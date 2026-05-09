@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Üzlet Riport</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f5f4f0;
+    --surface: #ffffff;
+    --surface2: #eeede8;
+    --border: rgba(0,0,0,0.08);
+    --border2: rgba(0,0,0,0.14);
+    --text: #1a1916;
+    --text2: #6b6a65;
+    --text3: #9e9d98;
+    --red: #c0392b;
+    --red-bg: #fdf0ee;
+    --green: #2d6a4f;
+    --green-bg: #edf7f2;
+    --amber: #92400e;
+    --amber-bg: #fef3c7;
+    --accent: #1a1916;
+    --radius: 10px;
+    --radius-lg: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--text);
+    color: #fff;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-left { display: flex; align-items: baseline; gap: 14px; }
+  .header h1 { font-size: 16px; font-weight: 600; letter-spacing: -0.3px; }
+  .header-meta { font-size: 12px; color: rgba(255,255,255,0.5); font-family: 'DM Mono', monospace; }
+  .franchise-toggle {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: rgba(255,255,255,0.7); cursor: pointer;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px; padding: 5px 12px; transition: all 0.15s;
+    user-select: none;
+  }
+  .franchise-toggle:hover { background: rgba(255,255,255,0.18); }
+  .franchise-toggle.active { background: rgba(255,255,255,0.2); color: #fff; }
+  .ft-dot { width: 7px; height: 7px; border-radius: 50%; background: #f59e0b; }
+
+  /* MAIN */
+  .main { max-width: 1200px; margin: 0 auto; padding: 24px 20px; }
+
+  /* TABS */
+  .tabs { display: flex; gap: 2px; margin-bottom: 20px; background: var(--surface2); padding: 3px; border-radius: var(--radius); width: fit-content; }
+  .tab { padding: 7px 18px; font-size: 13px; font-weight: 500; border: none; background: none; color: var(--text2); cursor: pointer; border-radius: 8px; transition: all 0.15s; }
+  .tab.active { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* CONTROLS */
+  .controls { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; align-items: center; }
+  .search-wrap { position: relative; flex: 1; min-width: 180px; max-width: 280px; }
+  .search-wrap input {
+    width: 100%; padding: 8px 12px 8px 32px;
+    border: 1px solid var(--border2); border-radius: var(--radius);
+    background: var(--surface); color: var(--text);
+    font-family: 'DM Sans', sans-serif; font-size: 13px;
+    outline: none; transition: border 0.15s;
+  }
+  .search-wrap input:focus { border-color: var(--text); }
+  .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text3); font-size: 13px; }
+  .filter-btn {
+    padding: 7px 14px; font-size: 12px; font-weight: 500;
+    border: 1px solid var(--border2); border-radius: var(--radius);
+    background: var(--surface); color: var(--text2); cursor: pointer;
+    transition: all 0.15s; font-family: 'DM Sans', sans-serif;
+  }
+  .filter-btn:hover { border-color: var(--text); color: var(--text); }
+  .filter-btn.active { background: var(--text); color: #fff; border-color: var(--text); }
+
+  /* METRICS */
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 18px; }
+  .metric {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 14px 16px;
+  }
+  .metric-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
+  .metric-value { font-size: 22px; font-weight: 600; letter-spacing: -0.5px; color: var(--text); }
+  .metric-value.neg { color: var(--red); }
+  .metric-value.pos { color: var(--green); }
+  .metric-value.warn { color: var(--amber); }
+  .metric-sub { font-size: 11px; color: var(--text3); margin-top: 2px; font-family: 'DM Mono', monospace; }
+
+  /* CARDS */
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 16px 18px; margin-bottom: 14px;
+  }
+  .card-title { font-size: 12px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+  .chart-wrap { position: relative; }
+
+  /* TABLE */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    text-align: left; padding: 8px 10px;
+    font-size: 11px; font-weight: 600; color: var(--text3);
+    text-transform: uppercase; letter-spacing: 0.4px;
+    border-bottom: 1px solid var(--border2); cursor: pointer;
+    user-select: none; white-space: nowrap;
+  }
+  thead th:hover { color: var(--text); }
+  td { padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--bg); }
+  td.neg { color: var(--red); font-weight: 500; }
+  td.pos { color: var(--green); font-weight: 500; }
+  td.mono { font-family: 'DM Mono', monospace; font-size: 12px; }
+  .badge {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    padding: 2px 8px; border-radius: 20px; letter-spacing: 0.3px;
+  }
+  .badge-ok { background: var(--green-bg); color: var(--green); }
+  .badge-warn { background: var(--amber-bg); color: var(--amber); }
+  .badge-bad { background: var(--red-bg); color: var(--red); }
+  .franchise-row td { opacity: 0.6; font-style: italic; }
+  .franchise-label {
+    font-size: 9px; font-weight: 600; letter-spacing: 0.5px;
+    background: var(--amber-bg); color: var(--amber);
+    padding: 1px 5px; border-radius: 3px; margin-left: 5px;
+    vertical-align: middle;
+  }
+  .levon-pill {
+    font-size: 10px; font-weight: 600;
+    background: #fef3c7; color: #92400e;
+    padding: 2px 7px; border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* TREND */
+  .trend-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
+  .trend-controls label { font-size: 12px; color: var(--text2); font-weight: 500; }
+  .trend-controls select {
+    padding: 7px 10px; font-size: 13px;
+    border: 1px solid var(--border2); border-radius: var(--radius);
+    background: var(--surface); color: var(--text);
+    font-family: 'DM Sans', sans-serif; outline: none; cursor: pointer;
+  }
+  .two-col { display: grid; grid-template-columns: 2fr 1fr; gap: 14px; }
+  @media(max-width:700px){ .two-col { grid-template-columns: 1fr; } }
+
+  /* LEVONÁS */
+  .levon-hint { font-size: 12px; color: var(--text3); margin-bottom: 12px; line-height: 1.6; }
+  .levon-total {
+    margin-top: 14px; padding: 12px 16px;
+    background: var(--surface2); border-radius: var(--radius);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; font-weight: 500;
+  }
+  .btn {
+    padding: 8px 16px; font-size: 13px; font-weight: 500;
+    border: 1px solid var(--border2); border-radius: var(--radius);
+    background: var(--surface); color: var(--text);
+    cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.15s;
+  }
+  .btn:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .btn-row { display: flex; gap: 8px; margin-top: 12px; }
+  .export-box {
+    margin-top: 12px; padding: 12px; font-size: 11px;
+    font-family: 'DM Mono', monospace; line-height: 1.6;
+    background: var(--surface2); border-radius: var(--radius);
+    white-space: pre-wrap; word-break: break-all;
+    display: none;
+  }
+  input[type=number], input[type=text] {
+    padding: 5px 8px; font-size: 12px;
+    border: 1px solid var(--border2); border-radius: 6px;
+    background: var(--surface); color: var(--text);
+    font-family: 'DM Sans', sans-serif; outline: none;
+  }
+  input[type=number]:focus, input[type=text]:focus { border-color: var(--text); }
+
+  /* LOADING */
+  #loading { text-align: center; padding: 60px; color: var(--text3); font-size: 14px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>Üzlet Riport</h1>
+    <span class="header-meta" id="headerMeta">betöltés...</span>
+  </div>
+  <div class="franchise-toggle" id="franchiseToggle" onclick="toggleFranchise()">
+    <div class="ft-dot"></div>
+    <span id="franchiseLabel">Franchise mutatása</span>
+  </div>
+</div>
+
+<div class="main" id="app">
+  <div id="loading">Adatok betöltése...</div>
+</div>
+
+<script>
+// ── CONFIG ────────────────────────────────────────────────────────────────────
+// Ha GitHub Pages-en van, ez a JSON fájl neve (ugyanabban a mappában legyen)
+const JSON_URL = 'data.json';
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let DATA = null;
+let showFranchise = false;
+let activeFilter = 'all';
+let sortKey = 'osszes';
+let sortDir = -1;
+let trendStore = null;
+let levons = {};
+let charts = {};
+const MONTHS = ['Jan','Feb','Már','Ápr','Máj','Jún','Júl','Aug','Sze','Okt','Nov','Dec'];
+
+// ── LOAD DATA ─────────────────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const r = await fetch(JSON_URL);
+    DATA = await r.json();
+  } catch(e) {
+    // fallback: inline data
+    DATA = INLINE_DATA;
+  }
+  init();
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+function init() {
+  document.getElementById('headerMeta').textContent = DATA.meta.honap + ' · frissítve: ' + DATA.meta.frissitve;
+  document.getElementById('app').innerHTML = `
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('aktualis')">Aktuális hónap</button>
+      <button class="tab" onclick="showTab('trend2026')">2026 trend</button>
+      <button class="tab" onclick="showTab('trend')">Évek trendje</button>
+      <button class="tab" onclick="showTab('levon')">Levonások</button>
+    </div>
+    <div class="panel active" id="tab-aktualis"></div>
+    <div class="panel" id="tab-trend2026"></div>
+    <div class="panel" id="tab-trend"></div>
+    <div class="panel" id="tab-levon"></div>
+  `;
+  renderAktualis();
+  renderTrend2026();
+  renderTrendUI();
+  renderLevon();
+}
+
+// ── HELPERS ───────────────────────────────────────────────────────────────────
+function fmt(v) { return (v >= 0 ? '+' : '') + Math.round(v).toLocaleString('hu-HU'); }
+function fmtAbs(v) { return Math.round(Math.abs(v)).toLocaleString('hu-HU'); }
+
+function getFiltered() {
+  const levonMap = {};
+  (DATA.levonasok || []).forEach(l => levonMap[l.nev] = l);
+  const q = (document.getElementById('srch')?.value || '').toLowerCase();
+  return DATA.uzletek.filter(d => {
+    if (!showFranchise && d.franchise) return false;
+    if (q && !d.nev.toLowerCase().includes(q)) return false;
+    if (activeFilter === 'neg') return d.osszes < 0;
+    if (activeFilter === 'pos') return d.osszes > 0;
+    return true;
+  }).sort((a, b) => {
+    let va, vb;
+    if (sortKey === 'levon') {
+      va = levonMap[a.nev]?.levon ?? 0;
+      vb = levonMap[b.nev]?.levon ?? 0;
+    } else {
+      va = a[sortKey] ?? 0; vb = b[sortKey] ?? 0;
+    }
+    if (typeof va === 'string') return sortDir * va.localeCompare(vb, 'hu');
+    return sortDir * (va - vb);
+  });
+}
+
+function toggleFranchise() {
+  showFranchise = !showFranchise;
+  document.getElementById('franchiseToggle').classList.toggle('active', showFranchise);
+  document.getElementById('franchiseLabel').textContent = showFranchise ? 'Franchise elrejtése' : 'Franchise mutatása';
+  if (document.getElementById('tab-aktualis').classList.contains('active')) renderAktualis();
+}
+
+function showTab(id) {
+  document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', ['aktualis','trend2026','trend','levon'][i] === id));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  if (id === 'trend') { setTimeout(renderTrendChart, 50); }
+  if (id === 'trend2026') { setTimeout(render2026Charts, 50); }
+}
+
+function setFilter(f) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.f === f));
+  renderAktualis();
+}
+
+function sortBy(k) {
+  if (sortKey === k) sortDir *= -1; else { sortKey = k; sortDir = -1; }
+  const chartCats = ['osszes','gomboc','ital','doboz','snack','desseg','ajandek','selejt_pct','leltar_pct'];
+  if (chartCats.includes(k)) activeChartCat = k;
+  renderAktualis();
+}
+
+// ── AKTUÁLIS HÓNAP ────────────────────────────────────────────────────────────
+function renderAktualis() {
+  const data = getFiltered();
+  const levonMap = {};
+  (DATA.levonasok || []).forEach(l => levonMap[l.nev] = l);
+  const totalLevon = (DATA.levonasok || []).reduce((s, l) => s + (l.levon || 0), 0);
+  const tot = data.reduce((s, d) => s + d.osszes, 0);
+  const neg = data.filter(d => d.osszes < 0).length;
+  const pos = data.filter(d => d.osszes > 0).length;
+  const avgS = data.length ? (data.reduce((s, d) => s + d.selejt_pct, 0) / data.length) : 0;
+  const avgLeltar = data.length ? (data.reduce((s, d) => s + (d.leltar_pct||100), 0) / data.length) : 100;
+  const worst = data.filter(d => d.osszes < 0).sort((a, b) => a.osszes - b.osszes)[0];
+
+  const CATS = [
+    {key:'leltar_pct', label:'Leltár %'},
+    {key:'osszes', label:'Összes eltérés'},
+    {key:'gomboc', label:'Gombóc'},
+    {key:'ital', label:'Ital'},
+    {key:'doboz', label:'Papírárú'},
+    {key:'snack', label:'Snack'},
+    {key:'desseg', label:'Édesség'},
+    {key:'ajandek', label:'Ajándéktárgy'},
+    {key:'selejt_pct', label:'Selejt %'},
+  ];
+
+  document.getElementById('tab-aktualis').innerHTML = `
+    <div class="controls">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="srch" placeholder="Üzlet keresés..." oninput="renderAktualis()">
+      </div>
+      <button class="filter-btn ${activeFilter==='all'?'active':''}" data-f="all" onclick="setFilter('all')">Összes</button>
+      <button class="filter-btn ${activeFilter==='neg'?'active':''}" data-f="neg" onclick="setFilter('neg')">Hiányos</button>
+      <button class="filter-btn ${activeFilter==='pos'?'active':''}" data-f="pos" onclick="setFilter('pos')">Többlet</button>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Üzletek</div>
+        <div class="metric-value">${data.length}</div>
+        <div class="metric-sub">${showFranchise ? 'franchise-szal' : 'saját üzletek'}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Átlag Leltár %</div>
+        <div class="metric-value ${avgLeltar<99.5?'neg':avgLeltar>=100?'pos':''}">${avgLeltar.toFixed(2)}%</div>
+        <div class="metric-sub">${DATA.meta.honap}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Összes eltérés</div>
+        <div class="metric-value ${tot<0?'neg':'pos'}">${fmt(tot)} Ft</div>
+        <div class="metric-sub">${DATA.meta.honap}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Hiányos</div>
+        <div class="metric-value neg">${neg}</div>
+        <div class="metric-sub">üzlet</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Többlet</div>
+        <div class="metric-value pos">${pos}</div>
+        <div class="metric-sub">üzlet</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Átlag selejt</div>
+        <div class="metric-value">${avgS.toFixed(1)}%</div>
+        <div class="metric-sub">összes üzlet</div>
+      </div>
+      ${worst ? `<div class="metric">
+        <div class="metric-label">Legnagyobb hiány</div>
+        <div class="metric-value neg" style="font-size:15px">${worst.nev}</div>
+        <div class="metric-sub">${fmt(worst.osszes)} Ft</div>
+      </div>` : ''}
+      ${totalLevon > 0 ? `<div class="metric">
+        <div class="metric-label">Összes levonás</div>
+        <div class="metric-value warn">${Math.round(totalLevon).toLocaleString('hu-HU')} Ft</div>
+        <div class="metric-sub">${(DATA.levonasok||[]).filter(l=>l.levon>0).length} üzlet</div>
+      </div>` : ''}
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:6px;">
+        <div class="card-title" style="margin-bottom:0" id="chartTitle">Összes eltérés üzletenként</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;">
+          ${CATS.map(c => `<button class="filter-btn${c.key===activeChartCat?' active':''}" style="padding:4px 10px;font-size:11px" onclick="setChartCat('${c.key}')">${c.label}</button>`).join('')}
+        </div>
+      </div>
+      <div class="chart-wrap" style="height:240px"><canvas id="barChart"></canvas></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Részletes adatok — kattints az oszlopra a rendezéshez</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th onclick="sortBy('leltar_pct')">Leltár %</th>
+            <th onclick="sortBy('nev')">Üzlet</th>
+            <th onclick="sortBy('osszes')">Összes elt.</th>
+            <th onclick="sortBy('gomboc')">Gombóc</th>
+            <th onclick="sortBy('ital')">Ital</th>
+            <th onclick="sortBy('doboz')">Papírárú</th>
+            <th onclick="sortBy('snack')">Snack</th>
+            <th onclick="sortBy('desseg')">Édesség</th>
+            <th onclick="sortBy('ajandek')">Ajándék</th>
+            <th onclick="sortBy('selejt_pct')">Selejt %</th>
+            <th onclick="sortBy('levon')">Levonás</th>
+          </tr></thead>
+          <tbody>${data.map(d => {
+            const lv = levonMap[d.nev];
+            const levonCell = lv ? `<span class="levon-pill">${Math.round(lv.levon).toLocaleString('hu-HU')} Ft</span>${lv.megjegyzes ? `<br><span style="font-size:10px;color:var(--text3)">${lv.megjegyzes}</span>` : ''}` : '—';
+            return `<tr ${d.franchise?'class="franchise-row"':''}>
+            <td class="mono ${(d.leltar_pct||100)<99.5?'neg':(d.leltar_pct||100)>=100?'pos':''}" style="font-weight:600">${d.leltar_pct?d.leltar_pct.toFixed(2)+'%':'—'}</td>
+            <td>${d.nev}${d.franchise?'<span class="franchise-label">F</span>':''}</td>
+            <td class="mono ${d.osszes<0?'neg':'pos'}">${fmt(Math.round(d.osszes))}</td>
+            <td class="mono ${(d.gomboc||0)<0?'neg':'pos'}">${fmt(Math.round(d.gomboc||0))}</td>
+            <td class="mono ${(d.ital||0)<0?'neg':'pos'}">${fmt(Math.round(d.ital||0))}</td>
+            <td class="mono ${(d.doboz||0)<0?'neg':'pos'}">${fmt(Math.round(d.doboz||0))}</td>
+            <td class="mono ${(d.snack||0)<0?'neg':'pos'}">${fmt(Math.round(d.snack||0))}</td>
+            <td class="mono ${(d.desseg||0)<0?'neg':'pos'}">${fmt(Math.round(d.desseg||0))}</td>
+            <td class="mono ${(d.ajandek||0)<0?'neg':'pos'}">${fmt(Math.round(d.ajandek||0))}</td>
+            <td class="mono">${d.selejt_pct.toFixed(2)}%</td>
+            <td>${levonCell}</td>
+          </tr>`}).join('')}</tbody>
+        </table>
+      </div>
+    </div>
+  `;
+
+  renderBarChart(data);
+}
+
+let activeChartCat = 'leltar_pct';
+
+function setChartCat(cat) {
+  activeChartCat = cat;
+  renderAktualis();
+}
+
+function renderBarChart(data) {
+  if (charts.bar) charts.bar.destroy();
+  const catLabels = {osszes:'Összes eltérés',gomboc:'Gombóc',ital:'Ital',doboz:'Papírárú',snack:'Snack',desseg:'Édesség',ajandek:'Ajándéktárgy',selejt_pct:'Selejt %',leltar_pct:'Leltár %'};
+  const labels = data.map(d => d.nev);
+  const isLeltar = activeChartCat === 'leltar_pct';
+  const isSzazalek = activeChartCat === 'selejt_pct' || isLeltar;
+  const vals = data.map(d => isSzazalek ? (d[activeChartCat]||0) : Math.round(d[activeChartCat] || 0));
+  const bgColors = activeChartCat === 'selejt_pct' ? vals.map(() => '#185FA5')
+    : isLeltar ? vals.map(v => v >= 100 ? '#2d6a4f' : '#c0392b')
+    : vals.map(v => v >= 0 ? '#2d6a4f' : '#c0392b');
+  document.getElementById('chartTitle').textContent = (catLabels[activeChartCat] || activeChartCat) + ' üzletenként';
+
+  const yMin = isLeltar ? Math.floor((Math.min(...vals) - 0.2) * 10) / 10 : undefined;
+  const yMax = isLeltar ? Math.ceil((Math.max(...vals) + 0.2) * 10) / 10 : undefined;
+
+  // 100% reference line drawn via chartArea plugin
+  const refLine100 = {
+    id: 'refLine100',
+    afterDraw(chart) {
+      if (!isLeltar) return;
+      const {ctx, chartArea, scales} = chart;
+      const y = scales.y.getPixelForValue(100);
+      if (y < chartArea.top || y > chartArea.bottom) return;
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(chartArea.left, y);
+      ctx.lineTo(chartArea.right, y);
+      ctx.strokeStyle = 'rgba(0,0,0,0.45)';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([5, 4]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = 'rgba(0,0,0,0.45)';
+      ctx.font = '10px DM Sans, sans-serif';
+      ctx.fillText('100%', chartArea.right + 4, y + 4);
+      ctx.restore();
+    }
+  };
+
+  charts.bar = new Chart(document.getElementById('barChart'), {
+    type: 'bar',
+    data: { labels, datasets: [{ data: vals, backgroundColor: bgColors, borderWidth: 0, borderRadius: 3 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => isLeltar ? ctx.parsed.y.toFixed(2) + '%' : isSzazalek ? ctx.parsed.y.toFixed(2) + '%' : fmt(ctx.parsed.y) + ' Ft' } }
+      },
+      scales: {
+        x: { ticks: { font: { size: 9, family: 'DM Sans' }, maxRotation: 55, autoSkip: false }, grid: { display: false } },
+        y: {
+          min: yMin, max: yMax,
+          ticks: { callback: v => isLeltar ? v.toFixed(1) + '%' : isSzazalek ? v + '%' : (v / 1000) + 'k', font: { size: 10 } },
+          grid: { color: 'rgba(0,0,0,0.05)' }
+        }
+      }
+    },
+    plugins: [refLine100]
+  });
+}
+
+// ── TREND ─────────────────────────────────────────────────────────────────────
+function renderTrendUI() {
+  const stores = Object.keys(DATA.trend || {});
+  trendStore = stores[0] || null;
+  document.getElementById('tab-trend').innerHTML = `
+    <div class="trend-controls">
+      <label>Üzlet:</label>
+      <select id="trendSel" onchange="trendStore=this.value;renderTrendChart()">
+        ${stores.map(s => `<option value="${s}">${s}</option>`).join('')}
+      </select>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title" id="trendCardTitle">Havi összes eltérés – 2023–2025</div>
+        <div class="chart-wrap" style="height:280px"><canvas id="trendChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Éves átlagok</div>
+        <div class="chart-wrap" style="height:280px"><canvas id="avgChart"></canvas></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Trend értelmezés</div>
+      <div id="trendSummary" style="font-size:13px;line-height:1.7;color:var(--text2);"></div>
+    </div>
+  `;
+  if (trendStore) setTimeout(renderTrendChart, 50);
+}
+
+function renderTrendChart() {
+  trendStore = document.getElementById('trendSel')?.value || trendStore;
+  if (!trendStore || !DATA.trend[trendStore]) return;
+  const hist = DATA.trend[trendStore];
+  document.getElementById('trendCardTitle').textContent = 'Havi összes eltérés – ' + trendStore;
+
+  const years = ['2023','2024','2025'];
+  const colors = { '2023': '#185FA5', '2024': '#2d6a4f', '2025': '#c0392b' };
+  const ds = years.filter(y => hist[y]).map(y => ({
+    label: y,
+    data: hist[y].h.map(v => v == null ? null : Math.round(v)),
+    borderColor: colors[y],
+    backgroundColor: colors[y] + '18',
+    borderWidth: 2,
+    tension: 0.35,
+    spanGaps: true,
+    pointRadius: 3,
+    fill: false,
+  }));
+
+  if (charts.trend) charts.trend.destroy();
+  charts.trend = new Chart(document.getElementById('trendChart'), {
+    type: 'line',
+    data: { labels: MONTHS, datasets: ds },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: true, labels: { boxWidth: 12, font: { size: 11 }, usePointStyle: true } },
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt(ctx.parsed.y) + ' Ft' } }
+      },
+      scales: {
+        x: { ticks: { font: { size: 10 } }, grid: { color: 'rgba(0,0,0,0.05)' } },
+        y: { ticks: { callback: v => (v / 1000) + 'k', font: { size: 10 } }, grid: { color: 'rgba(0,0,0,0.05)' } }
+      }
+    }
+  });
+
+  // Avg chart
+  const avgs = years.map(y => hist[y] ? Math.round(hist[y].avg) : null);
+  if (charts.avg) charts.avg.destroy();
+  charts.avg = new Chart(document.getElementById('avgChart'), {
+    type: 'bar',
+    data: {
+      labels: years,
+      datasets: [{ data: avgs, backgroundColor: avgs.map(v => v == null ? '#ccc' : v >= 0 ? '#2d6a4f' : '#c0392b'), borderWidth: 0, borderRadius: 4 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => fmt(ctx.parsed.y) + ' Ft átlag' } } },
+      scales: {
+        x: { ticks: { font: { size: 12, weight: '500' } }, grid: { display: false } },
+        y: { ticks: { callback: v => (v / 1000) + 'k', font: { size: 10 } }, grid: { color: 'rgba(0,0,0,0.05)' } }
+      }
+    }
+  });
+
+  // Summary
+  const validAvgs = years.map(y => hist[y]?.avg).filter(v => v != null);
+  let summary = '';
+  if (validAvgs.length >= 2) {
+    const trend = validAvgs[validAvgs.length-1] - validAvgs[0];
+    const trendText = trend > 0 ? `<strong style="color:var(--green)">+${fmtAbs(trend)} Ft javulás</strong>` : `<strong style="color:var(--red)">${fmtAbs(trend)} Ft romlás</strong>`;
+    summary = `Az átlagos havi eltérés 2023 óta ${trendText} volt. `;
+    const best = years.filter(y => hist[y]).reduce((b, y) => hist[y].avg > (hist[b]?.avg ?? -Infinity) ? y : b, years[0]);
+    const worst = years.filter(y => hist[y]).reduce((w, y) => hist[y].avg < (hist[w]?.avg ?? Infinity) ? y : w, years[0]);
+    summary += `A legjobb év <strong>${best}</strong> volt (${fmt(hist[best].avg)} Ft átlag), a legrosszabb <strong>${worst}</strong> (${fmt(hist[worst].avg)} Ft átlag).`;
+  }
+  document.getElementById('trendSummary').innerHTML = summary || 'Nincs elég adat az összehasonlításhoz.';
+}
+
+// ── 2026 TREND ────────────────────────────────────────────────────────────────
+const TREND2026 = [
+  {nev:"Király utca",jan:-11614,feb:-4953,mar:-46462,apr:-1220,franchise:false},
+  {nev:"Fashion",jan:2961,feb:-60888,mar:523,apr:24326,franchise:false},
+  {nev:"Bazilika",jan:3538,feb:16411,mar:-59357,apr:-19392,franchise:false},
+  {nev:"Széll Kálmán",jan:-55350,feb:-3114,mar:-41823,apr:-81462,franchise:false},
+  {nev:"Corvin",jan:8486,feb:25470,mar:12344,apr:-2219,franchise:false},
+  {nev:"Károly krt",jan:-97443,feb:-47078,mar:-66712,apr:-66992,franchise:false},
+  {nev:"Dob",jan:-39631,feb:-37573,mar:-11779,apr:-4681,franchise:false},
+  {nev:"Blaha",jan:1516,feb:-1612,mar:15445,apr:29169,franchise:false},
+  {nev:"Oktogon",jan:4534,feb:-26806,mar:84301,apr:-27854,franchise:false},
+  {nev:"Wesselényi",jan:32868,feb:-1675,mar:30885,apr:-9515,franchise:false},
+  {nev:"Astoria",jan:-10710,feb:32807,mar:-69898,apr:41235,franchise:false},
+  {nev:"Erzsébet krt 14",jan:-24146,feb:-98790,mar:21112,apr:-33463,franchise:false},
+  {nev:"Gomba Móricz",jan:95,feb:-70301,mar:-44639,apr:307,franchise:false},
+  {nev:"Keleti",jan:-2368,feb:-23338,mar:2844,apr:21058,franchise:false},
+  {nev:"Fővám tér",jan:-24100,feb:-1834,mar:-26065,apr:-52844,franchise:false},
+  {nev:"Ferenciek tere",jan:-51631,feb:-24445,mar:-2381,apr:-4944,franchise:false},
+  {nev:"Jászai Mari tér",jan:-37006,feb:-57567,mar:12163,apr:-13446,franchise:false},
+  {nev:"Etele",jan:-8703,feb:-63905,mar:-38538,apr:-29240,franchise:false},
+  {nev:"Kispest",jan:7160,feb:67972,mar:-5851,apr:22500,franchise:false},
+  {nev:"Bosnyák tér",jan:10345,feb:47941,mar:-64200,apr:19767,franchise:false},
+  {nev:"Árkád",jan:1253,feb:-5622,mar:-21440,apr:12738,franchise:false},
+  {nev:"Kazinczy",jan:2844,feb:19430,mar:20643,apr:13976,franchise:false},
+  {nev:"Törökvész",jan:14565,feb:55208,mar:30708,apr:7364,franchise:false},
+  {nev:"GO Buda",jan:20672,feb:46885,mar:-26475,apr:-55708,franchise:false},
+  {nev:"D1 Buda",jan:20502,feb:5392,mar:-7659,apr:8337,franchise:false},
+  {nev:"D2 Baross",jan:4390,feb:19093,mar:-10835,apr:13578,franchise:false},
+  {nev:"Újpest",jan:-19646,feb:-101675,mar:14939,apr:-4103,franchise:false},
+  {nev:"K1 Westend",jan:8027,feb:-26142,mar:-27800,apr:-19662,franchise:false},
+  {nev:"Szeged",jan:6456,feb:-79628,mar:-50881,apr:-4244,franchise:false},
+  {nev:"Pécs",jan:25784,feb:-6569,mar:20331,apr:-11226,franchise:true},
+  {nev:"Miskolc",jan:-41263,feb:-57051,mar:-170650,apr:-8633,franchise:true},
+];
+TREND2026.forEach(d => {
+  d.avg = Math.round((d.jan+d.feb+d.mar+d.apr)/4);
+  d.trend = d.apr - d.jan;
+});
+
+const T2026_MONTHS = ['Január','Február','Március','Április'];
+const T2026_KEYS = ['jan','feb','mar','apr'];
+let t2026View = 'all';
+let t2026SortKey = 'avg';
+let t2026SortDir = 1;
+
+function heatColor(v) {
+  if (v > 50000) return '#c8f0da';
+  if (v > 20000) return '#d8f5e6';
+  if (v > 0) return '#edf7f2';
+  if (v > -20000) return '#fdf0ee';
+  if (v > -50000) return '#f9d5d0';
+  return '#f5b8b0';
+}
+function fmtK(v) { return (v>=0?'+':'')+Math.round(v/1000)+'k'; }
+
+function get2026Data() {
+  return TREND2026.filter(d => {
+    if (!showFranchise && d.franchise) return false;
+    if (t2026View === 'neg') return d.avg < 0;
+    if (t2026View === 'pos') return d.avg > 0;
+    return true;
+  }).sort((a,b) => t2026SortDir*(a[t2026SortKey]-b[t2026SortKey]));
+}
+
+function set2026View(v) {
+  t2026View = v;
+  document.querySelectorAll('#tab-trend2026 .filter-btn').forEach((b,i) => b.classList.toggle('active', ['all','neg','pos'][i]===v));
+  render2026Heatmap();
+  render2026Table();
+}
+
+function sort2026By(k) {
+  if (t2026SortKey===k) t2026SortDir*=-1; else {t2026SortKey=k; t2026SortDir=1;}
+  render2026Table();
+}
+
+function renderTrend2026() {
+  const saját = TREND2026.filter(d=>!d.franchise);
+  const monthTotals = T2026_KEYS.map(m => saját.reduce((s,d)=>s+d[m],0));
+  const bestM = T2026_MONTHS[monthTotals.indexOf(Math.max(...monthTotals))];
+  const worstM = T2026_MONTHS[monthTotals.indexOf(Math.min(...monthTotals))];
+  const allAvg = Math.round(monthTotals.reduce((s,v)=>s+v,0)/4);
+  const improving = saját.filter(d=>d.trend>5000).length;
+  const worsening = saját.filter(d=>d.trend<-5000).length;
+
+  document.getElementById('tab-trend2026').innerHTML = `
+    <div class="metrics" style="margin-bottom:14px">
+      <div class="metric"><div class="metric-label">Legjobb hónap</div><div class="metric-value pos" style="font-size:16px">${bestM}</div><div class="metric-sub">${fmt(Math.max(...monthTotals))} Ft</div></div>
+      <div class="metric"><div class="metric-label">Legrosszabb hónap</div><div class="metric-value neg" style="font-size:16px">${worstM}</div><div class="metric-sub">${fmt(Math.min(...monthTotals))} Ft</div></div>
+      <div class="metric"><div class="metric-label">4 hónapos átlag</div><div class="metric-value ${allAvg<0?'neg':'pos'}">${fmt(allAvg)} Ft</div><div class="metric-sub">havi összesítő</div></div>
+      <div class="metric"><div class="metric-label">Javuló trend</div><div class="metric-value pos">${improving}</div><div class="metric-sub">jan→ápr ↑</div></div>
+      <div class="metric"><div class="metric-label">Romló trend</div><div class="metric-value neg">${worsening}</div><div class="metric-sub">jan→ápr ↓</div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px">
+      <div class="card">
+        <div class="card-title">Havi összesítés</div>
+        <div style="position:relative;height:200px"><canvas id="t2026month"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Hiányos vs többlet</div>
+        <div style="position:relative;height:200px"><canvas id="t2026negpos"></canvas></div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+      <div class="card">
+        <div class="card-title">Top 5 legjobb átlag</div>
+        <div style="position:relative;height:190px"><canvas id="t2026top"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Top 5 legrosszabb átlag</div>
+        <div style="position:relative;height:190px"><canvas id="t2026bot"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Hőtérkép – havi eltérések</div>
+      <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">
+        <button class="filter-btn active" onclick="set2026View('all')">Összes</button>
+        <button class="filter-btn" onclick="set2026View('neg')">Hiányos</button>
+        <button class="filter-btn" onclick="set2026View('pos')">Többlet</button>
+      </div>
+      <div id="heatmap2026"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Részletes táblázat</div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr>
+            <th onclick="sort2026By('nev')">Üzlet</th>
+            <th onclick="sort2026By('jan')">Január</th>
+            <th onclick="sort2026By('feb')">Február</th>
+            <th onclick="sort2026By('mar')">Március</th>
+            <th onclick="sort2026By('apr')">Április</th>
+            <th onclick="sort2026By('avg')">Átlag</th>
+            <th onclick="sort2026By('trend')">Trend</th>
+          </tr></thead>
+          <tbody id="t2026body"></tbody>
+        </table>
+      </div>
+    </div>
+  `;
+  render2026Heatmap();
+  render2026Table();
+}
+
+function render2026Charts() {
+  if (charts.t2026month) return;
+  const saját = TREND2026.filter(d=>!d.franchise);
+  const mTotals = T2026_KEYS.map(m => saját.reduce((s,d)=>s+d[m],0));
+  const negC = T2026_KEYS.map(m => saját.filter(d=>d[m]<0).length);
+  const posC = T2026_KEYS.map(m => saját.filter(d=>d[m]>0).length);
+
+  charts.t2026month = new Chart(document.getElementById('t2026month'), {
+    type:'bar',
+    data:{labels:T2026_MONTHS, datasets:[{data:mTotals, backgroundColor:mTotals.map(v=>v>=0?'#2d6a4f':'#c0392b'), borderWidth:0, borderRadius:3}]},
+    options:{responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>fmt(ctx.parsed.y)+' Ft'}}},
+      scales:{x:{grid:{display:false}},y:{ticks:{callback:v=>(v/1000)+'k'},grid:{color:'rgba(0,0,0,0.05)'}}}}
+  });
+
+  charts.t2026negpos = new Chart(document.getElementById('t2026negpos'), {
+    type:'bar',
+    data:{labels:T2026_MONTHS, datasets:[
+      {label:'Hiányos',data:negC,backgroundColor:'#c0392b',borderRadius:3},
+      {label:'Többlet',data:posC,backgroundColor:'#2d6a4f',borderRadius:3}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false, plugins:{legend:{display:true,labels:{boxWidth:10,font:{size:11}}}},
+      scales:{x:{grid:{display:false}},y:{ticks:{stepSize:5}}}}
+  });
+
+  const sorted = [...saját].sort((a,b)=>b.avg-a.avg);
+  charts.t2026top = new Chart(document.getElementById('t2026top'), {
+    type:'bar', data:{labels:sorted.slice(0,5).map(d=>d.nev), datasets:[{data:sorted.slice(0,5).map(d=>d.avg),backgroundColor:'#2d6a4f',borderWidth:0,borderRadius:3}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>fmt(ctx.parsed.x)+' Ft'}}},
+      scales:{x:{ticks:{callback:v=>(v/1000)+'k'},grid:{color:'rgba(0,0,0,0.05)'}},y:{ticks:{font:{size:11}}}}}
+  });
+
+  const bot5 = sorted.slice(-5).reverse();
+  charts.t2026bot = new Chart(document.getElementById('t2026bot'), {
+    type:'bar', data:{labels:bot5.map(d=>d.nev), datasets:[{data:bot5.map(d=>d.avg),backgroundColor:'#c0392b',borderWidth:0,borderRadius:3}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>fmt(ctx.parsed.x)+' Ft'}}},
+      scales:{x:{ticks:{callback:v=>(v/1000)+'k'},grid:{color:'rgba(0,0,0,0.05)'}},y:{ticks:{font:{size:11}}}}}
+  });
+}
+
+function render2026Heatmap() {
+  const data = get2026Data();
+  const cols = `160px repeat(4, 1fr) 90px`;
+  let html = `<div style="display:grid;grid-template-columns:${cols};gap:2px;font-size:11px">`;
+  html += '<div style="padding:5px 8px;font-size:10px;font-weight:600;color:var(--text3)">Üzlet</div>';
+  T2026_MONTHS.forEach(m => html += `<div style="padding:5px 8px;font-size:10px;font-weight:600;color:var(--text3);text-align:right">${m}</div>`);
+  html += '<div style="padding:5px 8px;font-size:10px;font-weight:600;color:var(--text3);text-align:right">Átlag</div>';
+  data.forEach(d => {
+    html += `<div style="padding:5px 8px;font-size:12px;display:flex;align-items:center;gap:4px">${d.nev}${d.franchise?'<span class="franchise-label">F</span>':''}</div>`;
+    T2026_KEYS.forEach(m => {
+      const v = d[m];
+      html += `<div style="padding:5px 8px;border-radius:4px;text-align:right;font-family:'DM Mono',monospace;background:${heatColor(v)};color:${v>=0?'#1a4731':'#7f1d1d'}">${fmtK(v)}</div>`;
+    });
+    html += `<div style="padding:5px 8px;border-radius:4px;text-align:right;font-family:'DM Mono',monospace;font-weight:600;background:${heatColor(d.avg)};color:${d.avg>=0?'#1a4731':'#7f1d1d'}">${fmtK(d.avg)}</div>`;
+  });
+  html += '</div>';
+  document.getElementById('heatmap2026').innerHTML = html;
+}
+
+function render2026Table() {
+  const data = get2026Data();
+  document.getElementById('t2026body').innerHTML = data.map(d => {
+    const ti = d.trend>5000?'<span style="color:var(--green);font-weight:700">↑</span>':d.trend<-5000?'<span style="color:var(--red);font-weight:700">↓</span>':'<span style="color:var(--text3);font-weight:700">→</span>';
+    return `<tr ${d.franchise?'style="opacity:0.6;font-style:italic"':''}>
+      <td>${d.nev}${d.franchise?'<span class="franchise-label">F</span>':''}</td>
+      <td class="mono ${d.jan<0?'neg':'pos'}">${fmt(d.jan)}</td>
+      <td class="mono ${d.feb<0?'neg':'pos'}">${fmt(d.feb)}</td>
+      <td class="mono ${d.mar<0?'neg':'pos'}">${fmt(d.mar)}</td>
+      <td class="mono ${d.apr<0?'neg':'pos'}">${fmt(d.apr)}</td>
+      <td class="mono ${d.avg<0?'neg':'pos'}" style="font-weight:600">${fmt(d.avg)}</td>
+      <td>${ti} <span style="font-size:11px;color:var(--text3);font-family:'DM Mono',monospace">${fmt(d.trend)}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+// ── LEVONÁS ───────────────────────────────────────────────────────────────────
+function renderLevon() {
+  const levonasok = DATA.levonasok || [];
+  const total = levonasok.reduce((s, l) => s + (l.levon || 0), 0);
+  const uzletMap = {};
+  DATA.uzletek.forEach(u => uzletMap[u.nev] = u);
+
+  document.getElementById('tab-levon').innerHTML = `
+    <div class="card">
+      <div class="card-title">Megállapított levonások – ${DATA.meta.honap}</div>
+      <p class="levon-hint">A levonásokat az Excel + levonás adatok beküldésekor rögzítjük a data.json-ban. Az adatok minden hónapban megmaradnak.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Üzlet</th><th>Eltérés</th><th>Levonás</th><th>Megjegyzés</th></tr></thead>
+          <tbody>${levonasok.length ? levonasok.map(l => {
+            const u = uzletMap[l.nev] || {};
+            return `<tr>
+              <td>${l.nev}</td>
+              <td class="mono ${(u.osszes||0)<0?'neg':'pos'}">${fmt(Math.round(u.osszes||0))}</td>
+              <td class="mono" style="font-weight:600">${l.levon > 0 ? Math.round(l.levon).toLocaleString('hu-HU')+' Ft' : '<span style="color:var(--text3)">—</span>'}</td>
+              <td style="font-size:12px;color:var(--text2)">${l.megjegyzes || ''}</td>
+            </tr>`;
+          }).join('') : '<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:20px">Nincs rögzített levonás</td></tr>'}</tbody>
+        </table>
+      </div>
+      ${total > 0 ? `<div class="levon-total">
+        <span>Összes megállapított levonás:</span>
+        <strong style="font-size:16px">${Math.round(total).toLocaleString('hu-HU')} Ft</strong>
+      </div>` : ''}
+    </div>
+  `;
+}
+
+// ── INLINE FALLBACK DATA ──────────────────────────────────────────────────────
+// Ha a fetch nem működik (pl. fájlból nyitják meg), ez az inline adat tölt be
+const INLINE_DATA = {
+  "meta": { "honap": "2026 április", "frissitve": "2026-05-02" },
+  "franchise": ["Miskolc","Pécs"],
+  "levonasok": [
+    {"nev":"Bazilika","levon":20000,"megjegyzes":""},
+    {"nev":"Széll Kálmán","levon":70000,"megjegyzes":""},
+    {"nev":"Károly krt","levon":65000,"megjegyzes":""},
+    {"nev":"Oktogon","levon":0,"megjegyzes":"Snack miatti eltérés - lopás, nincs levonás"},
+    {"nev":"Erzsébet krt 14","levon":30000,"megjegyzes":""},
+    {"nev":"Fővám tér","levon":60000,"megjegyzes":""},
+    {"nev":"Jászai Mari tér","levon":10000,"megjegyzes":""},
+    {"nev":"Etele","levon":25000,"megjegyzes":""},
+    {"nev":"GO Buda","levon":50000,"megjegyzes":""},
+    {"nev":"K1 Westend","levon":15000,"megjegyzes":""}
+  ],
+  "uzletek": [
+    {"nev":"Király utca","leltar_pct":99.99,"osszes":-1220,"gomboc":13139,"ital":-3490,"doboz":-10550,"snack":2970,"desseg":-3289,"ajandek":0,"selejt_pct":6.6},
+    {"nev":"Fashion","leltar_pct":100.15,"osszes":24326,"gomboc":12506,"ital":13130,"doboz":-1700,"snack":390,"desseg":0,"ajandek":0,"selejt_pct":7.5},
+    {"nev":"Bazilika","leltar_pct":99.87,"osszes":-19392,"gomboc":22928,"ital":-40060,"doboz":-6700,"snack":1450,"desseg":0,"ajandek":2990,"selejt_pct":6.34},
+    {"nev":"Széll Kálmán","leltar_pct":99.51,"osszes":-81462,"gomboc":-56243,"ital":-6440,"doboz":-13900,"snack":-3580,"desseg":-1299,"ajandek":0,"selejt_pct":5.9},
+    {"nev":"Corvin","leltar_pct":99.97,"osszes":-2219,"gomboc":-7879,"ital":2860,"doboz":1000,"snack":1800,"desseg":0,"ajandek":0,"selejt_pct":6.89},
+    {"nev":"Károly krt","leltar_pct":99.57,"osszes":-66992,"gomboc":-59222,"ital":-5970,"doboz":-1600,"snack":-200,"desseg":0,"ajandek":0,"selejt_pct":9.11},
+    {"nev":"Dob","leltar_pct":99.95,"osszes":-4681,"gomboc":2898,"ital":-3830,"doboz":-3650,"snack":1200,"desseg":-1299,"ajandek":0,"selejt_pct":8.78},
+    {"nev":"Blaha","leltar_pct":100.16,"osszes":29169,"gomboc":16928,"ital":-1610,"doboz":15150,"snack":0,"desseg":-1299,"ajandek":0,"selejt_pct":8.8},
+    {"nev":"Oktogon","leltar_pct":99.45,"osszes":-27854,"gomboc":24533,"ital":1320,"doboz":-5950,"snack":-25600,"desseg":-16887,"ajandek":-5270,"selejt_pct":9.7},
+    {"nev":"Wesselényi","leltar_pct":99.95,"osszes":-9515,"gomboc":-11095,"ital":80,"doboz":-300,"snack":1800,"desseg":0,"ajandek":0,"selejt_pct":4.4},
+    {"nev":"Astoria","leltar_pct":99.91,"osszes":41235,"gomboc":19586,"ital":4990,"doboz":1500,"snack":8770,"desseg":1299,"ajandek":5090,"selejt_pct":12.2},
+    {"nev":"Erzsébet krt 14","leltar_pct":98.79,"osszes":-33463,"gomboc":-29361,"ital":-5390,"doboz":-8600,"snack":5340,"desseg":2598,"ajandek":1950,"selejt_pct":15.6},
+    {"nev":"Gomba Móricz","leltar_pct":99.45,"osszes":307,"gomboc":-8515,"ital":12640,"doboz":-5800,"snack":1790,"desseg":-608,"ajandek":800,"selejt_pct":8.2},
+    {"nev":"Keleti","leltar_pct":99.4,"osszes":21058,"gomboc":10401,"ital":-12400,"doboz":22400,"snack":8150,"desseg":-9093,"ajandek":1600,"selejt_pct":8.8},
+    {"nev":"Fővám tér","leltar_pct":99.47,"osszes":-52844,"gomboc":-26984,"ital":-6410,"doboz":-3250,"snack":-16200,"desseg":0,"ajandek":0,"selejt_pct":8.7},
+    {"nev":"Ferenciek tere","leltar_pct":99.95,"osszes":-4944,"gomboc":-185,"ital":940,"doboz":-4400,"snack":0,"desseg":-1299,"ajandek":0,"selejt_pct":8.6},
+    {"nev":"Jászai Mari tér","leltar_pct":99.86,"osszes":-13446,"gomboc":-9876,"ital":3160,"doboz":-2750,"snack":-3980,"desseg":0,"ajandek":0,"selejt_pct":11.0},
+    {"nev":"Etele","leltar_pct":99.37,"osszes":-29240,"gomboc":-23460,"ital":640,"doboz":-1050,"snack":-6020,"desseg":0,"ajandek":650,"selejt_pct":11.4},
+    {"nev":"Kispest","leltar_pct":99.35,"osszes":22500,"gomboc":4831,"ital":-1680,"doboz":0,"snack":9520,"desseg":1299,"ajandek":8530,"selejt_pct":8.62},
+    {"nev":"Bosnyák tér","leltar_pct":99.87,"osszes":19767,"gomboc":16795,"ital":6250,"doboz":-5200,"snack":3570,"desseg":-2598,"ajandek":950,"selejt_pct":17.6},
+    {"nev":"Árkád","leltar_pct":100.01,"osszes":12738,"gomboc":10020,"ital":-1780,"doboz":2100,"snack":0,"desseg":2598,"ajandek":-200,"selejt_pct":9.8},
+    {"nev":"Kazinczy","leltar_pct":100.13,"osszes":13976,"gomboc":4607,"ital":6420,"doboz":-3150,"snack":4800,"desseg":1299,"ajandek":0,"selejt_pct":8.4},
+    {"nev":"Törökvész","leltar_pct":100.06,"osszes":7364,"gomboc":11665,"ital":-4040,"doboz":7300,"snack":1000,"desseg":1299,"ajandek":-9860,"selejt_pct":8.3},
+    {"nev":"GO Buda","leltar_pct":99.76,"osszes":-55708,"gomboc":-48848,"ital":-10030,"doboz":50,"snack":2370,"desseg":0,"ajandek":750,"selejt_pct":13.6},
+    {"nev":"D1 Buda","leltar_pct":99.27,"osszes":8337,"gomboc":-4235,"ital":12700,"doboz":0,"snack":730,"desseg":3372,"ajandek":-4230,"selejt_pct":4.78},
+    {"nev":"D2 Baross","leltar_pct":100.08,"osszes":13578,"gomboc":-9155,"ital":15450,"doboz":0,"snack":3170,"desseg":4063,"ajandek":50,"selejt_pct":5.25},
+    {"nev":"Újpest","leltar_pct":99.92,"osszes":-4103,"gomboc":4634,"ital":-2840,"doboz":200,"snack":-110,"desseg":-1907,"ajandek":-4080,"selejt_pct":8.32},
+    {"nev":"K1 Westend","leltar_pct":99.53,"osszes":-19662,"gomboc":-17783,"ital":2820,"doboz":-2800,"snack":-600,"desseg":-1299,"ajandek":0,"selejt_pct":24.9},
+    {"nev":"BP PARK","leltar_pct":99.6,"osszes":-11816,"gomboc":-10626,"ital":-840,"doboz":-950,"snack":600,"desseg":0,"ajandek":0,"selejt_pct":12.4},
+    {"nev":"Szeged","leltar_pct":99.97,"osszes":-4244,"gomboc":1154,"ital":8870,"doboz":-14700,"snack":3760,"desseg":-14538,"ajandek":11210,"selejt_pct":16.5},
+    {"nev":"Pécs","leltar_pct":99.58,"osszes":-11226,"gomboc":-23954,"ital":5140,"doboz":800,"snack":3790,"desseg":2598,"ajandek":400,"selejt_pct":5.7,"franchise":true},
+    {"nev":"Miskolc","leltar_pct":99.84,"osszes":-8633,"gomboc":-41146,"ital":29790,"doboz":-4450,"snack":-1990,"desseg":7403,"ajandek":1760,"selejt_pct":0,"franchise":true}
+  ],
+  "trend": {
+    "Király utca":{"2023":{"avg":-75323,"h":[-57924,-15652,-79554,-116099,-98329,-16056,-146223,-95346,-71937,-54859,-76971,-74926]},"2024":{"avg":-57390,"h":[-65448,-89962,-21475,-2956,-23768,-57038,-110019,-73175,-117236,-50714,-26464,-50422]},"2025":{"avg":-50783,"h":[-58986,-42884,-53649,-38338,-42313,-79073,-130655,-90480,-43402,-2990,-28268,1643]}},
+    "Fashion":{"2023":{"avg":-100435,"h":[-63689,-69756,-100745,-81803,-50697,-168075,-40766,-196245,-182961,-99850,-135921,-14715]},"2024":{"avg":-29719,"h":[-21637,-25749,-49171,-75204,-63405,-38567,-31298,4399,-15788,-14744,-26017,555]},"2025":{"avg":-2963,"h":[-1238,-10206,-33470,6074,-15162,28809,-1999,-6749,12896,5336,-5750,-14102]}},
+    "Corvin":{"2023":{"avg":-21519,"h":[101809,-38460,-126515,-76697,20667,-800,-46897,-25546,-25081,-17390,-68580,45266]},"2024":{"avg":-11732,"h":[5721,-43037,-38423,-29024,-34349,-1392,-5049,-30855,24105,-3551,-2140,17213]},"2025":{"avg":17177,"h":[17352,25279,11958,16445,51808,43495,13952,-6332,29758,27222,6510,-31326]}},
+    "Keleti":{"2023":{"avg":-53605,"h":[-46725,5603,-43929,-94308,-40191,-46598,-50600,-77803,-99028,-20537,-43365,-85774]},"2024":{"avg":-29092,"h":[-12651,10926,-40982,-11739,-23375,-19547,-35049,-56008,-48257,-16473,-71802,-24152]},"2025":{"avg":-21815,"h":[-29586,3433,-27285,-1235,-80071,-84833,20465,-11019,-10963,-30879,21550,-31353]}},
+    "Astoria":{"2023":{"avg":-37678,"h":[-177240,-1579,-34328,-29286,-36226,-74524,-72725,8191,2356,-3732,-28856,-4187]},"2024":{"avg":-13098,"h":[-1548,-10797,-7099,-7055,-7602,5340,-3118,3074,-100505,-4070,-9241,1614]},"2025":{"avg":-20042,"h":[-30338,-21278,-7462,-9305,-24188,-6613,-6687,-60757,-5250,-25087,23249,-66784]}}
+  }
+};
+
+// ── START ─────────────────────────────────────────────────────────────────────
+loadData();
+</script>
+</body>
+</html>
