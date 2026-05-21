@@ -1,7 +1,7 @@
 {
   "meta": {
-    "honap": "2026. május 20.",
-    "frissitve": "2026-05-20"
+    "honap": "2026. május 21.",
+    "frissitve": "2026-05-21"
   },
   "franchise": [
     "Miskolc",
@@ -107,7 +107,7 @@
     },
     {
       "nev": "Oktogon",
-      "leltar_pct": 100.05,
+      "leltar_pct": 99.8,
       "osszes": -28585,
       "gomboc": -13492,
       "ital": -3790,
@@ -131,7 +131,7 @@
     },
     {
       "nev": "Astoria",
-      "leltar_pct": 99.61,
+      "leltar_pct": 100.1,
       "osszes": 1451,
       "gomboc": 13869,
       "ital": -4070,
@@ -155,7 +155,7 @@
     },
     {
       "nev": "Gomba Móricz",
-      "leltar_pct": 100.2,
+      "leltar_pct": 99.8,
       "osszes": -15565,
       "gomboc": -30402,
       "ital": 10020,
@@ -167,7 +167,7 @@
     },
     {
       "nev": "Keleti",
-      "leltar_pct": 100.16,
+      "leltar_pct": 99.9,
       "osszes": -347,
       "gomboc": -3497,
       "ital": 460,
@@ -191,7 +191,7 @@
     },
     {
       "nev": "Ferenciek tere",
-      "leltar_pct": 100.37,
+      "leltar_pct": 100.1,
       "osszes": 22481,
       "gomboc": 15871,
       "ital": 6920,
@@ -203,7 +203,7 @@
     },
     {
       "nev": "Jászai Mari tér",
-      "leltar_pct": 100.11,
+      "leltar_pct": 100.1,
       "osszes": 8374,
       "gomboc": 22974,
       "ital": -3440,
@@ -215,7 +215,7 @@
     },
     {
       "nev": "Etele",
-      "leltar_pct": 99.48,
+      "leltar_pct": 99.7,
       "osszes": -29417,
       "gomboc": -13017,
       "ital": -8550,
@@ -227,7 +227,7 @@
     },
     {
       "nev": "Kispest",
-      "leltar_pct": 99.53,
+      "leltar_pct": 99.9,
       "osszes": -7945,
       "gomboc": -18375,
       "ital": 8340,
@@ -239,7 +239,7 @@
     },
     {
       "nev": "Bosnyák tér",
-      "leltar_pct": 99.35,
+      "leltar_pct": 99.5,
       "osszes": -30115,
       "gomboc": -24425,
       "ital": -7080,
@@ -251,7 +251,7 @@
     },
     {
       "nev": "Árkád",
-      "leltar_pct": 100.11,
+      "leltar_pct": 100.1,
       "osszes": 8900,
       "gomboc": 4520,
       "ital": 2030,
@@ -263,7 +263,7 @@
     },
     {
       "nev": "Kazinczy",
-      "leltar_pct": 100.41,
+      "leltar_pct": 100.3,
       "osszes": 29889,
       "gomboc": -3399,
       "ital": 3660,
@@ -275,7 +275,7 @@
     },
     {
       "nev": "Törökvész",
-      "leltar_pct": 100.39,
+      "leltar_pct": 100.2,
       "osszes": 16263,
       "gomboc": 21175,
       "ital": 1930,
@@ -287,7 +287,7 @@
     },
     {
       "nev": "GO Buda",
-      "leltar_pct": 100.02,
+      "leltar_pct": 99.9,
       "osszes": -10338,
       "gomboc": 19602,
       "ital": -18510,
@@ -299,7 +299,7 @@
     },
     {
       "nev": "D1 Buda",
-      "leltar_pct": 98.84,
+      "leltar_pct": 100.1,
       "osszes": 11929,
       "gomboc": 3050,
       "ital": 10,
@@ -311,7 +311,7 @@
     },
     {
       "nev": "D2 Baross",
-      "leltar_pct": 99.05,
+      "leltar_pct": 99.4,
       "osszes": -37014,
       "gomboc": -28982,
       "ital": -4950,
@@ -323,7 +323,7 @@
     },
     {
       "nev": "Újpest",
-      "leltar_pct": 99.98,
+      "leltar_pct": 99.9,
       "osszes": -3920,
       "gomboc": -14910,
       "ital": -2190,
@@ -335,7 +335,7 @@
     },
     {
       "nev": "K1 Westend",
-      "leltar_pct": 99.64,
+      "leltar_pct": 99.8,
       "osszes": -11706,
       "gomboc": -1616,
       "ital": -5240,
@@ -359,7 +359,7 @@
     },
     {
       "nev": "Szeged",
-      "leltar_pct": 100.74,
+      "leltar_pct": 100.1,
       "osszes": 14815,
       "gomboc": 13186,
       "ital": 8720,
@@ -371,7 +371,7 @@
     },
     {
       "nev": "Pécs",
-      "leltar_pct": 100.07,
+      "leltar_pct": 100.0,
       "osszes": 650,
       "gomboc": 31481,
       "ital": -1480,
