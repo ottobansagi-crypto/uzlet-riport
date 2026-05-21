@@ -238,7 +238,7 @@ const MONTHS = ['Jan','Feb','Már','Ápr','Máj','Jún','Júl','Aug','Sze','Okt'
 // ── LOAD DATA ─────────────────────────────────────────────────────────────────
 async function loadData() {
   try {
-    const r = await fetch(JSON_URL);
+    const r = await fetch(JSON_URL + '?v=' + Date.now());
     DATA = await r.json();
   } catch(e) {
     // fallback: inline data
