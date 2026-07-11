@@ -240,6 +240,14 @@ function esc(v) {
   return String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
+// ── CHART.JS AVAILABILITY GUARD ───────────────────────────────────────────────
+// Ha a Chart.js CDN nem tölt be, a diagramok kihagyása helyett üzenetet mutatunk
+// a canvas helyén, ahelyett hogy a hívó render* függvény hibával leállna.
+function chartFallback(canvasId, msg) {
+  const el = document.getElementById(canvasId);
+  if (el) el.outerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text3);font-size:12px;text-align:center;padding:0 20px">${esc(msg)}</div>`;
+}
+
 // ── LOAD DATA ─────────────────────────────────────────────────────────────────
 async function loadData() {
   try {
@@ -275,10 +283,11 @@ function init() {
     <div class="panel" id="tab-trend"></div>
     <div class="panel" id="tab-levon"></div>
   `;
-  renderAktualis();
-  renderTrend2026();
-  renderTrendUI();
-  renderLevon();
+  [renderAktualis, renderTrend2026, renderTrendUI, renderLevon].forEach(fn => {
+    try { fn(); } catch (e) {
+      console.error('Render hiba (' + fn.name + '):', e);
+    }
+  });
 }
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -477,6 +486,7 @@ function setChartCat(cat) {
 }
 
 function renderBarChart(data) {
+  if (typeof Chart === 'undefined') { chartFallback('barChart', 'A diagram nem tölt be (Chart.js könyvtár nem érhető el).'); return; }
   if (charts.bar) charts.bar.destroy();
   const catLabels = {osszes:'Összes eltérés',gomboc:'Gombóc',ital:'Ital',doboz:'Papírárú',snack:'Snack',desseg:'Édesség',ajandek:'Ajándéktárgy',selejt_pct:'Selejt %',leltar_pct:'Leltár %'};
   const labels = data.map(d => d.nev);
@@ -590,6 +600,11 @@ function renderTrendChart() {
   if (!trendStore || !DATA.trend[trendStore]) return;
   const hist = DATA.trend[trendStore];
   document.getElementById('trendCardTitle').textContent = 'Havi összes eltérés – ' + trendStore;
+  const chartsOk = typeof Chart !== 'undefined';
+  if (!chartsOk) {
+    chartFallback('trendChart', 'A diagram nem tölt be (Chart.js könyvtár nem érhető el).');
+    chartFallback('avgChart', 'A diagram nem tölt be (Chart.js könyvtár nem érhető el).');
+  }
 
   const years = ['2023','2024','2025'];
   const colors = { '2023': '#185FA5', '2024': '#2d6a4f', '2025': '#c0392b' };
@@ -605,41 +620,45 @@ function renderTrendChart() {
     fill: false,
   }));
 
-  if (charts.trend) charts.trend.destroy();
-  charts.trend = new Chart(document.getElementById('trendChart'), {
-    type: 'line',
-    data: { labels: MONTHS, datasets: ds },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        legend: { display: true, labels: { boxWidth: 12, font: { size: 11 }, usePointStyle: true } },
-        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt(ctx.parsed.y) + ' Ft' } }
-      },
-      scales: {
-        x: { ticks: { font: { size: 10 } }, grid: { color: 'rgba(0,0,0,0.05)' } },
-        y: { ticks: { callback: v => (v / 1000) + 'k', font: { size: 10 } }, grid: { color: 'rgba(0,0,0,0.05)' } }
+  if (chartsOk) {
+    if (charts.trend) charts.trend.destroy();
+    charts.trend = new Chart(document.getElementById('trendChart'), {
+      type: 'line',
+      data: { labels: MONTHS, datasets: ds },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: true, labels: { boxWidth: 12, font: { size: 11 }, usePointStyle: true } },
+          tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt(ctx.parsed.y) + ' Ft' } }
+        },
+        scales: {
+          x: { ticks: { font: { size: 10 } }, grid: { color: 'rgba(0,0,0,0.05)' } },
+          y: { ticks: { callback: v => (v / 1000) + 'k', font: { size: 10 } }, grid: { color: 'rgba(0,0,0,0.05)' } }
+        }
       }
-    }
-  });
+    });
+  }
 
   // Avg chart
   const avgs = years.map(y => hist[y] ? Math.round(hist[y].avg) : null);
-  if (charts.avg) charts.avg.destroy();
-  charts.avg = new Chart(document.getElementById('avgChart'), {
-    type: 'bar',
-    data: {
-      labels: years,
-      datasets: [{ data: avgs, backgroundColor: avgs.map(v => v == null ? '#ccc' : v >= 0 ? '#2d6a4f' : '#c0392b'), borderWidth: 0, borderRadius: 4 }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => fmt(ctx.parsed.y) + ' Ft átlag' } } },
-      scales: {
-        x: { ticks: { font: { size: 12, weight: '500' } }, grid: { display: false } },
-        y: { ticks: { callback: v => (v / 1000) + 'k', font: { size: 10 } }, grid: { color: 'rgba(0,0,0,0.05)' } }
+  if (chartsOk) {
+    if (charts.avg) charts.avg.destroy();
+    charts.avg = new Chart(document.getElementById('avgChart'), {
+      type: 'bar',
+      data: {
+        labels: years,
+        datasets: [{ data: avgs, backgroundColor: avgs.map(v => v == null ? '#ccc' : v >= 0 ? '#2d6a4f' : '#c0392b'), borderWidth: 0, borderRadius: 4 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => fmt(ctx.parsed.y) + ' Ft átlag' } } },
+        scales: {
+          x: { ticks: { font: { size: 12, weight: '500' } }, grid: { display: false } },
+          y: { ticks: { callback: v => (v / 1000) + 'k', font: { size: 10 } }, grid: { color: 'rgba(0,0,0,0.05)' } }
+        }
       }
-    }
-  });
+    });
+  }
 
   // Summary
   const validAvgs = years.map(y => hist[y]?.avg).filter(v => v != null);
@@ -809,6 +828,10 @@ function renderTrend2026() {
 
 function render2026Charts() {
   if (charts.t2026month) return;
+  if (typeof Chart === 'undefined') {
+    ['t2026month','t2026negpos','t2026top','t2026bot'].forEach(id => chartFallback(id, 'A diagram nem tölt be (Chart.js könyvtár nem érhető el).'));
+    return;
+  }
   const saját = TREND2026.filter(d=>!d.franchise);
   const mTotals = T2026_KEYS.map(m => saját.reduce((s,d)=>s+d[m],0));
   const negC = T2026_KEYS.map(m => saját.filter(d=>d[m]<0).length);
