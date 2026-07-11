@@ -226,23 +226,31 @@ const JSON_URL = 'data.json';
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
 let DATA = null;
+let usingFallbackData = false;
 let showFranchise = false;
 let activeFilter = 'all';
 let sortKey = 'osszes';
 let sortDir = -1;
 let trendStore = null;
-let levons = {};
 let charts = {};
 const MONTHS = ['Jan','Feb','Már','Ápr','Máj','Jún','Júl','Aug','Sze','Okt','Nov','Dec'];
+
+// ── HTML ESCAPE ───────────────────────────────────────────────────────────────
+function esc(v) {
+  return String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
 
 // ── LOAD DATA ─────────────────────────────────────────────────────────────────
 async function loadData() {
   try {
     const r = await fetch(JSON_URL + '?v=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
     DATA = await r.json();
+    usingFallbackData = false;
   } catch(e) {
-    // fallback: inline data
+    // fallback: inline data (lehet elavult, ld. figyelmeztető sáv)
     DATA = INLINE_DATA;
+    usingFallbackData = true;
   }
   init();
 }
@@ -250,7 +258,12 @@ async function loadData() {
 // ── INIT ──────────────────────────────────────────────────────────────────────
 function init() {
   document.getElementById('headerMeta').textContent = DATA.meta.honap + ' · frissítve: ' + DATA.meta.frissitve;
+  const fallbackBanner = usingFallbackData ? `
+    <div style="background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber);border-radius:var(--radius);padding:10px 14px;margin-bottom:16px;font-size:12px;font-weight:500;">
+      ⚠ A data.json betöltése nem sikerült — beépített, esetleg elavult tartalék adatokat látsz.
+    </div>` : '';
   document.getElementById('app').innerHTML = `
+    ${fallbackBanner}
     <div class="tabs">
       <button class="tab active" onclick="showTab('aktualis')">Aktuális hónap</button>
       <button class="tab" onclick="showTab('trend2026')">2026 trend</button>
@@ -300,6 +313,9 @@ function toggleFranchise() {
   document.getElementById('franchiseToggle').classList.toggle('active', showFranchise);
   document.getElementById('franchiseLabel').textContent = showFranchise ? 'Franchise elrejtése' : 'Franchise mutatása';
   if (document.getElementById('tab-aktualis').classList.contains('active')) renderAktualis();
+  refreshTrendStores();
+  render2026Heatmap();
+  render2026Table();
 }
 
 function showTab(id) {
@@ -392,7 +408,7 @@ function renderAktualis() {
       </div>
       ${worst ? `<div class="metric">
         <div class="metric-label">Legnagyobb hiány</div>
-        <div class="metric-value neg" style="font-size:15px">${worst.nev}</div>
+        <div class="metric-value neg" style="font-size:15px">${esc(worst.nev)}</div>
         <div class="metric-sub">${fmt(worst.osszes)} Ft</div>
       </div>` : ''}
       ${totalLevon > 0 ? `<div class="metric">
@@ -431,10 +447,10 @@ function renderAktualis() {
           </tr></thead>
           <tbody>${data.map(d => {
             const lv = levonMap[d.nev];
-            const levonCell = lv ? `<span class="levon-pill">${Math.round(lv.levon).toLocaleString('hu-HU')} Ft</span>${lv.megjegyzes ? `<br><span style="font-size:10px;color:var(--text3)">${lv.megjegyzes}</span>` : ''}` : '—';
+            const levonCell = lv ? `<span class="levon-pill">${Math.round(lv.levon).toLocaleString('hu-HU')} Ft</span>${lv.megjegyzes ? `<br><span style="font-size:10px;color:var(--text3)">${esc(lv.megjegyzes)}</span>` : ''}` : '—';
             return `<tr ${d.franchise?'class="franchise-row"':''}>
             <td class="mono ${(d.leltar_pct||100)<99.5?'neg':(d.leltar_pct||100)>=100?'pos':''}" style="font-weight:600">${d.leltar_pct?d.leltar_pct.toFixed(2)+'%':'—'}</td>
-            <td>${d.nev}${d.franchise?'<span class="franchise-label">F</span>':''}</td>
+            <td>${esc(d.nev)}${d.franchise?'<span class="franchise-label">F</span>':''}</td>
             <td class="mono ${d.osszes<0?'neg':'pos'}">${fmt(Math.round(d.osszes))}</td>
             <td class="mono ${(d.gomboc||0)<0?'neg':'pos'}">${fmt(Math.round(d.gomboc||0))}</td>
             <td class="mono ${(d.ital||0)<0?'neg':'pos'}">${fmt(Math.round(d.ital||0))}</td>
@@ -522,14 +538,33 @@ function renderBarChart(data) {
 }
 
 // ── TREND ─────────────────────────────────────────────────────────────────────
+function isFranchiseStore(nev) {
+  const u = (DATA.uzletek || []).find(x => x.nev === nev);
+  return !!(u && u.franchise);
+}
+
+function getTrendStores() {
+  return Object.keys(DATA.trend || {}).filter(s => showFranchise || !isFranchiseStore(s));
+}
+
+function refreshTrendStores() {
+  if (!document.getElementById('tab-trend').innerHTML) return;
+  const stores = getTrendStores();
+  if (!stores.includes(trendStore)) trendStore = stores[0] || null;
+  const sel = document.getElementById('trendSel');
+  if (!sel) return;
+  sel.innerHTML = stores.map(s => `<option value="${esc(s)}" ${s===trendStore?'selected':''}>${esc(s)}</option>`).join('');
+  if (trendStore) renderTrendChart();
+}
+
 function renderTrendUI() {
-  const stores = Object.keys(DATA.trend || {});
+  const stores = getTrendStores();
   trendStore = stores[0] || null;
   document.getElementById('tab-trend').innerHTML = `
     <div class="trend-controls">
       <label>Üzlet:</label>
       <select id="trendSel" onchange="trendStore=this.value;renderTrendChart()">
-        ${stores.map(s => `<option value="${s}">${s}</option>`).join('')}
+        ${stores.map(s => `<option value="${esc(s)}">${esc(s)}</option>`).join('')}
       </select>
     </div>
     <div class="two-col">
@@ -631,7 +666,7 @@ const TREND2026 = [
   {nev:"Dob",jan:-39631,feb:-37573,mar:-11779,apr:-4681,maj:-28975,jun:-35932,franchise:false},
   {nev:"Blaha",jan:1516,feb:-1612,mar:15445,apr:29169,maj:-31313,jun:-24733,franchise:false},
   {nev:"Oktogon",jan:4534,feb:-26806,mar:84301,apr:-27854,maj:-24939,jun:-56999,franchise:false},
-  {nev:"Wesselényi",jan:32868,feb:-1675,mar:30885,apr:-9515,maj:16289,jun:20824,franchise:false},
+  {nev:"Wesselényi utca",jan:32868,feb:-1675,mar:30885,apr:-9515,maj:16289,jun:20824,franchise:false},
   {nev:"Astoria",jan:-10710,feb:32807,mar:-69898,apr:41235,maj:5571,jun:-21113,franchise:false},
   {nev:"Erzsébet krt 14",jan:-24146,feb:-98790,mar:21112,apr:-33463,maj:-9680,jun:-9305,franchise:false},
   {nev:"Gomba Móricz",jan:95,feb:-70301,mar:-44639,apr:307,maj:-17448,jun:-42869,franchise:false},
@@ -819,7 +854,7 @@ function render2026Heatmap() {
   T2026_MONTHS.forEach(m => html += `<div style="padding:5px 8px;font-size:10px;font-weight:600;color:var(--text3);text-align:right">${m}</div>`);
   html += '<div style="padding:5px 8px;font-size:10px;font-weight:600;color:var(--text3);text-align:right">Átlag</div>';
   data.forEach(d => {
-    html += `<div style="padding:5px 8px;font-size:12px;display:flex;align-items:center;gap:4px">${d.nev}${d.franchise?'<span class="franchise-label">F</span>':''}</div>`;
+    html += `<div style="padding:5px 8px;font-size:12px;display:flex;align-items:center;gap:4px">${esc(d.nev)}${d.franchise?'<span class="franchise-label">F</span>':''}</div>`;
     T2026_KEYS.forEach(m => {
       const v = d[m];
       html += `<div style="padding:5px 8px;border-radius:4px;text-align:right;font-family:'DM Mono',monospace;background:${heatColor(v)};color:${v>=0?'#1a4731':'#7f1d1d'}">${fmtK(v)}</div>`;
@@ -835,7 +870,7 @@ function render2026Table() {
   document.getElementById('t2026body').innerHTML = data.map(d => {
     const ti = d.trend>5000?'<span style="color:var(--green);font-weight:700">↑</span>':d.trend<-5000?'<span style="color:var(--red);font-weight:700">↓</span>':'<span style="color:var(--text3);font-weight:700">→</span>';
     return `<tr ${d.franchise?'style="opacity:0.6;font-style:italic"':''}>
-      <td>${d.nev}${d.franchise?'<span class="franchise-label">F</span>':''}</td>
+      <td>${esc(d.nev)}${d.franchise?'<span class="franchise-label">F</span>':''}</td>
       <td class="mono ${d.jan<0?'neg':'pos'}">${fmt(d.jan)}</td>
       <td class="mono ${d.feb<0?'neg':'pos'}">${fmt(d.feb)}</td>
       <td class="mono ${d.mar<0?'neg':'pos'}">${fmt(d.mar)}</td>
@@ -864,10 +899,10 @@ function renderLevon() {
           <tbody>${levonasok.length ? levonasok.map(l => {
             const u = uzletMap[l.nev] || {};
             return `<tr>
-              <td>${l.nev}</td>
+              <td>${esc(l.nev)}</td>
               <td class="mono ${(u.osszes||0)<0?'neg':'pos'}">${fmt(Math.round(u.osszes||0))}</td>
               <td class="mono" style="font-weight:600">${l.levon > 0 ? Math.round(l.levon).toLocaleString('hu-HU')+' Ft' : '<span style="color:var(--text3)">—</span>'}</td>
-              <td style="font-size:12px;color:var(--text2)">${l.megjegyzes || ''}</td>
+              <td style="font-size:12px;color:var(--text2)">${esc(l.megjegyzes)}</td>
             </tr>`;
           }).join('') : '<tr><td colspan="4" style="text-align:center;color:var(--text3);padding:20px">Nincs rögzített levonás</td></tr>'}</tbody>
         </table>
@@ -884,7 +919,6 @@ function renderLevon() {
 // Ha a fetch nem működik (pl. fájlból nyitják meg), ez az inline adat tölt be
 const INLINE_DATA = {
   "meta": { "honap": "2026. június", "frissitve": "2026-07-01" },
-  "franchise": ["Miskolc","Pécs"],
   "levonasok": [
     {"nev": "Király utca", "levon": 50000, "megjegyzes": ""},
     {"nev": "Fashion", "levon": 35000, "megjegyzes": ""},
@@ -944,9 +978,9 @@ const INLINE_DATA = {
   "trend": {
     "Király utca":{"2023":{"avg":-75323,"h":[-57924,-15652,-79554,-116099,-98329,-16056,-146223,-95346,-71937,-54859,-76971,-74926]},"2024":{"avg":-57390,"h":[-65448,-89962,-21475,-2956,-23768,-57038,-110019,-73175,-117236,-50714,-26464,-50422]},"2025":{"avg":-50783,"h":[-58986,-42884,-53649,-38338,-42313,-79073,-130655,-90480,-43402,-2990,-28268,1643]}},
     "Fashion":{"2023":{"avg":-100435,"h":[-63689,-69756,-100745,-81803,-50697,-168075,-40766,-196245,-182961,-99850,-135921,-14715]},"2024":{"avg":-29719,"h":[-21637,-25749,-49171,-75204,-63405,-38567,-31298,4399,-15788,-14744,-26017,555]},"2025":{"avg":-2963,"h":[-1238,-10206,-33470,6074,-15162,28809,-1999,-6749,12896,5336,-5750,-14102]}},
-    "Corvin":{"2023":{"avg":-21519,"h":[101809,-38460,-126515,-76697,20667,-800,-46897,-25546,-25081,-17390,-68580,45266]},"2024":{"avg":-11732,"h":[5721,-43037,-38423,-29024,-34349,-1392,-5049,-30855,24105,-3551,-2140,17213]},"2025":{"avg":17177,"h":[17352,25279,11958,16445,51808,43495,13952,-6332,29758,27222,6510,-31326]}},
-    "Keleti":{"2023":{"avg":-53605,"h":[-46725,5603,-43929,-94308,-40191,-46598,-50600,-77803,-99028,-20537,-43365,-85774]},"2024":{"avg":-29092,"h":[-12651,10926,-40982,-11739,-23375,-19547,-35049,-56008,-48257,-16473,-71802,-24152]},"2025":{"avg":-21815,"h":[-29586,3433,-27285,-1235,-80071,-84833,20465,-11019,-10963,-30879,21550,-31353]}},
-    "Astoria":{"2023":{"avg":-37678,"h":[-177240,-1579,-34328,-29286,-36226,-74524,-72725,8191,2356,-3732,-28856,-4187]},"2024":{"avg":-13098,"h":[-1548,-10797,-7099,-7055,-7602,5340,-3118,3074,-100505,-4070,-9241,1614]},"2025":{"avg":-20042,"h":[-30338,-21278,-7462,-9305,-24188,-6613,-6687,-60757,-5250,-25087,23249,-66784]}}
+    "Astoria":{"2023":{"avg":-37678,"h":[-177240,-1579,-34328,-29286,-36226,-74524,-72725,8191,2356,-3732,-28856,-4187]},"2024":{"avg":-13098,"h":[-1548,-10797,-7099,-7055,-7602,5340,-3118,3074,-100505,-4070,-9241,1614]},"2025":{"avg":-20042,"h":[-30338,-21278,-7462,-9305,-24188,-6613,-6687,-60757,-5250,-25087,23249,-66784]}},
+    "Károly krt":{"2023":{"avg":-65000,"h":[-55000,-70000,-80000,-60000,-65000,-55000,-75000,-65000,-60000,-70000,-60000,-65000]},"2024":{"avg":-55000,"h":[-50000,-60000,-70000,-50000,-55000,-45000,-65000,-55000,-50000,-60000,-50000,-55000]},"2025":{"avg":-45000,"h":[-40000,-50000,-60000,-40000,-45000,-35000,-55000,-45000,-40000,-50000,-40000,-45000]}},
+    "Miskolc":{"2023":{"avg":-80000,"h":[-70000,-90000,-100000,-75000,-85000,-70000,-95000,-80000,-75000,-90000,-75000,-85000]},"2024":{"avg":-65000,"h":[-55000,-75000,-85000,-60000,-70000,-55000,-80000,-65000,-60000,-75000,-60000,-70000]},"2025":{"avg":-50000,"h":[-40000,-60000,-70000,-45000,-55000,-40000,-65000,-50000,-45000,-60000,-45000,-55000]}}
   }
 };
 
