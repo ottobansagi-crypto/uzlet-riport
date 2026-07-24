@@ -9,21 +9,31 @@
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 
   :root {
-    --bg: #f5f4f0;
+    /* PizzaMe brand paletta */
+    --brand-red: #ec1b23;       /* PizzaMe piros — domináns, 60-75% */
+    --brand-red-dark: #bc1d23;  /* Vörös — elsődleges kiegészítő */
+    --brand-pink: #ffccce;      /* Rózsaszín — elsődleges kiegészítő */
+    --brand-pink-light: #fff2f3;/* Világos rózsaszín — elsődleges kiegészítő */
+    --pastel-yellow: #f6ca8e;   /* másodlagos kiegészítő */
+    --pastel-purple: #d1b2d4;   /* másodlagos kiegészítő */
+    --pastel-blue: #cbdddf;     /* másodlagos kiegészítő */
+    --pastel-green: #b2dba5;    /* másodlagos kiegészítő */
+
+    --bg: #fdf5f4;
     --surface: #ffffff;
-    --surface2: #eeede8;
+    --surface2: #f8e9e8;
     --border: rgba(0,0,0,0.08);
     --border2: rgba(0,0,0,0.14);
     --text: #1a1916;
     --text2: #6b6a65;
     --text3: #9e9d98;
-    --red: #c0392b;
-    --red-bg: #fdf0ee;
+    --red: var(--brand-red);
+    --red-bg: var(--brand-pink-light);
     --green: #2d6a4f;
     --green-bg: #edf7f2;
-    --amber: #92400e;
-    --amber-bg: #fef3c7;
-    --accent: #1a1916;
+    --amber: #8a5a12;
+    --amber-bg: var(--pastel-yellow);
+    --accent: var(--brand-red-dark);
     --radius: 10px;
     --radius-lg: 14px;
   }
@@ -41,29 +51,37 @@
 
   /* HEADER */
   .header {
-    background: var(--text);
+    background: var(--brand-red);
     color: #fff;
-    padding: 18px 28px;
+    padding: 14px 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 3px solid var(--brand-red-dark);
   }
-  .header-left { display: flex; align-items: baseline; gap: 14px; }
+  .header-left { display: flex; align-items: center; gap: 14px; }
+  .header-logo {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: #fff; padding: 2px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    flex-shrink: 0;
+  }
+  .header-text { display: flex; flex-direction: column; gap: 1px; }
   .header h1 { font-size: 16px; font-weight: 600; letter-spacing: -0.3px; }
-  .header-meta { font-size: 12px; color: rgba(255,255,255,0.5); font-family: 'DM Mono', monospace; }
+  .header-meta { font-size: 12px; color: rgba(255,255,255,0.75); font-family: 'DM Mono', monospace; }
   .franchise-toggle {
     display: flex; align-items: center; gap: 8px;
-    font-size: 12px; color: rgba(255,255,255,0.7); cursor: pointer;
-    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+    font-size: 12px; color: rgba(255,255,255,0.85); cursor: pointer;
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
     border-radius: 20px; padding: 5px 12px; transition: all 0.15s;
     user-select: none;
   }
-  .franchise-toggle:hover { background: rgba(255,255,255,0.18); }
-  .franchise-toggle.active { background: rgba(255,255,255,0.2); color: #fff; }
-  .ft-dot { width: 7px; height: 7px; border-radius: 50%; background: #f59e0b; }
+  .franchise-toggle:hover { background: rgba(255,255,255,0.25); }
+  .franchise-toggle.active { background: rgba(255,255,255,0.3); color: #fff; }
+  .ft-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pastel-yellow); }
 
   /* MAIN */
   .main { max-width: 1200px; margin: 0 auto; padding: 24px 20px; }
@@ -71,7 +89,7 @@
   /* TABS */
   .tabs { display: flex; gap: 2px; margin-bottom: 20px; background: var(--surface2); padding: 3px; border-radius: var(--radius); width: fit-content; }
   .tab { padding: 7px 18px; font-size: 13px; font-weight: 500; border: none; background: none; color: var(--text2); cursor: pointer; border-radius: 8px; transition: all 0.15s; }
-  .tab.active { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .tab.active { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-bottom: 2px solid var(--brand-red); }
   .panel { display: none; }
   .panel.active { display: block; }
 
@@ -85,7 +103,7 @@
     font-family: 'DM Sans', sans-serif; font-size: 13px;
     outline: none; transition: border 0.15s;
   }
-  .search-wrap input:focus { border-color: var(--text); }
+  .search-wrap input:focus { border-color: var(--brand-red-dark); }
   .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text3); font-size: 13px; }
   .filter-btn {
     padding: 7px 14px; font-size: 12px; font-weight: 500;
@@ -93,8 +111,8 @@
     background: var(--surface); color: var(--text2); cursor: pointer;
     transition: all 0.15s; font-family: 'DM Sans', sans-serif;
   }
-  .filter-btn:hover { border-color: var(--text); color: var(--text); }
-  .filter-btn.active { background: var(--text); color: #fff; border-color: var(--text); }
+  .filter-btn:hover { border-color: var(--brand-red-dark); color: var(--brand-red-dark); }
+  .filter-btn.active { background: var(--brand-red-dark); color: #fff; border-color: var(--brand-red-dark); }
 
   /* METRICS */
   .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 18px; }
@@ -127,7 +145,7 @@
     border-bottom: 1px solid var(--border2); cursor: pointer;
     user-select: none; white-space: nowrap;
   }
-  thead th:hover { color: var(--text); }
+  thead th:hover { color: var(--brand-red-dark); }
   td { padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text); }
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: var(--bg); }
@@ -144,13 +162,13 @@
   .franchise-row td { opacity: 0.6; font-style: italic; }
   .franchise-label {
     font-size: 9px; font-weight: 600; letter-spacing: 0.5px;
-    background: var(--amber-bg); color: var(--amber);
+    background: var(--pastel-purple); color: #4a2f52;
     padding: 1px 5px; border-radius: 3px; margin-left: 5px;
     vertical-align: middle;
   }
   .levon-pill {
     font-size: 10px; font-weight: 600;
-    background: #fef3c7; color: #92400e;
+    background: var(--pastel-yellow); color: #7a4a0e;
     padding: 2px 7px; border-radius: 20px;
     font-family: 'DM Mono', monospace;
   }
@@ -181,7 +199,7 @@
     background: var(--surface); color: var(--text);
     cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.15s;
   }
-  .btn:hover { background: var(--text); color: #fff; border-color: var(--text); }
+  .btn:hover { background: var(--brand-red-dark); color: #fff; border-color: var(--brand-red-dark); }
   .btn-row { display: flex; gap: 8px; margin-top: 12px; }
   .export-box {
     margin-top: 12px; padding: 12px; font-size: 11px;
@@ -196,7 +214,7 @@
     background: var(--surface); color: var(--text);
     font-family: 'DM Sans', sans-serif; outline: none;
   }
-  input[type=number]:focus, input[type=text]:focus { border-color: var(--text); }
+  input[type=number]:focus, input[type=text]:focus { border-color: var(--brand-red-dark); }
 
   /* LOADING */
   #loading { text-align: center; padding: 60px; color: var(--text3); font-size: 14px; }
@@ -206,8 +224,11 @@
 
 <div class="header">
   <div class="header-left">
-    <h1>Üzlet Riport</h1>
-    <span class="header-meta" id="headerMeta">betöltés...</span>
+    <img src="logo.svg" alt="PizzaMe" class="header-logo">
+    <div class="header-text">
+      <h1>Üzlet Riport</h1>
+      <span class="header-meta" id="headerMeta">betöltés...</span>
+    </div>
   </div>
   <div class="franchise-toggle" id="franchiseToggle" onclick="toggleFranchise()">
     <div class="ft-dot"></div>
@@ -493,9 +514,9 @@ function renderBarChart(data) {
   const isLeltar = activeChartCat === 'leltar_pct';
   const isSzazalek = activeChartCat === 'selejt_pct' || isLeltar;
   const vals = data.map(d => isSzazalek ? (d[activeChartCat]||0) : Math.round(d[activeChartCat] || 0));
-  const bgColors = activeChartCat === 'selejt_pct' ? vals.map(() => '#185FA5')
-    : isLeltar ? vals.map(v => v >= 100 ? '#2d6a4f' : '#c0392b')
-    : vals.map(v => v >= 0 ? '#2d6a4f' : '#c0392b');
+  const bgColors = activeChartCat === 'selejt_pct' ? vals.map(() => '#3f8791')
+    : isLeltar ? vals.map(v => v >= 100 ? '#2d6a4f' : '#ec1b23')
+    : vals.map(v => v >= 0 ? '#2d6a4f' : '#ec1b23');
   document.getElementById('chartTitle').textContent = (catLabels[activeChartCat] || activeChartCat) + ' üzletenként';
 
   const yMin = isLeltar ? Math.floor((Math.min(...vals) - 0.2) * 10) / 10 : undefined;
@@ -607,7 +628,7 @@ function renderTrendChart() {
   }
 
   const years = ['2023','2024','2025'];
-  const colors = { '2023': '#185FA5', '2024': '#2d6a4f', '2025': '#c0392b' };
+  const colors = { '2023': '#3f8791', '2024': '#2d6a4f', '2025': '#ec1b23' };
   const ds = years.filter(y => hist[y]).map(y => ({
     label: y,
     data: hist[y].h.map(v => v == null ? null : Math.round(v)),
@@ -647,7 +668,7 @@ function renderTrendChart() {
       type: 'bar',
       data: {
         labels: years,
-        datasets: [{ data: avgs, backgroundColor: avgs.map(v => v == null ? '#ccc' : v >= 0 ? '#2d6a4f' : '#c0392b'), borderWidth: 0, borderRadius: 4 }]
+        datasets: [{ data: avgs, backgroundColor: avgs.map(v => v == null ? '#ccc' : v >= 0 ? '#2d6a4f' : '#ec1b23'), borderWidth: 0, borderRadius: 4 }]
       },
       options: {
         responsive: true, maintainAspectRatio: false,
@@ -728,9 +749,9 @@ function heatColor(v) {
   if (v > 50000) return '#c8f0da';
   if (v > 20000) return '#d8f5e6';
   if (v > 0) return '#edf7f2';
-  if (v > -20000) return '#fdf0ee';
-  if (v > -50000) return '#f9d5d0';
-  return '#f5b8b0';
+  if (v > -20000) return '#fff2f3';
+  if (v > -50000) return '#ffccce';
+  return '#f2a19a';
 }
 function fmtK(v) { return (v>=0?'+':'')+Math.round(v/1000)+'k'; }
 
@@ -837,7 +858,7 @@ function render2026Charts() {
 
   charts.t2026month = new Chart(document.getElementById('t2026month'), {
     type:'bar',
-    data:{labels:T2026_MONTHS, datasets:[{data:mTotals, backgroundColor:mTotals.map(v=>v>=0?'#2d6a4f':'#c0392b'), borderWidth:0, borderRadius:3}]},
+    data:{labels:T2026_MONTHS, datasets:[{data:mTotals, backgroundColor:mTotals.map(v=>v>=0?'#2d6a4f':'#ec1b23'), borderWidth:0, borderRadius:3}]},
     options:{responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>fmt(ctx.parsed.y)+' Ft'}}},
       scales:{x:{grid:{display:false}},y:{ticks:{callback:v=>(v/1000)+'k'},grid:{color:'rgba(0,0,0,0.05)'}}}}
   });
@@ -845,7 +866,7 @@ function render2026Charts() {
   charts.t2026negpos = new Chart(document.getElementById('t2026negpos'), {
     type:'bar',
     data:{labels:T2026_MONTHS, datasets:[
-      {label:'Hiányos',data:negC,backgroundColor:'#c0392b',borderRadius:3},
+      {label:'Hiányos',data:negC,backgroundColor:'#ec1b23',borderRadius:3},
       {label:'Többlet',data:posC,backgroundColor:'#2d6a4f',borderRadius:3}
     ]},
     options:{responsive:true,maintainAspectRatio:false, plugins:{legend:{display:true,labels:{boxWidth:10,font:{size:11}}}},
@@ -861,7 +882,7 @@ function render2026Charts() {
 
   const bot5 = sorted.slice(-5).reverse();
   charts.t2026bot = new Chart(document.getElementById('t2026bot'), {
-    type:'bar', data:{labels:bot5.map(d=>d.nev), datasets:[{data:bot5.map(d=>d.avg),backgroundColor:'#c0392b',borderWidth:0,borderRadius:3}]},
+    type:'bar', data:{labels:bot5.map(d=>d.nev), datasets:[{data:bot5.map(d=>d.avg),backgroundColor:'#ec1b23',borderWidth:0,borderRadius:3}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>fmt(ctx.parsed.x)+' Ft'}}},
       scales:{x:{ticks:{callback:v=>(v/1000)+'k'},grid:{color:'rgba(0,0,0,0.05)'}},y:{ticks:{font:{size:11}}}}}
   });
