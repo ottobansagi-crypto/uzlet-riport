@@ -216,6 +216,34 @@
 
   /* LOADING */
   #loading { text-align: center; padding: 60px; color: var(--text3); font-size: 14px; }
+
+  /* STORE DETAIL LINK + MODAL */
+  .store-link { cursor: pointer; text-decoration: underline; text-decoration-style: dotted; text-decoration-color: var(--border2); }
+  .store-link:hover { color: var(--brand-red-dark); }
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+    z-index: 200; align-items: flex-start; justify-content: center; padding: 40px 16px; overflow-y: auto;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: var(--surface); border-radius: var(--radius-lg); max-width: 560px; width: 100%;
+    padding: 22px 24px; position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 14px; right: 16px; cursor: pointer;
+    font-size: 20px; color: var(--text3); line-height: 1; background: none; border: none;
+  }
+  .modal-close:hover { color: var(--brand-red-dark); }
+  .modal-title { font-size: 17px; font-weight: 600; margin-bottom: 2px; }
+  .modal-sub { font-size: 12px; color: var(--text3); font-family: 'DM Mono', monospace; margin-bottom: 16px; }
+  .modal-cat { border-top: 1px solid var(--border); padding: 10px 0; }
+  .modal-cat:first-of-type { border-top: none; }
+  .modal-cat-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .modal-cat-label { font-size: 12px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.4px; }
+  .modal-cat-value { font-family: 'DM Mono', monospace; font-weight: 600; }
+  .modal-items { margin-top: 6px; padding-left: 2px; }
+  .modal-item { font-size: 12px; color: var(--text2); display: flex; justify-content: space-between; padding: 2px 0; }
+  .modal-item-empty { font-size: 11px; color: var(--text3); font-style: italic; margin-top: 4px; }
 </style>
 </head>
 <body>
@@ -236,6 +264,13 @@
 
 <div class="main" id="app">
   <div id="loading">Adatok betöltése...</div>
+</div>
+
+<div class="modal-overlay" id="detailModal" onclick="if(event.target===this) closeDetail()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeDetail()">&times;</button>
+    <div id="detailContent"></div>
+  </div>
 </div>
 
 <script>
@@ -478,7 +513,7 @@ function renderAktualis() {
             const levonCell = lv ? `<span class="levon-pill">${Math.round(lv.levon).toLocaleString('hu-HU')} Ft</span>${lv.megjegyzes ? `<br><span style="font-size:10px;color:var(--text3)">${esc(lv.megjegyzes)}</span>` : ''}` : '—';
             return `<tr ${d.franchise?'class="franchise-row"':''}>
             <td class="mono ${(d.leltar_pct||100)<99.5?'neg':(d.leltar_pct||100)>=100?'pos':''}" style="font-weight:600">${d.leltar_pct?d.leltar_pct.toFixed(2)+'%':'—'}</td>
-            <td>${esc(d.nev)}${d.franchise?'<span class="franchise-label">F</span>':''}</td>
+            <td><span class="store-link" data-nev="${esc(d.nev)}" onclick="openDetail(this.dataset.nev)">${esc(d.nev)}</span>${d.franchise?'<span class="franchise-label">F</span>':''}</td>
             <td class="mono ${d.osszes<0?'neg':'pos'}">${fmt(Math.round(d.osszes))}</td>
             <td class="mono ${(d.gomboc||0)<0?'neg':'pos'}">${fmt(Math.round(d.gomboc||0))}</td>
             <td class="mono ${(d.ital||0)<0?'neg':'pos'}">${fmt(Math.round(d.ital||0))}</td>
@@ -565,6 +600,52 @@ function renderBarChart(data) {
     plugins: [refLine100]
   });
 }
+
+// ── ÜZLET RÉSZLETEK (teszt: csak Astoria-nál van tétel-szintű bontás) ──────────
+const DETAIL_CATS = [
+  { key: 'gomboc', label: 'Gombóc' },
+  { key: 'ital', label: 'Ital' },
+  { key: 'doboz', label: 'Papírárú' },
+  { key: 'snack', label: 'Snack' },
+  { key: 'desseg', label: 'Édesség' },
+  { key: 'ajandek', label: 'Ajándéktárgy' },
+];
+
+function openDetail(nev) {
+  const d = (DATA.uzletek || []).find(u => u.nev === nev);
+  if (!d) return;
+  const reszletek = d.reszletek || {};
+
+  const catsHtml = DETAIL_CATS.map(c => {
+    const val = d[c.key] || 0;
+    const items = reszletek[c.key];
+    const itemsHtml = (items && items.length)
+      ? `<div class="modal-items">${items.map(it => `<div class="modal-item"><span>${esc(it.termek)}</span><span>${it.mennyiseg} db</span></div>`).join('')}</div>`
+      : `<div class="modal-item-empty">Nincs tétel-szintű bontás</div>`;
+    return `<div class="modal-cat">
+      <div class="modal-cat-head">
+        <span class="modal-cat-label">${esc(c.label)}</span>
+        <span class="modal-cat-value ${val<0?'neg':'pos'}">${fmt(Math.round(val))} Ft</span>
+      </div>
+      ${itemsHtml}
+    </div>`;
+  }).join('');
+
+  document.getElementById('detailContent').innerHTML = `
+    <div class="modal-title">${esc(d.nev)}${d.franchise?'<span class="franchise-label">F</span>':''}</div>
+    <div class="modal-sub">Leltár: ${d.leltar_pct?d.leltar_pct.toFixed(2)+'%':'—'} · Összes eltérés: ${fmt(Math.round(d.osszes))} Ft · Selejt: ${d.selejt_pct.toFixed(2)}%</div>
+    ${catsHtml}
+  `;
+  document.getElementById('detailModal').classList.add('active');
+}
+
+function closeDetail() {
+  document.getElementById('detailModal').classList.remove('active');
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeDetail();
+});
 
 // ── TREND ─────────────────────────────────────────────────────────────────────
 function isFranchiseStore(nev) {
