@@ -429,11 +429,6 @@ function setFilter(f) {
   renderAktualis();
 }
 
-function setManager(v) {
-  activeManager = v;
-  renderAktualis();
-}
-
 function sortBy(k) {
   if (sortKey === k) sortDir *= -1; else { sortKey = k; sortDir = -1; }
   const chartCats = ['osszes','gomboc','ital','doboz','snack','desseg','ajandek','selejt_pct','leltar_pct'];
