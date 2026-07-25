@@ -111,6 +111,14 @@
   }
   .filter-btn:hover { border-color: var(--brand-red-dark); color: var(--brand-red-dark); }
   .filter-btn.active { background: var(--brand-red-dark); color: #fff; border-color: var(--brand-red-dark); }
+  .header-select {
+    padding: 6px 10px; font-size: 12px; font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.25); border-radius: 20px;
+    background: rgba(255,255,255,0.15); color: #fff; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; outline: none;
+  }
+  .header-select:hover { background: rgba(255,255,255,0.25); }
+  .header-select option { color: var(--text); }
 
   /* METRICS */
   .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 18px; }
@@ -256,9 +264,19 @@
       <span class="header-meta" id="headerMeta">betöltés...</span>
     </div>
   </div>
-  <div class="franchise-toggle" id="franchiseToggle" onclick="toggleFranchise()">
-    <div class="ft-dot"></div>
-    <span id="franchiseLabel">Franchise mutatása</span>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <select id="managerSelect" class="header-select" onchange="setManager(this.value)">
+      <option value="all">Összes terület</option>
+      <option value="Bratkovics Ádám">Bratkovics Ádám</option>
+      <option value="Hegedűs Milán">Hegedűs Milán</option>
+      <option value="Racsmány Ignác">Racsmány Ignác</option>
+      <option value="Ullman Zsófia">Ullman Zsófia</option>
+      <option value="Anda Patrícia">Anda Patrícia</option>
+    </select>
+    <div class="franchise-toggle" id="franchiseToggle" onclick="toggleFranchise()">
+      <div class="ft-dot"></div>
+      <span id="franchiseLabel">Franchise mutatása</span>
+    </div>
   </div>
 </div>
 
@@ -283,11 +301,13 @@ let DATA = null;
 let usingFallbackData = false;
 let showFranchise = false;
 let activeFilter = 'all';
+let activeManager = 'all';
 let sortKey = 'osszes';
 let sortDir = -1;
 let trendStore = null;
 let charts = {};
 const MONTHS = ['Jan','Feb','Már','Ápr','Máj','Jún','Júl','Aug','Sze','Okt','Nov','Dec'];
+const MANAGERS = ['Bratkovics Ádám','Hegedűs Milán','Racsmány Ignác','Ullman Zsófia','Anda Patrícia'];
 
 // ── HTML ESCAPE ───────────────────────────────────────────────────────────────
 function esc(v) {
@@ -354,6 +374,7 @@ function getFiltered() {
   const q = (document.getElementById('srch')?.value || '').toLowerCase();
   return DATA.uzletek.filter(d => {
     if (!showFranchise && d.franchise) return false;
+    if (activeManager !== 'all' && !(d.teruletvezeto || []).includes(activeManager)) return false;
     if (q && !d.nev.toLowerCase().includes(q)) return false;
     if (activeFilter === 'neg') return d.osszes < 0;
     if (activeFilter === 'pos') return d.osszes > 0;
@@ -375,10 +396,23 @@ function toggleFranchise() {
   showFranchise = !showFranchise;
   document.getElementById('franchiseToggle').classList.toggle('active', showFranchise);
   document.getElementById('franchiseLabel').textContent = showFranchise ? 'Franchise elrejtése' : 'Franchise mutatása';
+  refreshAllTabs();
+}
+
+function setManager(v) {
+  activeManager = v;
+  refreshAllTabs();
+}
+
+function refreshAllTabs() {
   if (document.getElementById('tab-aktualis').classList.contains('active')) renderAktualis();
   refreshTrendStores();
   render2026Heatmap();
   render2026Table();
+  renderTrend2026Summary();
+  t2026ChartsDirty = true;
+  if (document.getElementById('tab-trend2026').classList.contains('active')) render2026Charts();
+  renderLevon();
 }
 
 function showTab(id) {
@@ -392,6 +426,11 @@ function showTab(id) {
 function setFilter(f) {
   activeFilter = f;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.f === f));
+  renderAktualis();
+}
+
+function setManager(v) {
+  activeManager = v;
   renderAktualis();
 }
 
@@ -654,7 +693,11 @@ function isFranchiseStore(nev) {
 }
 
 function getTrendStores() {
-  return Object.keys(DATA.trend || {}).filter(s => showFranchise || !isFranchiseStore(s));
+  return Object.keys(DATA.trend || {}).filter(s => {
+    if (!showFranchise && isFranchiseStore(s)) return false;
+    if (activeManager !== 'all' && !managerOf(s).includes(activeManager)) return false;
+    return true;
+  });
 }
 
 function refreshTrendStores() {
@@ -823,6 +866,12 @@ TREND2026.forEach(d => {
 let t2026View = 'all';
 let t2026SortKey = 'avg';
 let t2026SortDir = 1;
+let t2026ChartsDirty = true;
+
+function managerOf(nev) {
+  const u = (DATA.uzletek || []).find(x => x.nev === nev);
+  return (u && u.teruletvezeto) || [];
+}
 
 function heatColor(v) {
   if (v > 50000) return '#c8f0da';
@@ -834,9 +883,14 @@ function heatColor(v) {
 }
 function fmtK(v) { return (v>=0?'+':'')+Math.round(v/1000)+'k'; }
 
+function get2026Sajat() {
+  return TREND2026.filter(d => (showFranchise || !d.franchise) && (activeManager === 'all' || managerOf(d.nev).includes(activeManager)));
+}
+
 function get2026Data() {
   return TREND2026.filter(d => {
     if (!showFranchise && d.franchise) return false;
+    if (activeManager !== 'all' && !managerOf(d.nev).includes(activeManager)) return false;
     if (t2026View === 'neg') return d.avg < 0;
     if (t2026View === 'pos') return d.avg > 0;
     return true;
@@ -855,23 +909,34 @@ function sort2026By(k) {
   render2026Table();
 }
 
-function renderTrend2026() {
-  const saját = TREND2026.filter(d=>!d.franchise);
+function build2026MetricsHtml() {
+  const saját = get2026Sajat();
+  if (!saját.length) {
+    return `<div class="metric" style="grid-column:1/-1"><div class="metric-sub">Nincs üzlet ehhez a szűréshez.</div></div>`;
+  }
   const monthTotals = T2026_KEYS.map(m => saját.reduce((s,d)=>s+(d[m]||0),0));
   const bestM = T2026_MONTHS[monthTotals.indexOf(Math.max(...monthTotals))];
   const worstM = T2026_MONTHS[monthTotals.indexOf(Math.min(...monthTotals))];
-  const allAvg = Math.round(monthTotals.reduce((s,v)=>s+v,0)/4);
+  const allAvg = Math.round(monthTotals.reduce((s,v)=>s+v,0)/T2026_KEYS.length);
   const improving = saját.filter(d=>d.trend>5000).length;
   const worsening = saját.filter(d=>d.trend<-5000).length;
-
-  document.getElementById('tab-trend2026').innerHTML = `
-    <div class="metrics" style="margin-bottom:14px">
+  return `
       <div class="metric"><div class="metric-label">Legjobb hónap</div><div class="metric-value pos" style="font-size:16px">${bestM}</div><div class="metric-sub">${fmt(Math.max(...monthTotals))} Ft</div></div>
       <div class="metric"><div class="metric-label">Legrosszabb hónap</div><div class="metric-value neg" style="font-size:16px">${worstM}</div><div class="metric-sub">${fmt(Math.min(...monthTotals))} Ft</div></div>
       <div class="metric"><div class="metric-label">${T2026_KEYS.length} hónapos átlag</div><div class="metric-value ${allAvg<0?'neg':'pos'}">${fmt(allAvg)} Ft</div><div class="metric-sub">havi összesítő</div></div>
       <div class="metric"><div class="metric-label">Javuló trend</div><div class="metric-value pos">${improving}</div><div class="metric-sub">jan→ápr ↑</div></div>
       <div class="metric"><div class="metric-label">Romló trend</div><div class="metric-value neg">${worsening}</div><div class="metric-sub">jan→ápr ↓</div></div>
-    </div>
+  `;
+}
+
+function renderTrend2026Summary() {
+  const el = document.getElementById('t2026metrics');
+  if (el) el.innerHTML = build2026MetricsHtml();
+}
+
+function renderTrend2026() {
+  document.getElementById('tab-trend2026').innerHTML = `
+    <div class="metrics" style="margin-bottom:14px" id="t2026metrics">${build2026MetricsHtml()}</div>
 
     <div style="display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px">
       <div class="card">
@@ -925,12 +990,14 @@ function renderTrend2026() {
 }
 
 function render2026Charts() {
-  if (charts.t2026month) return;
+  if (!t2026ChartsDirty) return;
   if (typeof Chart === 'undefined') {
     ['t2026month','t2026negpos','t2026top','t2026bot'].forEach(id => chartFallback(id, 'A diagram nem tölt be (Chart.js könyvtár nem érhető el).'));
+    t2026ChartsDirty = false;
     return;
   }
-  const saját = TREND2026.filter(d=>!d.franchise);
+  ['t2026month','t2026negpos','t2026top','t2026bot'].forEach(k => { if (charts[k]) { charts[k].destroy(); charts[k] = null; } });
+  const saját = get2026Sajat();
   const mTotals = T2026_KEYS.map(m => saját.reduce((s,d)=>s+d[m],0));
   const negC = T2026_KEYS.map(m => saját.filter(d=>d[m]<0).length);
   const posC = T2026_KEYS.map(m => saját.filter(d=>d[m]>0).length);
@@ -965,6 +1032,7 @@ function render2026Charts() {
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>fmt(ctx.parsed.x)+' Ft'}}},
       scales:{x:{ticks:{callback:v=>(v/1000)+'k'},grid:{color:'rgba(0,0,0,0.05)'}},y:{ticks:{font:{size:11}}}}}
   });
+  t2026ChartsDirty = false;
 }
 
 function render2026Heatmap() {
@@ -1005,10 +1073,16 @@ function render2026Table() {
 
 // ── LEVONÁS ───────────────────────────────────────────────────────────────────
 function renderLevon() {
-  const levonasok = DATA.levonasok || [];
-  const total = levonasok.reduce((s, l) => s + (l.levon || 0), 0);
   const uzletMap = {};
   DATA.uzletek.forEach(u => uzletMap[u.nev] = u);
+  const levonasok = (DATA.levonasok || []).filter(l => {
+    const u = uzletMap[l.nev];
+    if (!u) return true;
+    if (!showFranchise && u.franchise) return false;
+    if (activeManager !== 'all' && !(u.teruletvezeto || []).includes(activeManager)) return false;
+    return true;
+  });
+  const total = levonasok.reduce((s, l) => s + (l.levon || 0), 0);
 
   document.getElementById('tab-levon').innerHTML = `
     <div class="card">
@@ -1042,40 +1116,40 @@ const INLINE_DATA = {
   "meta": { "honap": "2026. július", "frissitve": "2026-07-23" },
   "levonasok": [],
   "uzletek": [
-    {"nev":"Király utca","leltar_pct":99.87,"osszes":-23083,"gomboc":10025,"ital":-22480,"desseg":-6578,"doboz":-3450,"snack":-600,"ajandek":0,"selejt_pct":8.2},
-    {"nev":"Fashion","leltar_pct":100.01,"osszes":3935,"gomboc":13804,"ital":-6970,"desseg":-1299,"doboz":-1600,"snack":0,"ajandek":0,"selejt_pct":9.1},
-    {"nev":"Bazilika","leltar_pct":100.1,"osszes":21121,"gomboc":18181,"ital":1030,"desseg":0,"doboz":-9900,"snack":11810,"ajandek":0,"selejt_pct":6.6},
-    {"nev":"Széll Kálmán","leltar_pct":99.32,"osszes":-70040,"gomboc":-65040,"ital":-1150,"desseg":0,"doboz":-4450,"snack":600,"ajandek":0,"selejt_pct":8.5},
-    {"nev":"Corvin","leltar_pct":100.7,"osszes":36170,"gomboc":9260,"ital":22730,"desseg":0,"doboz":800,"snack":3380,"ajandek":0,"selejt_pct":16.7},
-    {"nev":"Károly krt","leltar_pct":99.77,"osszes":-27183,"gomboc":-4783,"ital":-19130,"desseg":0,"doboz":-4450,"snack":1180,"ajandek":0,"selejt_pct":6.7},
-    {"nev":"Dob","leltar_pct":99.69,"osszes":-23801,"gomboc":-28901,"ital":6200,"desseg":0,"doboz":-1100,"snack":0,"ajandek":0,"selejt_pct":9.0},
-    {"nev":"Blaha","leltar_pct":99.56,"osszes":-56987,"gomboc":-17870,"ital":-27120,"desseg":-3897,"doboz":-950,"snack":-7150,"ajandek":0,"selejt_pct":5.8},
-    {"nev":"Oktogon","leltar_pct":99.75,"osszes":-37654,"gomboc":9051,"ital":-15760,"desseg":-4505,"doboz":-19000,"snack":-8140,"ajandek":700,"selejt_pct":9.8},
-    {"nev":"Wesselényi utca","leltar_pct":99.89,"osszes":-15601,"gomboc":-24161,"ital":8060,"desseg":0,"doboz":500,"snack":0,"ajandek":0,"selejt_pct":4.4},
-    {"nev":"Astoria","leltar_pct":99.7,"osszes":-31955,"gomboc":-12212,"ital":-3200,"desseg":-9093,"doboz":-8700,"snack":600,"ajandek":650,"selejt_pct":11.2,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1}],"desseg":[{"termek":"Tiramisu","mennyiseg":4},{"termek":"Profiterol","mennyiseg":2},{"termek":"Csokis mousse","mennyiseg":1}],"doboz":[{"termek":"Papírzacskó","mennyiseg":122}]}},
-    {"nev":"Erzsébet krt 14","leltar_pct":100.2,"osszes":15042,"gomboc":18202,"ital":6530,"desseg":0,"doboz":150,"snack":-5390,"ajandek":-4450,"selejt_pct":16.5},
-    {"nev":"Gomba Móricz","leltar_pct":100.4,"osszes":60433,"gomboc":31571,"ital":26730,"desseg":-2598,"doboz":-2450,"snack":600,"ajandek":6580,"selejt_pct":10.8},
-    {"nev":"Keleti","leltar_pct":99.8,"osszes":-14925,"gomboc":-7854,"ital":-8710,"desseg":1299,"doboz":-950,"snack":1190,"ajandek":100,"selejt_pct":7.2},
-    {"nev":"Fővám tér","leltar_pct":99.31,"osszes":-48752,"gomboc":-23152,"ital":-24540,"desseg":0,"doboz":-3650,"snack":2590,"ajandek":0,"selejt_pct":9.3},
-    {"nev":"Ferenciek tere","leltar_pct":99.76,"osszes":-18644,"gomboc":8416,"ital":5190,"desseg":0,"doboz":-32850,"snack":600,"ajandek":0,"selejt_pct":6.4},
-    {"nev":"Jászai Mari tér","leltar_pct":100.1,"osszes":4225,"gomboc":1285,"ital":3930,"desseg":0,"doboz":-4000,"snack":-5970,"ajandek":8980,"selejt_pct":11.2},
-    {"nev":"Etele","leltar_pct":99.8,"osszes":-12906,"gomboc":7384,"ital":-13420,"desseg":0,"doboz":-3100,"snack":-3970,"ajandek":200,"selejt_pct":10.7},
-    {"nev":"Kispest","leltar_pct":100.1,"osszes":8399,"gomboc":8689,"ital":-1540,"desseg":0,"doboz":300,"snack":0,"ajandek":950,"selejt_pct":8.4},
-    {"nev":"Bosnyák tér","leltar_pct":100.1,"osszes":8794,"gomboc":13226,"ital":-5520,"desseg":4588,"doboz":-1800,"snack":-2400,"ajandek":700,"selejt_pct":15.8},
-    {"nev":"Árkád","leltar_pct":100.1,"osszes":8697,"gomboc":23495,"ital":-10230,"desseg":0,"doboz":-2700,"snack":0,"ajandek":5340,"selejt_pct":11.3},
-    {"nev":"Kazinczy","leltar_pct":99.74,"osszes":-19074,"gomboc":-23184,"ital":-3440,"desseg":0,"doboz":7550,"snack":0,"ajandek":0,"selejt_pct":7.5},
-    {"nev":"Törökvész","leltar_pct":100.1,"osszes":22559,"gomboc":16482,"ital":-830,"desseg":5887,"doboz":2600,"snack":-3580,"ajandek":2000,"selejt_pct":9.1},
-    {"nev":"GO Buda","leltar_pct":100.1,"osszes":14084,"gomboc":18614,"ital":-8410,"desseg":1990,"doboz":-1100,"snack":2590,"ajandek":400,"selejt_pct":14.7},
-    {"nev":"D1 Buda","leltar_pct":99.6,"osszes":-40310,"gomboc":-7538,"ital":-11520,"desseg":7960,"doboz":-600,"snack":0,"ajandek":2050,"selejt_pct":3.5},
-    {"nev":"D2 Baross","leltar_pct":99.6,"osszes":-50139,"gomboc":-37645,"ital":-2330,"desseg":-5970,"doboz":1700,"snack":0,"ajandek":1150,"selejt_pct":4.4},
-    {"nev":"Újpest","leltar_pct":99.2,"osszes":-35083,"gomboc":-53213,"ital":2540,"desseg":3980,"doboz":100,"snack":1190,"ajandek":200,"selejt_pct":9.3},
-    {"nev":"K1 Westend","leltar_pct":99.49,"osszes":-15491,"gomboc":9289,"ital":-24180,"desseg":0,"doboz":0,"snack":-600,"ajandek":0,"selejt_pct":24.3},
-    {"nev":"BP PARK","leltar_pct":99.7,"osszes":-36754,"gomboc":-36264,"ital":-840,"desseg":0,"doboz":350,"snack":0,"ajandek":0,"selejt_pct":5.3},
-    {"nev":"PLÁZS","leltar_pct":100.0,"osszes":-332,"gomboc":1678,"ital":-3010,"desseg":0,"doboz":1000,"snack":0,"ajandek":0,"selejt_pct":17.9},
-    {"nev":"F1 Siófok","leltar_pct":99.6,"osszes":-59846,"gomboc":-22566,"ital":-26340,"desseg":0,"doboz":-6950,"snack":-1990,"ajandek":-3990,"selejt_pct":7.8},
-    {"nev":"Szeged","leltar_pct":99.8,"osszes":-12825,"gomboc":2237,"ital":-14030,"desseg":8568,"doboz":-13650,"snack":-2580,"ajandek":6630,"selejt_pct":8.3},
-    {"nev":"Pécs","leltar_pct":100.1,"osszes":1790,"gomboc":1100,"ital":-340,"desseg":0,"doboz":-3750,"snack":4580,"ajandek":200,"selejt_pct":6.2,"franchise":true},
-    {"nev":"Miskolc","leltar_pct":99.1,"osszes":-97406,"gomboc":-58494,"ital":-19100,"desseg":3488,"doboz":-24750,"snack":0,"ajandek":1450,"selejt_pct":5.9,"franchise":true}
+    {"nev":"Király utca","leltar_pct":99.87,"osszes":-23083,"gomboc":10025,"ital":-22480,"desseg":-6578,"doboz":-3450,"snack":-600,"ajandek":0,"selejt_pct":8.2,"teruletvezeto":["Bratkovics Ádám"]},
+    {"nev":"Fashion","leltar_pct":100.01,"osszes":3935,"gomboc":13804,"ital":-6970,"desseg":-1299,"doboz":-1600,"snack":0,"ajandek":0,"selejt_pct":9.1,"teruletvezeto":["Hegedűs Milán"]},
+    {"nev":"Bazilika","leltar_pct":100.1,"osszes":21121,"gomboc":18181,"ital":1030,"desseg":0,"doboz":-9900,"snack":11810,"ajandek":0,"selejt_pct":6.6,"teruletvezeto":["Racsmány Ignác"]},
+    {"nev":"Széll Kálmán","leltar_pct":99.32,"osszes":-70040,"gomboc":-65040,"ital":-1150,"desseg":0,"doboz":-4450,"snack":600,"ajandek":0,"selejt_pct":8.5,"teruletvezeto":["Hegedűs Milán"]},
+    {"nev":"Corvin","leltar_pct":100.7,"osszes":36170,"gomboc":9260,"ital":22730,"desseg":0,"doboz":800,"snack":3380,"ajandek":0,"selejt_pct":16.7,"teruletvezeto":["Racsmány Ignác"]},
+    {"nev":"Károly krt","leltar_pct":99.77,"osszes":-27183,"gomboc":-4783,"ital":-19130,"desseg":0,"doboz":-4450,"snack":1180,"ajandek":0,"selejt_pct":6.7,"teruletvezeto":["Racsmány Ignác"]},
+    {"nev":"Dob","leltar_pct":99.69,"osszes":-23801,"gomboc":-28901,"ital":6200,"desseg":0,"doboz":-1100,"snack":0,"ajandek":0,"selejt_pct":9.0,"teruletvezeto":["Ullman Zsófia"]},
+    {"nev":"Blaha","leltar_pct":99.56,"osszes":-56987,"gomboc":-17870,"ital":-27120,"desseg":-3897,"doboz":-950,"snack":-7150,"ajandek":0,"selejt_pct":5.8,"teruletvezeto":["Anda Patrícia"]},
+    {"nev":"Oktogon","leltar_pct":99.75,"osszes":-37654,"gomboc":9051,"ital":-15760,"desseg":-4505,"doboz":-19000,"snack":-8140,"ajandek":700,"selejt_pct":9.8,"teruletvezeto":["Ullman Zsófia"]},
+    {"nev":"Wesselényi utca","leltar_pct":99.89,"osszes":-15601,"gomboc":-24161,"ital":8060,"desseg":0,"doboz":500,"snack":0,"ajandek":0,"selejt_pct":4.4,"teruletvezeto":["Hegedűs Milán"]},
+    {"nev":"Astoria","leltar_pct":99.7,"osszes":-31955,"gomboc":-12212,"ital":-3200,"desseg":-9093,"doboz":-8700,"snack":600,"ajandek":650,"selejt_pct":11.2,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1}],"desseg":[{"termek":"Tiramisu","mennyiseg":4},{"termek":"Profiterol","mennyiseg":2},{"termek":"Csokis mousse","mennyiseg":1}],"doboz":[{"termek":"Papírzacskó","mennyiseg":122}]},"teruletvezeto":["Anda Patrícia"]},
+    {"nev":"Erzsébet krt 14","leltar_pct":100.2,"osszes":15042,"gomboc":18202,"ital":6530,"desseg":0,"doboz":150,"snack":-5390,"ajandek":-4450,"selejt_pct":16.5,"teruletvezeto":["Ullman Zsófia"]},
+    {"nev":"Gomba Móricz","leltar_pct":100.4,"osszes":60433,"gomboc":31571,"ital":26730,"desseg":-2598,"doboz":-2450,"snack":600,"ajandek":6580,"selejt_pct":10.8,"teruletvezeto":["Ullman Zsófia"]},
+    {"nev":"Keleti","leltar_pct":99.8,"osszes":-14925,"gomboc":-7854,"ital":-8710,"desseg":1299,"doboz":-950,"snack":1190,"ajandek":100,"selejt_pct":7.2,"teruletvezeto":["Hegedűs Milán"]},
+    {"nev":"Fővám tér","leltar_pct":99.31,"osszes":-48752,"gomboc":-23152,"ital":-24540,"desseg":0,"doboz":-3650,"snack":2590,"ajandek":0,"selejt_pct":9.3,"teruletvezeto":["Anda Patrícia"]},
+    {"nev":"Ferenciek tere","leltar_pct":99.76,"osszes":-18644,"gomboc":8416,"ital":5190,"desseg":0,"doboz":-32850,"snack":600,"ajandek":0,"selejt_pct":6.4,"teruletvezeto":["Hegedűs Milán"]},
+    {"nev":"Jászai Mari tér","leltar_pct":100.1,"osszes":4225,"gomboc":1285,"ital":3930,"desseg":0,"doboz":-4000,"snack":-5970,"ajandek":8980,"selejt_pct":11.2,"teruletvezeto":["Racsmány Ignác"]},
+    {"nev":"Etele","leltar_pct":99.8,"osszes":-12906,"gomboc":7384,"ital":-13420,"desseg":0,"doboz":-3100,"snack":-3970,"ajandek":200,"selejt_pct":10.7,"teruletvezeto":["Bratkovics Ádám"]},
+    {"nev":"Kispest","leltar_pct":100.1,"osszes":8399,"gomboc":8689,"ital":-1540,"desseg":0,"doboz":300,"snack":0,"ajandek":950,"selejt_pct":8.4,"teruletvezeto":["Ullman Zsófia"]},
+    {"nev":"Bosnyák tér","leltar_pct":100.1,"osszes":8794,"gomboc":13226,"ital":-5520,"desseg":4588,"doboz":-1800,"snack":-2400,"ajandek":700,"selejt_pct":15.8,"teruletvezeto":["Bratkovics Ádám"]},
+    {"nev":"Árkád","leltar_pct":100.1,"osszes":8697,"gomboc":23495,"ital":-10230,"desseg":0,"doboz":-2700,"snack":0,"ajandek":5340,"selejt_pct":11.3,"teruletvezeto":["Bratkovics Ádám"]},
+    {"nev":"Kazinczy","leltar_pct":99.74,"osszes":-19074,"gomboc":-23184,"ital":-3440,"desseg":0,"doboz":7550,"snack":0,"ajandek":0,"selejt_pct":7.5,"teruletvezeto":["Anda Patrícia"]},
+    {"nev":"Törökvész","leltar_pct":100.1,"osszes":22559,"gomboc":16482,"ital":-830,"desseg":5887,"doboz":2600,"snack":-3580,"ajandek":2000,"selejt_pct":9.1,"teruletvezeto":["Racsmány Ignác"]},
+    {"nev":"GO Buda","leltar_pct":100.1,"osszes":14084,"gomboc":18614,"ital":-8410,"desseg":1990,"doboz":-1100,"snack":2590,"ajandek":400,"selejt_pct":14.7,"teruletvezeto":["Bratkovics Ádám"]},
+    {"nev":"D1 Buda","leltar_pct":99.6,"osszes":-40310,"gomboc":-7538,"ital":-11520,"desseg":7960,"doboz":-600,"snack":0,"ajandek":2050,"selejt_pct":3.5,"teruletvezeto":["Hegedűs Milán"]},
+    {"nev":"D2 Baross","leltar_pct":99.6,"osszes":-50139,"gomboc":-37645,"ital":-2330,"desseg":-5970,"doboz":1700,"snack":0,"ajandek":1150,"selejt_pct":4.4,"teruletvezeto":["Racsmány Ignác"]},
+    {"nev":"Újpest","leltar_pct":99.2,"osszes":-35083,"gomboc":-53213,"ital":2540,"desseg":3980,"doboz":100,"snack":1190,"ajandek":200,"selejt_pct":9.3,"teruletvezeto":["Anda Patrícia"]},
+    {"nev":"K1 Westend","leltar_pct":99.49,"osszes":-15491,"gomboc":9289,"ital":-24180,"desseg":0,"doboz":0,"snack":-600,"ajandek":0,"selejt_pct":24.3,"teruletvezeto":["Racsmány Ignác"]},
+    {"nev":"BP PARK","leltar_pct":99.7,"osszes":-36754,"gomboc":-36264,"ital":-840,"desseg":0,"doboz":350,"snack":0,"ajandek":0,"selejt_pct":5.3,"teruletvezeto":["Ullman Zsófia"]},
+    {"nev":"PLÁZS","leltar_pct":100.0,"osszes":-332,"gomboc":1678,"ital":-3010,"desseg":0,"doboz":1000,"snack":0,"ajandek":0,"selejt_pct":17.9,"teruletvezeto":["Bratkovics Ádám","Hegedűs Milán"]},
+    {"nev":"F1 Siófok","leltar_pct":99.6,"osszes":-59846,"gomboc":-22566,"ital":-26340,"desseg":0,"doboz":-6950,"snack":-1990,"ajandek":-3990,"selejt_pct":7.8,"teruletvezeto":["Bratkovics Ádám","Hegedűs Milán"]},
+    {"nev":"Szeged","leltar_pct":99.8,"osszes":-12825,"gomboc":2237,"ital":-14030,"desseg":8568,"doboz":-13650,"snack":-2580,"ajandek":6630,"selejt_pct":8.3,"teruletvezeto":["Anda Patrícia"]},
+    {"nev":"Pécs","leltar_pct":100.1,"osszes":1790,"gomboc":1100,"ital":-340,"desseg":0,"doboz":-3750,"snack":4580,"ajandek":200,"selejt_pct":6.2,"franchise":true,"teruletvezeto":["Bratkovics Ádám"]},
+    {"nev":"Miskolc","leltar_pct":99.1,"osszes":-97406,"gomboc":-58494,"ital":-19100,"desseg":3488,"doboz":-24750,"snack":0,"ajandek":1450,"selejt_pct":5.9,"franchise":true,"teruletvezeto":["Bratkovics Ádám"]}
   ],
   "trend": {
     "Király utca":{"2023":{"avg":-75323,"h":[-57924,-15652,-79554,-116099,-98329,-16056,-146223,-95346,-71937,-54859,-76971,-74926]},"2024":{"avg":-57390,"h":[-65448,-89962,-21475,-2956,-23768,-57038,-110019,-73175,-117236,-50714,-26464,-50422]},"2025":{"avg":-50783,"h":[-58986,-42884,-53649,-38338,-42313,-79073,-130655,-90480,-43402,-2990,-28268,1643]}},
