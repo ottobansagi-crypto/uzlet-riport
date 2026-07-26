@@ -15,7 +15,10 @@
       "doboz": -3450,
       "snack": -600,
       "ajandek": 0,
-      "selejt_pct": 8.2
+      "selejt_pct": 8.2,
+      "teruletvezeto": [
+        "Bratkovics Ádám"
+      ]
     },
     {
       "nev": "Fashion",
@@ -27,7 +30,10 @@
       "doboz": -1600,
       "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 9.1
+      "selejt_pct": 9.1,
+      "teruletvezeto": [
+        "Hegedűs Milán"
+      ]
     },
     {
       "nev": "Bazilika",
@@ -39,7 +45,10 @@
       "doboz": -9900,
       "snack": 11810,
       "ajandek": 0,
-      "selejt_pct": 6.6
+      "selejt_pct": 6.6,
+      "teruletvezeto": [
+        "Racsmány Ignác"
+      ]
     },
     {
       "nev": "Széll Kálmán",
@@ -51,7 +60,10 @@
       "doboz": -4450,
       "snack": 600,
       "ajandek": 0,
-      "selejt_pct": 8.5
+      "selejt_pct": 8.5,
+      "teruletvezeto": [
+        "Hegedűs Milán"
+      ]
     },
     {
       "nev": "Corvin",
@@ -63,7 +75,10 @@
       "doboz": 800,
       "snack": 3380,
       "ajandek": 0,
-      "selejt_pct": 16.7
+      "selejt_pct": 16.7,
+      "teruletvezeto": [
+        "Racsmány Ignác"
+      ]
     },
     {
       "nev": "Károly krt",
@@ -75,7 +90,10 @@
       "doboz": -4450,
       "snack": 1180,
       "ajandek": 0,
-      "selejt_pct": 6.7
+      "selejt_pct": 6.7,
+      "teruletvezeto": [
+        "Racsmány Ignác"
+      ]
     },
     {
       "nev": "Dob",
@@ -87,7 +105,10 @@
       "doboz": -1100,
       "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 9.0
+      "selejt_pct": 9.0,
+      "teruletvezeto": [
+        "Ullman Zsófia"
+      ]
     },
     {
       "nev": "Blaha",
@@ -99,7 +120,10 @@
       "doboz": -950,
       "snack": -7150,
       "ajandek": 0,
-      "selejt_pct": 5.8
+      "selejt_pct": 5.8,
+      "teruletvezeto": [
+        "Anda Patrícia"
+      ]
     },
     {
       "nev": "Oktogon",
@@ -111,7 +135,10 @@
       "doboz": -19000,
       "snack": -8140,
       "ajandek": 700,
-      "selejt_pct": 9.8
+      "selejt_pct": 9.8,
+      "teruletvezeto": [
+        "Ullman Zsófia"
+      ]
     },
     {
       "nev": "Wesselényi utca",
@@ -123,7 +150,10 @@
       "doboz": 500,
       "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 4.4
+      "selejt_pct": 4.4,
+      "teruletvezeto": [
+        "Hegedűs Milán"
+      ]
     },
     {
       "nev": "Astoria",
@@ -135,7 +165,10 @@
       "doboz": -8700,
       "snack": 600,
       "ajandek": 650,
-      "selejt_pct": 11.2
+      "selejt_pct": 11.2,
+      "teruletvezeto": [
+        "Anda Patrícia"
+      ]
     },
     {
       "nev": "Erzsébet krt 14",
@@ -147,7 +180,10 @@
       "doboz": 150,
       "snack": -5390,
       "ajandek": -4450,
-      "selejt_pct": 16.5
+      "selejt_pct": 16.5,
+      "teruletvezeto": [
+        "Ullman Zsófia"
+      ]
     },
     {
       "nev": "Gomba Móricz",
@@ -159,7 +195,10 @@
       "doboz": -2450,
       "snack": 600,
       "ajandek": 6580,
-      "selejt_pct": 10.8
+      "selejt_pct": 10.8,
+      "teruletvezeto": [
+        "Ullman Zsófia"
+      ]
     },
     {
       "nev": "Keleti",
@@ -171,7 +210,10 @@
       "doboz": -950,
       "snack": 1190,
       "ajandek": 100,
-      "selejt_pct": 7.2
+      "selejt_pct": 7.2,
+      "teruletvezeto": [
+        "Hegedűs Milán"
+      ]
     },
     {
       "nev": "Fővám tér",
@@ -183,7 +225,10 @@
       "doboz": -3650,
       "snack": 2590,
       "ajandek": 0,
-      "selejt_pct": 9.3
+      "selejt_pct": 9.3,
+      "teruletvezeto": [
+        "Anda Patrícia"
+      ]
     },
     {
       "nev": "Ferenciek tere",
@@ -195,7 +240,10 @@
       "doboz": -32850,
       "snack": 600,
       "ajandek": 0,
-      "selejt_pct": 6.4
+      "selejt_pct": 6.4,
+      "teruletvezeto": [
+        "Hegedűs Milán"
+      ]
     },
     {
       "nev": "Jászai Mari tér",
@@ -207,7 +255,10 @@
       "doboz": -4000,
       "snack": -5970,
       "ajandek": 8980,
-      "selejt_pct": 11.2
+      "selejt_pct": 11.2,
+      "teruletvezeto": [
+        "Racsmány Ignác"
+      ]
     },
     {
       "nev": "Etele",
@@ -219,7 +270,10 @@
       "doboz": -3100,
       "snack": -3970,
       "ajandek": 200,
-      "selejt_pct": 10.7
+      "selejt_pct": 10.7,
+      "teruletvezeto": [
+        "Bratkovics Ádám"
+      ]
     },
     {
       "nev": "Kispest",
@@ -231,7 +285,10 @@
       "doboz": 300,
       "snack": 0,
       "ajandek": 950,
-      "selejt_pct": 8.4
+      "selejt_pct": 8.4,
+      "teruletvezeto": [
+        "Ullman Zsófia"
+      ]
     },
     {
       "nev": "Bosnyák tér",
@@ -243,7 +300,10 @@
       "doboz": -1800,
       "snack": -2400,
       "ajandek": 700,
-      "selejt_pct": 15.8
+      "selejt_pct": 15.8,
+      "teruletvezeto": [
+        "Bratkovics Ádám"
+      ]
     },
     {
       "nev": "Árkád",
@@ -255,7 +315,10 @@
       "doboz": -2700,
       "snack": 0,
       "ajandek": 5340,
-      "selejt_pct": 11.3
+      "selejt_pct": 11.3,
+      "teruletvezeto": [
+        "Bratkovics Ádám"
+      ]
     },
     {
       "nev": "Kazinczy",
@@ -267,7 +330,10 @@
       "doboz": 7550,
       "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 7.5
+      "selejt_pct": 7.5,
+      "teruletvezeto": [
+        "Anda Patrícia"
+      ]
     },
     {
       "nev": "Törökvész",
@@ -279,7 +345,10 @@
       "doboz": 2600,
       "snack": -3580,
       "ajandek": 2000,
-      "selejt_pct": 9.1
+      "selejt_pct": 9.1,
+      "teruletvezeto": [
+        "Racsmány Ignác"
+      ]
     },
     {
       "nev": "GO Buda",
@@ -291,7 +360,10 @@
       "doboz": -1100,
       "snack": 2590,
       "ajandek": 400,
-      "selejt_pct": 14.7
+      "selejt_pct": 14.7,
+      "teruletvezeto": [
+        "Bratkovics Ádám"
+      ]
     },
     {
       "nev": "D1 Buda",
@@ -303,7 +375,10 @@
       "doboz": -600,
       "snack": 0,
       "ajandek": 2050,
-      "selejt_pct": 3.5
+      "selejt_pct": 3.5,
+      "teruletvezeto": [
+        "Hegedűs Milán"
+      ]
     },
     {
       "nev": "D2 Baross",
@@ -315,7 +390,10 @@
       "doboz": 1700,
       "snack": 0,
       "ajandek": 1150,
-      "selejt_pct": 4.4
+      "selejt_pct": 4.4,
+      "teruletvezeto": [
+        "Racsmány Ignác"
+      ]
     },
     {
       "nev": "Újpest",
@@ -327,7 +405,10 @@
       "doboz": 100,
       "snack": 1190,
       "ajandek": 200,
-      "selejt_pct": 9.3
+      "selejt_pct": 9.3,
+      "teruletvezeto": [
+        "Anda Patrícia"
+      ]
     },
     {
       "nev": "K1 Westend",
@@ -339,7 +420,10 @@
       "doboz": 0,
       "snack": -600,
       "ajandek": 0,
-      "selejt_pct": 24.3
+      "selejt_pct": 24.3,
+      "teruletvezeto": [
+        "Racsmány Ignác"
+      ]
     },
     {
       "nev": "BP PARK",
@@ -351,7 +435,10 @@
       "doboz": 350,
       "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 5.3
+      "selejt_pct": 5.3,
+      "teruletvezeto": [
+        "Ullman Zsófia"
+      ]
     },
     {
       "nev": "PLÁZS",
@@ -363,7 +450,11 @@
       "doboz": 1000,
       "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 17.9
+      "selejt_pct": 17.9,
+      "teruletvezeto": [
+        "Bratkovics Ádám",
+        "Hegedűs Milán"
+      ]
     },
     {
       "nev": "F1 Siófok",
@@ -375,7 +466,11 @@
       "doboz": -6950,
       "snack": -1990,
       "ajandek": -3990,
-      "selejt_pct": 7.8
+      "selejt_pct": 7.8,
+      "teruletvezeto": [
+        "Bratkovics Ádám",
+        "Hegedűs Milán"
+      ]
     },
     {
       "nev": "Szeged",
@@ -387,7 +482,10 @@
       "doboz": -13650,
       "snack": -2580,
       "ajandek": 6630,
-      "selejt_pct": 8.3
+      "selejt_pct": 8.3,
+      "teruletvezeto": [
+        "Anda Patrícia"
+      ]
     },
     {
       "nev": "Pécs",
@@ -400,7 +498,10 @@
       "snack": 4580,
       "ajandek": 200,
       "selejt_pct": 6.2,
-      "franchise": true
+      "franchise": true,
+      "teruletvezeto": [
+        "Bratkovics Ádám"
+      ]
     },
     {
       "nev": "Miskolc",
@@ -413,7 +514,10 @@
       "snack": 0,
       "ajandek": 1450,
       "selejt_pct": 5.9,
-      "franchise": true
+      "franchise": true,
+      "teruletvezeto": [
+        "Bratkovics Ádám"
+      ]
     }
   ],
   "trend": {
