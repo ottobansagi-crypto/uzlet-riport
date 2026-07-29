@@ -31,6 +31,14 @@
       "snack": 0,
       "ajandek": 0,
       "selejt_pct": 9.1,
+      "reszletek": {
+        "gomboc": [
+          { "termek": "45-ös gombóc", "mennyiseg": 1 }
+        ],
+        "ital": [
+          { "termek": "Személyzeti víz", "mennyiseg": 8 }
+        ]
+      },
       "teruletvezeto": [
         "Hegedűs Milán"
       ]
@@ -76,6 +84,17 @@
       "snack": 3380,
       "ajandek": 0,
       "selejt_pct": 16.7,
+      "reszletek": {
+        "gomboc": [
+          { "termek": "45-ös gombóc", "mennyiseg": 1 }
+        ],
+        "ital": [
+          { "termek": "Személyzeti víz", "mennyiseg": 36 }
+        ],
+        "snack": [
+          { "termek": "Tartufata szósz", "mennyiseg": 2 }
+        ]
+      },
       "teruletvezeto": [
         "Racsmány Ignác"
       ]
@@ -239,6 +258,14 @@
       "snack": 1190,
       "ajandek": 100,
       "selejt_pct": 7.2,
+      "reszletek": {
+        "gomboc": [
+          { "termek": "45-ös gombóc", "mennyiseg": 1 }
+        ],
+        "ital": [
+          { "termek": "Személyzeti víz", "mennyiseg": 14 }
+        ]
+      },
       "teruletvezeto": [
         "Hegedűs Milán"
       ]
@@ -449,6 +476,14 @@
       "snack": -600,
       "ajandek": 0,
       "selejt_pct": 24.3,
+      "reszletek": {
+        "gomboc": [
+          { "termek": "45-ös gombóc", "mennyiseg": 1 }
+        ],
+        "ital": [
+          { "termek": "0,33 Cola", "mennyiseg": 24 }
+        ]
+      },
       "teruletvezeto": [
         "Racsmány Ignác"
       ]
