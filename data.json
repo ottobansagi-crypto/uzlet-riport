@@ -166,6 +166,34 @@
       "snack": 600,
       "ajandek": 650,
       "selejt_pct": 11.2,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Tiramisu",
+            "mennyiseg": 4
+          },
+          {
+            "termek": "Profiterol",
+            "mennyiseg": 2
+          },
+          {
+            "termek": "Csokis mousse",
+            "mennyiseg": 1
+          }
+        ],
+        "doboz": [
+          {
+            "termek": "Papírzacskó",
+            "mennyiseg": 122
+          }
+        ]
+      },
       "teruletvezeto": [
         "Anda Patrícia"
       ]
