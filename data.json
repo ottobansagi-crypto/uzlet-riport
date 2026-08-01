@@ -1,42 +1,229 @@
 {
   "meta": {
     "honap": "2026. július",
-    "frissitve": "2026-07-23"
+    "frissitve": "2026 Július teljes hónap"
   },
-  "levonasok": [],
+  "levonasok": [
+    {
+      "nev": "Király utca",
+      "levon": 15000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Bazilika",
+      "levon": 10000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Széll Kálmán",
+      "levon": 80000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Károly krt",
+      "levon": 30000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Dob",
+      "levon": 25000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Blaha",
+      "levon": 55000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Wesselényi utca",
+      "levon": 40000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Astoria",
+      "levon": 25000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Fővám tér",
+      "levon": 30000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Ferenciek tere",
+      "levon": 25000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Újpest",
+      "levon": 50000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "PLÁZS",
+      "levon": 15000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "F1 Siófok",
+      "levon": 80000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Szeged",
+      "levon": 10000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "BP PARK",
+      "levon": 50000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "D1 Buda",
+      "levon": 15000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Etele",
+      "levon": 20000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "D2 Baross",
+      "levon": 25000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "GO Buda",
+      "levon": 20000,
+      "megjegyzes": ""
+    }
+  ],
   "uzletek": [
     {
       "nev": "Király utca",
-      "leltar_pct": 99.87,
-      "osszes": -23083,
-      "gomboc": 10025,
-      "ital": -22480,
-      "desseg": -6578,
-      "doboz": -3450,
-      "snack": -600,
-      "ajandek": 0,
-      "selejt_pct": 8.2,
+      "leltar_pct": 99.93,
+      "osszes": -18503,
+      "gomboc": 13166,
+      "ital": -24970,
+      "desseg": -5279,
+      "doboz": -3000,
+      "snack": 590,
+      "ajandek": 990,
+      "selejt_pct": 8.9,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
+        ],
+        "ital": [
+          {
+            "termek": "Személyzeti víz",
+            "mennyiseg": 14
+          },
+          {
+            "termek": "Mentes 0,5l",
+            "mennyiseg": 11
+          },
+          {
+            "termek": "Zero 0,5l",
+            "mennyiseg": 9
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Gelato Nutella",
+            "mennyiseg": 1
+          },
+          {
+            "termek": "Gelato Pistachio",
+            "mennyiseg": 1
+          },
+          {
+            "termek": "Tiramisu",
+            "mennyiseg": 1
+          }
+        ],
+        "doboz": [
+          {
+            "termek": "22-es doboz",
+            "mennyiseg": 54
+          },
+          {
+            "termek": "Papírzacskó",
+            "mennyiseg": 43
+          },
+          {
+            "termek": "25-ös doboz",
+            "mennyiseg": 30
+          }
+        ]
+      },
       "teruletvezeto": [
         "Bratkovics Ádám"
       ]
     },
     {
-      "nev": "Fashion",
-      "leltar_pct": 100.01,
-      "osszes": 3935,
-      "gomboc": 13804,
-      "ital": -6970,
-      "desseg": -1299,
-      "doboz": -1600,
+      "nev": "Erzsébet krt. 30.",
+      "leltar_pct": 100.1,
+      "osszes": 680,
+      "gomboc": -200,
+      "ital": 1130,
+      "desseg": 0,
+      "doboz": -250,
       "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 9.1,
+      "selejt_pct": 20.2,
+      "teruletvezeto": [
+        "Ullman Zsófia"
+      ]
+    },
+    {
+      "nev": "Fashion",
+      "leltar_pct": 100.06,
+      "osszes": 10800,
+      "gomboc": 10619,
+      "ital": 10780,
+      "desseg": -1299,
+      "doboz": -6900,
+      "snack": -2400,
+      "ajandek": 0,
+      "selejt_pct": 8.8,
       "reszletek": {
         "gomboc": [
-          { "termek": "45-ös gombóc", "mennyiseg": 1 }
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
         ],
         "ital": [
-          { "termek": "Személyzeti víz", "mennyiseg": 8 }
+          {
+            "termek": "Személyzeti víz",
+            "mennyiseg": 14
+          },
+          {
+            "termek": "0,5 Mentes",
+            "mennyiseg": 11
+          },
+          {
+            "termek": "0,5 Savas víz",
+            "mennyiseg": 4
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Csokis mousse",
+            "mennyiseg": 1
+          }
+        ],
+        "snack": [
+          {
+            "termek": "Chips",
+            "mennyiseg": 4
+          }
         ]
       },
       "teruletvezeto": [
@@ -45,54 +232,145 @@
     },
     {
       "nev": "Bazilika",
-      "leltar_pct": 100.1,
-      "osszes": 21121,
-      "gomboc": 18181,
-      "ital": 1030,
+      "leltar_pct": 99.94,
+      "osszes": -11348,
+      "gomboc": 23022,
+      "ital": -14480,
       "desseg": 0,
-      "doboz": -9900,
-      "snack": 11810,
+      "doboz": -16100,
+      "snack": -3790,
       "ajandek": 0,
-      "selejt_pct": 6.6,
+      "selejt_pct": 6.1,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 2
+          }
+        ],
+        "ital": [
+          {
+            "termek": "Zero 0,5",
+            "mennyiseg": 6
+          },
+          {
+            "termek": "Fuzetea",
+            "mennyiseg": 5
+          },
+          {
+            "termek": "Gyömbér",
+            "mennyiseg": 3
+          },
+          {
+            "termek": "Cappy 0,5",
+            "mennyiseg": 5
+          }
+        ],
+        "snack": [
+          {
+            "termek": "Chips",
+            "mennyiseg": 3
+          },
+          {
+            "termek": "Amica pizzás",
+            "mennyiseg": 1
+          },
+          {
+            "termek": "Grisbi pisztácia",
+            "mennyiseg": 1
+          },
+          {
+            "termek": "Grissini burgonya",
+            "mennyiseg": 1
+          }
+        ]
+      },
       "teruletvezeto": [
         "Racsmány Ignác"
       ]
     },
     {
       "nev": "Széll Kálmán",
-      "leltar_pct": 99.32,
-      "osszes": -70040,
-      "gomboc": -65040,
-      "ital": -1150,
-      "desseg": 0,
-      "doboz": -4450,
+      "leltar_pct": 99.4,
+      "osszes": -85527,
+      "gomboc": -71108,
+      "ital": -7320,
+      "desseg": -1299,
+      "doboz": -6400,
       "snack": 600,
       "ajandek": 0,
-      "selejt_pct": 8.5,
+      "selejt_pct": 8.7,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc (sima)",
+            "mennyiseg": 4
+          },
+          {
+            "termek": "45-ös gombóc (TK)",
+            "mennyiseg": 3
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Tiramisu",
+            "mennyiseg": 1
+          }
+        ],
+        "snack": [
+          {
+            "termek": "Chips",
+            "mennyiseg": 1
+          }
+        ]
+      },
       "teruletvezeto": [
         "Hegedűs Milán"
       ]
     },
     {
       "nev": "Corvin",
-      "leltar_pct": 100.7,
-      "osszes": 36170,
-      "gomboc": 9260,
-      "ital": 22730,
+      "leltar_pct": 100.62,
+      "osszes": 46323,
+      "gomboc": 34573,
+      "ital": 7770,
       "desseg": 0,
-      "doboz": 800,
+      "doboz": 600,
       "snack": 3380,
       "ajandek": 0,
-      "selejt_pct": 16.7,
+      "selejt_pct": 17.1,
       "reszletek": {
         "gomboc": [
-          { "termek": "45-ös gombóc", "mennyiseg": 1 }
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 3.5
+          }
         ],
         "ital": [
-          { "termek": "Személyzeti víz", "mennyiseg": 36 }
+          {
+            "termek": "Személyzeti víz",
+            "mennyiseg": 29
+          }
+        ],
+        "doboz": [
+          {
+            "termek": "45-ös doboz",
+            "mennyiseg": 6
+          },
+          {
+            "termek": "22-es doboz",
+            "mennyiseg": 7
+          }
         ],
         "snack": [
-          { "termek": "Tartufata szósz", "mennyiseg": 2 }
+          {
+            "termek": "Tartufata szósz",
+            "mennyiseg": 2
+          },
+          {
+            "termek": "Chips",
+            "mennyiseg": 1
+          }
         ]
       },
       "teruletvezeto": [
@@ -101,75 +379,217 @@
     },
     {
       "nev": "Károly krt",
-      "leltar_pct": 99.77,
-      "osszes": -27183,
-      "gomboc": -4783,
-      "ital": -19130,
-      "desseg": 0,
-      "doboz": -4450,
-      "snack": 1180,
+      "leltar_pct": 99.79,
+      "osszes": -33754,
+      "gomboc": 4921,
+      "ital": -32260,
+      "desseg": -6495,
+      "doboz": -1700,
+      "snack": 1780,
       "ajandek": 0,
-      "selejt_pct": 6.7,
+      "selejt_pct": 7.6,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "Szelet",
+            "mennyiseg": 5
+          }
+        ],
+        "ital": [
+          {
+            "termek": "Személyzeti víz",
+            "mennyiseg": 18
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Csokis mousse",
+            "mennyiseg": 4
+          },
+          {
+            "termek": "Profiterol",
+            "mennyiseg": 1
+          }
+        ],
+        "doboz": [
+          {
+            "termek": "Papírzacskó",
+            "mennyiseg": 37
+          }
+        ],
+        "snack": [
+          {
+            "termek": "Chips",
+            "mennyiseg": 1
+          },
+          {
+            "termek": "Burgonyás snack",
+            "mennyiseg": 1
+          }
+        ]
+      },
       "teruletvezeto": [
         "Racsmány Ignác"
       ]
     },
     {
       "nev": "Dob",
-      "leltar_pct": 99.69,
-      "osszes": -23801,
-      "gomboc": -28901,
-      "ital": 6200,
+      "leltar_pct": 99.76,
+      "osszes": -26920,
+      "gomboc": -29000,
+      "ital": -420,
       "desseg": 0,
-      "doboz": -1100,
-      "snack": 0,
+      "doboz": 100,
+      "snack": 2400,
       "ajandek": 0,
-      "selejt_pct": 9.0,
+      "selejt_pct": 8.6,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 3
+          },
+          {
+            "termek": "TK gombóc",
+            "mennyiseg": 3
+          }
+        ],
+        "ital": [
+          {
+            "termek": "Sörök",
+            "mennyiseg": 5
+          },
+          {
+            "termek": "Red Bull",
+            "mennyiseg": 2
+          },
+          {
+            "termek": "0,33l Cola",
+            "mennyiseg": 4
+          }
+        ],
+        "snack": [
+          {
+            "termek": "Chips",
+            "mennyiseg": 4
+          }
+        ]
+      },
       "teruletvezeto": [
         "Ullman Zsófia"
       ]
     },
     {
       "nev": "Blaha",
-      "leltar_pct": 99.56,
-      "osszes": -56987,
-      "gomboc": -17870,
-      "ital": -27120,
+      "leltar_pct": 99.7,
+      "osszes": -54611,
+      "gomboc": -16424,
+      "ital": -13790,
       "desseg": -3897,
-      "doboz": -950,
-      "snack": -7150,
+      "doboz": -13950,
+      "snack": -6550,
       "ajandek": 0,
-      "selejt_pct": 5.8,
+      "selejt_pct": 5.9,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1.5
+          },
+          {
+            "termek": "TK gombóc",
+            "mennyiseg": 2
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Profiterol",
+            "mennyiseg": 4
+          }
+        ],
+        "snack": [
+          {
+            "termek": "Tre Marie mogyorós nápolyi",
+            "mennyiseg": 4
+          },
+          {
+            "termek": "Chips",
+            "mennyiseg": 1
+          },
+          {
+            "termek": "Grissini paradicsom",
+            "mennyiseg": 1
+          }
+        ]
+      },
       "teruletvezeto": [
         "Anda Patrícia"
       ]
     },
     {
       "nev": "Oktogon",
-      "leltar_pct": 99.75,
-      "osszes": -37654,
-      "gomboc": 9051,
-      "ital": -15760,
-      "desseg": -4505,
-      "doboz": -19000,
-      "snack": -8140,
-      "ajandek": 700,
-      "selejt_pct": 9.8,
+      "leltar_pct": 99.6,
+      "osszes": -105686,
+      "gomboc": -42430,
+      "ital": -16150,
+      "desseg": -3206,
+      "doboz": -31150,
+      "snack": -13100,
+      "ajandek": 350,
+      "selejt_pct": 9.6,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "32-es gombóc",
+            "mennyiseg": 8
+          }
+        ],
+        "ital": [
+          {
+            "termek": "Személyzeti víz",
+            "mennyiseg": 15
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Tiramisu",
+            "mennyiseg": 4
+          }
+        ]
+      },
       "teruletvezeto": [
         "Ullman Zsófia"
       ]
     },
     {
       "nev": "Wesselényi utca",
-      "leltar_pct": 99.89,
-      "osszes": -15601,
-      "gomboc": -24161,
-      "ital": 8060,
+      "leltar_pct": 99.78,
+      "osszes": -42175,
+      "gomboc": -32755,
+      "ital": -7270,
       "desseg": 0,
-      "doboz": 500,
+      "doboz": -2150,
       "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 4.4,
+      "selejt_pct": 4.3,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 3
+          }
+        ],
+        "ital": [
+          {
+            "termek": "0,33 Zero",
+            "mennyiseg": 7
+          },
+          {
+            "termek": "Fuzetea Citrom",
+            "mennyiseg": 3
+          }
+        ]
+      },
       "teruletvezeto": [
         "Hegedűs Milán"
       ]
@@ -177,14 +597,14 @@
     {
       "nev": "Astoria",
       "leltar_pct": 99.7,
-      "osszes": -31955,
-      "gomboc": -12212,
-      "ital": -3200,
+      "osszes": -29431,
+      "gomboc": -14938,
+      "ital": -7450,
       "desseg": -9093,
-      "doboz": -8700,
-      "snack": 600,
-      "ajandek": 650,
-      "selejt_pct": 11.2,
+      "doboz": 1350,
+      "snack": -600,
+      "ajandek": 1300,
+      "selejt_pct": 11.7,
       "reszletek": {
         "gomboc": [
           {
@@ -205,12 +625,6 @@
             "termek": "Csokis mousse",
             "mennyiseg": 1
           }
-        ],
-        "doboz": [
-          {
-            "termek": "Papírzacskó",
-            "mennyiseg": 122
-          }
         ]
       },
       "teruletvezeto": [
@@ -219,51 +633,95 @@
     },
     {
       "nev": "Erzsébet krt 14",
-      "leltar_pct": 100.2,
-      "osszes": 15042,
-      "gomboc": 18202,
-      "ital": 6530,
-      "desseg": 0,
-      "doboz": 150,
-      "snack": -5390,
-      "ajandek": -4450,
-      "selejt_pct": 16.5,
+      "leltar_pct": 99.8,
+      "osszes": -18076,
+      "gomboc": 2023,
+      "ital": -1490,
+      "desseg": -1299,
+      "doboz": -450,
+      "snack": -7770,
+      "ajandek": -9090,
+      "selejt_pct": 17.0,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "Szelet",
+            "mennyiseg": 2
+          }
+        ],
+        "ajandek": [
+          {
+            "termek": "Gyerekjáték",
+            "mennyiseg": 14
+          }
+        ]
+      },
       "teruletvezeto": [
         "Ullman Zsófia"
       ]
     },
     {
       "nev": "Gomba Móricz",
-      "leltar_pct": 100.4,
-      "osszes": 60433,
-      "gomboc": 31571,
-      "ital": 26730,
-      "desseg": -2598,
-      "doboz": -2450,
-      "snack": 600,
-      "ajandek": 6580,
+      "leltar_pct": 100.1,
+      "osszes": 4192,
+      "gomboc": -24944,
+      "ital": 15990,
+      "desseg": 7186,
+      "doboz": -3800,
+      "snack": 2380,
+      "ajandek": 7380,
       "selejt_pct": 10.8,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 2
+          }
+        ],
+        "ital": [
+          {
+            "termek": "Személyzeti víz",
+            "mennyiseg": 6
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Tiramisu",
+            "mennyiseg": 3
+          }
+        ],
+        "ajandek": [
+          {
+            "termek": "Gyerekjáték",
+            "mennyiseg": 2
+          },
+          {
+            "termek": "Fokhagymás olaj",
+            "mennyiseg": 2
+          }
+        ]
+      },
       "teruletvezeto": [
         "Ullman Zsófia"
       ]
     },
     {
       "nev": "Keleti",
-      "leltar_pct": 99.8,
-      "osszes": -14925,
-      "gomboc": -7854,
-      "ital": -8710,
+      "leltar_pct": 100.1,
+      "osszes": 682,
+      "gomboc": 4523,
+      "ital": -8110,
       "desseg": 1299,
-      "doboz": -950,
-      "snack": 1190,
-      "ajandek": 100,
-      "selejt_pct": 7.2,
+      "doboz": -1200,
+      "snack": 3970,
+      "ajandek": 200,
+      "selejt_pct": 7.4,
       "reszletek": {
         "gomboc": [
-          { "termek": "45-ös gombóc", "mennyiseg": 1 }
-        ],
-        "ital": [
-          { "termek": "Személyzeti víz", "mennyiseg": 14 }
+          {
+            "termek": "Szelet",
+            "mennyiseg": 4
+          }
         ]
       },
       "teruletvezeto": [
@@ -272,75 +730,177 @@
     },
     {
       "nev": "Fővám tér",
-      "leltar_pct": 99.31,
-      "osszes": -48752,
-      "gomboc": -23152,
-      "ital": -24540,
+      "leltar_pct": 99.7,
+      "osszes": -31436,
+      "gomboc": -11536,
+      "ital": -9970,
       "desseg": 0,
-      "doboz": -3650,
-      "snack": 2590,
-      "ajandek": 0,
-      "selejt_pct": 9.3,
+      "doboz": -2550,
+      "snack": 600,
+      "ajandek": -7980,
+      "selejt_pct": 9.4,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
+        ],
+        "ajandek": [
+          {
+            "termek": "Pizzavágó",
+            "mennyiseg": 2
+          }
+        ]
+      },
       "teruletvezeto": [
         "Anda Patrícia"
       ]
     },
     {
       "nev": "Ferenciek tere",
-      "leltar_pct": 99.76,
-      "osszes": -18644,
-      "gomboc": 8416,
-      "ital": 5190,
+      "leltar_pct": 99.75,
+      "osszes": -27180,
+      "gomboc": -4730,
+      "ital": 10490,
       "desseg": 0,
-      "doboz": -32850,
-      "snack": 600,
-      "ajandek": 0,
-      "selejt_pct": 6.4,
+      "doboz": -35150,
+      "snack": -1780,
+      "ajandek": 3990,
+      "selejt_pct": 7.0,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "Szelet",
+            "mennyiseg": 4
+          }
+        ],
+        "ital": [
+          {
+            "termek": "0,5 Cola",
+            "mennyiseg": 5
+          }
+        ],
+        "doboz": [
+          {
+            "termek": "Papírzacskó",
+            "mennyiseg": 300
+          },
+          {
+            "termek": "Doboz",
+            "mennyiseg": 32
+          }
+        ]
+      },
       "teruletvezeto": [
         "Hegedűs Milán"
       ]
     },
     {
       "nev": "Jászai Mari tér",
-      "leltar_pct": 100.1,
-      "osszes": 4225,
-      "gomboc": 1285,
-      "ital": 3930,
-      "desseg": 0,
-      "doboz": -4000,
-      "snack": -5970,
-      "ajandek": 8980,
-      "selejt_pct": 11.2,
+      "leltar_pct": 99.99,
+      "osszes": -1408,
+      "gomboc": 12178,
+      "ital": 8920,
+      "desseg": -5196,
+      "doboz": -11350,
+      "snack": -9950,
+      "ajandek": 3990,
+      "selejt_pct": 11.5,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Tiramisu",
+            "mennyiseg": 2
+          },
+          {
+            "termek": "Csokis mousse",
+            "mennyiseg": 2
+          }
+        ],
+        "doboz": [
+          {
+            "termek": "Doboz",
+            "mennyiseg": 76
+          },
+          {
+            "termek": "Papírzacskó",
+            "mennyiseg": 7
+          }
+        ],
+        "snack": [
+          {
+            "termek": "Gribsi",
+            "mennyiseg": 2
+          },
+          {
+            "termek": "Krumi",
+            "mennyiseg": 1
+          },
+          {
+            "termek": "Torrone",
+            "mennyiseg": 1
+          }
+        ]
+      },
       "teruletvezeto": [
         "Racsmány Ignác"
       ]
     },
     {
       "nev": "Etele",
-      "leltar_pct": 99.8,
-      "osszes": -12906,
-      "gomboc": 7384,
-      "ital": -13420,
+      "leltar_pct": 99.77,
+      "osszes": -20072,
+      "gomboc": 6188,
+      "ital": -19040,
       "desseg": 0,
-      "doboz": -3100,
+      "doboz": -3450,
       "snack": -3970,
       "ajandek": 200,
-      "selejt_pct": 10.7,
+      "selejt_pct": 12.0,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "Szelet",
+            "mennyiseg": 6
+          }
+        ]
+      },
       "teruletvezeto": [
         "Bratkovics Ádám"
       ]
     },
     {
       "nev": "Kispest",
-      "leltar_pct": 100.1,
-      "osszes": 8399,
-      "gomboc": 8689,
-      "ital": -1540,
-      "desseg": 0,
+      "leltar_pct": 99.9,
+      "osszes": -5971,
+      "gomboc": 1476,
+      "ital": -6740,
+      "desseg": -3897,
       "doboz": 300,
-      "snack": 0,
-      "ajandek": 950,
-      "selejt_pct": 8.4,
+      "snack": 1190,
+      "ajandek": 1700,
+      "selejt_pct": 11.1,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "22-es gombóc",
+            "mennyiseg": 1
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Tiramisu",
+            "mennyiseg": 3
+          }
+        ]
+      },
       "teruletvezeto": [
         "Ullman Zsófia"
       ]
@@ -348,89 +908,175 @@
     {
       "nev": "Bosnyák tér",
       "leltar_pct": 100.1,
-      "osszes": 8794,
-      "gomboc": 13226,
-      "ital": -5520,
+      "osszes": 4009,
+      "gomboc": 11721,
+      "ital": -7100,
       "desseg": 4588,
-      "doboz": -1800,
+      "doboz": -3650,
       "snack": -2400,
-      "ajandek": 700,
-      "selejt_pct": 15.8,
+      "ajandek": 850,
+      "selejt_pct": 15.6,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
+        ],
+        "ital": [
+          {
+            "termek": "Ice Slim Vanília",
+            "mennyiseg": 10
+          }
+        ]
+      },
       "teruletvezeto": [
         "Bratkovics Ádám"
       ]
     },
     {
       "nev": "Árkád",
-      "leltar_pct": 100.1,
-      "osszes": 8697,
-      "gomboc": 23495,
-      "ital": -10230,
+      "leltar_pct": 99.9,
+      "osszes": -4927,
+      "gomboc": 8816,
+      "ital": -12250,
       "desseg": 0,
       "doboz": -2700,
       "snack": 0,
-      "ajandek": 5340,
-      "selejt_pct": 11.3,
+      "ajandek": 4390,
+      "selejt_pct": 11.6,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
+        ],
+        "ital": [
+          {
+            "termek": "Személyzeti víz",
+            "mennyiseg": 7
+          }
+        ]
+      },
       "teruletvezeto": [
         "Bratkovics Ádám"
       ]
     },
     {
       "nev": "Kazinczy",
-      "leltar_pct": 99.74,
-      "osszes": -19074,
-      "gomboc": -23184,
-      "ital": -3440,
+      "leltar_pct": 100.1,
+      "osszes": 4345,
+      "gomboc": 5065,
+      "ital": 4070,
       "desseg": 0,
-      "doboz": 7550,
-      "snack": 0,
+      "doboz": -2200,
+      "snack": -2590,
       "ajandek": 0,
-      "selejt_pct": 7.5,
+      "selejt_pct": 8.7,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "Szelet",
+            "mennyiseg": 6
+          }
+        ],
+        "ital": [
+          {
+            "termek": "Személyzeti víz",
+            "mennyiseg": 1
+          }
+        ]
+      },
       "teruletvezeto": [
         "Anda Patrícia"
       ]
     },
     {
       "nev": "Törökvész",
-      "leltar_pct": 100.1,
-      "osszes": 22559,
-      "gomboc": 16482,
-      "ital": -830,
-      "desseg": 5887,
-      "doboz": 2600,
-      "snack": -3580,
-      "ajandek": 2000,
-      "selejt_pct": 9.1,
+      "leltar_pct": 100.2,
+      "osszes": 23187,
+      "gomboc": 17302,
+      "ital": 2930,
+      "desseg": 8485,
+      "doboz": -3450,
+      "snack": -4380,
+      "ajandek": 2300,
+      "selejt_pct": 9.4,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Tiramisu",
+            "mennyiseg": 4
+          },
+          {
+            "termek": "Gelato",
+            "mennyiseg": 1
+          },
+          {
+            "termek": "Csokis mousse",
+            "mennyiseg": 1
+          }
+        ]
+      },
       "teruletvezeto": [
         "Racsmány Ignác"
       ]
     },
     {
       "nev": "GO Buda",
-      "leltar_pct": 100.1,
-      "osszes": 14084,
-      "gomboc": 18614,
-      "ital": -8410,
+      "leltar_pct": 99.7,
+      "osszes": -24284,
+      "gomboc": -13664,
+      "ital": -6540,
       "desseg": 1990,
-      "doboz": -1100,
-      "snack": 2590,
-      "ajandek": 400,
-      "selejt_pct": 14.7,
+      "doboz": -5450,
+      "snack": 1400,
+      "ajandek": -2020,
+      "selejt_pct": 14.3,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 2
+          }
+        ]
+      },
       "teruletvezeto": [
         "Bratkovics Ádám"
       ]
     },
     {
       "nev": "D1 Buda",
-      "leltar_pct": 99.6,
-      "osszes": -40310,
-      "gomboc": -7538,
-      "ital": -11520,
+      "leltar_pct": 99.8,
+      "osszes": -16143,
+      "gomboc": -28593,
+      "ital": -1340,
       "desseg": 7960,
-      "doboz": -600,
-      "snack": 0,
-      "ajandek": 2050,
-      "selejt_pct": 3.5,
+      "doboz": -1000,
+      "snack": 3980,
+      "ajandek": 2850,
+      "selejt_pct": 3.4,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "32-es gombóc",
+            "mennyiseg": 5
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Gelato",
+            "mennyiseg": 5
+          }
+        ]
+      },
       "teruletvezeto": [
         "Hegedűs Milán"
       ]
@@ -438,50 +1084,84 @@
     {
       "nev": "D2 Baross",
       "leltar_pct": 99.6,
-      "osszes": -50139,
-      "gomboc": -37645,
-      "ital": -2330,
-      "desseg": -5970,
-      "doboz": 1700,
+      "osszes": -27140,
+      "gomboc": -23251,
+      "ital": -2770,
+      "desseg": -7269,
+      "doboz": 2600,
       "snack": 0,
-      "ajandek": 1150,
-      "selejt_pct": 4.4,
+      "ajandek": 3550,
+      "selejt_pct": 4.7,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "32-es gombóc",
+            "mennyiseg": 4
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Gelato",
+            "mennyiseg": 4
+          }
+        ],
+        "ajandek": [
+          {
+            "termek": "Gyerekjáték",
+            "mennyiseg": 5
+          }
+        ]
+      },
       "teruletvezeto": [
         "Racsmány Ignác"
       ]
     },
     {
       "nev": "Újpest",
-      "leltar_pct": 99.2,
-      "osszes": -35083,
-      "gomboc": -53213,
-      "ital": 2540,
+      "leltar_pct": 99.0,
+      "osszes": -55908,
+      "gomboc": -55338,
+      "ital": -11920,
       "desseg": 3980,
-      "doboz": 100,
+      "doboz": 1400,
       "snack": 1190,
-      "ajandek": 200,
-      "selejt_pct": 9.3,
+      "ajandek": 1800,
+      "selejt_pct": 8.7,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "32-es gombóc",
+            "mennyiseg": 10
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Gelato",
+            "mennyiseg": 2
+          }
+        ]
+      },
       "teruletvezeto": [
         "Anda Patrícia"
       ]
     },
     {
       "nev": "K1 Westend",
-      "leltar_pct": 99.49,
-      "osszes": -15491,
-      "gomboc": 9289,
-      "ital": -24180,
+      "leltar_pct": 100.0,
+      "osszes": -15,
+      "gomboc": 11595,
+      "ital": -11460,
       "desseg": 0,
-      "doboz": 0,
+      "doboz": 450,
       "snack": -600,
       "ajandek": 0,
       "selejt_pct": 24.3,
       "reszletek": {
         "gomboc": [
-          { "termek": "45-ös gombóc", "mennyiseg": 1 }
-        ],
-        "ital": [
-          { "termek": "0,33 Cola", "mennyiseg": 24 }
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
         ]
       },
       "teruletvezeto": [
@@ -491,29 +1171,45 @@
     {
       "nev": "BP PARK",
       "leltar_pct": 99.7,
-      "osszes": -36754,
-      "gomboc": -36264,
-      "ital": -840,
+      "osszes": -49946,
+      "gomboc": -55237,
+      "ital": -3360,
       "desseg": 0,
-      "doboz": 350,
-      "snack": 0,
+      "doboz": 9650,
+      "snack": -999,
       "ajandek": 0,
-      "selejt_pct": 5.3,
+      "selejt_pct": 6.0,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 5
+          }
+        ]
+      },
       "teruletvezeto": [
         "Ullman Zsófia"
       ]
     },
     {
       "nev": "PLÁZS",
-      "leltar_pct": 100.0,
-      "osszes": -332,
-      "gomboc": 1678,
-      "ital": -3010,
+      "leltar_pct": 99.8,
+      "osszes": -15348,
+      "gomboc": -12248,
+      "ital": -4100,
       "desseg": 0,
       "doboz": 1000,
       "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 17.9,
+      "selejt_pct": 14.5,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
+        ]
+      },
       "teruletvezeto": [
         "Bratkovics Ádám",
         "Hegedűs Milán"
@@ -521,15 +1217,33 @@
     },
     {
       "nev": "F1 Siófok",
-      "leltar_pct": 99.6,
-      "osszes": -59846,
-      "gomboc": -22566,
-      "ital": -26340,
+      "leltar_pct": 99.5,
+      "osszes": -111212,
+      "gomboc": -84092,
+      "ital": -12880,
       "desseg": 0,
-      "doboz": -6950,
-      "snack": -1990,
-      "ajandek": -3990,
-      "selejt_pct": 7.8,
+      "doboz": -10600,
+      "snack": -1390,
+      "ajandek": -3640,
+      "selejt_pct": 7.3,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 8
+          }
+        ],
+        "doboz": [
+          {
+            "termek": "Doboz",
+            "mennyiseg": 40
+          },
+          {
+            "termek": "Papírzacskó",
+            "mennyiseg": 10
+          }
+        ]
+      },
       "teruletvezeto": [
         "Bratkovics Ádám",
         "Hegedűs Milán"
@@ -538,29 +1252,67 @@
     {
       "nev": "Szeged",
       "leltar_pct": 99.8,
-      "osszes": -12825,
-      "gomboc": 2237,
-      "ital": -14030,
+      "osszes": -10820,
+      "gomboc": -6418,
+      "ital": -21590,
       "desseg": 8568,
-      "doboz": -13650,
-      "snack": -2580,
-      "ajandek": 6630,
-      "selejt_pct": 8.3,
+      "doboz": -9050,
+      "snack": 13930,
+      "ajandek": 3740,
+      "selejt_pct": 8.7,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "Szelet",
+            "mennyiseg": 6
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Gelato",
+            "mennyiseg": 3
+          },
+          {
+            "termek": "Csokis mousse",
+            "mennyiseg": 2
+          }
+        ],
+        "snack": [
+          {
+            "termek": "Tartufata szósz",
+            "mennyiseg": 3
+          }
+        ]
+      },
       "teruletvezeto": [
         "Anda Patrícia"
       ]
     },
     {
       "nev": "Pécs",
-      "leltar_pct": 100.1,
-      "osszes": 1790,
-      "gomboc": 1100,
-      "ital": -340,
+      "leltar_pct": 99.9,
+      "osszes": -15229,
+      "gomboc": -9099,
+      "ital": 1590,
       "desseg": 0,
-      "doboz": -3750,
+      "doboz": -12500,
       "snack": 4580,
       "ajandek": 200,
       "selejt_pct": 6.2,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
+        ],
+        "doboz": [
+          {
+            "termek": "22cm doboz",
+            "mennyiseg": 104
+          }
+        ]
+      },
       "franchise": true,
       "teruletvezeto": [
         "Bratkovics Ádám"
@@ -568,15 +1320,33 @@
     },
     {
       "nev": "Miskolc",
-      "leltar_pct": 99.1,
-      "osszes": -97406,
-      "gomboc": -58494,
-      "ital": -19100,
-      "desseg": 3488,
-      "doboz": -24750,
-      "snack": 0,
-      "ajandek": 1450,
-      "selejt_pct": 5.9,
+      "leltar_pct": 98.71,
+      "osszes": -133151,
+      "gomboc": -85075,
+      "ital": -22260,
+      "desseg": 3824,
+      "doboz": -30250,
+      "snack": -1190,
+      "ajandek": 1800,
+      "selejt_pct": 5.7,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 8
+          }
+        ],
+        "doboz": [
+          {
+            "termek": "Doboz",
+            "mennyiseg": 105
+          },
+          {
+            "termek": "Papírzacskó",
+            "mennyiseg": 46
+          }
+        ]
+      },
       "franchise": true,
       "teruletvezeto": [
         "Bratkovics Ádám"
