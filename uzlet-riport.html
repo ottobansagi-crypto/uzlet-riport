@@ -38,6 +38,13 @@
     --radius-lg: 14px;
   }
 
+  /* KORÁBBI HÓNAP NÉZET — hidegebb, tompított háttér, hogy ne keveredjen az aktuálissal */
+  :root.history-mode {
+    --bg: #e7eaee;
+    --surface2: #dbe0e6;
+    --border2: rgba(0,0,0,0.18);
+  }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
@@ -225,6 +232,13 @@
   /* LOADING */
   #loading { text-align: center; padding: 60px; color: var(--text3); font-size: 14px; }
 
+  /* KORÁBBI HÓNAP FIGYELMEZTETÉS */
+  .history-banner {
+    background: #44546a; color: #fff;
+    border-radius: var(--radius); padding: 10px 14px;
+    margin-bottom: 16px; font-size: 12px; font-weight: 500;
+  }
+
   /* STORE DETAIL LINK + MODAL */
   .store-link { cursor: pointer; text-decoration: underline; text-decoration-style: dotted; text-decoration-color: var(--border2); }
   .store-link:hover { color: var(--brand-red-dark); }
@@ -269,6 +283,7 @@
     </div>
   </div>
   <div style="display:flex;align-items:center;gap:10px;">
+    <select id="monthSelect" class="header-select" onchange="setMonth(this.value)"></select>
     <select id="managerSelect" class="header-select" onchange="setManager(this.value)">
       <option value="all">Összes terület</option>
       <option value="Bratkovics Ádám">Bratkovics Ádám</option>
@@ -306,6 +321,7 @@ let usingFallbackData = false;
 let showFranchise = false;
 let activeFilter = 'all';
 let activeManager = 'all';
+let selectedMonth = 'current';
 let sortKey = 'osszes';
 let sortDir = -1;
 let trendStore = null;
@@ -316,6 +332,44 @@ const MANAGERS = ['Bratkovics Ádám','Hegedűs Milán','Racsmány Ignác','Ullm
 // ── HTML ESCAPE ───────────────────────────────────────────────────────────────
 function esc(v) {
   return String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// ── HÓNAP-VÁLASZTÓ ────────────────────────────────────────────────────────────
+// "current" = a data.json legfelső szintű meta/levonasok/uzletek (mindig a legfrissebb hónap).
+// Az elozo_honapok tömb korábbi, lezárt hónapok teljes pillanatképét tartalmazza.
+function getMonthSnapshot() {
+  if (selectedMonth === 'current') {
+    return { meta: DATA.meta, levonasok: DATA.levonasok || [], uzletek: DATA.uzletek };
+  }
+  const idx = parseInt(selectedMonth, 10);
+  const snap = (DATA.elozo_honapok || [])[idx];
+  return snap ? snap : { meta: DATA.meta, levonasok: DATA.levonasok || [], uzletek: DATA.uzletek };
+}
+
+function populateMonthSelect() {
+  const sel = document.getElementById('monthSelect');
+  if (!sel) return;
+  const history = DATA.elozo_honapok || [];
+  const opts = [`<option value="current">${esc(DATA.meta.honap)} (aktuális)</option>`];
+  history.forEach((snap, i) => opts.push(`<option value="${i}">${esc(snap.meta.honap)}</option>`));
+  sel.innerHTML = opts.join('');
+  sel.value = selectedMonth;
+}
+
+function setMonth(v) {
+  selectedMonth = v;
+  const snap = getMonthSnapshot();
+  document.getElementById('headerMeta').textContent = snap.meta.honap + ' · frissítve: ' + snap.meta.frissitve;
+  const isHistory = selectedMonth !== 'current';
+  document.documentElement.classList.toggle('history-mode', isHistory);
+  const banner = document.getElementById('historyBanner');
+  if (banner) {
+    banner.innerHTML = isHistory ? `
+      <div class="history-banner">
+        📅 Korábbi hónapot nézel: <strong>${esc(snap.meta.honap)}</strong> — ez nem az aktuális állapot.
+      </div>` : '';
+  }
+  refreshAllTabs();
 }
 
 // ── CHART.JS AVAILABILITY GUARD ───────────────────────────────────────────────
@@ -350,6 +404,7 @@ function init() {
     </div>` : '';
   document.getElementById('app').innerHTML = `
     ${fallbackBanner}
+    <div id="historyBanner"></div>
     <div class="tabs">
       <button class="tab active" onclick="showTab('aktualis')">Aktuális hónap</button>
       <button class="tab" onclick="showTab('trend2026')">2026 trend</button>
@@ -361,6 +416,7 @@ function init() {
     <div class="panel" id="tab-trend"></div>
     <div class="panel" id="tab-levon"></div>
   `;
+  populateMonthSelect();
   [renderAktualis, renderTrend2026, renderTrendUI, renderLevon].forEach(fn => {
     try { fn(); } catch (e) {
       console.error('Render hiba (' + fn.name + '):', e);
@@ -373,12 +429,16 @@ function fmt(v) { return (v >= 0 ? '+' : '') + Math.round(v).toLocaleString('hu-
 function fmtAbs(v) { return Math.round(Math.abs(v)).toLocaleString('hu-HU'); }
 
 function getFiltered() {
+  const snap = getMonthSnapshot();
   const levonMap = {};
-  (DATA.levonasok || []).forEach(l => levonMap[l.nev] = l);
+  (snap.levonasok || []).forEach(l => levonMap[l.nev] = l);
   const q = (document.getElementById('srch')?.value || '').toLowerCase();
-  return DATA.uzletek.filter(d => {
+  return snap.uzletek.filter(d => {
     if (!showFranchise && d.franchise) return false;
-    if (activeManager !== 'all' && !(d.teruletvezeto || []).includes(activeManager)) return false;
+    if (activeManager !== 'all') {
+      const mgrs = (d.teruletvezeto && d.teruletvezeto.length) ? d.teruletvezeto : managerOf(d.nev);
+      if (!mgrs.includes(activeManager)) return false;
+    }
     if (q && !d.nev.toLowerCase().includes(q)) return false;
     if (activeFilter === 'neg') return d.osszes < 0;
     if (activeFilter === 'pos') return d.osszes > 0;
@@ -442,10 +502,11 @@ function sortBy(k) {
 
 // ── AKTUÁLIS HÓNAP ────────────────────────────────────────────────────────────
 function renderAktualis() {
+  const snap = getMonthSnapshot();
   const data = getFiltered();
   const levonMap = {};
-  (DATA.levonasok || []).forEach(l => levonMap[l.nev] = l);
-  const totalLevon = (DATA.levonasok || []).reduce((s, l) => s + (l.levon || 0), 0);
+  (snap.levonasok || []).forEach(l => levonMap[l.nev] = l);
+  const totalLevon = (snap.levonasok || []).reduce((s, l) => s + (l.levon || 0), 0);
   const tot = data.reduce((s, d) => s + d.osszes, 0);
   const neg = data.filter(d => d.osszes < 0).length;
   const pos = data.filter(d => d.osszes > 0).length;
@@ -485,12 +546,12 @@ function renderAktualis() {
       <div class="metric">
         <div class="metric-label">Átlag Leltár %</div>
         <div class="metric-value ${avgLeltar<99.5?'neg':avgLeltar>=100?'pos':''}">${avgLeltar.toFixed(2)}%</div>
-        <div class="metric-sub">${DATA.meta.honap}</div>
+        <div class="metric-sub">${esc(snap.meta.honap)}</div>
       </div>
       <div class="metric">
         <div class="metric-label">Összes eltérés</div>
         <div class="metric-value ${tot<0?'neg':'pos'}">${fmt(tot)} Ft</div>
-        <div class="metric-sub">${DATA.meta.honap}</div>
+        <div class="metric-sub">${esc(snap.meta.honap)}</div>
       </div>
       <div class="metric">
         <div class="metric-label">Hiányos</div>
@@ -515,7 +576,7 @@ function renderAktualis() {
       ${totalLevon > 0 ? `<div class="metric">
         <div class="metric-label">Összes levonás</div>
         <div class="metric-value warn">${Math.round(totalLevon).toLocaleString('hu-HU')} Ft</div>
-        <div class="metric-sub">${(DATA.levonasok||[]).filter(l=>l.levon>0).length} üzlet</div>
+        <div class="metric-sub">${(snap.levonasok||[]).filter(l=>l.levon>0).length} üzlet</div>
       </div>` : ''}
     </div>
 
@@ -650,7 +711,7 @@ const DETAIL_CATS = [
 ];
 
 function openDetail(nev) {
-  const d = (DATA.uzletek || []).find(u => u.nev === nev);
+  const d = (getMonthSnapshot().uzletek || []).find(u => u.nev === nev);
   if (!d) return;
   const reszletek = d.reszletek || {};
 
@@ -1072,10 +1133,13 @@ function render2026Table() {
 
 // ── LEVONÁS ───────────────────────────────────────────────────────────────────
 function renderLevon() {
-  const uzletMap = {};
-  DATA.uzletek.forEach(u => uzletMap[u.nev] = u);
-  const levonasok = (DATA.levonasok || []).filter(l => {
-    const u = uzletMap[l.nev];
+  const snap = getMonthSnapshot();
+  const currentMap = {};
+  DATA.uzletek.forEach(u => currentMap[u.nev] = u);
+  const snapMap = {};
+  (snap.uzletek || []).forEach(u => snapMap[u.nev] = u);
+  const levonasok = (snap.levonasok || []).filter(l => {
+    const u = currentMap[l.nev] || snapMap[l.nev];
     if (!u) return true;
     if (!showFranchise && u.franchise) return false;
     if (activeManager !== 'all' && !(u.teruletvezeto || []).includes(activeManager)) return false;
@@ -1085,13 +1149,13 @@ function renderLevon() {
 
   document.getElementById('tab-levon').innerHTML = `
     <div class="card">
-      <div class="card-title">Megállapított levonások – ${DATA.meta.honap}</div>
+      <div class="card-title">Megállapított levonások – ${esc(snap.meta.honap)}</div>
       <p class="levon-hint">A levonásokat az Excel + levonás adatok beküldésekor rögzítjük a data.json-ban. Az adatok minden hónapban megmaradnak.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Üzlet</th><th>Eltérés</th><th>Levonás</th><th>Megjegyzés</th></tr></thead>
           <tbody>${levonasok.length ? levonasok.map(l => {
-            const u = uzletMap[l.nev] || {};
+            const u = snapMap[l.nev] || {};
             return `<tr>
               <td>${esc(l.nev)}</td>
               <td class="mono ${(u.osszes||0)<0?'neg':'pos'}">${fmt(Math.round(u.osszes||0))}</td>
@@ -1170,6 +1234,67 @@ const INLINE_DATA = {
     {"nev":"Szeged","leltar_pct":99.8,"osszes":-10820,"gomboc":-6418,"ital":-21590,"desseg":8568,"doboz":-9050,"snack":13930,"ajandek":3740,"selejt_pct":8.7,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":6}],"desseg":[{"termek":"Gelato","mennyiseg":3},{"termek":"Csokis mousse","mennyiseg":2}],"snack":[{"termek":"Tartufata szósz","mennyiseg":3}]},"teruletvezeto":["Anda Patrícia"]},
     {"nev":"Pécs","leltar_pct":99.9,"osszes":-15229,"gomboc":-9099,"ital":1590,"desseg":0,"doboz":-12500,"snack":4580,"ajandek":200,"selejt_pct":6.2,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1}],"doboz":[{"termek":"22cm doboz","mennyiseg":104}]},"franchise":true,"teruletvezeto":["Bratkovics Ádám"]},
     {"nev":"Miskolc","leltar_pct":98.71,"osszes":-133151,"gomboc":-85075,"ital":-22260,"desseg":3824,"doboz":-30250,"snack":-1190,"ajandek":1800,"selejt_pct":5.7,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":8}],"doboz":[{"termek":"Doboz","mennyiseg":105},{"termek":"Papírzacskó","mennyiseg":46}]},"franchise":true,"teruletvezeto":["Bratkovics Ádám"]}
+  ],
+  "elozo_honapok": [
+    {
+      "meta": { "honap": "2026. június", "frissitve": "2026-07-01" },
+      "levonasok": [
+      {"nev": "Király utca", "levon": 50000, "megjegyzes": ""},
+      {"nev": "Fashion", "levon": 35000, "megjegyzes": ""},
+      {"nev": "Bazilika", "levon": 75000, "megjegyzes": ""},
+      {"nev": "Széll Kálmán", "levon": 35000, "megjegyzes": ""},
+      {"nev": "Corvin", "levon": 10000, "megjegyzes": ""},
+      {"nev": "Károly krt", "levon": 100000, "megjegyzes": ""},
+      {"nev": "Dob", "levon": 30000, "megjegyzes": ""},
+      {"nev": "Blaha", "levon": 20000, "megjegyzes": ""},
+      {"nev": "Oktogon", "levon": 50000, "megjegyzes": ""},
+      {"nev": "Astoria", "levon": 20000, "megjegyzes": ""},
+      {"nev": "Gomba Móricz", "levon": 40000, "megjegyzes": ""},
+      {"nev": "Fővám tér", "levon": 20000, "megjegyzes": ""},
+      {"nev": "F1 Siófok", "levon": 20000, "megjegyzes": ""},
+      {"nev": "Szeged", "levon": 40000, "megjegyzes": ""},
+      {"nev": "D1 Buda", "levon": 20000, "megjegyzes": ""},
+      {"nev": "Etele", "levon": 30000, "megjegyzes": ""},
+      {"nev": "Kispest", "levon": 25000, "megjegyzes": ""},
+      {"nev": "Árkád", "levon": 45000, "megjegyzes": ""}
+      ],
+      "uzletek": [
+      {"nev":"Király utca","leltar_pct":99.75,"osszes":-52768,"gomboc":-19171,"ital":-14660,"desseg":-3897,"doboz":-12050,"snack":-2000,"ajandek":-990,"selejt_pct":8.1},
+      {"nev":"Fashion","leltar_pct":99.76,"osszes":-37306,"gomboc":-27086,"ital":-5220,"desseg":0,"doboz":-6800,"snack":1800,"ajandek":0,"selejt_pct":12.1},
+      {"nev":"Bazilika","leltar_pct":99.52,"osszes":-76470,"gomboc":-48135,"ital":-1760,"desseg":-6495,"doboz":-17100,"snack":-2980,"ajandek":0,"selejt_pct":8.2},
+      {"nev":"Széll Kálmán","leltar_pct":99.75,"osszes":-36571,"gomboc":-33273,"ital":6900,"desseg":-2598,"doboz":-8200,"snack":600,"ajandek":0,"selejt_pct":5.4},
+      {"nev":"Corvin","leltar_pct":99.83,"osszes":-13047,"gomboc":1492,"ital":-10310,"desseg":-1299,"doboz":-3150,"snack":220,"ajandek":0,"selejt_pct":10.2},
+      {"nev":"Károly krt","leltar_pct":99.29,"osszes":-100442,"gomboc":-69153,"ital":-9500,"desseg":-1299,"doboz":-15950,"snack":-570,"ajandek":-3970,"selejt_pct":7.9},
+      {"nev":"Dob","leltar_pct":99.65,"osszes":-35932,"gomboc":-9392,"ital":-5740,"desseg":0,"doboz":-28600,"snack":7800,"ajandek":0,"selejt_pct":8.5},
+      {"nev":"Blaha","leltar_pct":99.86,"osszes":-24733,"gomboc":-24345,"ital":2190,"desseg":-2598,"doboz":-1000,"snack":1020,"ajandek":0,"selejt_pct":6.8},
+      {"nev":"Oktogon","leltar_pct":99.7,"osszes":-56999,"gomboc":-27399,"ital":-13090,"desseg":-1990,"doboz":5500,"snack":-19470,"ajandek":-550,"selejt_pct":8.8},
+      {"nev":"Wesselényi utca","leltar_pct":100.1,"osszes":20824,"gomboc":15675,"ital":9030,"desseg":1299,"doboz":-4000,"snack":-1180,"ajandek":0,"selejt_pct":4.5},
+      {"nev":"Astoria","leltar_pct":99.75,"osszes":-21113,"gomboc":8578,"ital":-10300,"desseg":1299,"doboz":-250,"snack":-8420,"ajandek":-12020,"selejt_pct":14.3},
+      {"nev":"Erzsébet krt 14","leltar_pct":99.8,"osszes":-9305,"gomboc":-4615,"ital":-7940,"desseg":0,"doboz":-1350,"snack":-800,"ajandek":5400,"selejt_pct":14.2},
+      {"nev":"Gomba Móricz","leltar_pct":99.6,"osszes":-42869,"gomboc":-16943,"ital":-17420,"desseg":-5196,"doboz":-4650,"snack":3780,"ajandek":-2440,"selejt_pct":8.9},
+      {"nev":"Keleti","leltar_pct":100.1,"osszes":15866,"gomboc":22757,"ital":-510,"desseg":1299,"doboz":-5300,"snack":-3180,"ajandek":800,"selejt_pct":8.6},
+      {"nev":"Fővám tér","leltar_pct":99.7,"osszes":-25431,"gomboc":-25571,"ital":3140,"desseg":0,"doboz":-3000,"snack":0,"ajandek":0,"selejt_pct":11.2},
+      {"nev":"Ferenciek tere","leltar_pct":100.2,"osszes":19879,"gomboc":27009,"ital":4070,"desseg":0,"doboz":-11800,"snack":600,"ajandek":0,"selejt_pct":8.3},
+      {"nev":"Jászai Mari tér","leltar_pct":100.1,"osszes":1943,"gomboc":4422,"ital":380,"desseg":-1299,"doboz":-3150,"snack":600,"ajandek":990,"selejt_pct":10.9},
+      {"nev":"Etele","leltar_pct":99.66,"osszes":-32664,"gomboc":-16866,"ital":-5190,"desseg":-2598,"doboz":-12250,"snack":-600,"ajandek":4840,"selejt_pct":12.0},
+      {"nev":"Kispest","leltar_pct":99.7,"osszes":-31163,"gomboc":-26403,"ital":-5980,"desseg":0,"doboz":0,"snack":620,"ajandek":600,"selejt_pct":0},
+      {"nev":"Bosnyák tér","leltar_pct":99.9,"osszes":-9930,"gomboc":-1520,"ital":-3850,"desseg":0,"doboz":-10400,"snack":4790,"ajandek":1050,"selejt_pct":14.6},
+      {"nev":"Árkád","leltar_pct":99.6,"osszes":-50135,"gomboc":-22294,"ital":-9710,"desseg":0,"doboz":-7900,"snack":-1980,"ajandek":-7990,"selejt_pct":12.3},
+      {"nev":"Kazinczy","leltar_pct":100.1,"osszes":15482,"gomboc":9712,"ital":7200,"desseg":0,"doboz":-3450,"snack":2020,"ajandek":0,"selejt_pct":9.8},
+      {"nev":"Törökvész","leltar_pct":99.9,"osszes":-8875,"gomboc":1274,"ital":-7880,"desseg":-1299,"doboz":-5500,"snack":2380,"ajandek":2150,"selejt_pct":8.4},
+      {"nev":"GO Buda","leltar_pct":100.29,"osszes":3628,"gomboc":13758,"ital":-18180,"desseg":1990,"doboz":-2500,"snack":600,"ajandek":7960,"selejt_pct":15.0},
+      {"nev":"D1 Buda","leltar_pct":99.7,"osszes":-23002,"gomboc":4805,"ital":-14410,"desseg":3897,"doboz":0,"snack":-2380,"ajandek":3050,"selejt_pct":3.8},
+      {"nev":"D2 Baross","leltar_pct":100.1,"osszes":8180,"gomboc":-1282,"ital":-3810,"desseg":8568,"doboz":0,"snack":3180,"ajandek":60,"selejt_pct":5.9},
+      {"nev":"Újpest","leltar_pct":99.9,"osszes":-10725,"gomboc":3975,"ital":-5160,"desseg":-2666,"doboz":0,"snack":-1990,"ajandek":1100,"selejt_pct":0},
+      {"nev":"K1 Westend","leltar_pct":99.97,"osszes":-1517,"gomboc":16133,"ital":-14750,"desseg":0,"doboz":-3500,"snack":600,"ajandek":0,"selejt_pct":17.5},
+      {"nev":"BP PARK","leltar_pct":100.2,"osszes":22258,"gomboc":13467,"ital":840,"desseg":0,"doboz":8950,"snack":-999,"ajandek":0,"selejt_pct":7.7},
+      {"nev":"PLÁZS","leltar_pct":100.1,"osszes":5802,"gomboc":2342,"ital":-4090,"desseg":0,"doboz":7550,"snack":0,"ajandek":0,"selejt_pct":10.4},
+      {"nev":"F1 Siófok","leltar_pct":99.8,"osszes":-22829,"gomboc":-13779,"ital":-1980,"desseg":3980,"doboz":-11050,"snack":4200,"ajandek":0,"selejt_pct":11.8},
+      {"nev":"Szeged","leltar_pct":99.6,"osszes":-42462,"gomboc":-15402,"ital":-16570,"desseg":11940,"doboz":-20450,"snack":-3180,"ajandek":1200,"selejt_pct":14.3},
+      {"nev":"Pécs","leltar_pct":99.4,"osszes":-73745,"gomboc":-41686,"ital":-16130,"desseg":-1299,"doboz":-10100,"snack":-5980,"ajandek":1450,"selejt_pct":5.1,"franchise":true},
+      {"nev":"Miskolc","leltar_pct":100.3,"osszes":51749,"gomboc":-8267,"ital":5580,"desseg":5886,"doboz":46650,"snack":0,"ajandek":1900,"selejt_pct":6.5,"franchise":true}
+      ]
+    }
   ],
   "trend": {
     "Király utca":{"2023":{"avg":-75323,"h":[-57924,-15652,-79554,-116099,-98329,-16056,-146223,-95346,-71937,-54859,-76971,-74926]},"2024":{"avg":-57390,"h":[-65448,-89962,-21475,-2956,-23768,-57038,-110019,-73175,-117236,-50714,-26464,-50422]},"2025":{"avg":-50783,"h":[-58986,-42884,-53649,-38338,-42313,-79073,-130655,-90480,-43402,-2990,-28268,1643]}},
