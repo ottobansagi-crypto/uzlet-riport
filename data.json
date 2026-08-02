@@ -330,9 +330,9 @@
     },
     {
       "nev": "Corvin",
-      "leltar_pct": 100.62,
-      "osszes": 46323,
-      "gomboc": 34573,
+      "leltar_pct": 100.35,
+      "osszes": 26131,
+      "gomboc": 14381,
       "ital": 7770,
       "desseg": 0,
       "doboz": 600,
@@ -343,13 +343,7 @@
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 3.5
-          }
-        ],
-        "ital": [
-          {
-            "termek": "Személyzeti víz",
-            "mennyiseg": 29
+            "mennyiseg": 1
           }
         ],
         "doboz": [
