@@ -38,6 +38,13 @@
     --radius-lg: 14px;
   }
 
+  /* KORÁBBI HÓNAP NÉZET — hidegebb, tompított háttér, hogy ne keveredjen az aktuálissal */
+  :root.history-mode {
+    --bg: #e7eaee;
+    --surface2: #dbe0e6;
+    --border2: rgba(0,0,0,0.18);
+  }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
@@ -225,6 +232,13 @@
   /* LOADING */
   #loading { text-align: center; padding: 60px; color: var(--text3); font-size: 14px; }
 
+  /* KORÁBBI HÓNAP FIGYELMEZTETÉS */
+  .history-banner {
+    background: #44546a; color: #fff;
+    border-radius: var(--radius); padding: 10px 14px;
+    margin-bottom: 16px; font-size: 12px; font-weight: 500;
+  }
+
   /* STORE DETAIL LINK + MODAL */
   .store-link { cursor: pointer; text-decoration: underline; text-decoration-style: dotted; text-decoration-color: var(--border2); }
   .store-link:hover { color: var(--brand-red-dark); }
@@ -346,6 +360,15 @@ function setMonth(v) {
   selectedMonth = v;
   const snap = getMonthSnapshot();
   document.getElementById('headerMeta').textContent = snap.meta.honap + ' · frissítve: ' + snap.meta.frissitve;
+  const isHistory = selectedMonth !== 'current';
+  document.documentElement.classList.toggle('history-mode', isHistory);
+  const banner = document.getElementById('historyBanner');
+  if (banner) {
+    banner.innerHTML = isHistory ? `
+      <div class="history-banner">
+        📅 Korábbi hónapot nézel: <strong>${esc(snap.meta.honap)}</strong> — ez nem az aktuális állapot.
+      </div>` : '';
+  }
   refreshAllTabs();
 }
 
@@ -381,6 +404,7 @@ function init() {
     </div>` : '';
   document.getElementById('app').innerHTML = `
     ${fallbackBanner}
+    <div id="historyBanner"></div>
     <div class="tabs">
       <button class="tab active" onclick="showTab('aktualis')">Aktuális hónap</button>
       <button class="tab" onclick="showTab('trend2026')">2026 trend</button>
@@ -411,7 +435,10 @@ function getFiltered() {
   const q = (document.getElementById('srch')?.value || '').toLowerCase();
   return snap.uzletek.filter(d => {
     if (!showFranchise && d.franchise) return false;
-    if (activeManager !== 'all' && !(d.teruletvezeto || []).includes(activeManager)) return false;
+    if (activeManager !== 'all') {
+      const mgrs = (d.teruletvezeto && d.teruletvezeto.length) ? d.teruletvezeto : managerOf(d.nev);
+      if (!mgrs.includes(activeManager)) return false;
+    }
     if (q && !d.nev.toLowerCase().includes(q)) return false;
     if (activeFilter === 'neg') return d.osszes < 0;
     if (activeFilter === 'pos') return d.osszes > 0;
