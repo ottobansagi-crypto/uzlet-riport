@@ -519,12 +519,12 @@ function renderAktualis() {
       <div class="metric">
         <div class="metric-label">Átlag Leltár %</div>
         <div class="metric-value ${avgLeltar<99.5?'neg':avgLeltar>=100?'pos':''}">${avgLeltar.toFixed(2)}%</div>
-        <div class="metric-sub">${DATA.meta.honap}</div>
+        <div class="metric-sub">${esc(snap.meta.honap)}</div>
       </div>
       <div class="metric">
         <div class="metric-label">Összes eltérés</div>
         <div class="metric-value ${tot<0?'neg':'pos'}">${fmt(tot)} Ft</div>
-        <div class="metric-sub">${DATA.meta.honap}</div>
+        <div class="metric-sub">${esc(snap.meta.honap)}</div>
       </div>
       <div class="metric">
         <div class="metric-label">Hiányos</div>
