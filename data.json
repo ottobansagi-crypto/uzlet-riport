@@ -35,6 +35,11 @@
       "megjegyzes": ""
     },
     {
+      "nev": "Oktogon",
+      "levon": 90000,
+      "megjegyzes": ""
+    },
+    {
       "nev": "Wesselényi utca",
       "levon": 40000,
       "megjegyzes": ""
@@ -51,7 +56,7 @@
     },
     {
       "nev": "Ferenciek tere",
-      "levon": 25000,
+      "levon": 30000,
       "megjegyzes": ""
     },
     {
@@ -66,7 +71,7 @@
     },
     {
       "nev": "F1 Siófok",
-      "levon": 80000,
+      "levon": 90000,
       "megjegyzes": ""
     },
     {
@@ -76,7 +81,7 @@
     },
     {
       "nev": "BP PARK",
-      "levon": 50000,
+      "levon": 40000,
       "megjegyzes": ""
     },
     {
@@ -104,8 +109,8 @@
     {
       "nev": "Király utca",
       "leltar_pct": 99.93,
-      "osszes": -18503,
-      "gomboc": 13166,
+      "osszes": -18588,
+      "gomboc": 13081,
       "ital": -24970,
       "desseg": -5279,
       "doboz": -3000,
@@ -184,8 +189,8 @@
     {
       "nev": "Fashion",
       "leltar_pct": 100.06,
-      "osszes": 10800,
-      "gomboc": 10619,
+      "osszes": 10796,
+      "gomboc": 10615,
       "ital": 10780,
       "desseg": -1299,
       "doboz": -6900,
@@ -233,8 +238,8 @@
     {
       "nev": "Bazilika",
       "leltar_pct": 99.94,
-      "osszes": -11348,
-      "gomboc": 23022,
+      "osszes": -11345,
+      "gomboc": 23025,
       "ital": -14480,
       "desseg": 0,
       "doboz": -16100,
@@ -292,8 +297,8 @@
     {
       "nev": "Széll Kálmán",
       "leltar_pct": 99.4,
-      "osszes": -85527,
-      "gomboc": -71108,
+      "osszes": -85481,
+      "gomboc": -71062,
       "ital": -7320,
       "desseg": -1299,
       "doboz": -6400,
@@ -331,8 +336,8 @@
     {
       "nev": "Corvin",
       "leltar_pct": 100.35,
-      "osszes": 26131,
-      "gomboc": 14381,
+      "osszes": 26151,
+      "gomboc": 14401,
       "ital": 7770,
       "desseg": 0,
       "doboz": 600,
@@ -374,8 +379,8 @@
     {
       "nev": "Károly krt",
       "leltar_pct": 99.79,
-      "osszes": -33754,
-      "gomboc": 4921,
+      "osszes": -33682,
+      "gomboc": 4993,
       "ital": -32260,
       "desseg": -6495,
       "doboz": -1700,
@@ -429,8 +434,8 @@
     {
       "nev": "Dob",
       "leltar_pct": 99.76,
-      "osszes": -26920,
-      "gomboc": -29000,
+      "osszes": -26917,
+      "gomboc": -28997,
       "ital": -420,
       "desseg": 0,
       "doboz": 100,
@@ -476,8 +481,8 @@
     {
       "nev": "Blaha",
       "leltar_pct": 99.7,
-      "osszes": -54611,
-      "gomboc": -16424,
+      "osszes": -55034,
+      "gomboc": -16847,
       "ital": -13790,
       "desseg": -3897,
       "doboz": -13950,
@@ -522,9 +527,9 @@
     },
     {
       "nev": "Oktogon",
-      "leltar_pct": 99.6,
-      "osszes": -105686,
-      "gomboc": -42430,
+      "leltar_pct": 99.56,
+      "osszes": -105690,
+      "gomboc": -42434,
       "ital": -16150,
       "desseg": -3206,
       "doboz": -31150,
@@ -558,8 +563,8 @@
     {
       "nev": "Wesselényi utca",
       "leltar_pct": 99.78,
-      "osszes": -42175,
-      "gomboc": -32755,
+      "osszes": -42248,
+      "gomboc": -32828,
       "ital": -7270,
       "desseg": 0,
       "doboz": -2150,
@@ -591,8 +596,8 @@
     {
       "nev": "Astoria",
       "leltar_pct": 99.7,
-      "osszes": -29431,
-      "gomboc": -14938,
+      "osszes": -29409,
+      "gomboc": -14916,
       "ital": -7450,
       "desseg": -9093,
       "doboz": 1350,
@@ -627,7 +632,7 @@
     },
     {
       "nev": "Erzsébet krt 14",
-      "leltar_pct": 99.8,
+      "leltar_pct": 99.9,
       "osszes": -18076,
       "gomboc": 2023,
       "ital": -1490,
@@ -657,8 +662,8 @@
     {
       "nev": "Gomba Móricz",
       "leltar_pct": 100.1,
-      "osszes": 4192,
-      "gomboc": -24944,
+      "osszes": 4077,
+      "gomboc": -25059,
       "ital": 15990,
       "desseg": 7186,
       "doboz": -3800,
@@ -702,8 +707,8 @@
     {
       "nev": "Keleti",
       "leltar_pct": 100.1,
-      "osszes": 682,
-      "gomboc": 4523,
+      "osszes": 702,
+      "gomboc": 4543,
       "ital": -8110,
       "desseg": 1299,
       "doboz": -1200,
@@ -724,9 +729,9 @@
     },
     {
       "nev": "Fővám tér",
-      "leltar_pct": 99.7,
-      "osszes": -31436,
-      "gomboc": -11536,
+      "leltar_pct": 99.69,
+      "osszes": -31257,
+      "gomboc": -11357,
       "ital": -9970,
       "desseg": 0,
       "doboz": -2550,
@@ -753,9 +758,9 @@
     },
     {
       "nev": "Ferenciek tere",
-      "leltar_pct": 99.75,
-      "osszes": -27180,
-      "gomboc": -4730,
+      "leltar_pct": 99.69,
+      "osszes": -33424,
+      "gomboc": -10974,
       "ital": 10490,
       "desseg": 0,
       "doboz": -35150,
@@ -765,8 +770,8 @@
       "reszletek": {
         "gomboc": [
           {
-            "termek": "Szelet",
-            "mennyiseg": 4
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
           }
         ],
         "ital": [
@@ -849,9 +854,9 @@
     },
     {
       "nev": "Etele",
-      "leltar_pct": 99.77,
-      "osszes": -20072,
-      "gomboc": 6188,
+      "leltar_pct": 99.7,
+      "osszes": -19936,
+      "gomboc": 6324,
       "ital": -19040,
       "desseg": 0,
       "doboz": -3450,
@@ -873,8 +878,8 @@
     {
       "nev": "Kispest",
       "leltar_pct": 99.9,
-      "osszes": -5971,
-      "gomboc": 1476,
+      "osszes": -5964,
+      "gomboc": 1483,
       "ital": -6740,
       "desseg": -3897,
       "doboz": 300,
@@ -902,8 +907,8 @@
     {
       "nev": "Bosnyák tér",
       "leltar_pct": 100.1,
-      "osszes": 4009,
-      "gomboc": 11721,
+      "osszes": 4678,
+      "gomboc": 12390,
       "ital": -7100,
       "desseg": 4588,
       "doboz": -3650,
@@ -931,8 +936,8 @@
     {
       "nev": "Árkád",
       "leltar_pct": 99.9,
-      "osszes": -4927,
-      "gomboc": 8816,
+      "osszes": -4920,
+      "gomboc": 5640,
       "ital": -12250,
       "desseg": 0,
       "doboz": -2700,
@@ -943,7 +948,7 @@
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 1
+            "mennyiseg": 5
           }
         ],
         "ital": [
@@ -959,9 +964,9 @@
     },
     {
       "nev": "Kazinczy",
-      "leltar_pct": 100.1,
-      "osszes": 4345,
-      "gomboc": 5065,
+      "leltar_pct": 100.04,
+      "osszes": 4350,
+      "gomboc": 5070,
       "ital": 4070,
       "desseg": 0,
       "doboz": -2200,
@@ -989,8 +994,8 @@
     {
       "nev": "Törökvész",
       "leltar_pct": 100.2,
-      "osszes": 23187,
-      "gomboc": 17302,
+      "osszes": 23200,
+      "gomboc": 17315,
       "ital": 2930,
       "desseg": 8485,
       "doboz": -3450,
@@ -1001,7 +1006,7 @@
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 1
+            "mennyiseg": 1.5
           }
         ],
         "desseg": [
@@ -1026,8 +1031,8 @@
     {
       "nev": "GO Buda",
       "leltar_pct": 99.7,
-      "osszes": -24284,
-      "gomboc": -13664,
+      "osszes": -24600,
+      "gomboc": -13980,
       "ital": -6540,
       "desseg": 1990,
       "doboz": -5450,
@@ -1038,7 +1043,7 @@
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 2
+            "mennyiseg": 1
           }
         ]
       },
@@ -1077,7 +1082,7 @@
     },
     {
       "nev": "D2 Baross",
-      "leltar_pct": 99.6,
+      "leltar_pct": 99.7,
       "osszes": -27140,
       "gomboc": -23251,
       "ital": -2770,
@@ -1112,9 +1117,9 @@
     },
     {
       "nev": "Újpest",
-      "leltar_pct": 99.0,
-      "osszes": -55908,
-      "gomboc": -55338,
+      "leltar_pct": 99.1,
+      "osszes": -55911,
+      "gomboc": -52361,
       "ital": -11920,
       "desseg": 3980,
       "doboz": 1400,
@@ -1142,8 +1147,8 @@
     {
       "nev": "K1 Westend",
       "leltar_pct": 100.0,
-      "osszes": -15,
-      "gomboc": 11595,
+      "osszes": 6,
+      "gomboc": 11616,
       "ital": -11460,
       "desseg": 0,
       "doboz": 450,
@@ -1165,8 +1170,8 @@
     {
       "nev": "BP PARK",
       "leltar_pct": 99.7,
-      "osszes": -49946,
-      "gomboc": -55237,
+      "osszes": -37105,
+      "gomboc": -42396,
       "ital": -3360,
       "desseg": 0,
       "doboz": 9650,
@@ -1177,7 +1182,7 @@
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 5
+            "mennyiseg": 4
           }
         ]
       },
@@ -1188,8 +1193,8 @@
     {
       "nev": "PLÁZS",
       "leltar_pct": 99.8,
-      "osszes": -15348,
-      "gomboc": -12248,
+      "osszes": -15340,
+      "gomboc": -12240,
       "ital": -4100,
       "desseg": 0,
       "doboz": 1000,
@@ -1212,8 +1217,8 @@
     {
       "nev": "F1 Siófok",
       "leltar_pct": 99.5,
-      "osszes": -111212,
-      "gomboc": -84092,
+      "osszes": -111214,
+      "gomboc": -82704,
       "ital": -12880,
       "desseg": 0,
       "doboz": -10600,
@@ -1245,9 +1250,9 @@
     },
     {
       "nev": "Szeged",
-      "leltar_pct": 99.8,
-      "osszes": -10820,
-      "gomboc": -6418,
+      "leltar_pct": 99.53,
+      "osszes": -10797,
+      "gomboc": -6395,
       "ital": -21590,
       "desseg": 8568,
       "doboz": -9050,
@@ -1284,9 +1289,9 @@
     },
     {
       "nev": "Pécs",
-      "leltar_pct": 99.9,
-      "osszes": -15229,
-      "gomboc": -9099,
+      "leltar_pct": 99.87,
+      "osszes": -15193,
+      "gomboc": -9063,
       "ital": 1590,
       "desseg": 0,
       "doboz": -12500,
@@ -1315,8 +1320,8 @@
     {
       "nev": "Miskolc",
       "leltar_pct": 98.71,
-      "osszes": -133151,
-      "gomboc": -85075,
+      "osszes": -133088,
+      "gomboc": -85012,
       "ital": -22260,
       "desseg": 3824,
       "doboz": -30250,
