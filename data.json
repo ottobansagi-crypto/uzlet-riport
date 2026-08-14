@@ -1,7 +1,9 @@
 {
   "meta": {
     "honap": "2026. augusztus",
-    "frissitve": "2026. augusztus - részeredmény (folyamatban)"
+    "frissitve": "2026. augusztus 13-ig (részeredmény, folyamatban)",
+    "reszido": true,
+    "reszido_datum": "2026. augusztus 13"
   },
   "levonasok": [],
   "uzletek": [
