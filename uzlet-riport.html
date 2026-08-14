@@ -239,6 +239,13 @@
     margin-bottom: 16px; font-size: 12px; font-weight: 500;
   }
 
+  /* RÉSZEREDMÉNY (FOLYAMATBAN LÉVŐ HÓNAP) FIGYELMEZTETÉS */
+  .partial-banner {
+    background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber);
+    border-radius: var(--radius); padding: 10px 14px;
+    margin-bottom: 16px; font-size: 12px; font-weight: 500;
+  }
+
   /* STORE DETAIL LINK + MODAL */
   .store-link { cursor: pointer; text-decoration: underline; text-decoration-style: dotted; text-decoration-color: var(--border2); }
   .store-link:hover { color: var(--brand-red-dark); }
@@ -356,19 +363,32 @@ function populateMonthSelect() {
   sel.value = selectedMonth;
 }
 
+function updateStatusBanner() {
+  const snap = getMonthSnapshot();
+  const isHistory = selectedMonth !== 'current';
+  document.documentElement.classList.toggle('history-mode', isHistory);
+  const banner = document.getElementById('historyBanner');
+  if (!banner) return;
+  if (isHistory) {
+    banner.innerHTML = `
+      <div class="history-banner">
+        📅 Korábbi hónapot nézel: <strong>${esc(snap.meta.honap)}</strong> — ez nem az aktuális állapot.
+      </div>`;
+  } else if (snap.meta.reszido) {
+    banner.innerHTML = `
+      <div class="partial-banner">
+        ⏳ <strong>Részeredmény</strong> — a ${esc(snap.meta.honap)} havi leltár ${esc(snap.meta.reszido_datum || '')}-ig számolt adatokat mutat. A hónap még nem zárult le, a számok változhatnak.
+      </div>`;
+  } else {
+    banner.innerHTML = '';
+  }
+}
+
 function setMonth(v) {
   selectedMonth = v;
   const snap = getMonthSnapshot();
   document.getElementById('headerMeta').textContent = snap.meta.honap + ' · frissítve: ' + snap.meta.frissitve;
-  const isHistory = selectedMonth !== 'current';
-  document.documentElement.classList.toggle('history-mode', isHistory);
-  const banner = document.getElementById('historyBanner');
-  if (banner) {
-    banner.innerHTML = isHistory ? `
-      <div class="history-banner">
-        📅 Korábbi hónapot nézel: <strong>${esc(snap.meta.honap)}</strong> — ez nem az aktuális állapot.
-      </div>` : '';
-  }
+  updateStatusBanner();
   refreshAllTabs();
 }
 
@@ -417,6 +437,7 @@ function init() {
     <div class="panel" id="tab-levon"></div>
   `;
   populateMonthSelect();
+  updateStatusBanner();
   [renderAktualis, renderTrend2026, renderTrendUI, renderLevon].forEach(fn => {
     try { fn(); } catch (e) {
       console.error('Render hiba (' + fn.name + '):', e);
@@ -1176,7 +1197,7 @@ function renderLevon() {
 // ── INLINE FALLBACK DATA ──────────────────────────────────────────────────────
 // Ha a fetch nem működik (pl. fájlból nyitják meg), ez az inline adat tölt be
 const INLINE_DATA = {
-  "meta": { "honap": "2026. augusztus", "frissitve": "2026. augusztus - részeredmény (folyamatban)" },
+  "meta": { "honap": "2026. augusztus", "frissitve": "2026. augusztus 13-ig (részeredmény, folyamatban)", "reszido": true, "reszido_datum": "2026. augusztus 13" },
   "levonasok": [],
   "uzletek": [
     {"nev":"Király utca","leltar_pct":99.53,"osszes":-46656,"gomboc":-14246,"ital":-3080,"desseg":0,"doboz":-24150,"snack":-1190,"ajandek":-3990,"selejt_pct":8.3,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1.5}],"doboz":[{"termek":"Doboz","mennyiseg":140},{"termek":"Papírzacskó","mennyiseg":10}],"ajandek":[{"termek":"Kockajáték épület","mennyiseg":1}]},"teruletvezeto":["Bratkovics Ádám"]},
