@@ -44,7 +44,13 @@
       },
       "teruletvezeto": [
         "Bratkovics Ádám"
-      ]
+      ],
+      "selejt_ft": 922083,
+      "ptg": {
+        "osszes": -567,
+        "fiscat": 0,
+        "cash": -567
+      }
     },
     {
       "nev": "Erzsébet krt. 30.",
@@ -67,6 +73,12 @@
             "mennyiseg": 3
           }
         ]
+      },
+      "selejt_ft": 1177292,
+      "ptg": {
+        "osszes": 1526,
+        "fiscat": 0,
+        "cash": 0
       }
     },
     {
@@ -96,7 +108,13 @@
       },
       "teruletvezeto": [
         "Hegedűs Milán"
-      ]
+      ],
+      "selejt_ft": 662217,
+      "ptg": {
+        "osszes": 96,
+        "fiscat": 0,
+        "cash": 96
+      }
     },
     {
       "nev": "Bazilika",
@@ -141,7 +159,13 @@
       },
       "teruletvezeto": [
         "Racsmány Ignác"
-      ]
+      ],
+      "selejt_ft": 1020807,
+      "ptg": {
+        "osszes": -677,
+        "fiscat": 1249,
+        "cash": -121
+      }
     },
     {
       "nev": "Széll Kálmán",
@@ -192,7 +216,13 @@
       },
       "teruletvezeto": [
         "Hegedűs Milán"
-      ]
+      ],
+      "selejt_ft": 673593,
+      "ptg": {
+        "osszes": 213,
+        "fiscat": 0,
+        "cash": 213
+      }
     },
     {
       "nev": "Corvin",
@@ -221,7 +251,13 @@
       },
       "teruletvezeto": [
         "Racsmány Ignác"
-      ]
+      ],
+      "selejt_ft": 578609,
+      "ptg": {
+        "osszes": 626,
+        "fiscat": 0,
+        "cash": 626
+      }
     },
     {
       "nev": "Károly krt",
@@ -244,6 +280,12 @@
             "mennyiseg": 1.5
           }
         ]
+      },
+      "selejt_ft": 385330,
+      "ptg": {
+        "osszes": 935,
+        "fiscat": 0,
+        "cash": 3042
       }
     },
     {
@@ -273,7 +315,13 @@
       },
       "teruletvezeto": [
         "Ullman Zsófia"
-      ]
+      ],
+      "selejt_ft": 483818,
+      "ptg": {
+        "osszes": 6541,
+        "fiscat": 0,
+        "cash": 359
+      }
     },
     {
       "nev": "Blaha",
@@ -326,7 +374,13 @@
       },
       "teruletvezeto": [
         "Anda Patrícia"
-      ]
+      ],
+      "selejt_ft": 405817,
+      "ptg": {
+        "osszes": 20,
+        "fiscat": 0,
+        "cash": -4
+      }
     },
     {
       "nev": "Oktogon",
@@ -381,7 +435,14 @@
       },
       "teruletvezeto": [
         "Ullman Zsófia"
-      ]
+      ],
+      "pasta": 14936,
+      "selejt_ft": 1006274,
+      "ptg": {
+        "osszes": 1834,
+        "fiscat": 0,
+        "cash": 1834
+      }
     },
     {
       "nev": "Wesselényi utca",
@@ -410,7 +471,14 @@
       },
       "teruletvezeto": [
         "Hegedűs Milán"
-      ]
+      ],
+      "pasta": 0,
+      "selejt_ft": 289371,
+      "ptg": {
+        "osszes": -12135,
+        "fiscat": 14589,
+        "cash": -244
+      }
     },
     {
       "nev": "Astoria",
@@ -447,7 +515,13 @@
       },
       "teruletvezeto": [
         "Anda Patrícia"
-      ]
+      ],
+      "selejt_ft": 634001,
+      "ptg": {
+        "osszes": 47,
+        "fiscat": 0,
+        "cash": 47
+      }
     },
     {
       "nev": "Gomba Móricz",
@@ -476,7 +550,14 @@
       },
       "teruletvezeto": [
         "Ullman Zsófia"
-      ]
+      ],
+      "pasta": -17182,
+      "selejt_ft": 1017054,
+      "ptg": {
+        "osszes": 987,
+        "fiscat": 0,
+        "cash": 987
+      }
     },
     {
       "nev": "Keleti",
@@ -505,7 +586,14 @@
       },
       "teruletvezeto": [
         "Hegedűs Milán"
-      ]
+      ],
+      "pasta": 650,
+      "selejt_ft": 638576,
+      "ptg": {
+        "osszes": 10395,
+        "fiscat": 0,
+        "cash": 10395
+      }
     },
     {
       "nev": "Fővám tér",
@@ -538,7 +626,13 @@
       },
       "teruletvezeto": [
         "Anda Patrícia"
-      ]
+      ],
+      "selejt_ft": 622039,
+      "ptg": {
+        "osszes": -2471,
+        "fiscat": 0,
+        "cash": 849
+      }
     },
     {
       "nev": "Ferenciek tere",
@@ -567,7 +661,13 @@
       },
       "teruletvezeto": [
         "Hegedűs Milán"
-      ]
+      ],
+      "selejt_ft": 364452,
+      "ptg": {
+        "osszes": 3936,
+        "fiscat": 0,
+        "cash": 3936
+      }
     },
     {
       "nev": "Jászai Mari tér",
@@ -596,7 +696,13 @@
       },
       "teruletvezeto": [
         "Racsmány Ignác"
-      ]
+      ],
+      "selejt_ft": 544818,
+      "ptg": {
+        "osszes": 0,
+        "fiscat": 3338,
+        "cash": -1054
+      }
     },
     {
       "nev": "Etele",
@@ -619,6 +725,12 @@
             "mennyiseg": 1
           }
         ]
+      },
+      "selejt_ft": 463571,
+      "ptg": {
+        "osszes": -211,
+        "fiscat": 0,
+        "cash": -211
       }
     },
     {
@@ -648,7 +760,14 @@
       },
       "teruletvezeto": [
         "Ullman Zsófia"
-      ]
+      ],
+      "pasta": 21174,
+      "selejt_ft": 434503,
+      "ptg": {
+        "osszes": 24,
+        "fiscat": 0,
+        "cash": 24
+      }
     },
     {
       "nev": "Bosnyák tér",
@@ -683,7 +802,13 @@
       },
       "teruletvezeto": [
         "Bratkovics Ádám"
-      ]
+      ],
+      "selejt_ft": 676585,
+      "ptg": {
+        "osszes": 1857,
+        "fiscat": 0,
+        "cash": 1857
+      }
     },
     {
       "nev": "Árkád",
@@ -706,6 +831,13 @@
             "mennyiseg": 6
           }
         ]
+      },
+      "pasta": 10487,
+      "selejt_ft": 708585,
+      "ptg": {
+        "osszes": 1688,
+        "fiscat": 0,
+        "cash": 1688
       }
     },
     {
@@ -739,7 +871,13 @@
       },
       "teruletvezeto": [
         "Anda Patrícia"
-      ]
+      ],
+      "selejt_ft": 413191,
+      "ptg": {
+        "osszes": 0,
+        "fiscat": 0,
+        "cash": -155
+      }
     },
     {
       "nev": "Törökvész",
@@ -768,7 +906,14 @@
       },
       "teruletvezeto": [
         "Racsmány Ignác"
-      ]
+      ],
+      "pasta": -2161,
+      "selejt_ft": 739059,
+      "ptg": {
+        "osszes": 4,
+        "fiscat": 0,
+        "cash": 4
+      }
     },
     {
       "nev": "GO Buda",
@@ -791,6 +936,13 @@
             "mennyiseg": 1
           }
         ]
+      },
+      "pasta": 535,
+      "selejt_ft": 730335,
+      "ptg": {
+        "osszes": 5642,
+        "fiscat": 4342,
+        "cash": 1300
       }
     },
     {
@@ -814,6 +966,13 @@
             "mennyiseg": 2
           }
         ]
+      },
+      "pasta": -14453,
+      "selejt_ft": 216315,
+      "ptg": {
+        "osszes": 0,
+        "fiscat": 0,
+        "cash": null
       }
     },
     {
@@ -837,6 +996,13 @@
             "mennyiseg": 2
           }
         ]
+      },
+      "pasta": 13257,
+      "selejt_ft": 214195,
+      "ptg": {
+        "osszes": 0,
+        "fiscat": 0,
+        "cash": null
       }
     },
     {
@@ -866,7 +1032,14 @@
       },
       "teruletvezeto": [
         "Anda Patrícia"
-      ]
+      ],
+      "pasta": -6785,
+      "selejt_ft": 110618,
+      "ptg": {
+        "osszes": -5543,
+        "fiscat": 0,
+        "cash": -5543
+      }
     },
     {
       "nev": "K1 Westend",
@@ -895,7 +1068,13 @@
       },
       "teruletvezeto": [
         "Racsmány Ignác"
-      ]
+      ],
+      "selejt_ft": 487132,
+      "ptg": {
+        "osszes": 281,
+        "fiscat": 0,
+        "cash": 0
+      }
     },
     {
       "nev": "BP PARK",
@@ -924,7 +1103,13 @@
       },
       "teruletvezeto": [
         "Ullman Zsófia"
-      ]
+      ],
+      "selejt_ft": 458615,
+      "ptg": {
+        "osszes": 0,
+        "fiscat": 2798,
+        "cash": -3947
+      }
     },
     {
       "nev": "PLÁZS",
@@ -948,6 +1133,12 @@
             "mennyiseg": 6
           }
         ]
+      },
+      "selejt_ft": 221289,
+      "ptg": {
+        "osszes": 0,
+        "fiscat": 0,
+        "cash": 2197
       }
     },
     {
@@ -972,6 +1163,12 @@
             "mennyiseg": 1
           }
         ]
+      },
+      "selejt_ft": 998708,
+      "ptg": {
+        "osszes": -592,
+        "fiscat": 0,
+        "cash": -592
       }
     },
     {
@@ -1015,7 +1212,14 @@
       },
       "teruletvezeto": [
         "Anda Patrícia"
-      ]
+      ],
+      "pasta": -10501,
+      "selejt_ft": 652879,
+      "ptg": {
+        "osszes": 6089,
+        "fiscat": 0,
+        "cash": 6089
+      }
     },
     {
       "nev": "Pécs",
@@ -1039,6 +1243,13 @@
             "mennyiseg": 6
           }
         ]
+      },
+      "pasta": 6476,
+      "selejt_ft": 483016,
+      "ptg": {
+        "osszes": 259,
+        "fiscat": 0,
+        "cash": 259
       }
     },
     {
@@ -1063,6 +1274,12 @@
             "mennyiseg": 5
           }
         ]
+      },
+      "selejt_ft": 322422,
+      "ptg": {
+        "osszes": 253,
+        "fiscat": 0,
+        "cash": 253
       }
     }
   ],
