@@ -278,15 +278,23 @@
   .modal-item { font-size: 12px; color: var(--text2); display: flex; justify-content: space-between; padding: 2px 0; }
   .modal-item-empty { font-size: 11px; color: var(--text3); font-style: italic; margin-top: 4px; }
 
-  /* TÁJÉKOZTATÓ JELLEGŰ ADATOK (Pasta / PTG-rendszer eltérés / Selejt Ft) */
+  /* TELJES ÉRTÉKŰ EGYÉB ADATOK (PTG-rendszer eltérés / Selejt Ft) */
+  .modal-extra-section {
+    margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border);
+  }
+  .modal-extra-row { font-size: 12px; color: var(--text2); display: flex; justify-content: space-between; padding: 3px 0; font-family: 'DM Mono', monospace; }
+  .modal-extra-row .neg { color: var(--red); }
+  .modal-extra-row .pos { color: var(--green); }
+  .modal-extra-sub { font-size: 11px; color: var(--text3); margin: -2px 0 4px 0; }
+
+  /* TÁJÉKOZTATÓ JELLEGŰ ADAT (Pasta) */
   .modal-info-section {
-    margin-top: 14px; padding: 10px 12px;
+    margin-top: 10px; padding: 10px 12px;
     background: var(--surface2); border: 1px dashed var(--border2); border-radius: var(--radius);
   }
   .modal-info-row { font-size: 12px; color: var(--text2); display: flex; justify-content: space-between; padding: 3px 0; font-family: 'DM Mono', monospace; }
   .modal-info-row .neg { color: var(--red); }
   .modal-info-row .pos { color: var(--green); }
-  .modal-info-sub { font-size: 11px; color: var(--text3); margin: -2px 0 4px 0; }
   .modal-info-note { font-size: 11px; color: var(--text3); font-style: italic; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border2); }
 </style>
 </head>
@@ -762,22 +770,21 @@ function openDetail(nev) {
     </div>`;
   }).join('');
 
-  const infoRows = [];
-  if (d.pasta !== undefined && d.pasta !== null) {
-    infoRows.push(`<div class="modal-info-row"><span>Pasta eltérés</span><span class="${d.pasta<0?'neg':'pos'}">${fmt(Math.round(d.pasta))} Ft</span></div>`);
-  }
+  const extraRows = [];
   if (d.ptg) {
     const fiscatTxt = (d.ptg.fiscat!=null) ? fmt(Math.round(d.ptg.fiscat))+' Ft' : '—';
     const cashTxt = (d.ptg.cash!=null) ? fmt(Math.round(d.ptg.cash))+' Ft' : '—';
-    infoRows.push(`<div class="modal-info-row"><span>PTG/rendszer eltérés</span><span class="${d.ptg.osszes<0?'neg':'pos'}">${fmt(Math.round(d.ptg.osszes))} Ft</span></div>
-      <div class="modal-info-sub">Fiscat: ${fiscatTxt} · Cash: ${cashTxt}</div>`);
+    extraRows.push(`<div class="modal-extra-row"><span>PTG/rendszer eltérés</span><span class="${d.ptg.osszes<0?'neg':'pos'}">${fmt(Math.round(d.ptg.osszes))} Ft</span></div>
+      <div class="modal-extra-sub">Fiscat: ${fiscatTxt} · Cash: ${cashTxt}</div>`);
   }
   if (d.selejt_ft !== undefined && d.selejt_ft !== null) {
-    infoRows.push(`<div class="modal-info-row"><span>Selejt</span><span>${fmtAbs(d.selejt_ft)} Ft</span></div>`);
+    extraRows.push(`<div class="modal-extra-row"><span>Selejt</span><span>${fmtAbs(d.selejt_ft)} Ft</span></div>`);
   }
-  const infoHtml = infoRows.length ? `
+  const extraHtml = extraRows.length ? `<div class="modal-extra-section">${extraRows.join('')}</div>` : '';
+
+  const infoHtml = (d.pasta !== undefined && d.pasta !== null) ? `
     <div class="modal-info-section">
-      ${infoRows.join('')}
+      <div class="modal-info-row"><span>Pasta eltérés</span><span class="${d.pasta<0?'neg':'pos'}">${fmt(Math.round(d.pasta))} Ft</span></div>
       <div class="modal-info-note">* Tájékoztató jellegű adat, nem része a hivatalos leltár-eltérésnek.</div>
     </div>` : '';
 
@@ -785,6 +792,7 @@ function openDetail(nev) {
     <div class="modal-title">${esc(d.nev)}${d.franchise?'<span class="franchise-label">F</span>':''}</div>
     <div class="modal-sub">Leltár: ${d.leltar_pct?d.leltar_pct.toFixed(2)+'%':'—'} · Összes eltérés: <span class="${d.osszes<0?'neg':'pos'}">${fmt(Math.round(d.osszes))} Ft</span> · Selejt: ${d.selejt_pct.toFixed(2)}%</div>
     ${catsHtml}
+    ${extraHtml}
     ${infoHtml}
   `;
   document.getElementById('detailModal').classList.add('active');
