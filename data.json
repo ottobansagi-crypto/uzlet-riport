@@ -175,6 +175,9 @@
         "osszes": -269,
         "fiscat": 0,
         "cash": -269
+      },
+      "megjegyzesek": {
+        "ital": "Sok egyéb termék is vegyesen"
       }
     },
     {
@@ -255,6 +258,9 @@
         "osszes": 5734,
         "fiscat": 1249,
         "cash": 4485
+      },
+      "megjegyzesek": {
+        "ital": "Pár termék vegyesen"
       }
     },
     {
@@ -294,6 +300,10 @@
         "osszes": -13597,
         "fiscat": 1349,
         "cash": 2834
+      },
+      "megjegyzesek": {
+        "ital": "Sok termék vegyesen",
+        "snack": "Vegyesen pár termék"
       }
     },
     {
@@ -435,6 +445,10 @@
         "osszes": 935,
         "fiscat": 0,
         "cash": 24301
+      },
+      "megjegyzesek": {
+        "ital": "Sok termék vegyesen, 1-2-3 darabok",
+        "snack": "Pár termék vegyesen"
       }
     },
     {
@@ -464,6 +478,9 @@
         "osszes": 6541,
         "fiscat": 0,
         "cash": -6719
+      },
+      "megjegyzesek": {
+        "snack": "Pár termék vegyesen"
       }
     },
     {
@@ -563,6 +580,9 @@
         "osszes": 15809,
         "fiscat": 4896,
         "cash": 10913
+      },
+      "megjegyzesek": {
+        "snack": "Sok termék vegyesen"
       }
     },
     {
@@ -749,6 +769,9 @@
         "osszes": -14876,
         "fiscat": 0,
         "cash": 1944
+      },
+      "megjegyzesek": {
+        "ital": "15 db termék vegyesen"
       }
     },
     {
@@ -794,6 +817,9 @@
         "osszes": 16855,
         "fiscat": 2498,
         "cash": 19353
+      },
+      "megjegyzesek": {
+        "ital": "17 db vegyes ital termék"
       }
     },
     {
@@ -1008,6 +1034,9 @@
         "osszes": 0,
         "fiscat": 0,
         "cash": 42
+      },
+      "megjegyzesek": {
+        "ital": "7 db ital termék többlet"
       }
     },
     {
@@ -1166,6 +1195,9 @@
         "osszes": 0,
         "fiscat": 0,
         "cash": null
+      },
+      "megjegyzesek": {
+        "snack": "6 db termék vegyesen"
       }
     },
     {
@@ -1336,6 +1368,9 @@
         "osszes": 15493,
         "fiscat": 16489,
         "cash": -996
+      },
+      "megjegyzesek": {
+        "ital": "Rengeteg termék, 3-4 db-onként vegyesen"
       }
     },
     {
@@ -1463,6 +1498,9 @@
         "osszes": 1564,
         "fiscat": 690,
         "cash": 874
+      },
+      "megjegyzesek": {
+        "ital": "Sok termék vegyesen"
       }
     }
   ],
@@ -3776,6 +3814,9 @@
             "osszes": -269,
             "fiscat": 0,
             "cash": -269
+          },
+          "megjegyzesek": {
+            "ital": "Sok egyéb termék is vegyesen"
           }
         },
         {
@@ -3856,6 +3897,9 @@
             "osszes": 5734,
             "fiscat": 1249,
             "cash": 4485
+          },
+          "megjegyzesek": {
+            "ital": "Pár termék vegyesen"
           }
         },
         {
@@ -3895,6 +3939,10 @@
             "osszes": -13597,
             "fiscat": 1349,
             "cash": 2834
+          },
+          "megjegyzesek": {
+            "ital": "Sok termék vegyesen",
+            "snack": "Vegyesen pár termék"
           }
         },
         {
@@ -4036,6 +4084,10 @@
             "osszes": 935,
             "fiscat": 0,
             "cash": 24301
+          },
+          "megjegyzesek": {
+            "ital": "Sok termék vegyesen, 1-2-3 darabok",
+            "snack": "Pár termék vegyesen"
           }
         },
         {
@@ -4065,6 +4117,9 @@
             "osszes": 6541,
             "fiscat": 0,
             "cash": -6719
+          },
+          "megjegyzesek": {
+            "snack": "Pár termék vegyesen"
           }
         },
         {
@@ -4164,6 +4219,9 @@
             "osszes": 15809,
             "fiscat": 4896,
             "cash": 10913
+          },
+          "megjegyzesek": {
+            "snack": "Sok termék vegyesen"
           }
         },
         {
@@ -4350,6 +4408,9 @@
             "osszes": -14876,
             "fiscat": 0,
             "cash": 1944
+          },
+          "megjegyzesek": {
+            "ital": "15 db termék vegyesen"
           }
         },
         {
@@ -4395,6 +4456,9 @@
             "osszes": 16855,
             "fiscat": 2498,
             "cash": 19353
+          },
+          "megjegyzesek": {
+            "ital": "17 db vegyes ital termék"
           }
         },
         {
@@ -4609,6 +4673,9 @@
             "osszes": 0,
             "fiscat": 0,
             "cash": 42
+          },
+          "megjegyzesek": {
+            "ital": "7 db ital termék többlet"
           }
         },
         {
@@ -4767,6 +4834,9 @@
             "osszes": 0,
             "fiscat": 0,
             "cash": null
+          },
+          "megjegyzesek": {
+            "snack": "6 db termék vegyesen"
           }
         },
         {
@@ -4937,6 +5007,9 @@
             "osszes": 15493,
             "fiscat": 16489,
             "cash": -996
+          },
+          "megjegyzesek": {
+            "ital": "Rengeteg termék, 3-4 db-onként vegyesen"
           }
         },
         {
@@ -5064,6 +5137,9 @@
             "osszes": 1564,
             "fiscat": 690,
             "cash": 874
+          },
+          "megjegyzesek": {
+            "ital": "Sok termék vegyesen"
           }
         }
       ]
