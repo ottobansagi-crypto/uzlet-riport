@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PizzaMe Termelő Riport</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    /* PizzaMe brand — azonos az üzlet riporttal */
+    --brand-red: #ec1b23;
+    --brand-red-dark: #bc1d23;
+    --pastel-yellow: #f6ca8e;
+
+    --bg: #fdf5f4;
+    --surface: #ffffff;
+    --surface2: #f8e9e8;
+    --border: rgba(0,0,0,0.08);
+    --border2: rgba(0,0,0,0.14);
+    --text: #1a1916;        /* elsődleges szöveg */
+    --text2: #6b6a65;       /* másodlagos — 5,42:1 fehéren */
+    --text3: #8a8a85;       /* halvány — 3,47:1 fehéren */
+    --red: var(--brand-red);
+    --green: #2d6a4f;
+    --amber: #8a5a12;
+    --amber-bg: #fdf0dc;
+    --radius: 10px;
+    --radius-lg: 14px;
+
+    /* Szekvenciális rampa a hőtérképhez — egy szín, világos→sötét.
+       Validálva: monoton világosság, ΔL ≥ 0,06, világos vég 2,12:1 fehéren, hue-szórás 10°. */
+    --seq-1: #f6989c; --seq-2: #f26066; --seq-3: #ec1b23; --seq-4: #c2161d; --seq-5: #8f1015;
+    --seq-0: #f8e9e8;  /* nincs adat */
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg); color: var(--text);
+    min-height: 100vh; font-size: 14px; line-height: 1.5;
+  }
+
+  /* ── FEJLÉC + SZŰRŐSOR ────────────────────────────────────────────────── */
+  .header {
+    background: var(--brand-red); color: #fff; padding: 14px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 3px solid var(--brand-red-dark);
+    flex-wrap: wrap; gap: 12px;
+  }
+  .header-left { display: flex; align-items: center; gap: 14px; }
+  .header-logo { width: 40px; height: 40px; flex-shrink: 0; }
+  .header h1 { font-size: 16px; font-weight: 600; letter-spacing: -0.3px; }
+  .header-meta { font-size: 12px; color: rgba(255,255,255,0.8); font-family: 'DM Mono', monospace; }
+  .header-right { display: flex; align-items: center; gap: 8px; }
+  .header-right label { font-size: 12px; color: rgba(255,255,255,0.8); }
+  .header-select {
+    padding: 7px 12px; font-size: 13px; font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.3); border-radius: 20px;
+    background: rgba(255,255,255,0.15); color: #fff; cursor: pointer;
+    font-family: inherit; outline: none; min-height: 34px;
+  }
+  .header-select:hover { background: rgba(255,255,255,0.28); }
+  .header-select:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .header-select option { color: var(--text); }
+
+  .main { max-width: 1120px; margin: 0 auto; padding: 24px 20px 48px; }
+
+  /* ── MENÜ ─────────────────────────────────────────────────────────────── */
+  .menu { display: flex; gap: 2px; margin-bottom: 20px; background: var(--surface2); padding: 3px; border-radius: var(--radius); width: fit-content; }
+  .menu button {
+    padding: 8px 18px; font-size: 13px; font-weight: 500; border: none;
+    background: none; color: var(--text2); cursor: pointer; border-radius: 8px; font-family: inherit;
+  }
+  .menu button.active { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-bottom: 2px solid var(--brand-red); }
+
+  /* ── KÁRTYA ───────────────────────────────────────────────────────────── */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; margin-bottom: 14px; }
+  .card-title { font-size: 12px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .card-sub { font-size: 12px; color: var(--text3); margin-bottom: 14px; line-height: 1.6; }
+
+  /* ── HERO + STAT CSEMPÉK ──────────────────────────────────────────────── */
+  .hero-card { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+  .hero { min-width: 200px; }
+  .hero-label { font-size: 12px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+  .hero-value { font-size: 52px; font-weight: 600; letter-spacing: -1.5px; line-height: 1.05; color: var(--text); }
+  .hero-unit { font-size: 13px; color: var(--text3); margin-top: 4px; }
+  .hero-spark { position: relative; margin-top: 12px; width: 220px; height: 40px; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; flex: 1; min-width: 300px; }
+  .tile { border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
+  .tile-label { font-size: 11px; color: var(--text2); margin-bottom: 4px; }
+  .tile-value { font-size: 20px; font-weight: 600; letter-spacing: -0.4px; }
+  .tile-delta { font-size: 12px; margin-top: 2px; color: var(--text3); }
+  .up { color: var(--green); } .down { color: var(--red); }
+
+  /* ── TÁBLÁZAT ─────────────────────────────────────────────────────────── */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; padding: 8px 10px; font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 1px solid var(--border2); white-space: nowrap; }
+  td { padding: 9px 10px; border-bottom: 1px solid var(--border); }
+  tr:last-child td { border-bottom: none; }
+  th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.num { font-family: 'DM Mono', monospace; font-size: 12px; }
+  tbody tr.current td { background: var(--surface2); font-weight: 600; }
+  .muted { color: var(--text3); }
+
+  /* ── DIAGRAM ──────────────────────────────────────────────────────────── */
+  .chart-box { position: relative; }
+  /* a canvas alapertelmezett 300×150-es merete ne logjon ki a Chart.js inicializalasa elott */
+  .hero-spark canvas, .chart-box canvas { max-width: 100%; max-height: 100%; }
+
+  /* ── HŐTÉRKÉP ─────────────────────────────────────────────────────────── */
+  .hm { overflow-x: auto; }
+  .hm table { border-collapse: separate; border-spacing: 2px; }
+  .hm th { border-bottom: none; padding: 4px 6px; text-align: center; }
+  .hm th.ev { text-align: left; }
+  .hm td { border-bottom: none; padding: 0; }
+  .hm .cell {
+    display: block; min-width: 54px; padding: 7px 4px; border-radius: 4px;
+    text-align: center; font-family: 'DM Mono', monospace; font-size: 11px;
+    font-variant-numeric: tabular-nums; cursor: default;
+  }
+  .hm .cell.empty { background: var(--seq-0); color: var(--text3); }
+  .hm .cell.cur { outline: 2px solid var(--text); outline-offset: 1px; }
+  .hm .rowlab { font-weight: 600; padding-right: 8px; white-space: nowrap; }
+  .hm .osszeg { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; padding-left: 8px; white-space: nowrap; }
+  .scale { display: flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 11px; color: var(--text3); }
+  .scale i { width: 30px; height: 12px; border-radius: 3px; display: block; }
+
+  /* ── SÁVOK (dagasztás bontás) ─────────────────────────────────────────── */
+  .bars { display: grid; gap: 8px; }
+  .bar-row { display: grid; grid-template-columns: 130px 1fr auto; align-items: center; gap: 12px; }
+  .bar-name { font-size: 13px; }
+  .bar-track { height: 18px; position: relative; }
+  .bar-fill { height: 18px; background: var(--brand-red); border-radius: 0 4px 4px 0; min-width: 2px; }
+  .bar-val { font-family: 'DM Mono', monospace; font-size: 12px; font-variant-numeric: tabular-nums; color: var(--text2); }
+
+  /* ── SÁVOK / JELZÉSEK ─────────────────────────────────────────────────── */
+  .note { border-radius: var(--radius); padding: 11px 14px; margin-bottom: 16px; font-size: 12.5px; line-height: 1.6; }
+  .note-warn { background: var(--amber-bg); color: var(--amber); border: 1px solid #d9a45c; }
+  .note-info { background: var(--surface2); color: var(--text2); border: 1px solid var(--border2); }
+  .note strong { font-weight: 600; }
+
+  .deflist { font-size: 12.5px; color: var(--text2); line-height: 1.75; }
+  .deflist b { color: var(--text); font-weight: 600; }
+  .deflist li { margin-left: 18px; }
+
+  #loading { text-align: center; padding: 60px; color: var(--text3); }
+  .chart-fallback { display: flex; align-items: center; justify-content: center; height: 100%; color: var(--text3); font-size: 12px; text-align: center; padding: 0 20px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <img src="logo.png" alt="PizzaMe" class="header-logo">
+    <div>
+      <h1>PizzaMe Termelő Riport</h1>
+      <span class="header-meta" id="headerMeta">betöltés…</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <label for="honapSelect">Hónap</label>
+    <select id="honapSelect" class="header-select" onchange="setHonap(this.value)"></select>
+  </div>
+</div>
+
+<div class="main" id="app"><div id="loading">Adatok betöltése…</div></div>
+
+<script>
+const JSON_URL = 'termelo-data.json';
+const HO_ROVID = ['jan','febr','márc','ápr','máj','jún','júl','aug','szept','okt','nov','dec'];
+const SEQ = ['#f6989c', '#f26066', '#ec1b23', '#c2161d', '#8f1015'];
+const SEQ_INK = ['#1a1916', '#1a1916', '#ffffff', '#ffffff', '#ffffff'];
+const ACCENT = '#ec1b23';
+const MUTED_MARK = '#d8d5d2';
+
+let DATA = null, betoltesiHiba = null, valasztott = null, charts = {};
+
+/* ── segédek ─────────────────────────────────────────────────────────────── */
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const sz = (v, d = 0) => v == null || isNaN(v) ? '–' : Number(v).toLocaleString('hu-HU', {minimumFractionDigits: d, maximumFractionDigits: d});
+const jel = (v, d = 1) => v == null || isNaN(v) ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '') + sz(Math.abs(v), d);
+const pct = (v, d = 1) => v == null || isNaN(v) ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '') + sz(Math.abs(v), d) + '%';
+const irany = v => v == null ? '' : v > 0 ? 'up' : v < 0 ? 'down' : '';
+
+const honapok = () => DATA.honapok;
+const aktualis = () => honapok().find(h => h.id === valasztott) || honapok()[honapok().length - 1];
+const keres = (ev, ho) => honapok().find(h => h.ev === ev && h.ho === ho) || null;
+const elozoHonap = h => keres(h.ho === 1 ? h.ev - 1 : h.ev, h.ho === 1 ? 12 : h.ho - 1);
+const elozoEv = h => keres(h.ev - 1, h.ho);
+const valtozas = (a, b) => (a == null || b == null || !b) ? null : (a - b) / b * 100;
+/** A munkalap saját mutatója: tárgyhó / bázis × 100. */
+const index = (a, b) => (a == null || b == null || !b) ? null : a / b * 100;
+const gombocPerDag = h => h.dagasztas.ossz ? h.gomboc / h.dagasztas.ossz : null;
+
+function evek() { return [...new Set(honapok().map(h => h.ev))].sort(); }
+function evOssz(ev) {
+  const hs = honapok().filter(h => h.ev === ev);
+  const sum = f => hs.reduce((s, h) => s + (f(h) || 0), 0);
+  return {
+    ev, db: hs.length,
+    gomboc: sum(h => h.gomboc), dag: sum(h => h.dagasztas.ossz),
+    liszt: sum(h => h.liszt), tk_liszt: sum(h => h.tk_liszt)
+  };
+}
+
+/* ── Chart.js burkoló ────────────────────────────────────────────────────── */
+function chart(id, cfg) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (typeof Chart === 'undefined') {
+    el.outerHTML = '<div class="chart-fallback">A diagram nem tölthető be. Az összes érték a hőtérképen és a táblázatokban is megtalálható.</div>';
+    return;
+  }
+  if (charts[id]) charts[id].destroy();
+  Chart.defaults.font.family = "'DM Sans', sans-serif";
+  Chart.defaults.color = '#6b6a65';
+  charts[id] = new Chart(el, cfg);
+}
+const RACS = { color: 'rgba(0,0,0,0.07)', lineWidth: 1 };
+
+/* ── fejléc ──────────────────────────────────────────────────────────────── */
+function feltoltSelect() {
+  document.getElementById('honapSelect').innerHTML = honapok().slice().reverse()
+    .map(h => `<option value="${esc(h.id)}"${h.id === valasztott ? ' selected' : ''}>${esc(h.cimke)}</option>`).join('');
+}
+function setHonap(id) { valasztott = id; rajzol(); }
+
+/* ── 1. HERO + STAT CSEMPÉK ──────────────────────────────────────────────── */
+function hero() {
+  const h = aktualis(), eh = elozoHonap(h), ee = elozoEv(h);
+  const dEh = valtozas(h.gomboc, eh && eh.gomboc), dEe = valtozas(h.gomboc, ee && ee.gomboc);
+  return `
+  <div class="card hero-card">
+    <div class="hero">
+      <div class="hero-label">Gombóc — ${esc(h.cimke)}</div>
+      <div class="hero-value">${sz(h.gomboc)}</div>
+      <div class="hero-unit">nagy gombóc egyenérték</div>
+      <div class="hero-spark"><canvas id="sparkChart"></canvas></div>
+    </div>
+    <div class="tiles">
+      <div class="tile">
+        <div class="tile-label">Előző hónap</div>
+        <div class="tile-value ${irany(dEh)}">${pct(dEh)}</div>
+        <div class="tile-delta">${eh ? esc(eh.cimke) + ' · ' + sz(eh.gomboc) : 'nincs bázis'}</div>
+      </div>
+      <div class="tile">
+        <div class="tile-label">Előző év azonos hónapja</div>
+        <div class="tile-value ${irany(dEe)}">${pct(dEe)}</div>
+        <div class="tile-delta">${ee ? esc(ee.cimke) + ' · ' + sz(ee.gomboc) : 'nincs bázis'}</div>
+      </div>
+      <div class="tile">
+        <div class="tile-label">Dagasztások</div>
+        <div class="tile-value">${sz(h.dagasztas.ossz, 1)}</div>
+        <div class="tile-delta">${sz(gombocPerDag(h), 0)} gombóc / dagasztás</div>
+      </div>
+      <div class="tile">
+        <div class="tile-label">Sima liszt</div>
+        <div class="tile-value">${sz(h.liszt)} kg</div>
+        <div class="tile-delta">${sz(h.liszt / h.gomboc, 3)} kg / gombóc</div>
+      </div>
+      <div class="tile">
+        <div class="tile-label">TK liszt</div>
+        <div class="tile-value">${sz(h.tk_liszt)} kg</div>
+        <div class="tile-delta">TK arány ${sz(h.tk_arany, 2)}%</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function sparkRajz() {
+  const lista = honapok(), i = lista.findIndex(h => h.id === aktualis().id);
+  const utolso12 = lista.slice(Math.max(0, i - 11), i + 1);
+  chart('sparkChart', {
+    type: 'line',
+    data: {
+      labels: utolso12.map(h => h.cimke),
+      datasets: [{
+        data: utolso12.map(h => h.gomboc),
+        borderColor: MUTED_MARK, borderWidth: 2, tension: 0.3, fill: false,
+        pointRadius: utolso12.map((_, k) => k === utolso12.length - 1 ? 4 : 0),
+        pointBackgroundColor: ACCENT, pointBorderColor: '#fff', pointBorderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: { x: { display: false }, y: { display: false } },
+      animation: false
+    }
+  });
+}
+
+/* ── 2. ÖSSZEHASONLÍTÁS ──────────────────────────────────────────────────── */
+function osszehasonlitas() {
+  const h = aktualis(), eh = elozoHonap(h), ee = elozoEv(h);
+  // arany: true = százalékban kifejezett mutató, ott a különbség százalékpont
+  const sorok = [
+    ['Gombóc', x => x.gomboc, 0, '', false],
+    ['Dagasztások', x => x.dagasztas.ossz, 1, '', false],
+    ['Gombóc / dagasztás', gombocPerDag, 0, '', null],
+    ['Sima liszt', x => x.liszt, 0, ' kg', false],
+    ['TK liszt', x => x.tk_liszt, 0, ' kg', false],
+    ['TK arány', x => x.tk_arany, 2, '%', true]
+  ];
+  const cella = (o, f, d, u) => o ? sz(f(o), d) + u : '<span class="muted">–</span>';
+  return `
+  <div class="card">
+    <div class="card-title">Összehasonlítás</div>
+    <div class="card-sub">Az „index” a munkalap saját mutatója: tárgyhó / előző év azonos hónapja × 100. Arányszámnál (TK arány) a különbség százalékpontban értendő, ott index nem értelmes.</div>
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th></th>
+        <th class="num">${esc(h.cimke)}</th>
+        <th class="num">${eh ? esc(eh.cimke) : 'előző hónap'}</th>
+        <th class="num">eltérés</th>
+        <th class="num">${ee ? esc(ee.cimke) : 'előző év'}</th>
+        <th class="num">eltérés</th>
+        <th class="num">index</th>
+      </tr></thead>
+      <tbody>
+        ${sorok.map(([nev, f, d, u, arany]) => {
+          const v = f(h), a = eh ? f(eh) : null, b = ee ? f(ee) : null;
+          // százalékos mutatónál a különbség százalékpont, nem relatív változás
+          const elt = (x, y) => x == null || y == null ? '<span class="muted">–</span>'
+            : arany ? `<span class="${irany(x - y)}">${jel(x - y, 2)} pp</span>`
+                    : `<span class="${irany(valtozas(x, y))}">${pct(valtozas(x, y))}</span>`;
+          return `<tr>
+            <td>${esc(nev)}</td>
+            <td class="num">${sz(v, d)}${u}</td>
+            <td class="num">${cella(eh, f, d, u)}</td>
+            <td class="num">${elt(v, a)}</td>
+            <td class="num">${cella(ee, f, d, u)}</td>
+            <td class="num">${elt(v, b)}</td>
+            <td class="num">${arany === false && b ? sz(index(v, b), 1) + '%' : '<span class="muted">–</span>'}</td>
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table></div>
+  </div>`;
+}
+
+/* ── 3. HAVI IDŐSOR ──────────────────────────────────────────────────────── */
+function idosorRajz() {
+  const lista = honapok(), h = aktualis();
+  const max = lista.reduce((a, b) => b.gomboc > a.gomboc ? b : a);
+  chart('idosorChart', {
+    type: 'line',
+    data: {
+      labels: lista.map(x => x.cimke),
+      datasets: [{
+        label: 'Gombóc',
+        data: lista.map(x => x.gomboc),
+        borderColor: ACCENT, borderWidth: 2, tension: 0.25,
+        borderJoinStyle: 'round', borderCapStyle: 'round',
+        fill: true, backgroundColor: 'rgba(236,27,35,0.10)',
+        pointRadius: lista.map(x => x.id === h.id || x.id === max.id ? 5 : 0),
+        pointHoverRadius: 6,
+        pointBackgroundColor: lista.map(x => x.id === h.id ? ACCENT : '#8f1015'),
+        pointBorderColor: '#fff', pointBorderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1916', padding: 10, displayColors: false,
+          callbacks: { label: c => sz(c.parsed.y) + ' gombóc' }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: {
+            autoSkip: false, maxRotation: 0, font: { size: 11 },
+            callback(v, i) { const x = lista[i]; return x && x.ho === 1 ? x.ev : (i === 0 ? x.ev : ''); }
+          }
+        },
+        y: {
+          beginAtZero: true, grid: RACS, border: { display: false },
+          ticks: { callback: v => sz(v), font: { size: 11 } }
+        }
+      }
+    }
+  });
+}
+
+function idosor() {
+  const lista = honapok(), h = aktualis();
+  const max = lista.reduce((a, b) => b.gomboc > a.gomboc ? b : a);
+  return `
+  <div class="card">
+    <div class="card-title">Havi gombóc gyártás — ${esc(lista[0].cimke)}-tól</div>
+    <div class="card-sub">
+      Kiemelve a kiválasztott hónap (${esc(h.cimke)}) és a csúcs (${esc(max.cimke)}, ${sz(max.gomboc)} gombóc).
+      Minden havi érték számszerűen is megtalálható az alábbi hőtérképen.
+    </div>
+    <div class="chart-box" style="height:300px"><canvas id="idosorChart"></canvas></div>
+  </div>`;
+}
+
+/* ── 4. HŐTÉRKÉP ─────────────────────────────────────────────────────────── */
+function hotelrkepFokozat(v, min, max) {
+  if (v == null) return -1;
+  const t = max === min ? 1 : (v - min) / (max - min);
+  return Math.min(SEQ.length - 1, Math.floor(t * SEQ.length));
+}
+function hoterkep() {
+  const lista = honapok(), h = aktualis();
+  const ertekek = lista.map(x => x.gomboc);
+  const min = Math.min(...ertekek), max = Math.max(...ertekek);
+  const sorok = evek().slice().reverse().map(ev => {
+    const cellak = HO_ROVID.map((_, m) => {
+      const x = keres(ev, m + 1);
+      if (!x) return '<td><span class="cell empty" title="nincs adat">·</span></td>';
+      const f = hotelrkepFokozat(x.gomboc, min, max);
+      return `<td><span class="cell${x.id === h.id ? ' cur' : ''}" style="background:${SEQ[f]};color:${SEQ_INK[f]}"
+        title="${esc(x.cimke)}: ${sz(x.gomboc)} gombóc">${sz(Math.round(x.gomboc / 100) / 10, 1)}e</span></td>`;
+    }).join('');
+    const o = evOssz(ev);
+    return `<tr><td class="rowlab">${ev}</td>${cellak}<td class="osszeg">${sz(Math.round(o.gomboc / 1000))}e</td></tr>`;
+  }).join('');
+  return `
+  <div class="card">
+    <div class="card-title">Havi gyártás év szerint</div>
+    <div class="card-sub">Ezredre kerekítve (pl. 41,4e = 41 370). A pontos érték az egérmutató alatt jelenik meg. 2018 január–áprilisra nincs havi adat.</div>
+    <div class="hm"><table>
+      <thead><tr><th class="ev">Év</th>${HO_ROVID.map(m => `<th>${m}</th>`).join('')}<th>össz</th></tr></thead>
+      <tbody>${sorok}</tbody>
+    </table></div>
+    <div class="scale">
+      <span>kevesebb</span>${SEQ.map(c => `<i style="background:${c}"></i>`).join('')}<span>több</span>
+      <span style="margin-left:10px">${sz(min)} – ${sz(max)} gombóc</span>
+    </div>
+  </div>`;
+}
+
+/* ── 5. ÉVES ÖSSZESÍTŐ ───────────────────────────────────────────────────── */
+function evesTabla() {
+  const h = aktualis();
+  const sorok = evek().slice().reverse().map(ev => {
+    const o = evOssz(ev);
+    // az előző évből csak azok a hónapok, amelyek ebben az évben is megvannak
+    const sajatHok = honapok().filter(x => x.ev === ev).map(x => x.ho);
+    const bazis = honapok().filter(x => x.ev === ev - 1 && sajatHok.includes(x.ho));
+    const bazisOssz = bazis.length === sajatHok.length
+      ? bazis.reduce((s2, x) => s2 + x.gomboc, 0) : null;
+    return `<tr class="${ev === h.ev ? 'current' : ''}">
+      <td>${ev}</td>
+      <td class="num">${o.db}</td>
+      <td class="num">${sz(o.gomboc)}</td>
+      <td class="num">${sz(Math.round(o.gomboc / o.db))}</td>
+      <td class="num">${sz(o.dag, 1)}</td>
+      <td class="num">${sz(o.liszt + o.tk_liszt)}</td>
+      <td class="num">${sz(o.tk_liszt / o.liszt * 100, 2)}%</td>
+      <td class="num ${bazisOssz ? irany(valtozas(o.gomboc, bazisOssz)) : 'muted'}">${
+        bazisOssz ? pct(valtozas(o.gomboc, bazisOssz)) : '–'}</td>
+    </tr>`;
+  }).join('');
+  return `
+  <div class="card">
+    <div class="card-title">Éves összesítő</div>
+    <div class="card-sub">¹ Az összevetés mindig az előző év <em>azonos hónapjaira</em> szűkítve történik, hogy a nem teljes 2018-as (május–december) és 2026-os (január–augusztus) év is értelmezhető legyen.</div>
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Év</th><th class="num">Hónap</th><th class="num">Gombóc</th><th class="num">Havi átlag</th>
+        <th class="num">Dagasztás</th><th class="num">Liszt (kg)</th><th class="num">TK arány</th><th class="num">Előző évhez¹</th>
+      </tr></thead>
+      <tbody>${sorok}</tbody>
+    </table></div>
+  </div>`;
+}
+
+/* ── 6. DAGASZTÁS BONTÁS ─────────────────────────────────────────────────── */
+function dagasztasBontas() {
+  const h = aktualis();
+  const tipusok = DATA.dagasztas_tipusok
+    .map(t => ({ nev: t.nev, ertek: h.dagasztas[t.kod] || 0 }))
+    .sort((a, b) => b.ertek - a.ertek);
+  const max = Math.max(...tipusok.map(t => t.ertek), 1);
+  return `
+  <div class="card">
+    <div class="card-title">Dagasztások típus szerint — ${esc(h.cimke)}</div>
+    <div class="card-sub">Összesen ${sz(h.dagasztas.ossz, 1)} dagasztás.</div>
+    <div class="bars">
+      ${tipusok.map(t => `
+        <div class="bar-row">
+          <div class="bar-name">${esc(t.nev)}</div>
+          <div class="bar-track"><div class="bar-fill" style="width:${(t.ertek / max * 100).toFixed(1)}%"></div></div>
+          <div class="bar-val">${sz(t.ertek, 2)}</div>
+        </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+/* ── 7. JELZÉSEK ÉS DEFINÍCIÓK ───────────────────────────────────────────── */
+function jelzesek() {
+  const h = aktualis();
+  const k = (DATA.meta.korszakok || []).find(x => x.kod === h.korszak);
+  let ki = '';
+  if (betoltesiHiba) {
+    ki += `<div class="note note-warn">⚠ A ${esc(JSON_URL)} betöltése nem sikerült (${esc(betoltesiHiba)}).</div>`;
+  }
+  if (k && k.kod !== 'normal') {
+    ki += `<div class="note note-warn"><strong>${esc(k.nev)}.</strong> ${esc(k.magyarazat)}</div>`;
+  }
+  return ki;
+}
+
+function definiciok() {
+  const m = DATA.meta;
+  return `
+  <div class="card">
+    <div class="card-title">Definíciók és adatforrás</div>
+    <div class="deflist">
+      <b>Gombóc:</b> ${esc(m.gomboc_definicio)}<br>
+      <b>TK arány:</b> ${esc(m.tk_arany_definicio)}<br>
+      <b>Adatsor:</b> ${esc(m.adat_kezdet_megjegyzes)}<br>
+      <b>Dagasztás:</b> 2024 január–szeptemberben egy dagasztás lényegesen kevesebb gombócot adott,
+      mint előtte és utána. A gombóc darabszámok végig összevethetők, a dagasztásra vetített mutatók viszont nem.<br>
+      <b>Forrás:</b> ${esc(m.forras)} · frissítve: ${esc(m.frissitve)}
+    </div>
+  </div>`;
+}
+
+/* ── összerakás ──────────────────────────────────────────────────────────── */
+function rajzol() {
+  const h = aktualis();
+  document.getElementById('headerMeta').textContent = h.cimke + ' · forrás frissítve: ' + DATA.meta.frissitve;
+  document.getElementById('app').innerHTML = `
+    ${jelzesek()}
+    <div class="menu">
+      <button class="active" type="button">Havi gombóc gyártás</button>
+    </div>
+    ${hero()}
+    ${osszehasonlitas()}
+    ${idosor()}
+    ${hoterkep()}
+    ${dagasztasBontas()}
+    ${evesTabla()}
+    ${definiciok()}
+  `;
+  sparkRajz();
+  idosorRajz();
+}
+
+async function betolt() {
+  try {
+    const r = await fetch(JSON_URL + '?v=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    DATA = await r.json();
+  } catch (e) {
+    betoltesiHiba = e.message;
+    document.getElementById('app').innerHTML =
+      `<div class="note note-warn">⚠ Az adatok betöltése nem sikerült (${esc(e.message)}). Frissíts rá az oldalra.</div>`;
+    return;
+  }
+  valasztott = DATA.honapok.some(h => h.id === DATA.meta.aktualis)
+    ? DATA.meta.aktualis : DATA.honapok[DATA.honapok.length - 1].id;
+  feltoltSelect();
+  rajzol();
+}
+
+betolt();
+</script>
+</body>
+</html>

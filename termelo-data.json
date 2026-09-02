@@ -1,0 +1,1957 @@
+{
+ "meta": {
+  "cim": "PizzaMe Termelő Riport",
+  "szekcio": "Havi gombóc gyártás",
+  "forras": "„Alapanyag fogyások” munkafüzet – dagasztások száma munkalap (Google Drive)",
+  "frissitve": "2026. augusztus (lezárt hónap)",
+  "aktualis": "2026-08",
+  "gomboc_definicio": "A Gombóc szám nagy gombóc egyenérték: a 32-es gombóc 0,5-tel, a 22-es 0,25-tel számít bele.",
+  "egyenertek": {
+   "nagy gombóc": 1,
+   "32-es gombóc": 0.5,
+   "22-es gombóc": 0.25
+  },
+  "tk_arany_definicio": "TK liszt / sima liszt (a munkalap definíciója szerint)",
+  "adat_kezdet_megjegyzes": "A havi adatsor 2018 májusától áll rendelkezésre; 2018 január–áprilisra nincs havi bontás.",
+  "korszakok": [
+   {
+    "kod": "normal",
+    "nev": "szokásos dagasztás"
+   },
+   {
+    "kod": "2024-elteros",
+    "nev": "eltérő dagasztás (2024. január–szeptember)",
+    "magyarazat": "Ebben a kilenc hónapban egy dagasztás lényegesen kevesebb gombócot adott (kb. 277 egység) a korábbi és a későbbi ~345 helyett. A gombóc darabszámok összevethetők, a dagasztásra vetített mutatók viszont nem."
+   }
+  ]
+ },
+ "dagasztas_tipusok": [
+  {
+   "kod": "nagy",
+   "nev": "Nagy gombóc",
+   "szin": "#ec1b23"
+  },
+  {
+   "kod": "tk",
+   "nev": "TK gombóc",
+   "szin": "#bc1d23"
+  },
+  {
+   "kod": "g32",
+   "nev": "32-es gombóc",
+   "szin": "#f6ca8e"
+  },
+  {
+   "kod": "tk32",
+   "nev": "TK 32-es",
+   "szin": "#d1b2d4"
+  },
+  {
+   "kod": "g22",
+   "nev": "22-es gombóc",
+   "szin": "#cbdddf"
+  }
+ ],
+ "honapok": [
+  {
+   "id": "2018-05",
+   "ev": 2018,
+   "ho": 5,
+   "cimke": "2018. május",
+   "gomboc": 24574,
+   "dagasztas": {
+    "nagy": 51.0,
+    "tk": 10.0,
+    "g32": 1.0,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 62.0
+   },
+   "liszt": 8125.0,
+   "tk_liszt": 1000.0,
+   "tk_arany": 12.31,
+   "korszak": "normal"
+  },
+  {
+   "id": "2018-06",
+   "ev": 2018,
+   "ho": 6,
+   "cimke": "2018. június",
+   "gomboc": 23733,
+   "dagasztas": {
+    "nagy": 48.0,
+    "tk": 10.0,
+    "g32": 0.0,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 58.0
+   },
+   "liszt": 7600.0,
+   "tk_liszt": 1000.0,
+   "tk_arany": 13.16,
+   "korszak": "normal"
+  },
+  {
+   "id": "2018-07",
+   "ev": 2018,
+   "ho": 7,
+   "cimke": "2018. július",
+   "gomboc": 26001,
+   "dagasztas": {
+    "nagy": 51.0,
+    "tk": 12.0,
+    "g32": 4.0,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 67.0
+   },
+   "liszt": 8393.0,
+   "tk_liszt": 1200.0,
+   "tk_arany": 14.3,
+   "korszak": "normal"
+  },
+  {
+   "id": "2018-08",
+   "ev": 2018,
+   "ho": 8,
+   "cimke": "2018. augusztus",
+   "gomboc": 26859,
+   "dagasztas": {
+    "nagy": 54.0,
+    "tk": 12.0,
+    "g32": 9.0,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 75.0
+   },
+   "liszt": 9218.0,
+   "tk_liszt": 1200.0,
+   "tk_arany": 13.02,
+   "korszak": "normal"
+  },
+  {
+   "id": "2018-09",
+   "ev": 2018,
+   "ho": 9,
+   "cimke": "2018. szeptember",
+   "gomboc": 26553,
+   "dagasztas": {
+    "nagy": 51.0,
+    "tk": 12.0,
+    "g32": 3.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 66.5
+   },
+   "liszt": 8430.0,
+   "tk_liszt": 1200.0,
+   "tk_arany": 14.23,
+   "korszak": "normal"
+  },
+  {
+   "id": "2018-10",
+   "ev": 2018,
+   "ho": 10,
+   "cimke": "2018. október",
+   "gomboc": 28650,
+   "dagasztas": {
+    "nagy": 56.0,
+    "tk": 13.0,
+    "g32": 1.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 70.5
+   },
+   "liszt": 8995.0,
+   "tk_liszt": 1300.0,
+   "tk_arany": 14.45,
+   "korszak": "normal"
+  },
+  {
+   "id": "2018-11",
+   "ev": 2018,
+   "ho": 11,
+   "cimke": "2018. november",
+   "gomboc": 28450,
+   "dagasztas": {
+    "nagy": 55.0,
+    "tk": 15.0,
+    "g32": 0.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 70.5
+   },
+   "liszt": 8850.0,
+   "tk_liszt": 1500.0,
+   "tk_arany": 16.95,
+   "korszak": "normal"
+  },
+  {
+   "id": "2018-12",
+   "ev": 2018,
+   "ho": 12,
+   "cimke": "2018. december",
+   "gomboc": 30027,
+   "dagasztas": {
+    "nagy": 57.0,
+    "tk": 14.0,
+    "g32": 3.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 74.5
+   },
+   "liszt": 9410.0,
+   "tk_liszt": 1400.0,
+   "tk_arany": 14.88,
+   "korszak": "normal"
+  },
+  {
+   "id": "2019-01",
+   "ev": 2019,
+   "ho": 1,
+   "cimke": "2019. január",
+   "gomboc": 24227,
+   "dagasztas": {
+    "nagy": 44.0,
+    "tk": 13.0,
+    "g32": 4.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 61.5
+   },
+   "liszt": 7421.0,
+   "tk_liszt": 1302.0,
+   "tk_arany": 17.54,
+   "korszak": "normal"
+  },
+  {
+   "id": "2019-02",
+   "ev": 2019,
+   "ho": 2,
+   "cimke": "2019. február",
+   "gomboc": 25513,
+   "dagasztas": {
+    "nagy": 46.0,
+    "tk": 14.0,
+    "g32": 3.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 63.5
+   },
+   "liszt": 7760.0,
+   "tk_liszt": 1400.0,
+   "tk_arany": 18.04,
+   "korszak": "normal"
+  },
+  {
+   "id": "2019-03",
+   "ev": 2019,
+   "ho": 3,
+   "cimke": "2019. március",
+   "gomboc": 30542,
+   "dagasztas": {
+    "nagy": 55.0,
+    "tk": 17.0,
+    "g32": 3.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 75.5
+   },
+   "liszt": 9231.0,
+   "tk_liszt": 1702.0,
+   "tk_arany": 18.44,
+   "korszak": "normal"
+  },
+  {
+   "id": "2019-04",
+   "ev": 2019,
+   "ho": 4,
+   "cimke": "2019. április",
+   "gomboc": 32894,
+   "dagasztas": {
+    "nagy": 62.0,
+    "tk": 16.5,
+    "g32": 2.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 81.0
+   },
+   "liszt": 10110.0,
+   "tk_liszt": 1650.0,
+   "tk_arany": 16.32,
+   "korszak": "normal"
+  },
+  {
+   "id": "2019-05",
+   "ev": 2019,
+   "ho": 5,
+   "cimke": "2019. május",
+   "gomboc": 32914,
+   "dagasztas": {
+    "nagy": 64.0,
+    "tk": 16.0,
+    "g32": 0.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 80.5
+   },
+   "liszt": 10240.0,
+   "tk_liszt": 1600.0,
+   "tk_arany": 15.63,
+   "korszak": "normal"
+  },
+  {
+   "id": "2019-06",
+   "ev": 2019,
+   "ho": 6,
+   "cimke": "2019. június",
+   "gomboc": 34309,
+   "dagasztas": {
+    "nagy": 65.0,
+    "tk": 19.0,
+    "g32": 0.0,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 84.0
+   },
+   "liszt": 10510.0,
+   "tk_liszt": 1900.0,
+   "tk_arany": 18.08,
+   "korszak": "normal"
+  },
+  {
+   "id": "2019-07",
+   "ev": 2019,
+   "ho": 7,
+   "cimke": "2019. július",
+   "gomboc": 35169,
+   "dagasztas": {
+    "nagy": 66.0,
+    "tk": 20.0,
+    "g32": 0.0,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 86.0
+   },
+   "liszt": 10700.0,
+   "tk_liszt": 2000.0,
+   "tk_arany": 18.69,
+   "korszak": "normal"
+  },
+  {
+   "id": "2019-08",
+   "ev": 2019,
+   "ho": 8,
+   "cimke": "2019. augusztus",
+   "gomboc": 39263,
+   "dagasztas": {
+    "nagy": 72.0,
+    "tk": 24.0,
+    "g32": 0.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 96.5
+   },
+   "liszt": 11760.0,
+   "tk_liszt": 2400.0,
+   "tk_arany": 20.41,
+   "korszak": "normal"
+  },
+  {
+   "id": "2019-09",
+   "ev": 2019,
+   "ho": 9,
+   "cimke": "2019. szeptember",
+   "gomboc": 35301,
+   "dagasztas": {
+    "nagy": 62.0,
+    "tk": 23.0,
+    "g32": 1.75,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 86.75
+   },
+   "liszt": 10276.0,
+   "tk_liszt": 2300.0,
+   "tk_arany": 22.38,
+   "korszak": "normal"
+  },
+  {
+   "id": "2019-10",
+   "ev": 2019,
+   "ho": 10,
+   "cimke": "2019. október",
+   "gomboc": 36308,
+   "dagasztas": {
+    "nagy": 59.5,
+    "tk": 28.0,
+    "g32": 1.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 89.0
+   },
+   "liszt": 10158.0,
+   "tk_liszt": 2800.0,
+   "tk_arany": 27.56,
+   "korszak": "normal"
+  },
+  {
+   "id": "2019-11",
+   "ev": 2019,
+   "ho": 11,
+   "cimke": "2019. november",
+   "gomboc": 36199,
+   "dagasztas": {
+    "nagy": 59.75,
+    "tk": 27.0,
+    "g32": 2.0,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 88.75
+   },
+   "liszt": 10193.0,
+   "tk_liszt": 2700.0,
+   "tk_arany": 26.49,
+   "korszak": "normal"
+  },
+  {
+   "id": "2019-12",
+   "ev": 2019,
+   "ho": 12,
+   "cimke": "2019. december",
+   "gomboc": 40872,
+   "dagasztas": {
+    "nagy": 62.25,
+    "tk": 31.5,
+    "g32": 3.75,
+    "tk32": null,
+    "g22": null,
+    "ossz": 97.5
+   },
+   "liszt": 11119.0,
+   "tk_liszt": 3150.0,
+   "tk_arany": 28.33,
+   "korszak": "normal"
+  },
+  {
+   "id": "2020-01",
+   "ev": 2020,
+   "ho": 1,
+   "cimke": "2020. január",
+   "gomboc": 34663,
+   "dagasztas": {
+    "nagy": 56.125,
+    "tk": 25.0,
+    "g32": 3.75,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 84.875
+   },
+   "liszt": 9700.0,
+   "tk_liszt": 2500.0,
+   "tk_arany": 25.77,
+   "korszak": "normal"
+  },
+  {
+   "id": "2020-02",
+   "ev": 2020,
+   "ho": 2,
+   "cimke": "2020. február",
+   "gomboc": 35890,
+   "dagasztas": {
+    "nagy": 56.125,
+    "tk": 28.0,
+    "g32": 3.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 87.625
+   },
+   "liszt": 9801.0,
+   "tk_liszt": 2800.0,
+   "tk_arany": 28.57,
+   "korszak": "normal"
+  },
+  {
+   "id": "2020-03",
+   "ev": 2020,
+   "ho": 3,
+   "cimke": "2020. március",
+   "gomboc": 17518,
+   "dagasztas": {
+    "nagy": 53.0,
+    "tk": 13.0,
+    "g32": 1.75,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 67.75
+   },
+   "liszt": 4758.0,
+   "tk_liszt": 1300.0,
+   "tk_arany": 27.32,
+   "korszak": "normal"
+  },
+  {
+   "id": "2020-04",
+   "ev": 2020,
+   "ho": 4,
+   "cimke": "2020. április",
+   "gomboc": 8780,
+   "dagasztas": {
+    "nagy": 14.0,
+    "tk": 4.0,
+    "g32": 10.5,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 28.5
+   },
+   "liszt": 2785.0,
+   "tk_liszt": 400.0,
+   "tk_arany": 14.36,
+   "korszak": "normal"
+  },
+  {
+   "id": "2020-05",
+   "ev": 2020,
+   "ho": 5,
+   "cimke": "2020. május",
+   "gomboc": 18930,
+   "dagasztas": {
+    "nagy": 23.75,
+    "tk": 9.25,
+    "g32": 13.25,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 46.25
+   },
+   "liszt": 5920.0,
+   "tk_liszt": 925.0,
+   "tk_arany": 15.63,
+   "korszak": "normal"
+  },
+  {
+   "id": "2020-06",
+   "ev": 2020,
+   "ho": 6,
+   "cimke": "2020. június",
+   "gomboc": 25178,
+   "dagasztas": {
+    "nagy": 36.25,
+    "tk": 16.5,
+    "g32": 9.25,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 62.0
+   },
+   "liszt": 7485.0,
+   "tk_liszt": 1650.0,
+   "tk_arany": 22.04,
+   "korszak": "normal"
+  },
+  {
+   "id": "2020-07",
+   "ev": 2020,
+   "ho": 7,
+   "cimke": "2020. július",
+   "gomboc": 31293,
+   "dagasztas": {
+    "nagy": 47.75,
+    "tk": 20.5,
+    "g32": 7.75,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 76.0
+   },
+   "liszt": 9145.0,
+   "tk_liszt": 2050.0,
+   "tk_arany": 22.42,
+   "korszak": "normal"
+  },
+  {
+   "id": "2020-08",
+   "ev": 2020,
+   "ho": 8,
+   "cimke": "2020. augusztus",
+   "gomboc": 35700,
+   "dagasztas": {
+    "nagy": 54.5,
+    "tk": 24.5,
+    "g32": 15.0,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 94.0
+   },
+   "liszt": 10275.0,
+   "tk_liszt": 2450.0,
+   "tk_arany": 23.84,
+   "korszak": "normal"
+  },
+  {
+   "id": "2020-09",
+   "ev": 2020,
+   "ho": 9,
+   "cimke": "2020. szeptember",
+   "gomboc": 27378,
+   "dagasztas": {
+    "nagy": 47.0,
+    "tk": 19.0,
+    "g32": 9.75,
+    "tk32": 0.0,
+    "g22": null,
+    "ossz": 75.75
+   },
+   "liszt": 8050.0,
+   "tk_liszt": 1900.0,
+   "tk_arany": 23.6,
+   "korszak": "normal"
+  },
+  {
+   "id": "2020-10",
+   "ev": 2020,
+   "ho": 10,
+   "cimke": "2020. október",
+   "gomboc": 32091,
+   "dagasztas": {
+    "nagy": 42.2,
+    "tk": 16.5,
+    "g32": 30.0,
+    "tk32": 1.0,
+    "g22": null,
+    "ossz": 89.7
+   },
+   "liszt": 9850.0,
+   "tk_liszt": 1700.0,
+   "tk_arany": 17.26,
+   "korszak": "normal"
+  },
+  {
+   "id": "2020-11",
+   "ev": 2020,
+   "ho": 11,
+   "cimke": "2020. november",
+   "gomboc": 19171,
+   "dagasztas": {
+    "nagy": 22.7,
+    "tk": 8.0,
+    "g32": 20.3,
+    "tk32": 2.5,
+    "g22": null,
+    "ossz": 53.5
+   },
+   "liszt": 5900.0,
+   "tk_liszt": 1050.0,
+   "tk_arany": 17.8,
+   "korszak": "normal"
+  },
+  {
+   "id": "2020-12",
+   "ev": 2020,
+   "ho": 12,
+   "cimke": "2020. december",
+   "gomboc": 20086,
+   "dagasztas": {
+    "nagy": 21.1,
+    "tk": 7.75,
+    "g32": 24.9,
+    "tk32": 2.25,
+    "g22": null,
+    "ossz": 56.0
+   },
+   "liszt": 6250.0,
+   "tk_liszt": 1000.0,
+   "tk_arany": 16.0,
+   "korszak": "normal"
+  },
+  {
+   "id": "2021-01",
+   "ev": 2021,
+   "ho": 1,
+   "cimke": "2021. január",
+   "gomboc": 17856,
+   "dagasztas": {
+    "nagy": 20.2,
+    "tk": 7.0,
+    "g32": 19.8,
+    "tk32": 2.5,
+    "g22": null,
+    "ossz": 49.5
+   },
+   "liszt": 5475.0,
+   "tk_liszt": 950.0,
+   "tk_arany": 17.35,
+   "korszak": "normal"
+  },
+  {
+   "id": "2021-02",
+   "ev": 2021,
+   "ho": 2,
+   "cimke": "2021. február",
+   "gomboc": 17926,
+   "dagasztas": {
+    "nagy": 16.1,
+    "tk": 6.0,
+    "g32": 25.9,
+    "tk32": 2.25,
+    "g22": null,
+    "ossz": 50.25
+   },
+   "liszt": 5815.0,
+   "tk_liszt": 875.0,
+   "tk_arany": 15.05,
+   "korszak": "normal"
+  },
+  {
+   "id": "2021-03",
+   "ev": 2021,
+   "ho": 3,
+   "cimke": "2021. március",
+   "gomboc": 25620,
+   "dagasztas": {
+    "nagy": 16.5,
+    "tk": 6.0,
+    "g32": 47.5,
+    "tk32": 2.75,
+    "g22": null,
+    "ossz": 72.75
+   },
+   "liszt": 8440.0,
+   "tk_liszt": 875.0,
+   "tk_arany": 10.37,
+   "korszak": "normal"
+  },
+  {
+   "id": "2021-04",
+   "ev": 2021,
+   "ho": 4,
+   "cimke": "2021. április",
+   "gomboc": 22416,
+   "dagasztas": {
+    "nagy": 19.7,
+    "tk": 6.75,
+    "g32": 33.3,
+    "tk32": 3.25,
+    "g22": null,
+    "ossz": 63.0
+   },
+   "liszt": 7125.0,
+   "tk_liszt": 1000.0,
+   "tk_arany": 14.04,
+   "korszak": "normal"
+  },
+  {
+   "id": "2021-05",
+   "ev": 2021,
+   "ho": 5,
+   "cimke": "2021. május",
+   "gomboc": 43115,
+   "dagasztas": {
+    "nagy": 33.9,
+    "tk": 11.75,
+    "g32": 73.1,
+    "tk32": 2.75,
+    "g22": null,
+    "ossz": 121.5
+   },
+   "liszt": 14100.0,
+   "tk_liszt": 1450.0,
+   "tk_arany": 10.28,
+   "korszak": "normal"
+  },
+  {
+   "id": "2021-06",
+   "ev": 2021,
+   "ho": 6,
+   "cimke": "2021. június",
+   "gomboc": 39989,
+   "dagasztas": {
+    "nagy": 58.4,
+    "tk": 19.25,
+    "g32": 30.6,
+    "tk32": 2.75,
+    "g22": null,
+    "ossz": 111.0
+   },
+   "liszt": 12225.0,
+   "tk_liszt": 2200.0,
+   "tk_arany": 18.0,
+   "korszak": "normal"
+  },
+  {
+   "id": "2021-07",
+   "ev": 2021,
+   "ho": 7,
+   "cimke": "2021. július",
+   "gomboc": 41157,
+   "dagasztas": {
+    "nagy": 57.0,
+    "tk": 22.0,
+    "g32": 31.0,
+    "tk32": 3.75,
+    "g22": null,
+    "ossz": 113.75
+   },
+   "liszt": 12288.0,
+   "tk_liszt": 2575.0,
+   "tk_arany": 20.96,
+   "korszak": "normal"
+  },
+  {
+   "id": "2021-08",
+   "ev": 2021,
+   "ho": 8,
+   "cimke": "2021. augusztus",
+   "gomboc": 44799,
+   "dagasztas": {
+    "nagy": 64.66,
+    "tk": 24.0,
+    "g32": 32.33,
+    "tk32": 3.0,
+    "g22": null,
+    "ossz": 123.99
+   },
+   "liszt": 13475.0,
+   "tk_liszt": 2700.0,
+   "tk_arany": 20.04,
+   "korszak": "normal"
+  },
+  {
+   "id": "2021-09",
+   "ev": 2021,
+   "ho": 9,
+   "cimke": "2021. szeptember",
+   "gomboc": 45920,
+   "dagasztas": {
+    "nagy": 63.2,
+    "tk": 25.85,
+    "g32": 35.0,
+    "tk32": 3.25,
+    "g22": null,
+    "ossz": 127.3
+   },
+   "liszt": 13730.0,
+   "tk_liszt": 2910.0,
+   "tk_arany": 21.19,
+   "korszak": "normal"
+  },
+  {
+   "id": "2021-10",
+   "ev": 2021,
+   "ho": 10,
+   "cimke": "2021. október",
+   "gomboc": 48808,
+   "dagasztas": {
+    "nagy": 65.0,
+    "tk": 26.37,
+    "g32": 40.15,
+    "tk32": 3.75,
+    "g22": null,
+    "ossz": 135.27
+   },
+   "liszt": 14650.0,
+   "tk_liszt": 3013.0,
+   "tk_arany": 20.57,
+   "korszak": "normal"
+  },
+  {
+   "id": "2021-11",
+   "ev": 2021,
+   "ho": 11,
+   "cimke": "2021. november",
+   "gomboc": 42348,
+   "dagasztas": {
+    "nagy": 56.0,
+    "tk": 22.0,
+    "g32": 36.0,
+    "tk32": 3.25,
+    "g22": null,
+    "ossz": 117.25
+   },
+   "liszt": 13394.0,
+   "tk_liszt": 1894.0,
+   "tk_arany": 14.14,
+   "korszak": "normal"
+  },
+  {
+   "id": "2021-12",
+   "ev": 2021,
+   "ho": 12,
+   "cimke": "2021. december",
+   "gomboc": 47970,
+   "dagasztas": {
+    "nagy": 60.8,
+    "tk": 24.75,
+    "g32": 44.2,
+    "tk32": 3.75,
+    "g22": null,
+    "ossz": 133.5
+   },
+   "liszt": 15263.0,
+   "tk_liszt": 2137.0,
+   "tk_arany": 14.0,
+   "korszak": "normal"
+  },
+  {
+   "id": "2022-01",
+   "ev": 2022,
+   "ho": 1,
+   "cimke": "2022. január",
+   "gomboc": 38412,
+   "dagasztas": {
+    "nagy": 44.2,
+    "tk": 17.25,
+    "g32": 41.8,
+    "tk32": 3.5,
+    "g22": null,
+    "ossz": 106.75
+   },
+   "liszt": 12306.0,
+   "tk_liszt": 1556.0,
+   "tk_arany": 12.64,
+   "korszak": "normal"
+  },
+  {
+   "id": "2022-02",
+   "ev": 2022,
+   "ho": 2,
+   "cimke": "2022. február",
+   "gomboc": 42618,
+   "dagasztas": {
+    "nagy": 50.6,
+    "tk": 19.75,
+    "g32": 42.4,
+    "tk32": 3.75,
+    "g22": null,
+    "ossz": 116.5
+   },
+   "liszt": 13388.0,
+   "tk_liszt": 1763.0,
+   "tk_arany": 13.17,
+   "korszak": "normal"
+  },
+  {
+   "id": "2022-03",
+   "ev": 2022,
+   "ho": 3,
+   "cimke": "2022. március",
+   "gomboc": 46158,
+   "dagasztas": {
+    "nagy": 60.13,
+    "tk": 23.6,
+    "g32": 38.4,
+    "tk32": 3.48,
+    "g22": null,
+    "ossz": 125.61
+   },
+   "liszt": 14350.0,
+   "tk_liszt": 2035.0,
+   "tk_arany": 14.18,
+   "korszak": "normal"
+  },
+  {
+   "id": "2022-04",
+   "ev": 2022,
+   "ho": 4,
+   "cimke": "2022. április",
+   "gomboc": 49890,
+   "dagasztas": {
+    "nagy": 68.6,
+    "tk": 27.49,
+    "g32": 38.6,
+    "tk32": 3.71,
+    "g22": null,
+    "ossz": 138.4
+   },
+   "liszt": 15741.0,
+   "tk_liszt": 2340.0,
+   "tk_arany": 14.87,
+   "korszak": "normal"
+  },
+  {
+   "id": "2022-05",
+   "ev": 2022,
+   "ho": 5,
+   "cimke": "2022. május",
+   "gomboc": 51306,
+   "dagasztas": {
+    "nagy": 73.7,
+    "tk": 28.75,
+    "g32": 36.3,
+    "tk32": 3.46,
+    "g22": null,
+    "ossz": 142.21
+   },
+   "liszt": 16166.0,
+   "tk_liszt": 2416.0,
+   "tk_arany": 14.94,
+   "korszak": "normal"
+  },
+  {
+   "id": "2022-06",
+   "ev": 2022,
+   "ho": 6,
+   "cimke": "2022. június",
+   "gomboc": 55488,
+   "dagasztas": {
+    "nagy": 85.6,
+    "tk": 31.66,
+    "g32": 33.7,
+    "tk32": 3.2175,
+    "g22": null,
+    "ossz": 154.1775
+   },
+   "liszt": 17460.0,
+   "tk_liszt": 2541.0,
+   "tk_arany": 14.55,
+   "korszak": "normal"
+  },
+  {
+   "id": "2022-07",
+   "ev": 2022,
+   "ho": 7,
+   "cimke": "2022. július",
+   "gomboc": 58878,
+   "dagasztas": {
+    "nagy": 90.0,
+    "tk": 34.4,
+    "g32": 35.0,
+    "tk32": 3.46,
+    "g22": null,
+    "ossz": 162.86
+   },
+   "liszt": 18465.0,
+   "tk_liszt": 2840.0,
+   "tk_arany": 15.38,
+   "korszak": "normal"
+  },
+  {
+   "id": "2022-08",
+   "ev": 2022,
+   "ho": 8,
+   "cimke": "2022. augusztus",
+   "gomboc": 59449,
+   "dagasztas": {
+    "nagy": 95.4,
+    "tk": 33.13,
+    "g32": 34.6,
+    "tk32": 2.72,
+    "g22": null,
+    "ossz": 165.85
+   },
+   "liszt": 18942.0,
+   "tk_liszt": 2690.0,
+   "tk_arany": 14.2,
+   "korszak": "normal"
+  },
+  {
+   "id": "2022-09",
+   "ev": 2022,
+   "ho": 9,
+   "cimke": "2022. szeptember",
+   "gomboc": 57954,
+   "dagasztas": {
+    "nagy": 97.7,
+    "tk": 25.178,
+    "g32": 37.3,
+    "tk32": 2.72,
+    "g22": null,
+    "ossz": 162.898
+   },
+   "liszt": 18698.0,
+   "tk_liszt": 2092.0,
+   "tk_arany": 11.19,
+   "korszak": "normal"
+  },
+  {
+   "id": "2022-10",
+   "ev": 2022,
+   "ho": 10,
+   "cimke": "2022. október",
+   "gomboc": 60054,
+   "dagasztas": {
+    "nagy": 89.6,
+    "tk": 31.8,
+    "g32": 42.4,
+    "tk32": 2.7,
+    "g22": null,
+    "ossz": 166.5
+   },
+   "liszt": 19092.0,
+   "tk_liszt": 2592.0,
+   "tk_arany": 13.58,
+   "korszak": "normal"
+  },
+  {
+   "id": "2022-11",
+   "ev": 2022,
+   "ho": 11,
+   "cimke": "2022. november",
+   "gomboc": 52638,
+   "dagasztas": {
+    "nagy": 83.0,
+    "tk": 31.4,
+    "g32": 29.0,
+    "tk32": 2.4,
+    "g22": null,
+    "ossz": 145.8
+   },
+   "liszt": 16543.0,
+   "tk_liszt": 2542.0,
+   "tk_arany": 15.37,
+   "korszak": "normal"
+  },
+  {
+   "id": "2022-12",
+   "ev": 2022,
+   "ho": 12,
+   "cimke": "2022. december",
+   "gomboc": 65430,
+   "dagasztas": {
+    "nagy": 101.9,
+    "tk": 37.7,
+    "g32": 39.1,
+    "tk32": 2.97,
+    "g22": null,
+    "ossz": 181.67
+   },
+   "liszt": 20676.0,
+   "tk_liszt": 3050.0,
+   "tk_arany": 14.75,
+   "korszak": "normal"
+  },
+  {
+   "id": "2023-01",
+   "ev": 2023,
+   "ho": 1,
+   "cimke": "2023. január",
+   "gomboc": 53202,
+   "dagasztas": {
+    "nagy": 81.4,
+    "tk": 31.0,
+    "g32": 32.6,
+    "tk32": 2.22,
+    "g22": null,
+    "ossz": 147.22
+   },
+   "liszt": 16743.0,
+   "tk_liszt": 2493.0,
+   "tk_arany": 14.89,
+   "korszak": "normal"
+  },
+  {
+   "id": "2023-02",
+   "ev": 2023,
+   "ho": 2,
+   "cimke": "2023. február",
+   "gomboc": 51312,
+   "dagasztas": {
+    "nagy": 76.6,
+    "tk": 28.7,
+    "g32": 34.4,
+    "tk32": 2.47,
+    "g22": null,
+    "ossz": 142.17
+   },
+   "liszt": 16218.0,
+   "tk_liszt": 2342.0,
+   "tk_arany": 14.44,
+   "korszak": "normal"
+  },
+  {
+   "id": "2023-03",
+   "ev": 2023,
+   "ho": 3,
+   "cimke": "2023. március",
+   "gomboc": 60132,
+   "dagasztas": {
+    "nagy": 93.0,
+    "tk": 35.4,
+    "g32": 35.0,
+    "tk32": 2.47,
+    "g22": null,
+    "ossz": 165.87
+   },
+   "liszt": 18842.0,
+   "tk_liszt": 2842.0,
+   "tk_arany": 15.08,
+   "korszak": "normal"
+  },
+  {
+   "id": "2023-04",
+   "ev": 2023,
+   "ho": 4,
+   "cimke": "2023. április",
+   "gomboc": 61320,
+   "dagasztas": {
+    "nagy": 91.6,
+    "tk": 36.9,
+    "g32": 36.4,
+    "tk32": 2.9,
+    "g22": null,
+    "ossz": 167.8
+   },
+   "liszt": 18991.0,
+   "tk_liszt": 2991.0,
+   "tk_arany": 15.75,
+   "korszak": "normal"
+  },
+  {
+   "id": "2023-05",
+   "ev": 2023,
+   "ho": 5,
+   "cimke": "2023. május",
+   "gomboc": 72180,
+   "dagasztas": {
+    "nagy": 100.0,
+    "tk": 33.17,
+    "g32": 63.0,
+    "tk32": 2.72,
+    "g22": null,
+    "ossz": 198.89
+   },
+   "liszt": 23067.0,
+   "tk_liszt": 2692.0,
+   "tk_arany": 11.67,
+   "korszak": "normal"
+  },
+  {
+   "id": "2023-06",
+   "ev": 2023,
+   "ho": 6,
+   "cimke": "2023. június",
+   "gomboc": 62004,
+   "dagasztas": {
+    "nagy": 109.0,
+    "tk": 27.0,
+    "g32": 34.0,
+    "tk32": 2.2275,
+    "g22": null,
+    "ossz": 172.2275
+   },
+   "liszt": 20068.0,
+   "tk_liszt": 2194.0,
+   "tk_arany": 10.93,
+   "korszak": "normal"
+  },
+  {
+   "id": "2023-07",
+   "ev": 2023,
+   "ho": 7,
+   "cimke": "2023. július",
+   "gomboc": 59838,
+   "dagasztas": {
+    "nagy": 98.0,
+    "tk": 33.4,
+    "g32": 32.0,
+    "tk32": 2.47,
+    "g22": null,
+    "ossz": 165.87
+   },
+   "liszt": 18942.0,
+   "tk_liszt": 2693.0,
+   "tk_arany": 14.22,
+   "korszak": "normal"
+  },
+  {
+   "id": "2023-08",
+   "ev": 2023,
+   "ho": 8,
+   "cimke": "2023. augusztus",
+   "gomboc": 60258,
+   "dagasztas": {
+    "nagy": 97.0,
+    "tk": 40.5,
+    "g32": 30.0,
+    "tk32": 3.0,
+    "g22": null,
+    "ossz": 170.5
+   },
+   "liszt": 18051.0,
+   "tk_liszt": 3480.0,
+   "tk_arany": 19.28,
+   "korszak": "normal"
+  },
+  {
+   "id": "2023-09",
+   "ev": 2023,
+   "ho": 9,
+   "cimke": "2023. szeptember",
+   "gomboc": 53922,
+   "dagasztas": {
+    "nagy": 85.0,
+    "tk": 34.5,
+    "g32": 31.0,
+    "tk32": 3.0,
+    "g22": null,
+    "ossz": 153.5
+   },
+   "liszt": 16375.0,
+   "tk_liszt": 3000.0,
+   "tk_arany": 18.32,
+   "korszak": "normal"
+  },
+  {
+   "id": "2023-10",
+   "ev": 2023,
+   "ho": 10,
+   "cimke": "2023. október",
+   "gomboc": 49155,
+   "dagasztas": {
+    "nagy": 76.0,
+    "tk": 34.0,
+    "g32": 28.0,
+    "tk32": 3.4,
+    "g22": null,
+    "ossz": 141.4
+   },
+   "liszt": 14870.0,
+   "tk_liszt": 2992.0,
+   "tk_arany": 20.12,
+   "korszak": "normal"
+  },
+  {
+   "id": "2023-11",
+   "ev": 2023,
+   "ho": 11,
+   "cimke": "2023. november",
+   "gomboc": 46896,
+   "dagasztas": {
+    "nagy": 70.0,
+    "tk": 31.0,
+    "g32": 29.0,
+    "tk32": 3.0,
+    "g22": null,
+    "ossz": 133.0
+   },
+   "liszt": 14075.0,
+   "tk_liszt": 2720.0,
+   "tk_arany": 19.33,
+   "korszak": "normal"
+  },
+  {
+   "id": "2023-12",
+   "ev": 2023,
+   "ho": 12,
+   "cimke": "2023. december",
+   "gomboc": 54588,
+   "dagasztas": {
+    "nagy": 88.1,
+    "tk": 28.42,
+    "g32": 36.5,
+    "tk32": 2.89,
+    "g22": null,
+    "ossz": 155.91
+   },
+   "liszt": 17140.0,
+   "tk_liszt": 2505.0,
+   "tk_arany": 14.61,
+   "korszak": "normal"
+  },
+  {
+   "id": "2024-01",
+   "ev": 2024,
+   "ho": 1,
+   "cimke": "2024. január",
+   "gomboc": 41964,
+   "dagasztas": {
+    "nagy": 79.85,
+    "tk": 26.04,
+    "g32": 41.1,
+    "tk32": 3.96,
+    "g22": null,
+    "ossz": 150.95
+   },
+   "liszt": 13295.0,
+   "tk_liszt": 1950.0,
+   "tk_arany": 14.67,
+   "korszak": "2024-elteros"
+  },
+  {
+   "id": "2024-02",
+   "ev": 2024,
+   "ho": 2,
+   "cimke": "2024. február",
+   "gomboc": 42534,
+   "dagasztas": {
+    "nagy": 89.0,
+    "tk": 29.6,
+    "g32": 31.0,
+    "tk32": 2.9,
+    "g22": null,
+    "ossz": 152.5
+   },
+   "liszt": 13300.0,
+   "tk_liszt": 2112.0,
+   "tk_arany": 15.88,
+   "korszak": "2024-elteros"
+  },
+  {
+   "id": "2024-03",
+   "ev": 2024,
+   "ho": 3,
+   "cimke": "2024. március",
+   "gomboc": 51006,
+   "dagasztas": {
+    "nagy": 97.5,
+    "tk": 32.68,
+    "g32": 49.5,
+    "tk32": 4.32,
+    "g22": null,
+    "ossz": 184.0
+   },
+   "liszt": 16180.0,
+   "tk_liszt": 2405.0,
+   "tk_arany": 14.86,
+   "korszak": "2024-elteros"
+  },
+  {
+   "id": "2024-04",
+   "ev": 2024,
+   "ho": 4,
+   "cimke": "2024. április",
+   "gomboc": 46068,
+   "dagasztas": {
+    "nagy": 97.67,
+    "tk": 31.4,
+    "g32": 36.3,
+    "tk32": 3.56,
+    "g22": null,
+    "ossz": 168.93
+   },
+   "liszt": 14798.0,
+   "tk_liszt": 2272.0,
+   "tk_arany": 15.35,
+   "korszak": "2024-elteros"
+  },
+  {
+   "id": "2024-05",
+   "ev": 2024,
+   "ho": 5,
+   "cimke": "2024. május",
+   "gomboc": 52116,
+   "dagasztas": {
+    "nagy": 112.5,
+    "tk": 35.4,
+    "g32": 35.0,
+    "tk32": 3.6,
+    "g22": null,
+    "ossz": 186.5
+   },
+   "liszt": 16310.0,
+   "tk_liszt": 2535.0,
+   "tk_arany": 15.54,
+   "korszak": "2024-elteros"
+  },
+  {
+   "id": "2024-06",
+   "ev": 2024,
+   "ho": 6,
+   "cimke": "2024. június",
+   "gomboc": 56247,
+   "dagasztas": {
+    "nagy": 110.5,
+    "tk": 33.2,
+    "g32": 55.0,
+    "tk32": 4.2,
+    "g22": null,
+    "ossz": 202.9
+   },
+   "liszt": 18048.0,
+   "tk_liszt": 2434.0,
+   "tk_arany": 13.49,
+   "korszak": "2024-elteros"
+  },
+  {
+   "id": "2024-07",
+   "ev": 2024,
+   "ho": 7,
+   "cimke": "2024. július",
+   "gomboc": 53538,
+   "dagasztas": {
+    "nagy": 117.0,
+    "tk": 34.2,
+    "g32": 39.0,
+    "tk32": 3.6,
+    "g22": null,
+    "ossz": 193.8
+   },
+   "liszt": 17114.0,
+   "tk_liszt": 2460.0,
+   "tk_arany": 14.37,
+   "korszak": "2024-elteros"
+  },
+  {
+   "id": "2024-08",
+   "ev": 2024,
+   "ho": 8,
+   "cimke": "2024. augusztus",
+   "gomboc": 55416,
+   "dagasztas": {
+    "nagy": 120.0,
+    "tk": 33.4,
+    "g32": 42.0,
+    "tk32": 3.4,
+    "g22": null,
+    "ossz": 198.8
+   },
+   "liszt": 17672.0,
+   "tk_liszt": 2392.0,
+   "tk_arany": 13.54,
+   "korszak": "2024-elteros"
+  },
+  {
+   "id": "2024-09",
+   "ev": 2024,
+   "ho": 9,
+   "cimke": "2024. szeptember",
+   "gomboc": 48798,
+   "dagasztas": {
+    "nagy": 102.44,
+    "tk": 29.74,
+    "g32": 39.7,
+    "tk32": 3.6,
+    "g22": null,
+    "ossz": 175.48
+   },
+   "liszt": 15551.0,
+   "tk_liszt": 2167.0,
+   "tk_arany": 13.93,
+   "korszak": "2024-elteros"
+  },
+  {
+   "id": "2024-10",
+   "ev": 2024,
+   "ho": 10,
+   "cimke": "2024. október",
+   "gomboc": 49872,
+   "dagasztas": {
+    "nagy": 83.0,
+    "tk": 26.5,
+    "g32": 33.0,
+    "tk32": 2.5,
+    "g22": null,
+    "ossz": 145.0
+   },
+   "liszt": 15950.0,
+   "tk_liszt": 2320.0,
+   "tk_arany": 14.55,
+   "korszak": "normal"
+  },
+  {
+   "id": "2024-11",
+   "ev": 2024,
+   "ho": 11,
+   "cimke": "2024. november",
+   "gomboc": 43650,
+   "dagasztas": {
+    "nagy": 71.0,
+    "tk": 23.2,
+    "g32": 30.0,
+    "tk32": 2.8,
+    "g22": null,
+    "ossz": 127.0
+   },
+   "liszt": 13925.0,
+   "tk_liszt": 2080.0,
+   "tk_arany": 14.94,
+   "korszak": "normal"
+  },
+  {
+   "id": "2024-12",
+   "ev": 2024,
+   "ho": 12,
+   "cimke": "2024. december",
+   "gomboc": 53086,
+   "dagasztas": {
+    "nagy": 88.375,
+    "tk": 27.9,
+    "g32": 34.0,
+    "tk32": 2.6,
+    "g22": null,
+    "ossz": 152.875
+   },
+   "liszt": 17076.0,
+   "tk_liszt": 2440.0,
+   "tk_arany": 14.29,
+   "korszak": "normal"
+  },
+  {
+   "id": "2025-01",
+   "ev": 2025,
+   "ho": 1,
+   "cimke": "2025. január",
+   "gomboc": 38928,
+   "dagasztas": {
+    "nagy": 59.0,
+    "tk": 19.2,
+    "g32": 32.5,
+    "tk32": 2.8,
+    "g22": null,
+    "ossz": 113.5
+   },
+   "liszt": 12538.0,
+   "tk_liszt": 1760.0,
+   "tk_arany": 14.04,
+   "korszak": "normal"
+  },
+  {
+   "id": "2025-02",
+   "ev": 2025,
+   "ho": 2,
+   "cimke": "2025. február",
+   "gomboc": 35550,
+   "dagasztas": {
+    "nagy": 58.0,
+    "tk": 19.4,
+    "g32": 25.0,
+    "tk32": 2.6,
+    "g22": null,
+    "ossz": 105.0
+   },
+   "liszt": 11475.0,
+   "tk_liszt": 1760.0,
+   "tk_arany": 15.34,
+   "korszak": "normal"
+  },
+  {
+   "id": "2025-03",
+   "ev": 2025,
+   "ho": 3,
+   "cimke": "2025. március",
+   "gomboc": 38464,
+   "dagasztas": {
+    "nagy": 63.0,
+    "tk": 21.4,
+    "g32": 26.0,
+    "tk32": 2.54,
+    "g22": null,
+    "ossz": 112.94
+   },
+   "liszt": 12325.0,
+   "tk_liszt": 1920.0,
+   "tk_arany": 15.58,
+   "korszak": "normal"
+  },
+  {
+   "id": "2025-04",
+   "ev": 2025,
+   "ho": 4,
+   "cimke": "2025. április",
+   "gomboc": 45598,
+   "dagasztas": {
+    "nagy": 76.0,
+    "tk": 24.5,
+    "g32": 28.8,
+    "tk32": 2.4,
+    "g22": null,
+    "ossz": 131.7
+   },
+   "liszt": 14445.0,
+   "tk_liszt": 2152.0,
+   "tk_arany": 14.9,
+   "korszak": "normal"
+  },
+  {
+   "id": "2025-05",
+   "ev": 2025,
+   "ho": 5,
+   "cimke": "2025. május",
+   "gomboc": 48156,
+   "dagasztas": {
+    "nagy": 80.6,
+    "tk": 23.9,
+    "g32": 33.8,
+    "tk32": 2.8,
+    "g22": null,
+    "ossz": 141.1
+   },
+   "liszt": 15635.0,
+   "tk_liszt": 2136.0,
+   "tk_arany": 13.66,
+   "korszak": "normal"
+  },
+  {
+   "id": "2025-06",
+   "ev": 2025,
+   "ho": 6,
+   "cimke": "2025. június",
+   "gomboc": 47460,
+   "dagasztas": {
+    "nagy": 83.4,
+    "tk": 22.8,
+    "g32": 31.0,
+    "tk32": 2.4,
+    "g22": null,
+    "ossz": 139.6
+   },
+   "liszt": 15560.0,
+   "tk_liszt": 2016.0,
+   "tk_arany": 12.96,
+   "korszak": "normal"
+  },
+  {
+   "id": "2025-07",
+   "ev": 2025,
+   "ho": 7,
+   "cimke": "2025. július",
+   "gomboc": 49494,
+   "dagasztas": {
+    "nagy": 83.0,
+    "tk": 23.6,
+    "g32": 36.0,
+    "tk32": 2.2,
+    "g22": null,
+    "ossz": 144.8
+   },
+   "liszt": 16165.0,
+   "tk_liszt": 2064.0,
+   "tk_arany": 12.77,
+   "korszak": "normal"
+  },
+  {
+   "id": "2025-08",
+   "ev": 2025,
+   "ho": 8,
+   "cimke": "2025. augusztus",
+   "gomboc": 49148,
+   "dagasztas": {
+    "nagy": 82.82,
+    "tk": 25.3,
+    "g32": 34.0,
+    "tk32": 2.2,
+    "g22": null,
+    "ossz": 144.32
+   },
+   "liszt": 16000.0,
+   "tk_liszt": 2200.0,
+   "tk_arany": 13.75,
+   "korszak": "normal"
+  },
+  {
+   "id": "2025-09",
+   "ev": 2025,
+   "ho": 9,
+   "cimke": "2025. szeptember",
+   "gomboc": 44845,
+   "dagasztas": {
+    "nagy": 71.86,
+    "tk": 20.84,
+    "g32": 37.1,
+    "tk32": 1.96,
+    "g22": 0.81,
+    "ossz": 132.57
+   },
+   "liszt": 14865.0,
+   "tk_liszt": 1824.0,
+   "tk_arany": 12.27,
+   "korszak": "normal"
+  },
+  {
+   "id": "2025-10",
+   "ev": 2025,
+   "ho": 10,
+   "cimke": "2025. október",
+   "gomboc": 45504,
+   "dagasztas": {
+    "nagy": 69.91,
+    "tk": 23.3,
+    "g32": 37.7,
+    "tk32": 2.2,
+    "g22": 1.33,
+    "ossz": 134.44
+   },
+   "liszt": 14894.0,
+   "tk_liszt": 2040.0,
+   "tk_arany": 13.7,
+   "korszak": "normal"
+  },
+  {
+   "id": "2025-11",
+   "ev": 2025,
+   "ho": 11,
+   "cimke": "2025. november",
+   "gomboc": 38892,
+   "dagasztas": {
+    "nagy": 62.657,
+    "tk": 22.2,
+    "g32": 26.97,
+    "tk32": 1.8,
+    "g22": 1.48,
+    "ossz": 115.107
+   },
+   "liszt": 12575.0,
+   "tk_liszt": 1920.0,
+   "tk_arany": 15.27,
+   "korszak": "normal"
+  },
+  {
+   "id": "2025-12",
+   "ev": 2025,
+   "ho": 12,
+   "cimke": "2025. december",
+   "gomboc": 54027,
+   "dagasztas": {
+    "nagy": 87.065,
+    "tk": 28.9,
+    "g32": 39.1,
+    "tk32": 2.2,
+    "g22": 1.82,
+    "ossz": 159.085
+   },
+   "liszt": 17555.0,
+   "tk_liszt": 2488.0,
+   "tk_arany": 14.17,
+   "korszak": "normal"
+  },
+  {
+   "id": "2026-01",
+   "ev": 2026,
+   "ho": 1,
+   "cimke": "2026. január",
+   "gomboc": 32649,
+   "dagasztas": {
+    "nagy": 46.8,
+    "tk": 16.7,
+    "g32": 28.9,
+    "tk32": 1.8,
+    "g22": 1.36,
+    "ossz": 95.56
+   },
+   "liszt": 10572.0,
+   "tk_liszt": 1480.0,
+   "tk_arany": 14.0,
+   "korszak": "normal"
+  },
+  {
+   "id": "2026-02",
+   "ev": 2026,
+   "ho": 2,
+   "cimke": "2026. február",
+   "gomboc": 36123,
+   "dagasztas": {
+    "nagy": 53.86,
+    "tk": 19.3,
+    "g32": 29.7,
+    "tk32": 2.0,
+    "g22": 2.0,
+    "ossz": 106.86
+   },
+   "liszt": 11690.0,
+   "tk_liszt": 1704.0,
+   "tk_arany": 14.58,
+   "korszak": "normal"
+  },
+  {
+   "id": "2026-03",
+   "ev": 2026,
+   "ho": 3,
+   "cimke": "2026. március",
+   "gomboc": 38370,
+   "dagasztas": {
+    "nagy": 61.839,
+    "tk": 20.66,
+    "g32": 26.85,
+    "tk32": 1.83,
+    "g22": 1.35,
+    "ossz": 112.529
+   },
+   "liszt": 12380.0,
+   "tk_liszt": 1800.0,
+   "tk_arany": 14.54,
+   "korszak": "normal"
+  },
+  {
+   "id": "2026-04",
+   "ev": 2026,
+   "ho": 4,
+   "cimke": "2026. április",
+   "gomboc": 43737,
+   "dagasztas": {
+    "nagy": 68.258,
+    "tk": 24.03,
+    "g32": 32.8,
+    "tk32": 2.2,
+    "g22": 1.68,
+    "ossz": 128.968
+   },
+   "liszt": 14203.0,
+   "tk_liszt": 2104.0,
+   "tk_arany": 14.81,
+   "korszak": "normal"
+  },
+  {
+   "id": "2026-05",
+   "ev": 2026,
+   "ho": 5,
+   "cimke": "2026. május",
+   "gomboc": 43183,
+   "dagasztas": {
+    "nagy": 75.59,
+    "tk": 24.0,
+    "g32": 24.6,
+    "tk32": 1.7,
+    "g22": 1.36,
+    "ossz": 127.25
+   },
+   "liszt": 13991.0,
+   "tk_liszt": 2068.0,
+   "tk_arany": 14.78,
+   "korszak": "normal"
+  },
+  {
+   "id": "2026-06",
+   "ev": 2026,
+   "ho": 6,
+   "cimke": "2026. június",
+   "gomboc": 43630,
+   "dagasztas": {
+    "nagy": 78.839,
+    "tk": 22.7,
+    "g32": 24.5,
+    "tk32": 1.8,
+    "g22": 1.5,
+    "ossz": 129.339
+   },
+   "liszt": 13135.0,
+   "tk_liszt": 3185.0,
+   "tk_arany": 24.25,
+   "korszak": "normal"
+  },
+  {
+   "id": "2026-07",
+   "ev": 2026,
+   "ho": 7,
+   "cimke": "2026. július",
+   "gomboc": 45462,
+   "dagasztas": {
+    "nagy": 80.661,
+    "tk": 24.2,
+    "g32": 23.9,
+    "tk32": 1.8,
+    "g22": 1.42,
+    "ossz": 131.981
+   },
+   "liszt": 13250.0,
+   "tk_liszt": 3380.0,
+   "tk_arany": 25.51,
+   "korszak": "normal"
+  },
+  {
+   "id": "2026-08",
+   "ev": 2026,
+   "ho": 8,
+   "cimke": "2026. augusztus",
+   "gomboc": 41370,
+   "dagasztas": {
+    "nagy": 72.795,
+    "tk": 22.2,
+    "g32": 21.8,
+    "tk32": 1.8,
+    "g22": 1.32,
+    "ossz": 119.915
+   },
+   "liszt": 12024.0,
+   "tk_liszt": 3120.0,
+   "tk_arany": 25.95,
+   "korszak": "normal"
+  }
+ ]
+}
