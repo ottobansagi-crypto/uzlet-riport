@@ -470,18 +470,46 @@ function init() {
 function fmt(v) { return (v >= 0 ? '+' : '') + Math.round(v).toLocaleString('hu-HU'); }
 function fmtAbs(v) { return Math.round(Math.abs(v)).toLocaleString('hu-HU'); }
 
+// A keresőmező a renderAktualis() innerHTML-jén belül van, ezért minden
+// billentyűleütésnél újra létrejön: a szöveget külön tartjuk, és a render
+// után visszaadjuk a fókuszt + kurzorpozíciót, különben egy karakter után
+// kiürül a mező és kiesik a fókusz.
+let searchQuery = '';
+let searchCaret = null;
+
+function onSearchInput(el) {
+  searchQuery = el.value;
+  searchCaret = el.selectionStart;
+  renderAktualis();
+}
+
+// Ékezet-független összehasonlítás: a "kiraly" is találjon rá a "Király utca"-ra
+function normText(s) {
+  return (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
+function restoreSearchFocus() {
+  if (searchCaret === null) return;
+  const el = document.getElementById('srch');
+  if (el) {
+    el.focus();
+    try { el.setSelectionRange(searchCaret, searchCaret); } catch (e) {}
+  }
+  searchCaret = null;
+}
+
 function getFiltered() {
   const snap = getMonthSnapshot();
   const levonMap = {};
   (snap.levonasok || []).forEach(l => levonMap[l.nev] = l);
-  const q = (document.getElementById('srch')?.value || '').toLowerCase();
+  const q = normText(searchQuery.trim());
   return snap.uzletek.filter(d => {
     if (!showFranchise && d.franchise) return false;
     if (activeManager !== 'all') {
       const mgrs = (d.teruletvezeto && d.teruletvezeto.length) ? d.teruletvezeto : managerOf(d.nev);
       if (!mgrs.includes(activeManager)) return false;
     }
-    if (q && !d.nev.toLowerCase().includes(q)) return false;
+    if (q && !normText(d.nev).includes(q)) return false;
     if (activeFilter === 'neg') return d.osszes < 0;
     if (activeFilter === 'pos') return d.osszes > 0;
     return true;
@@ -572,7 +600,7 @@ function renderAktualis() {
     <div class="controls">
       <div class="search-wrap">
         <span class="search-icon">⌕</span>
-        <input type="text" id="srch" placeholder="Üzlet keresés..." oninput="renderAktualis()">
+        <input type="text" id="srch" placeholder="Üzlet keresés..." value="${esc(searchQuery)}" oninput="onSearchInput(this)">
       </div>
       <button class="filter-btn ${activeFilter==='all'?'active':''}" data-f="all" onclick="setFilter('all')">Összes</button>
       <button class="filter-btn ${activeFilter==='neg'?'active':''}" data-f="neg" onclick="setFilter('neg')">Hiányos</button>
@@ -670,6 +698,7 @@ function renderAktualis() {
     </div>
   `;
 
+  restoreSearchFocus();
   renderBarChart(data);
 }
 
