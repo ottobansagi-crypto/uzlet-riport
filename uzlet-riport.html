@@ -483,6 +483,11 @@ function onSearchInput(el) {
   renderAktualis();
 }
 
+// Ékezet-független összehasonlítás: a "kiraly" is találjon rá a "Király utca"-ra
+function normText(s) {
+  return (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
 function restoreSearchFocus() {
   if (searchCaret === null) return;
   const el = document.getElementById('srch');
@@ -497,14 +502,14 @@ function getFiltered() {
   const snap = getMonthSnapshot();
   const levonMap = {};
   (snap.levonasok || []).forEach(l => levonMap[l.nev] = l);
-  const q = searchQuery.toLowerCase();
+  const q = normText(searchQuery.trim());
   return snap.uzletek.filter(d => {
     if (!showFranchise && d.franchise) return false;
     if (activeManager !== 'all') {
       const mgrs = (d.teruletvezeto && d.teruletvezeto.length) ? d.teruletvezeto : managerOf(d.nev);
       if (!mgrs.includes(activeManager)) return false;
     }
-    if (q && !d.nev.toLowerCase().includes(q)) return false;
+    if (q && !normText(d.nev).includes(q)) return false;
     if (activeFilter === 'neg') return d.osszes < 0;
     if (activeFilter === 'pos') return d.osszes > 0;
     return true;
