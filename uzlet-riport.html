@@ -470,11 +470,34 @@ function init() {
 function fmt(v) { return (v >= 0 ? '+' : '') + Math.round(v).toLocaleString('hu-HU'); }
 function fmtAbs(v) { return Math.round(Math.abs(v)).toLocaleString('hu-HU'); }
 
+// A keresőmező a renderAktualis() innerHTML-jén belül van, ezért minden
+// billentyűleütésnél újra létrejön: a szöveget külön tartjuk, és a render
+// után visszaadjuk a fókuszt + kurzorpozíciót, különben egy karakter után
+// kiürül a mező és kiesik a fókusz.
+let searchQuery = '';
+let searchCaret = null;
+
+function onSearchInput(el) {
+  searchQuery = el.value;
+  searchCaret = el.selectionStart;
+  renderAktualis();
+}
+
+function restoreSearchFocus() {
+  if (searchCaret === null) return;
+  const el = document.getElementById('srch');
+  if (el) {
+    el.focus();
+    try { el.setSelectionRange(searchCaret, searchCaret); } catch (e) {}
+  }
+  searchCaret = null;
+}
+
 function getFiltered() {
   const snap = getMonthSnapshot();
   const levonMap = {};
   (snap.levonasok || []).forEach(l => levonMap[l.nev] = l);
-  const q = (document.getElementById('srch')?.value || '').toLowerCase();
+  const q = searchQuery.toLowerCase();
   return snap.uzletek.filter(d => {
     if (!showFranchise && d.franchise) return false;
     if (activeManager !== 'all') {
@@ -572,7 +595,7 @@ function renderAktualis() {
     <div class="controls">
       <div class="search-wrap">
         <span class="search-icon">⌕</span>
-        <input type="text" id="srch" placeholder="Üzlet keresés..." oninput="renderAktualis()">
+        <input type="text" id="srch" placeholder="Üzlet keresés..." value="${esc(searchQuery)}" oninput="onSearchInput(this)">
       </div>
       <button class="filter-btn ${activeFilter==='all'?'active':''}" data-f="all" onclick="setFilter('all')">Összes</button>
       <button class="filter-btn ${activeFilter==='neg'?'active':''}" data-f="neg" onclick="setFilter('neg')">Hiányos</button>
@@ -670,6 +693,7 @@ function renderAktualis() {
     </div>
   `;
 
+  restoreSearchFocus();
   renderBarChart(data);
 }
 
