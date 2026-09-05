@@ -1953,5 +1953,223 @@
    "tk_arany": 25.95,
    "korszak": "normal"
   }
- ]
+ ],
+ "alapanyag": {
+  "forras": "PizzaMe-termelo-alapanyag.xlsx – Terméktörzs és Időszak munkalap",
+  "elojel": "mínusz = hiány, plusz = többlet",
+  "ft_keplet": "eltérés × beszerzési ár",
+  "kategoria_sorrend": [
+   "Fő termékek",
+   "Húsok",
+   "Sajtok",
+   "Szárazáru",
+   "Édességek"
+  ],
+  "termekek": [
+   {
+    "kod": "liszt",
+    "nev": "Liszt",
+    "kategoria": "Fő termékek",
+    "egyseg": "kg",
+    "ar": 312.2
+   },
+   {
+    "kod": "tk_liszt",
+    "nev": "TK liszt",
+    "kategoria": "Fő termékek",
+    "egyseg": "kg",
+    "ar": 370.01
+   },
+   {
+    "kod": "olivaolaj",
+    "nev": "Olívaolaj",
+    "kategoria": "Fő termékek",
+    "egyseg": "L",
+    "ar": 1927.13
+   },
+   {
+    "kod": "sonka",
+    "nev": "Sonka",
+    "kategoria": "Húsok",
+    "egyseg": "kg",
+    "ar": 1920
+   },
+   {
+    "kod": "napolitana_szalami",
+    "nev": "Napolitana szalámi",
+    "kategoria": "Húsok",
+    "egyseg": "kg",
+    "ar": 4080
+   },
+   {
+    "kod": "pepperoni_szalami",
+    "nev": "Pepperoni szalámi",
+    "kategoria": "Húsok",
+    "egyseg": "kg",
+    "ar": 3342.99
+   },
+   {
+    "kod": "calabra_szalami",
+    "nev": "Calabra szalámi",
+    "kategoria": "Húsok",
+    "egyseg": "kg",
+    "ar": 3798.82
+   },
+   {
+    "kod": "szupercsipos_szalami",
+    "nev": "Szupercsípős szalámi",
+    "kategoria": "Húsok",
+    "egyseg": "kg",
+    "ar": 4107.72
+   },
+   {
+    "kod": "bacon",
+    "nev": "Bacon",
+    "kategoria": "Húsok",
+    "egyseg": "kg",
+    "ar": 1569
+   },
+   {
+    "kod": "gyulai_kolbasz",
+    "nev": "Gyulai kolbász",
+    "kategoria": "Húsok",
+    "egyseg": "kg",
+    "ar": 2600
+   },
+   {
+    "kod": "mozzarella",
+    "nev": "Mozzarella",
+    "kategoria": "Sajtok",
+    "egyseg": "kg",
+    "ar": 1875.42
+   },
+   {
+    "kod": "parmezan",
+    "nev": "Parmezán",
+    "kategoria": "Sajtok",
+    "egyseg": "kg",
+    "ar": 3800
+   },
+   {
+    "kod": "gorgonzola",
+    "nev": "Gorgonzola",
+    "kategoria": "Sajtok",
+    "egyseg": "kg",
+    "ar": 4074.51
+   },
+   {
+    "kod": "ricotta",
+    "nev": "Ricotta",
+    "kategoria": "Sajtok",
+    "egyseg": "kg",
+    "ar": 1494.51
+   },
+   {
+    "kod": "tartufata_szosz",
+    "nev": "Tartufata szósz",
+    "kategoria": "Szárazáru",
+    "egyseg": "db",
+    "ar": 2168.43
+   },
+   {
+    "kod": "funghi_mix",
+    "nev": "Funghi mix",
+    "kategoria": "Szárazáru",
+    "egyseg": "db",
+    "ar": 1917.3
+   },
+   {
+    "kod": "spenot",
+    "nev": "Spenót",
+    "kategoria": "Szárazáru",
+    "egyseg": "db",
+    "ar": 861.11
+   },
+   {
+    "kod": "csokis_mousse",
+    "nev": "Csokis mousse",
+    "kategoria": "Édességek",
+    "egyseg": "db",
+    "ar": 431.15
+   },
+   {
+    "kod": "tiramisu",
+    "nev": "Tiramisu",
+    "kategoria": "Édességek",
+    "egyseg": "db",
+    "ar": 216.31
+   },
+   {
+    "kod": "profiterol",
+    "nev": "Profiterol",
+    "kategoria": "Édességek",
+    "egyseg": "db",
+    "ar": 216.31
+   },
+   {
+    "kod": "gelato_nutella",
+    "nev": "Gelato Nutella",
+    "kategoria": "Édességek",
+    "egyseg": "db",
+    "ar": 690
+   },
+   {
+    "kod": "gelato_tartufata",
+    "nev": "Gelato Tartufata",
+    "kategoria": "Édességek",
+    "egyseg": "db",
+    "ar": 690
+   },
+   {
+    "kod": "gelato_pisztacia",
+    "nev": "Gelato Pisztácia",
+    "kategoria": "Édességek",
+    "egyseg": "db",
+    "ar": 690
+   }
+  ],
+  "idoszakok": [
+   {
+    "id": "2026-08-zaras",
+    "cimke": "2026. augusztus – havi zárás",
+    "ev": 2026,
+    "ho": 8,
+    "kezdet": "2026-08-01",
+    "veg": "2026-08-31",
+    "statusz": "havi zaras",
+    "tetelek": [
+     {
+      "termek": "liszt",
+      "keszlet": 5200,
+      "fogyas": 11954,
+      "elteres": -45
+     },
+     {
+      "termek": "tk_liszt",
+      "keszlet": 4660,
+      "fogyas": 3118,
+      "elteres": -1.44
+     },
+     {
+      "termek": "olivaolaj",
+      "keszlet": 4805,
+      "fogyas": 1093,
+      "elteres": -1.51
+     },
+     {
+      "termek": "sonka",
+      "keszlet": 980,
+      "fogyas": 1728,
+      "elteres": 142
+     },
+     {
+      "termek": "napolitana_szalami",
+      "keszlet": 186.5,
+      "fogyas": 563,
+      "elteres": -12.5
+     }
+    ]
+   }
+  ]
+ }
 }

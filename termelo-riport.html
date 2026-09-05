@@ -149,6 +149,21 @@
   .deflist b { color: var(--text); font-weight: 600; }
   .deflist li { margin-left: 18px; }
 
+  /* ── ALAPANYAG ELTÉRÉS ──────────────────────────────────────────────── */
+  .fo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .fo-kartya { border: 1px solid var(--border2); border-radius: var(--radius); padding: 14px 16px; }
+  .fo-nev { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+  .fo-fo { font-size: 26px; font-weight: 600; letter-spacing: -0.5px; white-space: nowrap; }
+  .fo-mell { font-size: 12px; color: var(--text2); margin-top: 3px; font-variant-numeric: tabular-nums; }
+  .kat-cim { font-size: 12px; font-weight: 600; color: var(--text); margin: 18px 0 6px; display: flex; justify-content: space-between; align-items: baseline; }
+  .kat-cim .osszeg { font-family: 'DM Mono', monospace; font-size: 12px; font-variant-numeric: tabular-nums; }
+  .kat-cim:first-of-type { margin-top: 0; }
+  .kat-ures { font-size: 12px; color: var(--text3); font-style: italic; padding: 6px 0 2px; }
+  .hiany { color: var(--red); } .tobblet { color: var(--green); }
+  .osszeg-sav { display: flex; flex-wrap: wrap; gap: 10px 28px; padding: 12px 16px; background: var(--surface2); border-radius: var(--radius); margin-bottom: 14px; }
+  .osszeg-sav div { font-size: 12px; color: var(--text2); }
+  .osszeg-sav b { display: block; font-size: 18px; font-weight: 600; color: var(--text); letter-spacing: -0.3px; }
+
   #loading { text-align: center; padding: 60px; color: var(--text3); }
   .chart-fallback { display: flex; align-items: center; justify-content: center; height: 100%; color: var(--text3); font-size: 12px; text-align: center; padding: 0 20px; }
 </style>
@@ -224,12 +239,44 @@ function chart(id, cfg) {
 }
 const RACS = { color: 'rgba(0,0,0,0.07)', lineWidth: 1 };
 
-/* ── fejléc ──────────────────────────────────────────────────────────────── */
-function feltoltSelect() {
-  document.getElementById('honapSelect').innerHTML = honapok().slice().reverse()
-    .map(h => `<option value="${esc(h.id)}"${h.id === valasztott ? ' selected' : ''}>${esc(h.cimke)}</option>`).join('');
+/* ── fejléc + szekcióváltás ──────────────────────────────────────────────── */
+let szekcio = 'gomboc';
+let valasztottIdoszak = null;
+
+const ZOLD = '#2d6a4f';   // többlet – 6,39:1 fehér felületen
+const PIROS = ACCENT;     // hiány
+
+function alap() { return DATA.alapanyag || null; }
+function alapIdoszakok() { return alap() ? alap().idoszakok : []; }
+function alapAktualis() {
+  const l = alapIdoszakok();
+  return l.find(x => x.id === valasztottIdoszak) || l[l.length - 1] || null;
 }
-function setHonap(id) { valasztott = id; rajzol(); }
+
+function feltoltSelect() {
+  const sel = document.getElementById('honapSelect');
+  const cimke = document.querySelector('.header-right label');
+  if (szekcio === 'gomboc') {
+    cimke.textContent = 'Hónap';
+    sel.innerHTML = honapok().slice().reverse()
+      .map(h => `<option value="${esc(h.id)}"${h.id === valasztott ? ' selected' : ''}>${esc(h.cimke)}</option>`).join('');
+  } else {
+    cimke.textContent = 'Időszak';
+    const l = alapIdoszakok().slice().reverse();
+    sel.innerHTML = l.length
+      ? l.map(i => `<option value="${esc(i.id)}"${i.id === (alapAktualis()||{}).id ? ' selected' : ''}>${esc(i.cimke)}</option>`).join('')
+      : '<option>nincs időszak</option>';
+  }
+}
+function setHonap(id) {
+  if (szekcio === 'gomboc') valasztott = id; else valasztottIdoszak = id;
+  rajzol();
+}
+function setSzekcio(nev) {
+  szekcio = nev;
+  feltoltSelect();
+  rajzol();
+}
 
 /* ── 1. HERO + STAT CSEMPÉK ──────────────────────────────────────────────── */
 function hero() {
@@ -530,25 +577,209 @@ function definiciok() {
   </div>`;
 }
 
-/* ── összerakás ──────────────────────────────────────────────────────────── */
-function rajzol() {
-  const h = aktualis();
-  document.getElementById('headerMeta').textContent = h.cimke + ' · forrás frissítve: ' + DATA.meta.frissitve;
-  document.getElementById('app').innerHTML = `
-    ${jelzesek()}
-    <div class="menu">
-      <button class="active" type="button">Havi gombóc gyártás</button>
+
+/* ── ALAPANYAG ELTÉRÉS ───────────────────────────────────────────────────── */
+function termekTorzs(kod) { return alap().termekek.find(t => t.kod === kod) || null; }
+
+/** Egy időszak tételei kiszámolt %-kal és Ft-tal, a törzsadatokkal összefésülve. */
+function alapSorok(i) {
+  if (!i) return [];
+  return i.tetelek.map(t => {
+    const m = termekTorzs(t.termek) || { nev: t.termek, kategoria: '–', egyseg: '', ar: 0 };
+    return {
+      kod: t.termek, nev: m.nev, kategoria: m.kategoria, egyseg: m.egyseg, ar: m.ar,
+      keszlet: t.keszlet, fogyas: t.fogyas, elteres: t.elteres,
+      pct: t.fogyas ? t.elteres / t.fogyas * 100 : null,
+      ft: t.elteres * (m.ar || 0),
+      // hány napnyi fogyást fed a záró készlet
+      fedezet: (t.fogyas && t.keszlet != null) ? t.keszlet / t.fogyas * napok(i) : null
+    };
+  });
+}
+function napok(i) {
+  const a = new Date(i.kezdet), b = new Date(i.veg);
+  return Math.round((b - a) / 86400000) + 1;
+}
+/** Egész számnál nincs tizedes, törtnél kettő – így a 12,5 nem lesz 13. */
+const szAuto = v => v == null || isNaN(v) ? '–' : sz(v, Number.isInteger(v) ? 0 : 2);
+const elt = v => v == null || isNaN(v) ? '–'
+  : (v > 0 ? '+' : v < 0 ? '−' : '') + szAuto(Math.abs(v));
+const eltCls = v => v < 0 ? 'hiany' : v > 0 ? 'tobblet' : '';
+const STATUSZ = { 'havi zaras': 'havi zárás', 'reszeredmeny': 'részeredmény' };
+const statuszNev = k => STATUSZ[k] || k;
+
+function alapanyagSzekcio() {
+  const a = alap(), i = alapAktualis();
+  if (!a || !i) return '<div class="card"><div class="kat-ures">Ehhez a szekcióhoz még nincs adat.</div></div>';
+
+  const sorok = alapSorok(i);
+  const ftOssz = sorok.reduce((s2, r) => s2 + r.ft, 0);
+  const hiany = sorok.filter(r => r.elteres < 0);
+  const tobblet = sorok.filter(r => r.elteres > 0);
+  const foSorok = sorok.filter(r => r.kategoria === 'Fő termékek');
+
+  const hianyzo = a.termekek.length - sorok.length;
+  const figyelmeztetes = hianyzo > 0 ? `
+    <div class="note note-warn">
+      <strong>Részlegesen kitöltött időszak.</strong> A ${a.termekek.length} termékből ${sorok.length} van kitöltve,
+      ${hianyzo} még hiányzik. Az összesített forinthatás ezért nem a teljes kép.
+    </div>` : '';
+
+  return `
+    ${figyelmeztetes}
+
+    <div class="card">
+      <div class="card-title">${esc(i.cimke)}</div>
+      <div class="card-sub">${esc(i.kezdet)} – ${esc(i.veg)} · ${napok(i)} nap · ${esc(statuszNev(i.statusz))}</div>
+      <div class="osszeg-sav">
+        <div>Összesített Ft hatás<b class="${eltCls(ftOssz)}">${elt(Math.round(ftOssz))} Ft</b></div>
+        <div>Ebből hiány<b class="hiany">${elt(Math.round(hiany.reduce((s2, r) => s2 + r.ft, 0)))} Ft</b></div>
+        <div>Ebből többlet<b class="tobblet">${elt(Math.round(tobblet.reduce((s2, r) => s2 + r.ft, 0)))} Ft</b></div>
+        <div>Kitöltött tétel<b>${sorok.length} / ${a.termekek.length}</b></div>
+      </div>
+
+      ${foSorok.length ? `
+      <div class="card-title" style="margin-top:4px">Fő alapanyagok</div>
+      <div class="fo-grid">
+        ${foSorok.map(r => `
+          <div class="fo-kartya">
+            <div class="fo-nev">${esc(r.nev)}</div>
+            <div class="fo-fo ${eltCls(r.elteres)}">${elt(r.elteres)} ${esc(r.egyseg)}</div>
+            <div class="fo-mell ${eltCls(r.pct)}">${pct(r.pct, 2)} a ${szAuto(r.fogyas)} ${esc(r.egyseg)} fogyáshoz mérve</div>
+            <div class="fo-mell">${elt(Math.round(r.ft))} Ft · készlet ${szAuto(r.keszlet)} ${esc(r.egyseg)}${
+              r.fedezet ? ' (~' + sz(r.fedezet, 0) + ' napra' : ''}${r.fedezet ? ')' : ''}</div>
+          </div>`).join('')}
+      </div>` : ''}
     </div>
-    ${hero()}
-    ${osszehasonlitas()}
-    ${idosor()}
-    ${hoterkep()}
-    ${dagasztasBontas()}
-    ${evesTabla()}
-    ${definiciok()}
+
+    <div class="card">
+      <div class="card-title">Eltérés a fogyás %-ában</div>
+      <div class="card-sub">
+        A nullától balra a hiány, jobbra a többlet. A % azért a fő mutató, mert eltérő méretű tételek is
+        összevethetők vele — a 45 kg liszt és a 12,5 kg szalámi nem ugyanaz a súlyú probléma.
+      </div>
+      <div class="chart-box" style="height:${Math.max(160, sorok.length * 42)}px"><canvas id="alapChart"></canvas></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Kategóriánként</div>
+      <div class="card-sub">Kategórián belül forinthatás szerint rendezve. Előjel: mínusz = hiány, plusz = többlet.</div>
+      ${a.kategoria_sorrend.map(kat => {
+        const ks = sorok.filter(r => r.kategoria === kat)
+                        .sort((x, y) => x.ft - y.ft);
+        const kFt = ks.reduce((s2, r) => s2 + r.ft, 0);
+        const nincs = a.termekek.filter(t => t.kategoria === kat && !sorok.some(r => r.kod === t.kod));
+        return `
+          <div class="kat-cim">
+            <span>${esc(kat)}</span>
+            ${ks.length ? `<span class="osszeg ${eltCls(kFt)}">${elt(Math.round(kFt))} Ft</span>` : ''}
+          </div>
+          ${ks.length ? `
+          <div class="table-wrap"><table>
+            <thead><tr>
+              <th>Termék</th><th class="num">Készlet</th><th class="num">Fogyás</th>
+              <th class="num">Eltérés</th><th class="num">Eltérés %</th><th class="num">Ft hatás</th>
+            </tr></thead>
+            <tbody>
+              ${ks.map(r => `<tr>
+                <td>${esc(r.nev)}</td>
+                <td class="num">${szAuto(r.keszlet)} ${esc(r.egyseg)}</td>
+                <td class="num">${szAuto(r.fogyas)} ${esc(r.egyseg)}</td>
+                <td class="num ${eltCls(r.elteres)}">${elt(r.elteres)}</td>
+                <td class="num ${eltCls(r.pct)}">${pct(r.pct, 2)}</td>
+                <td class="num ${eltCls(r.ft)}">${elt(Math.round(r.ft))}</td>
+              </tr>`).join('')}
+            </tbody>
+          </table></div>` : ''}
+          ${nincs.length ? `<div class="kat-ures">Nincs adat ebben az időszakban: ${
+            nincs.map(t => esc(t.nev)).join(', ')}.</div>` : ''}`;
+      }).join('')}
+    </div>
+
+    <div class="card">
+      <div class="card-title">Definíciók és adatforrás</div>
+      <div class="deflist">
+        <b>Eltérés előjele:</b> ${esc(a.elojel)} — a riportban a hiány piros, a többlet zöld.<br>
+        <b>Eltérés %:</b> eltérés / fogyás. Ez az egyetlen mutató, amivel különböző méretű tételek összevethetők.<br>
+        <b>Ft hatás:</b> ${esc(a.ft_keplet)}, a terméktörzsben megadott egységáron.<br>
+        <b>Készletfedezet:</b> a záró készlet hány napnyi fogyást fed az időszak napi átlagával számolva.<br>
+        <b>Forrás:</b> ${esc(a.forras)}
+      </div>
+    </div>
   `;
-  sparkRajz();
-  idosorRajz();
+}
+
+function alapChartRajz() {
+  const i = alapAktualis();
+  if (!i) return;
+  const sorok = alapSorok(i).slice().sort((a, b) => (a.pct || 0) - (b.pct || 0));
+  chart('alapChart', {
+    type: 'bar',
+    data: {
+      labels: sorok.map(r => r.nev),
+      datasets: [{
+        data: sorok.map(r => r.pct == null ? 0 : +r.pct.toFixed(2)),
+        backgroundColor: sorok.map(r => r.elteres < 0 ? PIROS : ZOLD),
+        borderRadius: 4, borderSkipped: false, maxBarThickness: 24
+      }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1916', padding: 10, displayColors: false,
+          callbacks: {
+            label(c) {
+              const r = sorok[c.dataIndex];
+              return `${elt(r.elteres)} ${r.egyseg} · ${pct(r.pct, 2)} · ${elt(Math.round(r.ft))} Ft`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid: RACS, border: { display: false }, ticks: { callback: v => v + '%' } },
+        y: { grid: { display: false }, border: { display: false } }
+      }
+    }
+  });
+}
+
+/* ── összerakás ──────────────────────────────────────────────────────────── */
+function menuHtml() {
+  const g = szekcio === 'gomboc';
+  return `
+    <div class="menu">
+      <button type="button" class="${g ? 'active' : ''}" onclick="setSzekcio('gomboc')">Havi gombóc gyártás</button>
+      <button type="button" class="${g ? '' : 'active'}" onclick="setSzekcio('alapanyag')">Alapanyag eltérés</button>
+    </div>`;
+}
+
+function rajzol() {
+  const app = document.getElementById('app');
+  if (szekcio === 'gomboc') {
+    const h = aktualis();
+    document.getElementById('headerMeta').textContent = h.cimke + ' · forrás frissítve: ' + DATA.meta.frissitve;
+    app.innerHTML = `
+      ${jelzesek()}
+      ${menuHtml()}
+      ${hero()}
+      ${osszehasonlitas()}
+      ${idosor()}
+      ${hoterkep()}
+      ${dagasztasBontas()}
+      ${evesTabla()}
+      ${definiciok()}
+    `;
+    sparkRajz();
+    idosorRajz();
+  } else {
+    const i = alapAktualis();
+    document.getElementById('headerMeta').textContent =
+      (i ? i.cimke : 'alapanyag eltérés') + ' · forrás frissítve: ' + DATA.meta.frissitve;
+    app.innerHTML = `${menuHtml()}${alapanyagSzekcio()}`;
+    alapChartRajz();
+  }
 }
 
 async function betolt() {
