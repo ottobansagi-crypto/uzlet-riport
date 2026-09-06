@@ -579,63 +579,71 @@ function definiciok() {
 
 
 /* ── ALAPANYAG ELTÉRÉS ───────────────────────────────────────────────────── */
-function termekTorzs(kod) { return alap().termekek.find(t => t.kod === kod) || null; }
+let osszesTermek = false;   // false = csak a kiemelt termékek
+let kereses = '';
 
-/** Egy időszak tételei kiszámolt %-kal és Ft-tal, a törzsadatokkal összefésülve. */
+/** Egy időszak tételei kiszámolt %-kal és Ft-tal. Ár nélkül a Ft nem számolható. */
 function alapSorok(i) {
   if (!i) return [];
-  return i.tetelek.map(t => {
-    const m = termekTorzs(t.termek) || { nev: t.termek, kategoria: '–', egyseg: '', ar: 0 };
-    return {
-      kod: t.termek, nev: m.nev, kategoria: m.kategoria, egyseg: m.egyseg, ar: m.ar,
-      keszlet: t.keszlet, fogyas: t.fogyas, elteres: t.elteres,
-      pct: t.fogyas ? t.elteres / t.fogyas * 100 : null,
-      ft: t.elteres * (m.ar || 0),
-      // hány napnyi fogyást fed a záró készlet
-      fedezet: (t.fogyas && t.keszlet != null) ? t.keszlet / t.fogyas * napok(i) : null
-    };
-  });
+  return i.termekek.map(t => Object.assign({}, t, {
+    pct: (t.fogyas && Math.abs(t.fogyas) > 1e-9 && t.elteres != null)
+      ? t.elteres / t.fogyas * 100 : null,
+    ft: (t.ar != null && t.elteres != null) ? t.elteres * t.ar : null,
+    fedezet: (t.fogyas && t.zaro != null && Math.abs(t.fogyas) > 1e-9)
+      ? t.zaro / t.fogyas * napok(i) : null
+  }));
 }
 function napok(i) {
-  const a = new Date(i.kezdet), b = new Date(i.veg);
-  return Math.round((b - a) / 86400000) + 1;
+  return Math.round((new Date(i.veg) - new Date(i.kezdet)) / 86400000) + 1;
 }
-/** Egész számnál nincs tizedes, törtnél kettő – így a 12,5 nem lesz 13. */
 const szAuto = v => v == null || isNaN(v) ? '–' : sz(v, Number.isInteger(v) ? 0 : 2);
 const elt = v => v == null || isNaN(v) ? '–'
   : (v > 0 ? '+' : v < 0 ? '−' : '') + szAuto(Math.abs(v));
-const eltCls = v => v < 0 ? 'hiany' : v > 0 ? 'tobblet' : '';
+const eltCls = v => v == null ? '' : v < 0 ? 'hiany' : v > 0 ? 'tobblet' : '';
 const STATUSZ = { 'havi zaras': 'havi zárás', 'reszeredmeny': 'részeredmény' };
 const statuszNev = k => STATUSZ[k] || k;
+
+function setOsszes(v) { osszesTermek = v; kereses = ''; rajzol(); }
+function setKereses(v) {
+  kereses = v;
+  document.getElementById('termekTabla').innerHTML = osszesTablaBelso(alapSorok(alapAktualis()));
+  // a tábla újrarajzolásakor az input kicserélődik, ezért a fókuszt vissza kell tenni
+  const el = document.getElementById('termekSrch');
+  if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); }
+}
 
 function alapanyagSzekcio() {
   const a = alap(), i = alapAktualis();
   if (!a || !i) return '<div class="card"><div class="kat-ures">Ehhez a szekcióhoz még nincs adat.</div></div>';
 
-  const sorok = alapSorok(i);
-  const ftOssz = sorok.reduce((s2, r) => s2 + r.ft, 0);
-  const hiany = sorok.filter(r => r.elteres < 0);
-  const tobblet = sorok.filter(r => r.elteres > 0);
-  const foSorok = sorok.filter(r => r.kategoria === 'Fő termékek');
+  const mind = alapSorok(i);
+  const kiemelt = mind.filter(r => r.kategoria);
+  const sorok = osszesTermek ? mind : kiemelt;
 
-  const hianyzo = a.termekek.length - sorok.length;
-  const figyelmeztetes = hianyzo > 0 ? `
+  const ftSorok = sorok.filter(r => r.ft != null);
+  const ftOssz = ftSorok.reduce((s2, r) => s2 + r.ft, 0);
+  const hiany = ftSorok.filter(r => r.ft < 0);
+  const tobblet = ftSorok.filter(r => r.ft > 0);
+  const arNelkul = sorok.filter(r => r.ar == null && r.elteres);
+  const foSorok = mind.filter(r => r.kategoria === 'Fő termékek');
+
+  const arFigyelem = arNelkul.length ? `
     <div class="note note-warn">
-      <strong>Részlegesen kitöltött időszak.</strong> A ${a.termekek.length} termékből ${sorok.length} van kitöltve,
-      ${hianyzo} még hiányzik. Az összesített forinthatás ezért nem a teljes kép.
+      <strong>${arNelkul.length} tételnél hiányzik a bekerülési ár</strong>, ezért ott a Ft hatás nem
+      számolható, és az összesített forintból is kimarad. ${esc(a.ar_hiany_megjegyzes || '')}
     </div>` : '';
 
   return `
-    ${figyelmeztetes}
+    ${arFigyelem}
 
     <div class="card">
       <div class="card-title">${esc(i.cimke)}</div>
       <div class="card-sub">${esc(i.kezdet)} – ${esc(i.veg)} · ${napok(i)} nap · ${esc(statuszNev(i.statusz))}</div>
       <div class="osszeg-sav">
-        <div>Összesített Ft hatás<b class="${eltCls(ftOssz)}">${elt(Math.round(ftOssz))} Ft</b></div>
+        <div>Ft hatás (ahol van ár)<b class="${eltCls(ftOssz)}">${elt(Math.round(ftOssz))} Ft</b></div>
         <div>Ebből hiány<b class="hiany">${elt(Math.round(hiany.reduce((s2, r) => s2 + r.ft, 0)))} Ft</b></div>
         <div>Ebből többlet<b class="tobblet">${elt(Math.round(tobblet.reduce((s2, r) => s2 + r.ft, 0)))} Ft</b></div>
-        <div>Kitöltött tétel<b>${sorok.length} / ${a.termekek.length}</b></div>
+        <div>Tételek<b>${sorok.length}${osszesTermek ? '' : ' / ' + mind.length}</b></div>
       </div>
 
       ${foSorok.length ? `
@@ -644,64 +652,38 @@ function alapanyagSzekcio() {
         ${foSorok.map(r => `
           <div class="fo-kartya">
             <div class="fo-nev">${esc(r.nev)}</div>
-            <div class="fo-fo ${eltCls(r.elteres)}">${elt(r.elteres)} ${esc(r.egyseg)}</div>
-            <div class="fo-mell ${eltCls(r.pct)}">${pct(r.pct, 2)} a ${szAuto(r.fogyas)} ${esc(r.egyseg)} fogyáshoz mérve</div>
-            <div class="fo-mell">${elt(Math.round(r.ft))} Ft · készlet ${szAuto(r.keszlet)} ${esc(r.egyseg)}${
-              r.fedezet ? ' (~' + sz(r.fedezet, 0) + ' napra' : ''}${r.fedezet ? ')' : ''}</div>
+            <div class="fo-fo ${eltCls(r.elteres)}">${elt(r.elteres)} ${esc(r.egyseg || '')}</div>
+            <div class="fo-mell ${eltCls(r.pct)}">${pct(r.pct, 2)} a ${szAuto(r.fogyas)} ${esc(r.egyseg || '')} fogyáshoz mérve</div>
+            <div class="fo-mell">${r.ft != null ? elt(Math.round(r.ft)) + ' Ft · ' : '<span class="muted">nincs ár · </span>'}készlet ${szAuto(r.zaro)} ${esc(r.egyseg || '')}${r.fedezet ? ' (~' + sz(r.fedezet, 0) + ' napra)' : ''}</div>
           </div>`).join('')}
       </div>` : ''}
     </div>
 
     <div class="card">
-      <div class="card-title">Eltérés a fogyás %-ában</div>
+      <div class="card-title">Eltérés a fogyás %-ában — kiemelt termékek</div>
       <div class="card-sub">
         A nullától balra a hiány, jobbra a többlet. A % azért a fő mutató, mert eltérő méretű tételek is
-        összevethetők vele — a 45 kg liszt és a 12,5 kg szalámi nem ugyanaz a súlyú probléma.
+        összevethetők vele.
       </div>
-      <div class="chart-box" style="height:${Math.max(160, sorok.length * 42)}px"><canvas id="alapChart"></canvas></div>
+      <div class="chart-box" style="height:${Math.max(220, kiemelt.length * 30)}px"><canvas id="alapChart"></canvas></div>
     </div>
 
     <div class="card">
-      <div class="card-title">Kategóriánként</div>
-      <div class="card-sub">Kategórián belül forinthatás szerint rendezve. Előjel: mínusz = hiány, plusz = többlet.</div>
-      ${a.kategoria_sorrend.map(kat => {
-        const ks = sorok.filter(r => r.kategoria === kat)
-                        .sort((x, y) => x.ft - y.ft);
-        const kFt = ks.reduce((s2, r) => s2 + r.ft, 0);
-        const nincs = a.termekek.filter(t => t.kategoria === kat && !sorok.some(r => r.kod === t.kod));
-        return `
-          <div class="kat-cim">
-            <span>${esc(kat)}</span>
-            ${ks.length ? `<span class="osszeg ${eltCls(kFt)}">${elt(Math.round(kFt))} Ft</span>` : ''}
-          </div>
-          ${ks.length ? `
-          <div class="table-wrap"><table>
-            <thead><tr>
-              <th>Termék</th><th class="num">Készlet</th><th class="num">Fogyás</th>
-              <th class="num">Eltérés</th><th class="num">Eltérés %</th><th class="num">Ft hatás</th>
-            </tr></thead>
-            <tbody>
-              ${ks.map(r => `<tr>
-                <td>${esc(r.nev)}</td>
-                <td class="num">${szAuto(r.keszlet)} ${esc(r.egyseg)}</td>
-                <td class="num">${szAuto(r.fogyas)} ${esc(r.egyseg)}</td>
-                <td class="num ${eltCls(r.elteres)}">${elt(r.elteres)}</td>
-                <td class="num ${eltCls(r.pct)}">${pct(r.pct, 2)}</td>
-                <td class="num ${eltCls(r.ft)}">${elt(Math.round(r.ft))}</td>
-              </tr>`).join('')}
-            </tbody>
-          </table></div>` : ''}
-          ${nincs.length ? `<div class="kat-ures">Nincs adat ebben az időszakban: ${
-            nincs.map(t => esc(t.nev)).join(', ')}.</div>` : ''}`;
-      }).join('')}
+      <div class="card-title">Tételek</div>
+      <div class="controls" style="margin-bottom:10px">
+        <button class="filter-btn ${osszesTermek ? '' : 'active'}" onclick="setOsszes(false)">Kiemelt termékek (${kiemelt.length})</button>
+        <button class="filter-btn ${osszesTermek ? 'active' : ''}" onclick="setOsszes(true)">Összes termék (${mind.length})</button>
+      </div>
+      <div id="termekTabla">${osszesTermek ? osszesTablaBelso(mind) : kategoriaBontas(a, sorok)}</div>
     </div>
 
     <div class="card">
       <div class="card-title">Definíciók és adatforrás</div>
       <div class="deflist">
-        <b>Eltérés előjele:</b> ${esc(a.elojel)} — a riportban a hiány piros, a többlet zöld.<br>
+        <b>Fogyás:</b> ${esc(a.szamitas.fogyas)}<br>
+        <b>Eltérés:</b> ${esc(a.szamitas.elteres)} — ${esc(a.elojel)}, a riportban a hiány piros, a többlet zöld.<br>
         <b>Eltérés %:</b> eltérés / fogyás. Ez az egyetlen mutató, amivel különböző méretű tételek összevethetők.<br>
-        <b>Ft hatás:</b> ${esc(a.ft_keplet)}, a terméktörzsben megadott egységáron.<br>
+        <b>Ft hatás:</b> ${esc(a.ft_keplet)}<br>
         <b>Készletfedezet:</b> a záró készlet hány napnyi fogyást fed az időszak napi átlagával számolva.<br>
         <b>Forrás:</b> ${esc(a.forras)}
       </div>
@@ -709,18 +691,69 @@ function alapanyagSzekcio() {
   `;
 }
 
+const FEJ = `<thead><tr>
+  <th>Termék</th><th class="num">Záró készlet</th><th class="num">Fogyás</th>
+  <th class="num">Eltérés</th><th class="num">Eltérés %</th><th class="num">Ft hatás</th>
+</tr></thead>`;
+
+function sorHtml(r) {
+  return `<tr>
+    <td>${esc(r.nev)}</td>
+    <td class="num">${szAuto(r.zaro)} ${esc(r.egyseg || '')}</td>
+    <td class="num">${szAuto(r.fogyas)} ${esc(r.egyseg || '')}</td>
+    <td class="num ${eltCls(r.elteres)}">${elt(r.elteres)}</td>
+    <td class="num ${eltCls(r.pct)}">${pct(r.pct, 2)}</td>
+    <td class="num ${r.ft == null ? 'muted' : eltCls(r.ft)}">${r.ft == null ? 'nincs ár' : elt(Math.round(r.ft))}</td>
+  </tr>`;
+}
+
+function kategoriaBontas(a, sorok) {
+  return a.kategoria_sorrend.map(kat => {
+    const ks = sorok.filter(r => r.kategoria === kat)
+      .sort((x, y) => (x.ft == null ? 0 : x.ft) - (y.ft == null ? 0 : y.ft));
+    if (!ks.length) return `<div class="kat-cim"><span>${esc(kat)}</span></div>
+      <div class="kat-ures">Ehhez a kategóriához nincs kijelölt termék.</div>`;
+    const arasak = ks.filter(r => r.ft != null);
+    const kFt = arasak.reduce((s2, r) => s2 + r.ft, 0);
+    return `
+      <div class="kat-cim">
+        <span>${esc(kat)}</span>
+        <span class="osszeg ${arasak.length ? eltCls(kFt) : 'muted'}">${
+          arasak.length ? elt(Math.round(kFt)) + ' Ft' : 'nincs ár'}</span>
+      </div>
+      <div class="table-wrap"><table>${FEJ}<tbody>${ks.map(sorHtml).join('')}</tbody></table></div>`;
+  }).join('');
+}
+
+function osszesTablaBelso(mind) {
+  const q = kereses.toLowerCase();
+  const ks = mind.filter(r => r.elteres != null && r.elteres !== 0)
+    .filter(r => !q || r.nev.toLowerCase().includes(q))
+    .sort((x, y) => Math.abs(y.pct == null ? 0 : y.pct) - Math.abs(x.pct == null ? 0 : x.pct));
+  return `
+    <div class="card-sub">Csak azok a tételek, ahol van eltérés. Az eltérés %-a szerint rendezve, a legnagyobbal kezdve.</div>
+    <div class="search-wrap" style="margin-bottom:10px">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="termekSrch" placeholder="Termék keresése…" value="${esc(kereses)}"
+             oninput="setKereses(this.value)">
+    </div>
+    <div class="table-wrap"><table>${FEJ}<tbody>${ks.map(sorHtml).join('')}</tbody></table></div>
+    <div class="kat-ures">${ks.length} tétel</div>`;
+}
+
 function alapChartRajz() {
   const i = alapAktualis();
   if (!i) return;
-  const sorok = alapSorok(i).slice().sort((a, b) => (a.pct || 0) - (b.pct || 0));
+  const sorok = alapSorok(i).filter(r => r.kategoria)
+    .slice().sort((a, b) => (a.pct == null ? 0 : a.pct) - (b.pct == null ? 0 : b.pct));
   chart('alapChart', {
     type: 'bar',
     data: {
       labels: sorok.map(r => r.nev),
       datasets: [{
         data: sorok.map(r => r.pct == null ? 0 : +r.pct.toFixed(2)),
-        backgroundColor: sorok.map(r => r.elteres < 0 ? PIROS : ZOLD),
-        borderRadius: 4, borderSkipped: false, maxBarThickness: 24
+        backgroundColor: sorok.map(r => (r.elteres == null ? 0 : r.elteres) < 0 ? PIROS : ZOLD),
+        borderRadius: 4, borderSkipped: false, maxBarThickness: 20
       }]
     },
     options: {
@@ -732,14 +765,15 @@ function alapChartRajz() {
           callbacks: {
             label(c) {
               const r = sorok[c.dataIndex];
-              return `${elt(r.elteres)} ${r.egyseg} · ${pct(r.pct, 2)} · ${elt(Math.round(r.ft))} Ft`;
+              return elt(r.elteres) + ' ' + (r.egyseg || '') + ' · ' + pct(r.pct, 2)
+                + (r.ft != null ? ' · ' + elt(Math.round(r.ft)) + ' Ft' : ' · nincs ár');
             }
           }
         }
       },
       scales: {
         x: { grid: RACS, border: { display: false }, ticks: { callback: v => v + '%' } },
-        y: { grid: { display: false }, border: { display: false } }
+        y: { grid: { display: false }, border: { display: false }, ticks: { font: { size: 11 } } }
       }
     }
   });
