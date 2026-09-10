@@ -245,6 +245,12 @@
     border-radius: var(--radius); padding: 10px 14px;
     margin-bottom: 16px; font-size: 12px; font-weight: 500;
   }
+  /* 2026 trend: az utolsó, még nem lezárt hónap magyarázata */
+  .partial-trend-note {
+    background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber);
+    border-radius: var(--radius); padding: 8px 12px;
+    margin-bottom: 14px; font-size: 11.5px;
+  }
 
   /* STORE DETAIL LINK + MODAL */
   .store-link { cursor: pointer; text-decoration: underline; text-decoration-style: dotted; text-decoration-color: var(--border2); }
@@ -980,44 +986,54 @@ function renderTrendChart() {
 
 // ── 2026 TREND ────────────────────────────────────────────────────────────────
 const TREND2026 = [
-  {nev:"Király utca",jan:-11614,feb:-4953,mar:-46462,apr:-1220,maj:-73280,jun:-52768,jul:-18588,aug:-57115,franchise:false},
-  {nev:"Fashion",jan:2961,feb:-60888,mar:523,apr:24326,maj:-22987,jun:-37306,jul:10796,aug:-42535,franchise:false},
-  {nev:"Bazilika",jan:3538,feb:16411,mar:-59357,apr:-19392,maj:-97340,jun:-76470,jul:-11345,aug:-81827,franchise:false},
-  {nev:"Széll Kálmán",jan:-55350,feb:-3114,mar:-41823,apr:-81462,maj:-68919,jun:-36571,jul:-85481,aug:-57585,franchise:false},
-  {nev:"Corvin",jan:8486,feb:25470,mar:12344,apr:-2219,maj:12499,jun:-13047,jul:26151,aug:-22916,franchise:false},
-  {nev:"Károly krt",jan:-97443,feb:-47078,mar:-66712,apr:-66992,maj:-7006,jun:-100442,jul:-33682,aug:-78431,franchise:false},
-  {nev:"Dob",jan:-39631,feb:-37573,mar:-11779,apr:-4681,maj:-28975,jun:-35932,jul:-26917,aug:-29836,franchise:false},
-  {nev:"Blaha",jan:1516,feb:-1612,mar:15445,apr:29169,maj:-31313,jun:-24733,jul:-55034,aug:4279,franchise:false},
-  {nev:"Oktogon",jan:4534,feb:-26806,mar:84301,apr:-27854,maj:-24939,jun:-56999,jul:-105690,aug:-77104,franchise:false},
-  {nev:"Wesselényi utca",jan:32868,feb:-1675,mar:30885,apr:-9515,maj:16289,jun:20824,jul:-42248,aug:-20090,franchise:false},
-  {nev:"Astoria",jan:-10710,feb:32807,mar:-69898,apr:41235,maj:5571,jun:-21113,jul:-29409,aug:-8715,franchise:false},
-  {nev:"Erzsébet krt 14",jan:-24146,feb:-98790,mar:21112,apr:-33463,maj:-9680,jun:-9305,jul:-18076,aug:null,franchise:false},
-  {nev:"Gomba Móricz",jan:95,feb:-70301,mar:-44639,apr:307,maj:-17448,jun:-42869,jul:4077,aug:-51976,franchise:false},
-  {nev:"Keleti",jan:-2368,feb:-23338,mar:2844,apr:21058,maj:-30412,jun:15866,jul:702,aug:13893,franchise:false},
-  {nev:"Fővám tér",jan:-24100,feb:-1834,mar:-26065,apr:-52844,maj:-12695,jun:-25431,jul:-31257,aug:-37191,franchise:false},
-  {nev:"Ferenciek tere",jan:-51631,feb:-24445,mar:-2381,apr:-4944,maj:20111,jun:19879,jul:-33424,aug:-89915,franchise:false},
-  {nev:"Jászai Mari tér",jan:-37006,feb:-57567,mar:12163,apr:-13446,maj:-13137,jun:1943,jul:-1408,aug:-13521,franchise:false},
-  {nev:"Etele",jan:-8703,feb:-63905,mar:-38538,apr:-29240,maj:-19538,jun:-32664,jul:-19936,aug:3615,franchise:false},
-  {nev:"Kispest",jan:7160,feb:67972,mar:-5851,apr:22500,maj:-8906,jun:-31163,jul:-5964,aug:-20896,franchise:false},
-  {nev:"Bosnyák tér",jan:10345,feb:47941,mar:-64200,apr:19767,maj:-35883,jun:-9930,jul:4678,aug:9925,franchise:false},
-  {nev:"Árkád",jan:1253,feb:-5622,mar:-21440,apr:12738,maj:-5286,jun:-50135,jul:-4920,aug:-9129,franchise:false},
-  {nev:"Kazinczy",jan:2844,feb:19430,mar:20643,apr:13976,maj:-735,jun:15482,jul:4350,aug:-12907,franchise:false},
-  {nev:"Törökvész",jan:14565,feb:55208,mar:30708,apr:7364,maj:15056,jun:-8875,jul:23200,aug:4170,franchise:false},
-  {nev:"GO Buda",jan:20672,feb:46885,mar:-26475,apr:-55708,maj:-28460,jun:3628,jul:-24600,aug:-76042,franchise:false},
-  {nev:"D1 Buda",jan:20502,feb:5392,mar:-7659,apr:8337,maj:25063,jun:-23002,jul:-16143,aug:7319,franchise:false},
-  {nev:"D2 Baross",jan:4390,feb:19093,mar:-10835,apr:13578,maj:-13707,jun:8180,jul:-27140,aug:-11147,franchise:false},
-  {nev:"Újpest",jan:-19646,feb:-101675,mar:14939,apr:-4103,maj:17664,jun:-10725,jul:-55911,aug:-28412,franchise:false},
-  {nev:"K1 Westend",jan:8027,feb:-26142,mar:-27800,apr:-19662,maj:-13119,jun:-1517,jul:6,aug:-13087,franchise:false},
-  {nev:"F1 Siófok",jan:null,feb:null,mar:null,apr:null,maj:-182,jun:-22829,jul:-111214,aug:-69220,franchise:false},
-  {nev:"Szeged",jan:6456,feb:-79628,mar:-50881,apr:-4244,maj:-17298,jun:-42462,jul:-10797,aug:-79383,franchise:false},
-  {nev:"Pécs",jan:25784,feb:-6569,mar:20331,apr:-11226,maj:-68077,jun:-73745,jul:-15193,aug:-28507,franchise:true},
-  {nev:"Miskolc",jan:-41263,feb:-57051,mar:-170650,apr:-8633,maj:-163341,jun:51749,jul:-133088,aug:-204672,franchise:true},
-  {nev:"BP PARK",jan:null,feb:null,mar:null,apr:null,maj:null,jun:22258,jul:-37105,aug:-50804,franchise:false},
-  {nev:"PLÁZS",jan:null,feb:null,mar:null,apr:null,maj:null,jun:5802,jul:-15340,aug:-37822,franchise:false},
-  {nev:"Erzsébet krt. 30.",jan:null,feb:null,mar:null,apr:null,maj:null,jun:null,jul:680,aug:-16808,franchise:false},
+  {nev:"Király utca",jan:-11614,feb:-4953,mar:-46462,apr:-1220,maj:-73280,jun:-52768,jul:-18588,aug:-57115,sze:4589,franchise:false},
+  {nev:"Fashion",jan:2961,feb:-60888,mar:523,apr:24326,maj:-22987,jun:-37306,jul:10796,aug:-42535,sze:-8899,franchise:false},
+  {nev:"Bazilika",jan:3538,feb:16411,mar:-59357,apr:-19392,maj:-97340,jun:-76470,jul:-11345,aug:-81827,sze:-36866,franchise:false},
+  {nev:"Széll Kálmán",jan:-55350,feb:-3114,mar:-41823,apr:-81462,maj:-68919,jun:-36571,jul:-85481,aug:-57585,sze:-42608,franchise:false},
+  {nev:"Corvin",jan:8486,feb:25470,mar:12344,apr:-2219,maj:12499,jun:-13047,jul:26151,aug:-22916,sze:-4862,franchise:false},
+  {nev:"Károly krt",jan:-97443,feb:-47078,mar:-66712,apr:-66992,maj:-7006,jun:-100442,jul:-33682,aug:-78431,sze:-13650,franchise:false},
+  {nev:"Dob",jan:-39631,feb:-37573,mar:-11779,apr:-4681,maj:-28975,jun:-35932,jul:-26917,aug:-29836,sze:312,franchise:false},
+  {nev:"Blaha",jan:1516,feb:-1612,mar:15445,apr:29169,maj:-31313,jun:-24733,jul:-55034,aug:4279,sze:29026,franchise:false},
+  {nev:"Oktogon",jan:4534,feb:-26806,mar:84301,apr:-27854,maj:-24939,jun:-56999,jul:-105690,aug:-77104,sze:-219663,franchise:false},
+  {nev:"Wesselényi utca",jan:32868,feb:-1675,mar:30885,apr:-9515,maj:16289,jun:20824,jul:-42248,aug:-20090,sze:27575,franchise:false},
+  {nev:"Astoria",jan:-10710,feb:32807,mar:-69898,apr:41235,maj:5571,jun:-21113,jul:-29409,aug:-8715,sze:-2499,franchise:false},
+  {nev:"Erzsébet krt 14",jan:-24146,feb:-98790,mar:21112,apr:-33463,maj:-9680,jun:-9305,jul:-18076,aug:null,sze:null,franchise:false},
+  {nev:"Gomba Móricz",jan:95,feb:-70301,mar:-44639,apr:307,maj:-17448,jun:-42869,jul:4077,aug:-51976,sze:18065,franchise:false},
+  {nev:"Keleti",jan:-2368,feb:-23338,mar:2844,apr:21058,maj:-30412,jun:15866,jul:702,aug:13893,sze:-59777,franchise:false},
+  {nev:"Fővám tér",jan:-24100,feb:-1834,mar:-26065,apr:-52844,maj:-12695,jun:-25431,jul:-31257,aug:-37191,sze:-4312,franchise:false},
+  {nev:"Ferenciek tere",jan:-51631,feb:-24445,mar:-2381,apr:-4944,maj:20111,jun:19879,jul:-33424,aug:-89915,sze:12076,franchise:false},
+  {nev:"Jászai Mari tér",jan:-37006,feb:-57567,mar:12163,apr:-13446,maj:-13137,jun:1943,jul:-1408,aug:-13521,sze:20023,franchise:false},
+  {nev:"Etele",jan:-8703,feb:-63905,mar:-38538,apr:-29240,maj:-19538,jun:-32664,jul:-19936,aug:3615,sze:-37235,franchise:false},
+  {nev:"Kispest",jan:7160,feb:67972,mar:-5851,apr:22500,maj:-8906,jun:-31163,jul:-5964,aug:-20896,sze:23486,franchise:false},
+  {nev:"Bosnyák tér",jan:10345,feb:47941,mar:-64200,apr:19767,maj:-35883,jun:-9930,jul:4678,aug:9925,sze:896,franchise:false},
+  {nev:"Árkád",jan:1253,feb:-5622,mar:-21440,apr:12738,maj:-5286,jun:-50135,jul:-4920,aug:-9129,sze:14165,franchise:false},
+  {nev:"Kazinczy",jan:2844,feb:19430,mar:20643,apr:13976,maj:-735,jun:15482,jul:4350,aug:-12907,sze:20485,franchise:false},
+  {nev:"Törökvész",jan:14565,feb:55208,mar:30708,apr:7364,maj:15056,jun:-8875,jul:23200,aug:4170,sze:-91917,franchise:false},
+  {nev:"GO Buda",jan:20672,feb:46885,mar:-26475,apr:-55708,maj:-28460,jun:3628,jul:-24600,aug:-76042,sze:-27288,franchise:false},
+  {nev:"D1 Buda",jan:20502,feb:5392,mar:-7659,apr:8337,maj:25063,jun:-23002,jul:-16143,aug:7319,sze:6006,franchise:false},
+  {nev:"D2 Baross",jan:4390,feb:19093,mar:-10835,apr:13578,maj:-13707,jun:8180,jul:-27140,aug:-11147,sze:24698,franchise:false},
+  {nev:"Újpest",jan:-19646,feb:-101675,mar:14939,apr:-4103,maj:17664,jun:-10725,jul:-55911,aug:-28412,sze:15685,franchise:false},
+  {nev:"K1 Westend",jan:8027,feb:-26142,mar:-27800,apr:-19662,maj:-13119,jun:-1517,jul:6,aug:-13087,sze:-6560,franchise:false},
+  {nev:"F1 Siófok",jan:null,feb:null,mar:null,apr:null,maj:-182,jun:-22829,jul:-111214,aug:-69220,sze:4090,franchise:false},
+  {nev:"Szeged",jan:6456,feb:-79628,mar:-50881,apr:-4244,maj:-17298,jun:-42462,jul:-10797,aug:-79383,sze:-86978,franchise:false},
+  {nev:"Pécs",jan:25784,feb:-6569,mar:20331,apr:-11226,maj:-68077,jun:-73745,jul:-15193,aug:-28507,sze:-96036,franchise:true},
+  {nev:"Miskolc",jan:-41263,feb:-57051,mar:-170650,apr:-8633,maj:-163341,jun:51749,jul:-133088,aug:-204672,sze:-38899,franchise:true},
+  {nev:"BP PARK",jan:null,feb:null,mar:null,apr:null,maj:null,jun:22258,jul:-37105,aug:-50804,sze:-24663,franchise:false},
+  {nev:"PLÁZS",jan:null,feb:null,mar:null,apr:null,maj:null,jun:5802,jul:-15340,aug:-37822,sze:-6167,franchise:false},
+  {nev:"Erzsébet krt. 30.",jan:null,feb:null,mar:null,apr:null,maj:null,jun:null,jul:680,aug:-16808,sze:-1731,franchise:false},
 ];
-const T2026_MONTHS = ['Január','Február','Március','Április','Május','Június','Július','Augusztus'];
-const T2026_KEYS = ['jan','feb','mar','apr','maj','jun','jul','aug'];
+const T2026_MONTHS = ['Január','Február','Március','Április','Május','Június','Július','Augusztus','Szeptember'];
+const T2026_KEYS = ['jan','feb','mar','apr','maj','jun','jul','aug','sze'];
+// Az utolsó hónap lehet még folyamatban (részeredmény) - a trendben jelöljük.
+const T2026_HONAP_KEY = { 'január':'jan','február':'feb','március':'mar','április':'apr','május':'maj','június':'jun','július':'jul','augusztus':'aug','szeptember':'sze' };
+function partialMonthKey() {
+  if (!DATA || !DATA.meta || !DATA.meta.reszido) return null;
+  const h = (DATA.meta.honap || '').replace(/^\d{4}\.\s*/, '').trim().toLowerCase();
+  return T2026_HONAP_KEY[h] || null;
+}
+function monthLabel(i) {
+  return T2026_MONTHS[i] + (T2026_KEYS[i] === partialMonthKey() ? '*' : '');
+}
 TREND2026.forEach(d => {
   const vals2026 = T2026_KEYS.map(k => d[k]).filter(v=>v!=null);
   d.avg = vals2026.length ? Math.round(vals2026.reduce((s,v)=>s+v,0)/vals2026.length) : 0;
@@ -1077,8 +1093,8 @@ function build2026MetricsHtml() {
     return `<div class="metric" style="grid-column:1/-1"><div class="metric-sub">Nincs üzlet ehhez a szűréshez.</div></div>`;
   }
   const monthTotals = T2026_KEYS.map(m => saját.reduce((s,d)=>s+(d[m]||0),0));
-  const bestM = T2026_MONTHS[monthTotals.indexOf(Math.max(...monthTotals))];
-  const worstM = T2026_MONTHS[monthTotals.indexOf(Math.min(...monthTotals))];
+  const bestM = monthLabel(monthTotals.indexOf(Math.max(...monthTotals)));
+  const worstM = monthLabel(monthTotals.indexOf(Math.min(...monthTotals)));
   const allAvg = Math.round(monthTotals.reduce((s,v)=>s+v,0)/T2026_KEYS.length);
   const improving = saját.filter(d=>d.trend>5000).length;
   const worsening = saját.filter(d=>d.trend<-5000).length;
@@ -1097,7 +1113,12 @@ function renderTrend2026Summary() {
 }
 
 function renderTrend2026() {
+  // Ha az aktuális hónap még nem zárult le, a trendben csillaggal jelöljük,
+  // hogy az utolsó oszlop csak részeredmény (nem hasonlítható a zárt hónapokhoz).
+  const pk = partialMonthKey();
+  const partialNote = pk ? `<div class="partial-trend-note">* A ${esc((DATA.meta.honap||'').replace(/^\d{4}\.\s*/,''))} még nem zárult le: az utolsó oszlop csak részeredmény${DATA.meta.reszido_datum ? ' (' + esc(DATA.meta.reszido_datum) + '-ig)' : ''}, ezért nem hasonlítható közvetlenül a lezárt hónapokhoz.</div>` : '';
   document.getElementById('tab-trend2026').innerHTML = `
+    ${partialNote}
     <div class="metrics" style="margin-bottom:14px" id="t2026metrics">${build2026MetricsHtml()}</div>
 
     <div style="display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px">
@@ -1138,7 +1159,7 @@ function renderTrend2026() {
         <table>
           <thead><tr>
             <th onclick="sort2026By('nev')">Üzlet</th>
-            ${T2026_KEYS.map((k,i) => `<th onclick="sort2026By('${k}')">${esc(T2026_MONTHS[i])}</th>`).join('')}
+            ${T2026_KEYS.map((k,i) => `<th onclick="sort2026By('${k}')">${esc(monthLabel(i))}</th>`).join('')}
             <th onclick="sort2026By('avg')">Átlag</th>
             <th onclick="sort2026By('trend')">Trend</th>
           </tr></thead>
@@ -1166,14 +1187,14 @@ function render2026Charts() {
 
   charts.t2026month = new Chart(document.getElementById('t2026month'), {
     type:'bar',
-    data:{labels:T2026_MONTHS, datasets:[{data:mTotals, backgroundColor:mTotals.map(v=>v>=0?'#2d6a4f':'#ec1b23'), borderWidth:0, borderRadius:3}]},
+    data:{labels:T2026_MONTHS.map((m,i)=>monthLabel(i)), datasets:[{data:mTotals, backgroundColor:mTotals.map(v=>v>=0?'#2d6a4f':'#ec1b23'), borderWidth:0, borderRadius:3}]},
     options:{responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>fmt(ctx.parsed.y)+' Ft'}}},
       scales:{x:{grid:{display:false}},y:{ticks:{callback:v=>(v/1000)+'k'},grid:{color:'rgba(0,0,0,0.05)'}}}}
   });
 
   charts.t2026negpos = new Chart(document.getElementById('t2026negpos'), {
     type:'bar',
-    data:{labels:T2026_MONTHS, datasets:[
+    data:{labels:T2026_MONTHS.map((m,i)=>monthLabel(i)), datasets:[
       {label:'Hiányos',data:negC,backgroundColor:'#ec1b23',borderRadius:3},
       {label:'Többlet',data:posC,backgroundColor:'#2d6a4f',borderRadius:3}
     ]},
@@ -1202,7 +1223,7 @@ function render2026Heatmap() {
   const cols = `160px repeat(${T2026_MONTHS.length}, 1fr) 90px`;
   let html = `<div style="display:grid;grid-template-columns:${cols};gap:2px;font-size:11px">`;
   html += '<div style="padding:5px 8px;font-size:10px;font-weight:600;color:var(--text3)">Üzlet</div>';
-  T2026_MONTHS.forEach(m => html += `<div style="padding:5px 8px;font-size:10px;font-weight:600;color:var(--text3);text-align:right">${m}</div>`);
+  T2026_MONTHS.forEach((m,i) => html += `<div style="padding:5px 8px;font-size:10px;font-weight:600;color:var(--text3);text-align:right">${monthLabel(i)}</div>`);
   html += '<div style="padding:5px 8px;font-size:10px;font-weight:600;color:var(--text3);text-align:right">Átlag</div>';
   data.forEach(d => {
     html += `<div style="padding:5px 8px;font-size:12px;display:flex;align-items:center;gap:4px">${esc(d.nev)}${d.franchise?'<span class="franchise-label">F</span>':''}</div>`;
@@ -1278,68 +1299,43 @@ function renderLevon() {
 // ── INLINE FALLBACK DATA ──────────────────────────────────────────────────────
 // Ha a fetch nem működik (pl. fájlból nyitják meg), ez az inline adat tölt be
 const INLINE_DATA = {
-  "meta": { "honap": "2026. augusztus", "frissitve": "2026 Augusztus teljes hónap" },
-  "levonasok": [
-    {"nev": "Király utca", "levon": 55000, "megjegyzes": ""},
-    {"nev": "Erzsébet krt. 30.", "levon": 15000, "megjegyzes": ""},
-    {"nev": "Fashion", "levon": 40000, "megjegyzes": ""},
-    {"nev": "Bazilika", "levon": 80000, "megjegyzes": ""},
-    {"nev": "Széll Kálmán", "levon": 55000, "megjegyzes": ""},
-    {"nev": "Corvin", "levon": 20000, "megjegyzes": ""},
-    {"nev": "Károly krt", "levon": 75000, "megjegyzes": ""},
-    {"nev": "Dob", "levon": 25000, "megjegyzes": ""},
-    {"nev": "Oktogon", "levon": 75000, "megjegyzes": ""},
-    {"nev": "Wesselényi utca", "levon": 20000, "megjegyzes": ""},
-    {"nev": "Gomba Móricz", "levon": 50000, "megjegyzes": ""},
-    {"nev": "Fővám tér", "levon": 35000, "megjegyzes": ""},
-    {"nev": "Ferenciek tere", "levon": 90000, "megjegyzes": ""},
-    {"nev": "Jászai Mari tér", "levon": 10000, "megjegyzes": ""},
-    {"nev": "Újpest", "levon": 25000, "megjegyzes": ""},
-    {"nev": "PLÁZS", "levon": 35000, "megjegyzes": ""},
-    {"nev": "K1 Westend", "levon": 10000, "megjegyzes": ""},
-    {"nev": "F1 Siófok", "levon": 65000, "megjegyzes": ""},
-    {"nev": "Szeged", "levon": 75000, "megjegyzes": ""},
-    {"nev": "BP PARK", "levon": 50000, "megjegyzes": ""},
-    {"nev": "Kispest", "levon": 20000, "megjegyzes": ""},
-    {"nev": "Kazinczy", "levon": 10000, "megjegyzes": ""},
-    {"nev": "D2 Baross", "levon": 10000, "megjegyzes": ""},
-    {"nev": "GO Buda", "levon": 75000, "megjegyzes": ""}
-  ],
+  "meta": { "honap": "2026. szeptember", "frissitve": "2026. szeptember 10-ig (részeredmény, folyamatban)", "reszido": true, "reszido_datum": "2026. szeptember 10" },
+  "levonasok": [],
   "uzletek": [
-    {"nev":"Király utca","leltar_pct":99.76,"osszes":-57115,"gomboc":2145,"ital":-27180,"desseg":0,"doboz":-25700,"snack":-2390,"ajandek":-3990,"selejt_pct":8.8,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":2}],"ital":[{"termek":"Személyzeti víz","mennyiseg":14}],"doboz":[{"termek":"Doboz","mennyiseg":140},{"termek":"Papírzacskó","mennyiseg":14}],"ajandek":[{"termek":"Kockajáték épület","mennyiseg":1}]},"megjegyzesek":{"ital":"Sok egyéb termék is vegyesen"},"teruletvezeto":["Bratkovics Ádám"],"selejt_ft":2406363,"ptg":{"osszes":-269,"fiscat":0,"cash":-269}},
-    {"nev":"Erzsébet krt. 30.","leltar_pct":99.8,"osszes":-16808,"gomboc":-10468,"ital":1850,"desseg":-1990,"doboz":-6200,"snack":-2600,"ajandek":0,"selejt_pct":26.0,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1}],"doboz":[{"termek":"Papírzacskó","mennyiseg":55}]},"teruletvezeto":["Ullman Zsófia"],"selejt_ft":3058141,"ptg":{"osszes":2862,"fiscat":0,"cash":0}},
-    {"nev":"Fashion","leltar_pct":99.77,"osszes":-42535,"gomboc":-26826,"ital":-5720,"desseg":-1299,"doboz":-6100,"snack":-2590,"ajandek":0,"selejt_pct":8.6,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":2.5}],"doboz":[{"termek":"Doboz","mennyiseg":45},{"termek":"Papírzacskó","mennyiseg":15}],"snack":[{"termek":"Tre Marie","mennyiseg":1}]},"megjegyzesek":{"ital":"Pár termék vegyesen"},"teruletvezeto":["Hegedűs Milán"],"selejt_ft":1802088,"ptg":{"osszes":5734,"fiscat":1249,"cash":4485}},
-    {"nev":"Bazilika","leltar_pct":99.54,"osszes":-81827,"gomboc":-44118,"ital":-26480,"desseg":-1299,"doboz":-6550,"snack":-3380,"ajandek":0,"selejt_pct":9.1,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":4}],"doboz":[{"termek":"Doboz","mennyiseg":33},{"termek":"Papírzacskó","mennyiseg":10}]},"megjegyzesek":{"ital":"Sok termék vegyesen","snack":"Vegyesen pár termék"},"teruletvezeto":["Racsmány Ignác"],"selejt_ft":1850436,"ptg":{"osszes":-13597,"fiscat":1349,"cash":2834}},
-    {"nev":"Széll Kálmán","leltar_pct":99.6,"osszes":-57585,"gomboc":-35356,"ital":-4040,"desseg":-1299,"doboz":-12100,"snack":-4790,"ajandek":0,"selejt_pct":10.2,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":3.5}],"doboz":[{"termek":"Doboz","mennyiseg":62},{"termek":"Papírzacskó","mennyiseg":11}],"snack":[{"termek":"Lays","mennyiseg":4},{"termek":"Sperlai","mennyiseg":1}]},"teruletvezeto":["Hegedűs Milán"],"selejt_ft":1675558,"ptg":{"osszes":3003,"fiscat":2698,"cash":305}},
-    {"nev":"Corvin","leltar_pct":99.68,"osszes":-22916,"gomboc":4114,"ital":-6370,"desseg":0,"doboz":-21650,"snack":990,"ajandek":0,"selejt_pct":16.4,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":4}],"ital":[{"termek":"Személyzeti víz","mennyiseg":9}],"doboz":[{"termek":"Doboz","mennyiseg":14},{"termek":"Papírzacskó","mennyiseg":222}],"snack":[{"termek":"Krumi","mennyiseg":1}]},"teruletvezeto":["Racsmány Ignác"],"selejt_ft":1443963,"ptg":{"osszes":8594,"fiscat":1199,"cash":9793}},
-    {"nev":"Károly krt","leltar_pct":99.54,"osszes":-78431,"gomboc":-36001,"ital":-14320,"desseg":0,"doboz":-16150,"snack":-4980,"ajandek":-6980,"selejt_pct":6.1,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":3.5}],"doboz":[{"termek":"Doboz","mennyiseg":93}],"ajandek":[{"termek":"PM pizzavágó","mennyiseg":3}]},"megjegyzesek":{"ital":"Sok termék vegyesen, 1-2-3 darabok","snack":"Pár termék vegyesen"},"teruletvezeto":["Racsmány Ignác"],"selejt_ft":1138837,"ptg":{"osszes":935,"fiscat":0,"cash":24301}},
-    {"nev":"Dob","leltar_pct":99.71,"osszes":-29836,"gomboc":-22316,"ital":-1500,"desseg":0,"doboz":-1050,"snack":-4970,"ajandek":0,"selejt_pct":11.3,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":2}]},"megjegyzesek":{"snack":"Pár termék vegyesen"},"teruletvezeto":["Ullman Zsófia"],"selejt_ft":1401617,"ptg":{"osszes":6541,"fiscat":0,"cash":-6719}},
-    {"nev":"Blaha","leltar_pct":100.02,"osszes":4279,"gomboc":16889,"ital":-4130,"desseg":0,"doboz":-6350,"snack":1860,"ajandek":-3990,"selejt_pct":5.4,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1.5}],"ajandek":[{"termek":"Kockajáték épület","mennyiseg":1}],"snack":[{"termek":"Tre Marie mogyorós","mennyiseg":4},{"termek":"Grissini","mennyiseg":3},{"termek":"Amica pizza snack","mennyiseg":1}]},"teruletvezeto":["Anda Patrícia"],"selejt_ft":1019170,"ptg":{"osszes":2295,"fiscat":4247,"cash":-1946}},
-    {"nev":"Oktogon","leltar_pct":99.6,"osszes":-77104,"gomboc":-58165,"ital":1280,"desseg":-5279,"doboz":-300,"snack":-12740,"ajandek":-1900,"selejt_pct":9.2,"reszletek":{"gomboc":[{"termek":"32-es gombóc","mennyiseg":10}],"desseg":[{"termek":"Csokis mousse","mennyiseg":2},{"termek":"Profiterol","mennyiseg":2},{"termek":"Gelato","mennyiseg":1}],"doboz":[{"termek":"Doboz","mennyiseg":60}]},"megjegyzesek":{"snack":"Sok termék vegyesen"},"teruletvezeto":["Ullman Zsófia"],"pasta":-9011,"selejt_ft":2678149,"ptg":{"osszes":15809,"fiscat":4896,"cash":10913}},
-    {"nev":"Wesselényi utca","leltar_pct":99.89,"osszes":-20090,"gomboc":-24860,"ital":720,"desseg":0,"doboz":3650,"snack":400,"ajandek":0,"selejt_pct":5.0,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":2.5}]},"teruletvezeto":["Hegedűs Milán"],"pasta":0,"selejt_ft":938935,"ptg":{"osszes":-23603,"fiscat":308293,"cash":99998}},
-    {"nev":"Astoria","leltar_pct":99.8,"osszes":-8715,"gomboc":-4972,"ital":3090,"desseg":3897,"doboz":-5600,"snack":-4780,"ajandek":-350,"selejt_pct":12.2,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":5}],"doboz":[{"termek":"Doboz","mennyiseg":14},{"termek":"Papírzacskó","mennyiseg":16}]},"teruletvezeto":["Anda Patrícia"],"selejt_ft":1565904,"ptg":{"osszes":3187,"fiscat":2698,"cash":489}},
-    {"nev":"Gomba Móricz","leltar_pct":99.4,"osszes":-51976,"gomboc":-31534,"ital":-11310,"desseg":4588,"doboz":-14650,"snack":1180,"ajandek":-250,"selejt_pct":11.6,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":3}],"ital":[{"termek":"Cappy ice","mennyiseg":6},{"termek":"0,33 Cola","mennyiseg":5},{"termek":"Fuzetea Citrom","mennyiseg":4},{"termek":"Red Bull Sudachi","mennyiseg":3}],"doboz":[{"termek":"Doboz","mennyiseg":40},{"termek":"Papírzacskó","mennyiseg":63}]},"teruletvezeto":["Ullman Zsófia"],"pasta":-11542,"selejt_ft":2114165,"ptg":{"osszes":1909,"fiscat":0,"cash":1909}},
-    {"nev":"Keleti","leltar_pct":100.1,"osszes":13893,"gomboc":15722,"ital":890,"desseg":-1299,"doboz":750,"snack":-2970,"ajandek":800,"selejt_pct":11.8,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1.5}]},"teruletvezeto":["Hegedűs Milán"],"pasta":4417,"selejt_ft":1488798,"ptg":{"osszes":10620,"fiscat":0,"cash":10620}},
-    {"nev":"Fővám tér","leltar_pct":99.68,"osszes":-37191,"gomboc":-25041,"ital":-7510,"desseg":0,"doboz":-3050,"snack":-1590,"ajandek":0,"selejt_pct":10.3,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":2.5}]},"megjegyzesek":{"ital":"15 db termék vegyesen"},"teruletvezeto":["Anda Patrícia"],"selejt_ft":1375526,"ptg":{"osszes":-14876,"fiscat":0,"cash":1944}},
-    {"nev":"Ferenciek tere","leltar_pct":98.85,"osszes":-89915,"gomboc":-75550,"ital":-8870,"desseg":-6495,"doboz":1800,"snack":-800,"ajandek":0,"selejt_pct":8.2,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":7}],"desseg":[{"termek":"Tiramisu","mennyiseg":4},{"termek":"Csokis mousse","mennyiseg":1}],"doboz":[{"termek":"Doboz","mennyiseg":95}]},"megjegyzesek":{"ital":"17 db vegyes ital termék"},"teruletvezeto":["Hegedűs Milán"],"selejt_ft":1065408,"ptg":{"osszes":16855,"fiscat":2498,"cash":19353}},
-    {"nev":"Jászai Mari tér","leltar_pct":99.89,"osszes":-13521,"gomboc":-3661,"ital":3560,"desseg":0,"doboz":-7050,"snack":-6370,"ajandek":0,"selejt_pct":10.0,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":3}],"doboz":[{"termek":"Doboz","mennyiseg":28},{"termek":"Papírzacskó","mennyiseg":11}],"snack":[{"termek":"Grisbi","mennyiseg":3}]},"teruletvezeto":["Racsmány Ignác"],"selejt_ft":1379787,"ptg":{"osszes":0,"fiscat":7805,"cash":-805}},
-    {"nev":"Etele","leltar_pct":100.1,"osszes":3615,"gomboc":2244,"ital":240,"desseg":-1299,"doboz":-1450,"snack":790,"ajandek":3090,"selejt_pct":9.7,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":2}],"ajandek":[{"termek":"Fokhagyma olaj","mennyiseg":1}]},"teruletvezeto":["Bratkovics Ádám"],"selejt_ft":1329769,"ptg":{"osszes":925,"fiscat":0,"cash":925}},
-    {"nev":"Kispest","leltar_pct":99.8,"osszes":-20896,"gomboc":-17916,"ital":-4880,"desseg":0,"doboz":400,"snack":-200,"ajandek":1700,"selejt_pct":13.4,"reszletek":{"gomboc":[{"termek":"32-es gombóc","mennyiseg":3}]},"teruletvezeto":["Ullman Zsófia"],"pasta":6377,"selejt_ft":981944,"ptg":{"osszes":4064,"fiscat":3726,"cash":338}},
-    {"nev":"Bosnyák tér","leltar_pct":100.1,"osszes":9925,"gomboc":13196,"ital":-4710,"desseg":1299,"doboz":-1450,"snack":1590,"ajandek":0,"selejt_pct":13.7,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1}]},"teruletvezeto":["Bratkovics Ádám"],"selejt_ft":1646282,"ptg":{"osszes":616,"fiscat":0,"cash":616}},
-    {"nev":"Árkád","leltar_pct":99.8,"osszes":-9129,"gomboc":-5299,"ital":-1730,"desseg":0,"doboz":-3950,"snack":-800,"ajandek":2650,"selejt_pct":12.5,"reszletek":{"gomboc":[{"termek":"32-es gombóc","mennyiseg":1}]},"teruletvezeto":["Bratkovics Ádám"],"pasta":5074,"selejt_ft":1643288,"ptg":{"osszes":2540,"fiscat":0,"cash":2540}},
-    {"nev":"Kazinczy","leltar_pct":99.85,"osszes":-12907,"gomboc":-15827,"ital":5080,"desseg":0,"doboz":-5150,"snack":2990,"ajandek":0,"selejt_pct":9.2,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":1.5}],"doboz":[{"termek":"Doboz","mennyiseg":29}],"snack":[{"termek":"Lays","mennyiseg":3},{"termek":"Sperlai","mennyiseg":1}]},"megjegyzesek":{"ital":"7 db ital termék többlet"},"teruletvezeto":["Anda Patrícia"],"selejt_ft":913520,"ptg":{"osszes":0,"fiscat":0,"cash":42}},
-    {"nev":"Törökvész","leltar_pct":100.1,"osszes":4170,"gomboc":23509,"ital":-1680,"desseg":-10309,"doboz":-8200,"snack":-800,"ajandek":1650,"selejt_pct":8.9,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":2}],"desseg":[{"termek":"Profiterol","mennyiseg":9}],"doboz":[{"termek":"Doboz","mennyiseg":15},{"termek":"Papírzacskó","mennyiseg":26}]},"teruletvezeto":["Racsmány Ignác"],"pasta":4111,"selejt_ft":1514484,"ptg":{"osszes":6161,"fiscat":4428,"cash":1733}},
-    {"nev":"GO Buda","leltar_pct":99.1,"osszes":-76042,"gomboc":-37209,"ital":-1870,"desseg":1907,"doboz":-34200,"snack":-4770,"ajandek":100,"selejt_pct":12.2,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":3.5}],"doboz":[{"termek":"Papírzacskó","mennyiseg":317}],"snack":[{"termek":"Grissini","mennyiseg":2},{"termek":"Sperlai","mennyiseg":1}]},"teruletvezeto":["Bratkovics Ádám"],"pasta":6077,"selejt_ft":1490479,"ptg":{"osszes":18752,"fiscat":6840,"cash":11912}},
-    {"nev":"D1 Buda","leltar_pct":100.1,"osszes":7319,"gomboc":9460,"ital":1680,"desseg":1299,"doboz":-900,"snack":-3980,"ajandek":-240,"selejt_pct":5.9,"reszletek":{"gomboc":[{"termek":"32-es gombóc","mennyiseg":2}],"snack":[{"termek":"Sperlai gumicukor","mennyiseg":2}]},"teruletvezeto":["Hegedűs Milán"],"pasta":-21858,"selejt_ft":887033,"ptg":{"osszes":0,"fiscat":0,"cash":null}},
-    {"nev":"D2 Baross","leltar_pct":99.8,"osszes":-11147,"gomboc":-5626,"ital":-1030,"desseg":1299,"doboz":4300,"snack":-10140,"ajandek":50,"selejt_pct":3.0,"reszletek":{"gomboc":[{"termek":"32-es gombóc","mennyiseg":1}]},"megjegyzesek":{"snack":"6 db termék vegyesen"},"teruletvezeto":["Racsmány Ignác"],"pasta":638,"selejt_ft":392754,"ptg":{"osszes":0,"fiscat":0,"cash":null}},
-    {"nev":"Újpest","leltar_pct":99.5,"osszes":-28412,"gomboc":-29632,"ital":-280,"desseg":0,"doboz":500,"snack":0,"ajandek":1000,"selejt_pct":5.0,"reszletek":{"gomboc":[{"termek":"32-es gombóc","mennyiseg":5}]},"teruletvezeto":["Anda Patrícia"],"pasta":3600,"selejt_ft":450446,"ptg":{"osszes":-2694,"fiscat":0,"cash":-2694}},
-    {"nev":"K1 Westend","leltar_pct":99.74,"osszes":-13087,"gomboc":523,"ital":-4610,"desseg":0,"doboz":-9000,"snack":0,"ajandek":0,"selejt_pct":19.1,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":1}],"ital":[{"termek":"Személyzeti víz","mennyiseg":12}],"doboz":[{"termek":"Papírzacskó","mennyiseg":58},{"termek":"Doboz","mennyiseg":13}]},"teruletvezeto":["Racsmány Ignác"],"selejt_ft":1264494,"ptg":{"osszes":2594,"fiscat":0,"cash":0}},
-    {"nev":"BP PARK","leltar_pct":99.6,"osszes":-50804,"gomboc":-43216,"ital":-840,"desseg":0,"doboz":-4750,"snack":-1998,"ajandek":0,"selejt_pct":8.7,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":4}]},"teruletvezeto":["Ullman Zsófia"],"selejt_ft":1478870,"ptg":{"osszes":0,"fiscat":2798,"cash":500}},
-    {"nev":"PLÁZS","leltar_pct":99.6,"osszes":-37822,"gomboc":-27112,"ital":-1210,"desseg":0,"doboz":-9500,"snack":0,"ajandek":0,"selejt_pct":8.3,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":2.5}],"doboz":[{"termek":"Doboz","mennyiseg":60}]},"teruletvezeto":["Bratkovics Ádám","Hegedűs Milán"],"selejt_ft":915423,"ptg":{"osszes":0,"fiscat":0,"cash":3063}},
-    {"nev":"F1 Siófok","leltar_pct":99.6,"osszes":-69220,"gomboc":-19130,"ital":-47100,"desseg":0,"doboz":-2650,"snack":800,"ajandek":-1140,"selejt_pct":9.6,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":2}]},"megjegyzesek":{"ital":"Rengeteg termék, 3-4 db-onként vegyesen"},"teruletvezeto":["Bratkovics Ádám","Hegedűs Milán"],"selejt_ft":2611506,"ptg":{"osszes":15493,"fiscat":16489,"cash":-996}},
-    {"nev":"Szeged","leltar_pct":99.4,"osszes":-79383,"gomboc":-36233,"ital":-3730,"desseg":-1990,"doboz":-22950,"snack":-9750,"ajandek":-4730,"selejt_pct":9.2,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":3.5}],"doboz":[{"termek":"Doboz","mennyiseg":64},{"termek":"Papírzacskó","mennyiseg":107}],"ajandek":[{"termek":"PM fokhagymaolaj","mennyiseg":2}],"snack":[{"termek":"Sperlai","mennyiseg":4},{"termek":"Grissini","mennyiseg":1}]},"teruletvezeto":["Anda Patrícia"],"pasta":859,"selejt_ft":1543744,"ptg":{"osszes":11623,"fiscat":5736,"cash":5887}},
-    {"nev":"Pécs","leltar_pct":99.7,"osszes":-28507,"gomboc":-18243,"ital":1480,"desseg":-3894,"doboz":-7150,"snack":-1200,"ajandek":500,"selejt_pct":9.4,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1}],"doboz":[{"termek":"Papírzacskó","mennyiseg":36},{"termek":"Doboz","mennyiseg":12}]},"franchise":true,"teruletvezeto":["Bratkovics Ádám"],"pasta":1975,"selejt_ft":1496960,"ptg":{"osszes":-9931,"fiscat":0,"cash":-9931}},
-    {"nev":"Miskolc","leltar_pct":98.12,"osszes":-204672,"gomboc":-173280,"ital":-37310,"desseg":4478,"doboz":-1000,"snack":1990,"ajandek":450,"selejt_pct":5.8,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":17}]},"megjegyzesek":{"ital":"Sok termék vegyesen"},"franchise":true,"teruletvezeto":["Bratkovics Ádám"],"selejt_ft":756436,"ptg":{"osszes":1564,"fiscat":690,"cash":874}}
+    {"nev":"Király utca","leltar_pct":100.08,"osszes":4589,"gomboc":6779,"ital":510,"desseg":0,"doboz":-1300,"snack":-1400,"ajandek":0,"selejt_pct":10.9,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":6}]},"megjegyzesek":{"ital":"44 db NA mentes többlet, 24 db Heineken hiány. Siófoki mozgatás: 8 karton 0,5 víz, 4 Heineken – másnap jelentkezett az eltérés, kérem újra megnézni."},"teruletvezeto":["Bratkovics Ádám"],"selejt_ft":733083,"ptg":{"osszes":-4552,"fiscat":3747,"cash":-805}},
+    {"nev":"Erzsébet krt. 30.","leltar_pct":99.9,"osszes":-1731,"gomboc":-11231,"ital":1300,"desseg":0,"doboz":8200,"snack":0,"ajandek":0,"selejt_pct":17.2,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1}],"doboz":[{"termek":"Papírzacskó","mennyiseg":55}]},"megjegyzesek":{"ital":"9 db 1,5 Mentes többlet, 9 db Sprite hiány"},"teruletvezeto":["Ullman Zsófia"],"selejt_ft":487283,"ptg":{"osszes":495,"fiscat":0,"cash":0}},
+    {"nev":"Fashion","leltar_pct":99.8,"osszes":-8899,"gomboc":-3829,"ital":-7410,"desseg":0,"doboz":1950,"snack":390,"ajandek":0,"selejt_pct":7.6,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":4}],"ital":[{"termek":"1,5 Mentes víz","mennyiseg":8}]},"teruletvezeto":["Hegedűs Milán"],"selejt_ft":367146,"ptg":{"osszes":-79,"fiscat":0,"cash":-79}},
+    {"nev":"Bazilika","leltar_pct":99.2,"osszes":-36866,"gomboc":-10918,"ital":-13480,"desseg":-2598,"doboz":-3100,"snack":-6770,"ajandek":0,"selejt_pct":10.5,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1}],"snack":[{"termek":"Amica burgonya","mennyiseg":3}]},"megjegyzesek":{"ital":"4-5 termék, 1-2 db-onként","snack":"Selejt lehet, lejárt termék?"},"teruletvezeto":["Racsmány Ignác"],"selejt_ft":561082,"ptg":{"osszes":6647,"fiscat":0,"cash":592}},
+    {"nev":"Széll Kálmán","leltar_pct":98.92,"osszes":-42608,"gomboc":-7258,"ital":-17150,"desseg":0,"doboz":-19400,"snack":1200,"ajandek":0,"selejt_pct":6.2,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":3.5}],"ital":[{"termek":"Személyzeti víz","mennyiseg":12},{"termek":"Heineken","mennyiseg":3},{"termek":"Fuzetea Citrom","mennyiseg":3}],"doboz":[{"termek":"25 cm doboz","mennyiseg":100}]},"megjegyzesek":{"snack":"Vegyesen sok plusz és mínusz"},"teruletvezeto":["Hegedűs Milán"],"selejt_ft":270357,"ptg":{"osszes":1508,"fiscat":1099,"cash":409}},
+    {"nev":"Corvin","leltar_pct":99.74,"osszes":-4862,"gomboc":5718,"ital":-1730,"desseg":0,"doboz":-7050,"snack":-1800,"ajandek":0,"selejt_pct":16.5,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":5}]},"megjegyzesek":{"doboz":"100 doboz hiány, 50 papírzacskó többlet"},"teruletvezeto":["Racsmány Ignác"],"selejt_ft":376665,"ptg":{"osszes":463,"fiscat":214000,"cash":463}},
+    {"nev":"Károly krt","leltar_pct":99.67,"osszes":-13650,"gomboc":36580,"ital":-22530,"desseg":0,"doboz":-16900,"snack":-10800,"ajandek":0,"selejt_pct":10.4,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":3}],"doboz":[{"termek":"22 cm doboz","mennyiseg":120},{"termek":"Papírzacskó","mennyiseg":60}],"snack":[{"termek":"Lays","mennyiseg":14}]},"megjegyzesek":{"gomboc":"Mai napon 6 tk gombóc többlet","ital":"1 karton 0,5 savas víz, 8 db Cola, 8 db Red Bull"},"teruletvezeto":["Racsmány Ignác"],"selejt_ft":505363,"ptg":{"osszes":935,"fiscat":1349,"cash":-255}},
+    {"nev":"Dob","leltar_pct":100.01,"osszes":312,"gomboc":-1178,"ital":4190,"desseg":0,"doboz":-1300,"snack":-1400,"ajandek":0,"selejt_pct":14.7,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":1}]},"megjegyzesek":{"ital":"1 karton 1,5 Mentes víz"},"teruletvezeto":["Ullman Zsófia"],"selejt_ft":467098,"ptg":{"osszes":6541,"fiscat":0,"cash":1432}},
+    {"nev":"Blaha","leltar_pct":100.54,"osszes":29026,"gomboc":18606,"ital":26230,"desseg":0,"doboz":-16800,"snack":990,"ajandek":0,"selejt_pct":3.9,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":2}],"ital":[{"termek":"Cappy Ice","mennyiseg":9},{"termek":"0,5 Cola","mennyiseg":9},{"termek":"1,5 Mentes","mennyiseg":6}],"doboz":[{"termek":"Doboz","mennyiseg":147}],"snack":[{"termek":"Grisbi pisztácia","mennyiseg":4}]},"megjegyzesek":{"ital":"Sok termékből többlet"},"teruletvezeto":["Anda Patrícia"],"selejt_ft":231349,"ptg":{"osszes":-381,"fiscat":0,"cash":-381}},
+    {"nev":"Oktogon","leltar_pct":96.42,"osszes":-219663,"gomboc":-31962,"ital":-26370,"desseg":-691,"doboz":-145600,"snack":-15240,"ajandek":200,"selejt_pct":10.7,"reszletek":{"gomboc":[{"termek":"32-es gombóc","mennyiseg":3}],"doboz":[{"termek":"Papírzacskó","mennyiseg":1455}]},"megjegyzesek":{"ital":"Nagy eltérések plusz-mínusz – a siófoki árukészletet itt is átvizsgáljuk","doboz":"1455 papírzacskó – Siófokról átvett készlet?","snack":"2# Lays"},"teruletvezeto":["Ullman Zsófia"],"pasta":-4433,"selejt_ft":827751,"ptg":{"osszes":1153,"fiscat":0,"cash":1153}},
+    {"nev":"Wesselényi utca","leltar_pct":100.65,"osszes":27575,"gomboc":4005,"ital":23520,"desseg":0,"doboz":650,"snack":-600,"ajandek":0,"selejt_pct":5.1,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":4}],"ital":[{"termek":"Személyzeti víz","mennyiseg":25}]},"megjegyzesek":{"ital":"A többletet a 25 db személyzeti víz többlet okozza"},"teruletvezeto":["Hegedűs Milán"],"pasta":0,"selejt_ft":234921,"ptg":{"osszes":219,"fiscat":0,"cash":219}},
+    {"nev":"Astoria","leltar_pct":99.98,"osszes":-2499,"gomboc":14451,"ital":3160,"desseg":0,"doboz":-2950,"snack":-2200,"ajandek":-14960,"selejt_pct":10.0,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1.5}],"ajandek":[{"termek":"Pizzavágó","mennyiseg":3},{"termek":"Chili olaj","mennyiseg":1}]},"megjegyzesek":{"doboz":"Főként papírzacskók hiányoznak","snack":"1 pisztáciás Grisbi többlet?"},"teruletvezeto":["Anda Patrícia"],"selejt_ft":372122,"ptg":{"osszes":10375,"fiscat":8874,"cash":1501}},
+    {"nev":"Gomba Móricz","leltar_pct":100.1,"osszes":18065,"gomboc":-234,"ital":13410,"desseg":1299,"doboz":1850,"snack":-210,"ajandek":1950,"selejt_pct":10.6,"reszletek":{"ajandek":[{"termek":"Gyerekjáték","mennyiseg":3}]},"megjegyzesek":{"ital":"Vegyesen üdítők","doboz":"30 papírzacskó többlet, vegyes doboz hiányok"},"teruletvezeto":["Ullman Zsófia"],"pasta":13438,"selejt_ft":516713,"ptg":{"osszes":2691,"fiscat":2498,"cash":193}},
+    {"nev":"Keleti","leltar_pct":98.43,"osszes":-59777,"gomboc":-13387,"ital":4050,"desseg":0,"doboz":600,"snack":-1000,"ajandek":-50040,"selejt_pct":5.7,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1.5}],"ajandek":[{"termek":"PM kockajáték figura","mennyiseg":50}]},"megjegyzesek":{"ital":"Vegyes üdítő elszámolások, összevisszaság"},"teruletvezeto":["Hegedűs Milán"],"pasta":-6844,"selejt_ft":201498,"ptg":{"osszes":1367,"fiscat":1099,"cash":268}},
+    {"nev":"Fővám tér","leltar_pct":99.86,"osszes":-4312,"gomboc":-5652,"ital":-100,"desseg":0,"doboz":-350,"snack":1790,"ajandek":0,"selejt_pct":8.4,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":5}]},"teruletvezeto":["Anda Patrícia"],"selejt_ft":283538,"ptg":{"osszes":-1925,"fiscat":0,"cash":-1925}},
+    {"nev":"Ferenciek tere","leltar_pct":100.39,"osszes":12076,"gomboc":18126,"ital":-4790,"desseg":0,"doboz":-1050,"snack":-210,"ajandek":0,"selejt_pct":8.1,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1.5}],"doboz":[{"termek":"Doboz","mennyiseg":8}]},"megjegyzesek":{"ital":"Vegyes ital eltérések"},"teruletvezeto":["Hegedűs Milán"],"selejt_ft":281541,"ptg":{"osszes":9385,"fiscat":2139,"cash":7246}},
+    {"nev":"Jászai Mari tér","leltar_pct":100.69,"osszes":20023,"gomboc":17893,"ital":6770,"desseg":0,"doboz":-1850,"snack":-2790,"ajandek":0,"selejt_pct":11.2,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1.5}]},"megjegyzesek":{"gomboc":"Gombóc táblában -2 buci, itt +3 buci; összevont leltárban kb. 5 szelet többlet","ital":"Személyzeti vizek","doboz":"Vegyes doboz hiányok","snack":"Hiányzó Sperlari gumicukor"},"teruletvezeto":["Racsmány Ignác"],"selejt_ft":405280,"ptg":{"osszes":0,"fiscat":0,"cash":20401}},
+    {"nev":"Etele","leltar_pct":98.62,"osszes":-37235,"gomboc":-10475,"ital":-5580,"desseg":0,"doboz":-1050,"snack":-4170,"ajandek":-15960,"selejt_pct":12.5,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1}],"ajandek":[{"termek":"Kockajáték épület","mennyiseg":4}],"snack":[{"termek":"Amica pizza snack","mennyiseg":3}]},"megjegyzesek":{"ital":"Vegyes üdítő hiányok","snack":"Selejtezni kellett volna, lejárt"},"teruletvezeto":["Bratkovics Ádám"],"selejt_ft":413796,"ptg":{"osszes":1485,"fiscat":1349,"cash":136}},
+    {"nev":"Kispest","leltar_pct":101.4,"osszes":23486,"gomboc":21297,"ital":990,"desseg":1299,"doboz":300,"snack":-400,"ajandek":0,"selejt_pct":14.5,"reszletek":{"gomboc":[{"termek":"32-es gombóc","mennyiseg":3}],"desseg":[{"termek":"Tiramisu","mennyiseg":1}]},"megjegyzesek":{"pasta":"1,5 kg többlet vegyesen"},"teruletvezeto":["Ullman Zsófia"],"pasta":26915,"selejt_ft":292715,"ptg":{"osszes":-4,"fiscat":0,"cash":-4}},
+    {"nev":"Bosnyák tér","leltar_pct":99.94,"osszes":896,"gomboc":255,"ital":490,"desseg":-1299,"doboz":2050,"snack":-800,"ajandek":200,"selejt_pct":13.9,"teruletvezeto":["Bratkovics Ádám"],"selejt_ft":426515,"ptg":{"osszes":2902,"fiscat":2498,"cash":404}},
+    {"nev":"Árkád","leltar_pct":100.47,"osszes":14165,"gomboc":18455,"ital":-890,"desseg":0,"doboz":-1950,"snack":-1800,"ajandek":350,"selejt_pct":12.9,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1}]},"megjegyzesek":{"pasta":"Kb. 0,5 kg pasta hiány"},"teruletvezeto":["Bratkovics Ádám"],"pasta":-6322,"selejt_ft":472769,"ptg":{"osszes":2811,"fiscat":2580,"cash":231}},
+    {"nev":"Kazinczy","leltar_pct":100.83,"osszes":20485,"gomboc":12735,"ital":4300,"desseg":0,"doboz":-750,"snack":4200,"ajandek":0,"selejt_pct":4.9,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":1}],"snack":[{"termek":"Lays chips","mennyiseg":8}]},"megjegyzesek":{"ital":"1 karton 1,5 Mentes"},"teruletvezeto":["Anda Patrícia"],"selejt_ft":132014,"ptg":{"osszes":0,"fiscat":0,"cash":222}},
+    {"nev":"Törökvész","leltar_pct":97.81,"osszes":-91917,"gomboc":-86664,"ital":2130,"desseg":-83,"doboz":-3950,"snack":-2000,"ajandek":-1350,"selejt_pct":9.5,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":8}]},"megjegyzesek":{"gomboc":"Minden napos TK eltérés"},"teruletvezeto":["Racsmány Ignác"],"pasta":86,"selejt_ft":459530,"ptg":{"osszes":9,"fiscat":0,"cash":9}},
+    {"nev":"GO Buda","leltar_pct":99.03,"osszes":-27288,"gomboc":-21868,"ital":-3710,"desseg":0,"doboz":-700,"snack":-610,"ajandek":-400,"selejt_pct":10.6,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":2}]},"teruletvezeto":["Bratkovics Ádám"],"pasta":661,"selejt_ft":349513,"ptg":{"osszes":1689,"fiscat":0,"cash":1689}},
+    {"nev":"D1 Buda","leltar_pct":100.1,"osszes":6006,"gomboc":5436,"ital":2020,"desseg":0,"doboz":-900,"snack":-400,"ajandek":-150,"selejt_pct":3.9,"reszletek":{"gomboc":[{"termek":"32-es gombóc","mennyiseg":1}]},"teruletvezeto":["Hegedűs Milán"],"pasta":1869,"selejt_ft":164425,"ptg":{"osszes":0,"fiscat":0,"cash":null}},
+    {"nev":"D2 Baross","leltar_pct":100.2,"osszes":24698,"gomboc":14808,"ital":1780,"desseg":0,"doboz":800,"snack":6760,"ajandek":550,"selejt_pct":3.9,"reszletek":{"gomboc":[{"termek":"32-es gombóc","mennyiseg":2}],"snack":[{"termek":"Sperlari","mennyiseg":4},{"termek":"Fini","mennyiseg":1}]},"teruletvezeto":["Racsmány Ignác"],"pasta":-444,"selejt_ft":146405,"ptg":{"osszes":0,"fiscat":0,"cash":null}},
+    {"nev":"Újpest","leltar_pct":100.2,"osszes":15685,"gomboc":2895,"ital":12890,"desseg":0,"doboz":200,"snack":-400,"ajandek":100,"selejt_pct":3.9,"reszletek":{"gomboc":[{"termek":"32-es gombóc","mennyiseg":1}],"ital":[{"termek":"Moretti","mennyiseg":8}]},"megjegyzesek":{"pasta":"840 g pasta hiány"},"teruletvezeto":["Anda Patrícia"],"pasta":-4991,"selejt_ft":91904,"ptg":{"osszes":1258,"fiscat":100,"cash":1158}},
+    {"nev":"K1 Westend","leltar_pct":99.46,"osszes":-6560,"gomboc":2610,"ital":-7170,"desseg":0,"doboz":-1400,"snack":-600,"ajandek":0,"selejt_pct":22.2,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":2}]},"megjegyzesek":{"ital":"Vegyesen pár termék"},"teruletvezeto":["Racsmány Ignác"],"selejt_ft":378566,"ptg":{"osszes":7,"fiscat":0,"cash":0}},
+    {"nev":"BP PARK","leltar_pct":99.3,"osszes":-24663,"gomboc":-23063,"ital":0,"desseg":0,"doboz":-1600,"snack":0,"ajandek":0,"selejt_pct":7.7,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":2}]},"teruletvezeto":["Ullman Zsófia"],"selejt_ft":358992,"ptg":{"osszes":0,"fiscat":0,"cash":3048}},
+    {"nev":"PLÁZS","leltar_pct":99.2,"osszes":-6167,"gomboc":-3247,"ital":-2420,"desseg":0,"doboz":-500,"snack":0,"ajandek":0,"selejt_pct":31.1,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":3}]},"teruletvezeto":["Bratkovics Ádám","Hegedűs Milán"],"selejt_ft":366693,"ptg":{"osszes":0,"fiscat":0,"cash":-43}},
+    {"nev":"F1 Siófok","leltar_pct":100.4,"osszes":4090,"gomboc":2008,"ital":350,"desseg":-2598,"doboz":550,"snack":-210,"ajandek":3990,"selejt_pct":77.4,"reszletek":{"gomboc":[{"termek":"Szelet","mennyiseg":2}]},"teruletvezeto":["Bratkovics Ádám","Hegedűs Milán"],"selejt_ft":4148222,"ptg":{"osszes":-61,"fiscat":0,"cash":-61}},
+    {"nev":"Szeged","leltar_pct":97.64,"osszes":-86978,"gomboc":-67696,"ital":-730,"desseg":2598,"doboz":-21650,"snack":-2590,"ajandek":3090,"selejt_pct":13.3,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":6}],"desseg":[{"termek":"Tiramisu","mennyiseg":2}],"doboz":[{"termek":"Doboz","mennyiseg":150},{"termek":"Papírzacskó","mennyiseg":30}],"ajandek":[{"termek":"Fokhagyma olaj","mennyiseg":1}],"snack":[{"termek":"Tartu","mennyiseg":1}]},"teruletvezeto":["Anda Patrícia"],"pasta":-2147,"selejt_ft":580282,"ptg":{"osszes":2080,"fiscat":1899,"cash":181}},
+    {"nev":"Pécs","leltar_pct":98.4,"osszes":-96036,"gomboc":3644,"ital":-1080,"desseg":0,"doboz":1100,"snack":-800,"ajandek":-98900,"selejt_pct":4.1,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1}],"ajandek":[{"termek":"Kockajáték figura","mennyiseg":100}]},"megjegyzesek":{"ajandek":"A 09.07-i leltárban 100 db eltérés"},"franchise":true,"teruletvezeto":["Bratkovics Ádám"],"pasta":8995,"selejt_ft":249444,"ptg":{"osszes":-1312,"fiscat":0,"cash":-1312}},
+    {"nev":"Miskolc","leltar_pct":98.36,"osszes":-38899,"gomboc":-24356,"ital":-12740,"desseg":-2253,"doboz":-2100,"snack":-1990,"ajandek":4540,"selejt_pct":7.2,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":2}]},"megjegyzesek":{"ital":"Sok termék vegyesen"},"franchise":true,"teruletvezeto":["Bratkovics Ádám"],"selejt_ft":237308,"ptg":{"osszes":208,"fiscat":0,"cash":208}}
   ],
   "elozo_honapok": [
     {
