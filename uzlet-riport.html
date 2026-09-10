@@ -326,9 +326,9 @@
       <option value="Ullman Zsófia">Ullman Zsófia</option>
       <option value="Anda Patrícia">Anda Patrícia</option>
     </select>
-    <div class="franchise-toggle" id="franchiseToggle" onclick="toggleFranchise()">
+    <div class="franchise-toggle active" id="franchiseToggle" onclick="toggleFranchise()">
       <div class="ft-dot"></div>
-      <span id="franchiseLabel">Franchise mutatása</span>
+      <span id="franchiseLabel">Franchise elrejtése</span>
     </div>
   </div>
 </div>
@@ -352,7 +352,7 @@ const JSON_URL = 'data.json';
 // ── STATE ─────────────────────────────────────────────────────────────────────
 let DATA = null;
 let usingFallbackData = false;
-let showFranchise = false;
+let showFranchise = true;   // a franchise üzletek alapból látszanak
 let activeFilter = 'all';
 let activeManager = 'all';
 let selectedMonth = 'current';
@@ -475,6 +475,10 @@ function init() {
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 function fmt(v) { return (v >= 0 ? '+' : '') + Math.round(v).toLocaleString('hu-HU'); }
 function fmtAbs(v) { return Math.round(Math.abs(v)).toLocaleString('hu-HU'); }
+// Százalék magyar formátumban (tizedesvessző), a Ft-összegekkel egységesen
+function fmtPct(v, d = 2) {
+  return Number(v).toLocaleString('hu-HU', { minimumFractionDigits: d, maximumFractionDigits: d }) + '%';
+}
 
 // A keresőmező a renderAktualis() innerHTML-jén belül van, ezért minden
 // billentyűleütésnél újra létrejön: a szöveget külön tartjuk, és a render
@@ -621,7 +625,7 @@ function renderAktualis() {
       </div>
       <div class="metric">
         <div class="metric-label">Átlag Leltár %</div>
-        <div class="metric-value ${avgLeltar<99.5?'neg':avgLeltar>=100?'pos':''}">${avgLeltar.toFixed(2)}%</div>
+        <div class="metric-value ${avgLeltar<99.5?'neg':avgLeltar>=100?'pos':''}">${fmtPct(avgLeltar)}</div>
         <div class="metric-sub">${esc(snap.meta.honap)}</div>
       </div>
       <div class="metric">
@@ -641,7 +645,7 @@ function renderAktualis() {
       </div>
       <div class="metric">
         <div class="metric-label">Átlag selejt</div>
-        <div class="metric-value">${avgS.toFixed(1)}%</div>
+        <div class="metric-value">${fmtPct(avgS, 1)}</div>
         <div class="metric-sub">összes üzlet</div>
       </div>
       ${worst ? `<div class="metric">
@@ -687,7 +691,7 @@ function renderAktualis() {
             const lv = levonMap[d.nev];
             const levonCell = lv ? `<span class="levon-pill">${Math.round(lv.levon).toLocaleString('hu-HU')} Ft</span>${lv.megjegyzes ? `<br><span style="font-size:10px;color:var(--text3)">${esc(lv.megjegyzes)}</span>` : ''}` : '—';
             return `<tr ${d.franchise?'class="franchise-row"':''}>
-            <td class="mono ${(d.leltar_pct||100)<99.5?'neg':(d.leltar_pct||100)>=100?'pos':''}" style="font-weight:600">${d.leltar_pct?d.leltar_pct.toFixed(2)+'%':'—'}</td>
+            <td class="mono ${(d.leltar_pct||100)<99.5?'neg':(d.leltar_pct||100)>=100?'pos':''}" style="font-weight:600">${d.leltar_pct?fmtPct(d.leltar_pct):'—'}</td>
             <td><span class="store-link" data-nev="${esc(d.nev)}" onclick="openDetail(this.dataset.nev)">${esc(d.nev)}</span>${d.franchise?'<span class="franchise-label">F</span>':''}</td>
             <td class="mono ${d.osszes<0?'neg':'pos'}">${fmt(Math.round(d.osszes))}</td>
             <td class="mono ${(d.gomboc||0)<0?'neg':'pos'}">${fmt(Math.round(d.gomboc||0))}</td>
@@ -696,7 +700,7 @@ function renderAktualis() {
             <td class="mono ${(d.snack||0)<0?'neg':'pos'}">${fmt(Math.round(d.snack||0))}</td>
             <td class="mono ${(d.desseg||0)<0?'neg':'pos'}">${fmt(Math.round(d.desseg||0))}</td>
             <td class="mono ${(d.ajandek||0)<0?'neg':'pos'}">${fmt(Math.round(d.ajandek||0))}</td>
-            <td class="mono">${d.selejt_pct.toFixed(2)}%</td>
+            <td class="mono">${fmtPct(d.selejt_pct)}</td>
             <td>${levonCell}</td>
           </tr>`}).join('')}</tbody>
         </table>
@@ -762,13 +766,13 @@ function renderBarChart(data) {
       responsive: true, maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: ctx => isLeltar ? ctx.parsed.y.toFixed(2) + '%' : isSzazalek ? ctx.parsed.y.toFixed(2) + '%' : fmt(ctx.parsed.y) + ' Ft' } }
+        tooltip: { callbacks: { label: ctx => (isLeltar || isSzazalek) ? fmtPct(ctx.parsed.y) : fmt(ctx.parsed.y) + ' Ft' } }
       },
       scales: {
         x: { ticks: { font: { size: 9, family: 'DM Sans' }, maxRotation: 55, autoSkip: false }, grid: { display: false } },
         y: {
           min: yMin, max: yMax,
-          ticks: { callback: v => isLeltar ? v.toFixed(1) + '%' : isSzazalek ? v + '%' : (v / 1000) + 'k', font: { size: 10 } },
+          ticks: { callback: v => isLeltar ? fmtPct(v, 1) : isSzazalek ? fmtPct(v, 0) : (v / 1000) + 'k', font: { size: 10 } },
           grid: { color: 'rgba(0,0,0,0.05)' }
         }
       }
@@ -837,7 +841,7 @@ function openDetail(nev) {
 
   document.getElementById('detailContent').innerHTML = `
     <div class="modal-title">${esc(d.nev)}${d.franchise?'<span class="franchise-label">F</span>':''}</div>
-    <div class="modal-sub">Leltár: ${d.leltar_pct?d.leltar_pct.toFixed(2)+'%':'—'} · Összes eltérés: <span class="${d.osszes<0?'neg':'pos'}">${fmt(Math.round(d.osszes))} Ft</span> · Selejt: ${d.selejt_pct.toFixed(2)}%</div>
+    <div class="modal-sub">Leltár: ${d.leltar_pct?fmtPct(d.leltar_pct):'—'} · Összes eltérés: <span class="${d.osszes<0?'neg':'pos'}">${fmt(Math.round(d.osszes))} Ft</span> · Selejt: ${fmtPct(d.selejt_pct)}</div>
     ${catsHtml}
     ${extraHtml}
     ${infoHtml}
