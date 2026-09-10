@@ -27,7 +27,7 @@
         ]
       },
       "megjegyzesek": {
-        "ital": "44 db NA mentes többlet, 24 db Heineken hiány. Siófoki mozgatás: 8 karton 0,5 víz, 4 Heineken – másnap jelentkezett az eltérés, kérem újra megnézni."
+        "ital": "44 db NA mentes többlet, 24 db Heineken hiány. Siófoki mozgatás: 8 karton 0,5 víz, 4 karton Heineken – másnap jelentkezett az eltérés, kérem újra megnézni."
       },
       "selejt_ft": 733083,
       "ptg": {
@@ -227,8 +227,8 @@
       },
       "selejt_ft": 376665,
       "ptg": {
-        "osszes": 463,
-        "fiscat": 214000,
+        "osszes": 0,
+        "fiscat": 0,
         "cash": 463
       },
       "teruletvezeto": [
@@ -402,7 +402,7 @@
       "megjegyzesek": {
         "ital": "Nagy eltérések plusz-mínusz – a siófoki árukészletet itt is átvizsgáljuk",
         "doboz": "1455 papírzacskó – Siófokról átvett készlet?",
-        "snack": "2# Lays"
+        "snack": "2 karton Lays chips"
       },
       "pasta": -4433,
       "selejt_ft": 827751,
