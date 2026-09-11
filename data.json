@@ -9,7 +9,7 @@
   "uzletek": [
     {
       "nev": "Király utca",
-      "leltar_pct": 100.08,
+      "leltar_pct": 100.1,
       "osszes": 4589,
       "gomboc": 6779,
       "ital": 510,
@@ -27,7 +27,7 @@
         ]
       },
       "megjegyzesek": {
-        "ital": "44 db NA mentes többlet, 24 db Heineken hiány. Siófoki mozgatás: 8 karton 0,5 víz, 4 karton Heineken – másnap jelentkezett az eltérés, kérem újra megnézni."
+        "ital": "48 db 0,5 NA mentes többlet, 24 db Heineken hiány"
       },
       "selejt_ft": 733083,
       "ptg": {
@@ -42,9 +42,9 @@
     {
       "nev": "Erzsébet krt. 30.",
       "leltar_pct": 99.9,
-      "osszes": -1731,
+      "osszes": -1791,
       "gomboc": -11231,
-      "ital": 1300,
+      "ital": 1240,
       "desseg": 0,
       "doboz": 8200,
       "snack": 0,
@@ -63,9 +63,6 @@
             "mennyiseg": 55
           }
         ]
-      },
-      "megjegyzesek": {
-        "ital": "9 db 1,5 Mentes többlet, 9 db Sprite hiány"
       },
       "selejt_ft": 487283,
       "ptg": {
@@ -205,15 +202,15 @@
     },
     {
       "nev": "Corvin",
-      "leltar_pct": 99.74,
-      "osszes": -4862,
+      "leltar_pct": 100.1,
+      "osszes": 4238,
       "gomboc": 5718,
       "ital": -1730,
       "desseg": 0,
-      "doboz": -7050,
+      "doboz": 2050,
       "snack": -1800,
       "ajandek": 0,
-      "selejt_pct": 16.5,
+      "selejt_pct": 16.6,
       "reszletek": {
         "gomboc": [
           {
@@ -223,11 +220,11 @@
         ]
       },
       "megjegyzesek": {
-        "doboz": "100 doboz hiány, 50 papírzacskó többlet"
+        "doboz": "50 papírzacskó többlet"
       },
       "selejt_ft": 376665,
       "ptg": {
-        "osszes": 0,
+        "osszes": 463,
         "fiscat": 0,
         "cash": 463
       },
@@ -237,20 +234,26 @@
     },
     {
       "nev": "Károly krt",
-      "leltar_pct": 99.67,
-      "osszes": -13650,
-      "gomboc": 36580,
-      "ital": -22530,
+      "leltar_pct": 98.52,
+      "osszes": -61623,
+      "gomboc": -24253,
+      "ital": -9670,
       "desseg": 0,
       "doboz": -16900,
       "snack": -10800,
       "ajandek": 0,
-      "selejt_pct": 10.4,
+      "selejt_pct": 10.3,
       "reszletek": {
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 3
+            "mennyiseg": 2.5
+          }
+        ],
+        "ital": [
+          {
+            "termek": "Red Bull",
+            "mennyiseg": 8
           }
         ],
         "doboz": [
@@ -270,10 +273,6 @@
           }
         ]
       },
-      "megjegyzesek": {
-        "gomboc": "Mai napon 6 tk gombóc többlet",
-        "ital": "1 karton 0,5 savas víz, 8 db Cola, 8 db Red Bull"
-      },
       "selejt_ft": 505363,
       "ptg": {
         "osszes": 935,
@@ -286,15 +285,15 @@
     },
     {
       "nev": "Dob",
-      "leltar_pct": 100.01,
-      "osszes": 312,
+      "leltar_pct": 99.81,
+      "osszes": -4728,
       "gomboc": -1178,
-      "ital": 4190,
+      "ital": -850,
       "desseg": 0,
       "doboz": -1300,
       "snack": -1400,
       "ajandek": 0,
-      "selejt_pct": 14.7,
+      "selejt_pct": 14.6,
       "reszletek": {
         "gomboc": [
           {
@@ -302,9 +301,6 @@
             "mennyiseg": 1
           }
         ]
-      },
-      "megjegyzesek": {
-        "ital": "1 karton 1,5 Mentes víz"
       },
       "selejt_ft": 467098,
       "ptg": {
@@ -318,13 +314,13 @@
     },
     {
       "nev": "Blaha",
-      "leltar_pct": 100.54,
-      "osszes": 29026,
-      "gomboc": 18606,
-      "ital": 26230,
+      "leltar_pct": 99.87,
+      "osszes": -6820,
+      "gomboc": 18590,
+      "ital": 350,
       "desseg": 0,
       "doboz": -16800,
-      "snack": 990,
+      "snack": -8960,
       "ajandek": 0,
       "selejt_pct": 3.9,
       "reszletek": {
@@ -332,20 +328,6 @@
           {
             "termek": "45-ös gombóc",
             "mennyiseg": 2
-          }
-        ],
-        "ital": [
-          {
-            "termek": "Cappy Ice",
-            "mennyiseg": 9
-          },
-          {
-            "termek": "0,5 Cola",
-            "mennyiseg": 9
-          },
-          {
-            "termek": "1,5 Mentes",
-            "mennyiseg": 6
           }
         ],
         "doboz": [
@@ -361,12 +343,9 @@
           }
         ]
       },
-      "megjegyzesek": {
-        "ital": "Sok termékből többlet"
-      },
       "selejt_ft": 231349,
       "ptg": {
-        "osszes": -381,
+        "osszes": -397,
         "fiscat": 0,
         "cash": -381
       },
@@ -376,7 +355,7 @@
     },
     {
       "nev": "Oktogon",
-      "leltar_pct": 96.42,
+      "leltar_pct": 96.12,
       "osszes": -219663,
       "gomboc": -31962,
       "ital": -26370,
@@ -417,31 +396,22 @@
     },
     {
       "nev": "Wesselényi utca",
-      "leltar_pct": 100.65,
-      "osszes": 27575,
+      "leltar_pct": 100.1,
+      "osszes": 7415,
       "gomboc": 4005,
-      "ital": 23520,
+      "ital": 3360,
       "desseg": 0,
       "doboz": 650,
       "snack": -600,
       "ajandek": 0,
-      "selejt_pct": 5.1,
+      "selejt_pct": 5.0,
       "reszletek": {
         "gomboc": [
           {
             "termek": "Szelet",
             "mennyiseg": 4
           }
-        ],
-        "ital": [
-          {
-            "termek": "Személyzeti víz",
-            "mennyiseg": 25
-          }
         ]
-      },
-      "megjegyzesek": {
-        "ital": "A többletet a 25 db személyzeti víz többlet okozza"
       },
       "pasta": 0,
       "selejt_ft": 234921,
@@ -456,15 +426,15 @@
     },
     {
       "nev": "Astoria",
-      "leltar_pct": 99.98,
-      "osszes": -2499,
+      "leltar_pct": 99.23,
+      "osszes": -7539,
       "gomboc": 14451,
-      "ital": 3160,
+      "ital": -1880,
       "desseg": 0,
       "doboz": -2950,
       "snack": -2200,
       "ajandek": -14960,
-      "selejt_pct": 10.0,
+      "selejt_pct": 9.9,
       "reszletek": {
         "gomboc": [
           {
@@ -483,10 +453,6 @@
           }
         ]
       },
-      "megjegyzesek": {
-        "doboz": "Főként papírzacskók hiányoznak",
-        "snack": "1 pisztáciás Grisbi többlet?"
-      },
       "selejt_ft": 372122,
       "ptg": {
         "osszes": 10375,
@@ -499,7 +465,7 @@
     },
     {
       "nev": "Gomba Móricz",
-      "leltar_pct": 100.1,
+      "leltar_pct": 100.2,
       "osszes": 18065,
       "gomboc": -234,
       "ital": 13410,
@@ -601,7 +567,7 @@
     },
     {
       "nev": "Ferenciek tere",
-      "leltar_pct": 100.39,
+      "leltar_pct": 100.1,
       "osszes": 12076,
       "gomboc": 18126,
       "ital": -4790,
@@ -616,16 +582,10 @@
             "termek": "45-ös gombóc",
             "mennyiseg": 1.5
           }
-        ],
-        "doboz": [
-          {
-            "termek": "Doboz",
-            "mennyiseg": 8
-          }
         ]
       },
       "megjegyzesek": {
-        "ital": "Vegyes ital eltérések"
+        "ital": "3-4 termék, 1-1 db hiány"
       },
       "selejt_ft": 281541,
       "ptg": {
@@ -639,10 +599,10 @@
     },
     {
       "nev": "Jászai Mari tér",
-      "leltar_pct": 100.69,
-      "osszes": 20023,
+      "leltar_pct": 100.2,
+      "osszes": 14983,
       "gomboc": 17893,
-      "ital": 6770,
+      "ital": 1730,
       "desseg": 0,
       "doboz": -1850,
       "snack": -2790,
@@ -657,10 +617,7 @@
         ]
       },
       "megjegyzesek": {
-        "gomboc": "Gombóc táblában -2 buci, itt +3 buci; összevont leltárban kb. 5 szelet többlet",
-        "ital": "Személyzeti vizek",
-        "doboz": "Vegyes doboz hiányok",
-        "snack": "Hiányzó Sperlari gumicukor"
+        "snack": "Sperlari gumicukor"
       },
       "selejt_ft": 405280,
       "ptg": {
@@ -719,20 +676,20 @@
     },
     {
       "nev": "Kispest",
-      "leltar_pct": 101.4,
-      "osszes": 23486,
-      "gomboc": 21297,
+      "leltar_pct": 99.9,
+      "osszes": -1595,
+      "gomboc": -3784,
       "ital": 990,
       "desseg": 1299,
       "doboz": 300,
       "snack": -400,
       "ajandek": 0,
-      "selejt_pct": 14.5,
+      "selejt_pct": 14.3,
       "reszletek": {
         "gomboc": [
           {
-            "termek": "32-es gombóc",
-            "mennyiseg": 3
+            "termek": "22-es gombóc",
+            "mennyiseg": 1
           }
         ],
         "desseg": [
@@ -742,10 +699,7 @@
           }
         ]
       },
-      "megjegyzesek": {
-        "pasta": "1,5 kg többlet vegyesen"
-      },
-      "pasta": 26915,
+      "pasta": 1834,
       "selejt_ft": 292715,
       "ptg": {
         "osszes": -4,
@@ -758,7 +712,7 @@
     },
     {
       "nev": "Bosnyák tér",
-      "leltar_pct": 99.94,
+      "leltar_pct": 100.0,
       "osszes": 896,
       "gomboc": 255,
       "ital": 490,
@@ -779,7 +733,7 @@
     },
     {
       "nev": "Árkád",
-      "leltar_pct": 100.47,
+      "leltar_pct": 100.1,
       "osszes": 14165,
       "gomboc": 18455,
       "ital": -890,
@@ -796,9 +750,6 @@
           }
         ]
       },
-      "megjegyzesek": {
-        "pasta": "Kb. 0,5 kg pasta hiány"
-      },
       "pasta": -6322,
       "selejt_ft": 472769,
       "ptg": {
@@ -812,10 +763,10 @@
     },
     {
       "nev": "Kazinczy",
-      "leltar_pct": 100.83,
-      "osszes": 20485,
+      "leltar_pct": 100.2,
+      "osszes": 15445,
       "gomboc": 12735,
-      "ital": 4300,
+      "ital": -740,
       "desseg": 0,
       "doboz": -750,
       "snack": 4200,
@@ -824,7 +775,7 @@
       "reszletek": {
         "gomboc": [
           {
-            "termek": "Szelet",
+            "termek": "45-ös gombóc",
             "mennyiseg": 1
           }
         ],
@@ -834,9 +785,6 @@
             "mennyiseg": 8
           }
         ]
-      },
-      "megjegyzesek": {
-        "ital": "1 karton 1,5 Mentes"
       },
       "selejt_ft": 132014,
       "ptg": {
@@ -850,7 +798,7 @@
     },
     {
       "nev": "Törökvész",
-      "leltar_pct": 97.81,
+      "leltar_pct": 97.4,
       "osszes": -91917,
       "gomboc": -86664,
       "ital": 2130,
@@ -983,7 +931,7 @@
     },
     {
       "nev": "Újpest",
-      "leltar_pct": 100.2,
+      "leltar_pct": 100.1,
       "osszes": 15685,
       "gomboc": 2895,
       "ital": 12890,
@@ -1005,9 +953,6 @@
             "mennyiseg": 8
           }
         ]
-      },
-      "megjegyzesek": {
-        "pasta": "840 g pasta hiány"
       },
       "pasta": -4991,
       "selejt_ft": 91904,
@@ -1083,7 +1028,7 @@
     },
     {
       "nev": "PLÁZS",
-      "leltar_pct": 99.2,
+      "leltar_pct": 99.8,
       "osszes": -6167,
       "gomboc": -3247,
       "ital": -2420,
@@ -1113,7 +1058,7 @@
     },
     {
       "nev": "F1 Siófok",
-      "leltar_pct": 100.4,
+      "leltar_pct": 100.1,
       "osszes": 4090,
       "gomboc": 2008,
       "ital": 350,
@@ -1143,7 +1088,7 @@
     },
     {
       "nev": "Szeged",
-      "leltar_pct": 97.64,
+      "leltar_pct": 98.2,
       "osszes": -86978,
       "gomboc": -67696,
       "ital": -730,
