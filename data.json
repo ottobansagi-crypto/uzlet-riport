@@ -9,7 +9,7 @@
   "uzletek": [
     {
       "nev": "Király utca",
-      "leltar_pct": 100.01,
+      "leltar_pct": 100,
       "osszes": 987,
       "gomboc": 7397,
       "ital": -6400,
@@ -437,7 +437,7 @@
     },
     {
       "nev": "Astoria",
-      "leltar_pct": 100.05,
+      "leltar_pct": 100,
       "osszes": 203,
       "gomboc": 13423,
       "ital": -3020,
@@ -951,7 +951,7 @@
     },
     {
       "nev": "D2 Baross",
-      "leltar_pct": 100.05,
+      "leltar_pct": 100,
       "osszes": 4000,
       "gomboc": 1958,
       "ital": 2720,
