@@ -457,11 +457,13 @@ function init() {
       <button class="tab" onclick="showTab('trend2026')">2026 trend</button>
       <button class="tab" onclick="showTab('trend')">Évek trendje</button>
       <button class="tab" onclick="showTab('levon')">Levonások</button>
+      <button class="tab" onclick="showTab('sk')">SK</button>
     </div>
     <div class="panel active" id="tab-aktualis"></div>
     <div class="panel" id="tab-trend2026"></div>
     <div class="panel" id="tab-trend"></div>
     <div class="panel" id="tab-levon"></div>
+    <div class="panel" id="tab-sk"></div>
   `;
   populateMonthSelect();
   updateStatusBanner();
@@ -475,6 +477,18 @@ function init() {
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 function fmt(v) { return (v >= 0 ? '+' : '') + Math.round(v).toLocaleString('hu-HU'); }
 function fmtAbs(v) { return Math.round(Math.abs(v)).toLocaleString('hu-HU'); }
+// --- SK (euró) formázók. Az SK lap teljesen angol, ezért angol szám- és
+// százalékformátum: 2,942 EUR / 99.3% - így nem keveredik a magyar nézettel.
+function fmtEur(v) {
+  const n = Math.round(Number(v));
+  return (n >= 0 ? '+' : '-') + Math.abs(n).toLocaleString('en-US') + ' \u20AC';
+}
+function fmtEurAbs(v) { return Math.round(Math.abs(Number(v))).toLocaleString('en-US') + ' \u20AC'; }
+function fmtPctEn(v, d = 1) {
+  const s = Number(v).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+  return s.replace(/\.0$/, '') + '%';
+}
+
 // Százalék magyar formátumban (tizedesvessző), egységesen 1 tizedessel.
 // A fölösleges ",0" végződés lemarad: 100%, 99,4%, 10,6%
 function fmtPct(v, d = 1) {
@@ -562,11 +576,12 @@ function refreshAllTabs() {
 }
 
 function showTab(id) {
-  document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', ['aktualis','trend2026','trend','levon'][i] === id));
+  document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', ['aktualis','trend2026','trend','levon','sk'][i] === id));
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
   if (id === 'trend') { setTimeout(renderTrendChart, 50); }
   if (id === 'trend2026') { setTimeout(render2026Charts, 50); }
+  if (id === 'sk') { renderSk(); }
 }
 
 function setFilter(f) {
@@ -635,6 +650,7 @@ function renderAktualis() {
         <div class="metric-value ${tot<0?'neg':'pos'}">${fmt(tot)} Ft</div>
         <div class="metric-sub">${esc(snap.meta.honap)}</div>
       </div>
+      ${skMetricCardHtml(snap.meta.honap)}
       <div class="metric">
         <div class="metric-label">Hiányos</div>
         <div class="metric-value neg">${neg}</div>
@@ -1531,6 +1547,21 @@ const INLINE_DATA = {
       ]
     }
   ],
+  "sk": {
+    "currency": "EUR",
+    "store": "Kolarska",
+    "pending": [],
+    "months": [
+      {"key":"2026-01","label":"January 2026","stores":[{"name":"Kolarska","inventory_pct":99.3,"total":-132,"dough":-78,"drinks":-38,"dessert":0,"boxes":-16,"merchandise":0,"snack":0,"scrap":2942,"scrap_pct":15.6,"cash_register":{"total":0,"upos":0},"details":{"dough":[{"item":"Bochnik","qty":3}]}}]},
+      {"key":"2026-02","label":"February 2026","stores":[{"name":"Kolarska","inventory_pct":99.6,"total":-66,"dough":-63,"drinks":20,"dessert":-3,"boxes":-26,"merchandise":0,"snack":5,"scrap":2314,"scrap_pct":12.7,"cash_register":{"total":-15,"upos":-15},"details":{"dough":[{"item":"45cm Bochnik","qty":2}]}}]},
+      {"key":"2026-03","label":"March 2026","stores":[{"name":"Kolarska","inventory_pct":99.5,"total":-102,"dough":-63,"drinks":-24,"dessert":0,"boxes":-15,"merchandise":0,"snack":0,"scrap":2936,"scrap_pct":14.5,"cash_register":{"total":-1,"upos":-1},"details":{"dough":[{"item":"Bochnik","qty":2}]}}]},
+      {"key":"2026-04","label":"April 2026","stores":[{"name":"Kolarska","inventory_pct":99.5,"total":-105,"dough":-57,"drinks":-15,"dessert":-16,"boxes":-9,"merchandise":0,"snack":-9,"pasta":42,"scrap":2296,"scrap_pct":11.9,"cash_register":{"total":22,"upos":22},"details":{"dough":[{"item":"Bochnik","qty":2}]}}]},
+      {"key":"2026-05","label":"May 2026","stores":[{"name":"Kolarska","inventory_pct":99.6,"total":-50,"dough":-54,"drinks":24,"dessert":6,"boxes":-26,"merchandise":0,"snack":0,"pasta":76,"scrap":2619,"scrap_pct":11.3,"cash_register":{"total":0,"upos":0},"details":{"dough":[{"item":"Bochnik","qty":2}]}}]},
+      {"key":"2026-06","label":"June 2026","stores":[{"name":"Kolarska","inventory_pct":99.8,"total":-38,"dough":-67,"drinks":0,"dessert":28,"boxes":-14,"merchandise":0,"snack":15,"pasta":-54,"scrap":2368,"scrap_pct":11.6,"cash_register":{"total":0,"upos":0},"details":{"dough":[{"item":"Bochnik","qty":2}]}}]},
+      {"key":"2026-07","label":"July 2026","stores":[{"name":"Kolarska","inventory_pct":99.3,"total":-106,"dough":-110,"drinks":41,"dessert":-3,"boxes":-39,"merchandise":0,"snack":6,"pasta":12,"scrap":2689,"scrap_pct":13.8,"cash_register":{"total":-4,"upos":-4},"details":{"dough":[{"item":"45cm Bochnik","qty":3}]}}]},
+      {"key":"2026-08","label":"August 2026","stores":[{"name":"Kolarska","inventory_pct":99.1,"total":-121,"dough":-128,"drinks":1,"dessert":9,"boxes":-25,"merchandise":0,"snack":22,"pasta":-4,"scrap":2999,"scrap_pct":14.1,"cash_register":{"total":0,"upos":0},"details":{"dough":[{"item":"45cm Bochnik","qty":4}],"boxes":[{"item":"Paper bags","qty":86}]}}]}
+    ]
+  },
   "trend": {
     "Király utca":{"2023":{"avg":-75323,"h":[-57924,-15652,-79554,-116099,-98329,-16056,-146223,-95346,-71937,-54859,-76971,-74926]},"2024":{"avg":-57390,"h":[-65448,-89962,-21475,-2956,-23768,-57038,-110019,-73175,-117236,-50714,-26464,-50422]},"2025":{"avg":-50783,"h":[-58986,-42884,-53649,-38338,-42313,-79073,-130655,-90480,-43402,-2990,-28268,1643]}},
     "Fashion":{"2023":{"avg":-100435,"h":[-63689,-69756,-100745,-81803,-50697,-168075,-40766,-196245,-182961,-99850,-135921,-14715]},"2024":{"avg":-29719,"h":[-21637,-25749,-49171,-75204,-63405,-38567,-31298,4399,-15788,-14744,-26017,555]},"2025":{"avg":-2963,"h":[-1238,-10206,-33470,6074,-15162,28809,-1999,-6749,12896,5336,-5750,-14102]}},
@@ -1539,6 +1570,193 @@ const INLINE_DATA = {
     "Miskolc":{"2023":{"avg":-80000,"h":[-70000,-90000,-100000,-75000,-85000,-70000,-95000,-80000,-75000,-90000,-75000,-85000]},"2024":{"avg":-65000,"h":[-55000,-75000,-85000,-60000,-70000,-55000,-80000,-65000,-60000,-75000,-60000,-70000]},"2025":{"avg":-50000,"h":[-40000,-60000,-70000,-45000,-55000,-40000,-65000,-50000,-45000,-60000,-45000,-55000]}}
   }
 };
+
+
+// ── SK (Kolarska) ─────────────────────────────────────────────────────────────
+// Az SK adat szándékosan külön ágon (DATA.sk) van, nem az uzletek listában:
+// így az euró fizikailag nem tud beszivárogni a forintos összesítőkbe.
+const SK_HONAP_KEY = { 'január':'01','február':'02','március':'03','április':'04',
+  'május':'05','június':'06','július':'07','augusztus':'08','szeptember':'09',
+  'október':'10','november':'11','december':'12' };
+
+function skMonths() { return (DATA && DATA.sk && DATA.sk.months) || []; }
+
+// A magyar nézet hónapjához ("2026. szeptember") tartozó SK hónap, ha van.
+function skMonthForHungarian(honap) {
+  const m = String(honap || '').match(/(\d{4})\.\s*([a-záéíóöőúüű]+)/i);
+  if (!m) return null;
+  const key = m[1] + '-' + (SK_HONAP_KEY[m[2].toLowerCase()] || '');
+  return skMonths().find(x => x.key === key) || null;
+}
+
+// Kártya a magyar "Aktuális hónap" fülön. Csak a leltár%-ot mutatja: az
+// pénznem-független, így összevethető a magyar átlaggal. Az euró-értékek
+// az SK lapon vannak.
+function skMetricCardHtml(honap) {
+  if (!DATA || !DATA.sk) return '';
+  const mon = skMonthForHungarian(honap);
+  const s = mon && mon.stores && mon.stores[0];
+  const val = s ? fmtPct(s.inventory_pct) : '—';
+  const cls = s ? (s.inventory_pct < 99.5 ? 'neg' : s.inventory_pct >= 100 ? 'pos' : '') : '';
+  const sub = s
+    ? esc(DATA.sk.store) + ' · selejt ' + fmtPct(s.scrap_pct)
+    : 'nincs adat erre a hónapra';
+  return `
+      <div class="metric">
+        <div class="metric-label">SK üzlet — leltár %</div>
+        <div class="metric-value ${cls}">${val}</div>
+        <div class="metric-sub">${sub}</div>
+      </div>`;
+}
+
+let skSelectedMonth = null;
+
+function setSkMonth(k) { skSelectedMonth = k; renderSk(); }
+
+const SK_CATS = [
+  { key: 'dough',       label: 'Pizza dough ball' },
+  { key: 'drinks',      label: 'Drinks' },
+  { key: 'boxes',       label: 'Boxes' },
+  { key: 'dessert',     label: 'Dessert' },
+  { key: 'snack',       label: 'Snack' },
+  { key: 'merchandise', label: 'Merchandise' },
+];
+
+function renderSk() {
+  const el = document.getElementById('tab-sk');
+  if (!el) return;
+  const months = skMonths();
+  if (!months.length) { el.innerHTML = '<div class="modal-item-empty">No SK data yet.</div>'; return; }
+
+  const cur = months.find(m => m.key === skSelectedMonth) || months[months.length - 1];
+  skSelectedMonth = cur.key;
+  const s = cur.stores[0];
+
+  const pending = (DATA.sk.pending || []);
+  const pendingNote = pending.length
+    ? `<div class="partial-trend-note">Data pending for: ${pending.map(esc).join(', ')} — these months are not shown until the figures reconcile.</div>`
+    : '';
+
+  const opts = months.map(m =>
+    `<option value="${esc(m.key)}" ${m.key === cur.key ? 'selected' : ''}>${esc(m.label)}</option>`).join('');
+
+  const histRows = months.map(m => {
+    const x = m.stores[0];
+    return `<tr>
+      <td>${esc(m.label)}</td>
+      <td class="mono ${x.inventory_pct<99.5?'neg':x.inventory_pct>=100?'pos':''}" style="font-weight:600">${fmtPctEn(x.inventory_pct)}</td>
+      <td class="mono ${x.total<0?'neg':'pos'}">${fmtEur(x.total)}</td>
+      ${SK_CATS.map(c => `<td class="mono ${(x[c.key]||0)<0?'neg':'pos'}">${fmtEur(x[c.key]||0)}</td>`).join('')}
+      <td class="mono ${(x.pasta||0)<0?'neg':'pos'}">${x.pasta==null?'—':fmtEur(x.pasta)}</td>
+      <td class="mono">${fmtPctEn(x.scrap_pct)}</td>
+    </tr>`;
+  }).join('');
+
+  el.innerHTML = `
+    ${pendingNote}
+    <div class="controls">
+      <select id="skMonthSelect" class="header-select" onchange="setSkMonth(this.value)">${opts}</select>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Inventory %</div>
+        <div class="metric-value ${s.inventory_pct<99.5?'neg':s.inventory_pct>=100?'pos':''}">${fmtPctEn(s.inventory_pct)}</div>
+        <div class="metric-sub">${esc(cur.label)}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Total difference</div>
+        <div class="metric-value ${s.total<0?'neg':'pos'}">${fmtEur(s.total)}</div>
+        <div class="metric-sub">${esc(cur.label)}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Scrap</div>
+        <div class="metric-value">${fmtEurAbs(s.scrap)}</div>
+        <div class="metric-sub">${fmtPctEn(s.scrap_pct)} of sales</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Store</div>
+        <div class="metric-value" style="font-size:15px">${esc(s.name)}</div>
+        <div class="metric-sub">Slovakia · EUR</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Store</th><th>Inventory %</th><th>Total diff.</th>
+          ${SK_CATS.map(c => `<th>${esc(c.label)}</th>`).join('')}
+          <th>Scrap %</th>
+        </tr></thead>
+        <tbody><tr>
+          <td><span class="store-link" onclick="openSkDetail()">${esc(s.name)}</span></td>
+          <td class="mono ${s.inventory_pct<99.5?'neg':s.inventory_pct>=100?'pos':''}" style="font-weight:600">${fmtPctEn(s.inventory_pct)}</td>
+          <td class="mono ${s.total<0?'neg':'pos'}">${fmtEur(s.total)}</td>
+          ${SK_CATS.map(c => `<td class="mono ${(s[c.key]||0)<0?'neg':'pos'}">${fmtEur(s[c.key]||0)}</td>`).join('')}
+          <td class="mono">${fmtPctEn(s.scrap_pct)}</td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <div class="card-title" style="margin-top:18px">Month by month — 2026</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Month</th><th>Inventory %</th><th>Total diff.</th>
+          ${SK_CATS.map(c => `<th>${esc(c.label)}</th>`).join('')}
+          <th>Pasta</th><th>Scrap %</th>
+        </tr></thead>
+        <tbody>${histRows}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+function openSkDetail() {
+  const months = skMonths();
+  const cur = months.find(m => m.key === skSelectedMonth) || months[months.length - 1];
+  if (!cur) return;
+  const d = cur.stores[0];
+  const det = d.details || {};
+
+  const cats = SK_CATS.map(c => {
+    const val = d[c.key] || 0;
+    const items = det[c.key];
+    const body = (items && items.length)
+      ? `<div class="modal-items">${items.map(i => `<div class="modal-item"><span>${esc(i.item)}</span><span>${i.qty} pcs</span></div>`).join('')}</div>`
+      : `<div class="modal-item-empty">No item-level breakdown</div>`;
+    return `<div class="modal-cat">
+      <div class="modal-cat-head">
+        <span class="modal-cat-label">${esc(c.label)}</span>
+        <span class="modal-cat-value ${val<0?'neg':'pos'}">${fmtEur(val)}</span>
+      </div>
+      ${body}
+    </div>`;
+  }).join('');
+
+  const cr = d.cash_register || {};
+  const extra = `
+    <div class="modal-extra-section">
+      <div class="modal-extra-row"><span>Cash register difference</span><span class="${(cr.total||0)<0?'neg':'pos'}">${fmtEur(cr.total||0)}</span></div>
+      <div class="modal-extra-sub">Upos: ${cr.upos==null?'—':fmtEur(cr.upos)}</div>
+      <div class="modal-extra-row"><span>Scrap</span><span>${fmtEurAbs(d.scrap)}</span></div>
+    </div>`;
+
+  const pasta = (d.pasta !== undefined && d.pasta !== null) ? `
+    <div class="modal-info-section">
+      <div class="modal-info-row"><span>Pasta</span><span class="${d.pasta<0?'neg':'pos'}">${fmtEur(d.pasta)}</span></div>
+      <div class="modal-info-note">* For information only, not part of the official inventory difference.</div>
+    </div>` : '';
+
+  document.getElementById('detailContent').innerHTML = `
+    <div class="modal-title">${esc(d.name)}</div>
+    <div class="modal-sub">Inventory: ${fmtPctEn(d.inventory_pct)} · Total difference: <span class="${d.total<0?'neg':'pos'}">${fmtEur(d.total)}</span> · Scrap: ${fmtPctEn(d.scrap_pct)} · ${esc(cur.label)}</div>
+    ${cats}
+    ${extra}
+    ${pasta}
+  `;
+  document.getElementById('detailModal').classList.add('active');
+}
 
 // ── START ─────────────────────────────────────────────────────────────────────
 loadData();

@@ -4904,5 +4904,270 @@
         }
       ]
     }
-  ]
+  ],
+  "sk": {
+    "currency": "EUR",
+    "store": "Kolarska",
+    "months": [
+      {
+        "key": "2026-01",
+        "label": "January 2026",
+        "stores": [
+          {
+            "name": "Kolarska",
+            "inventory_pct": 99.3,
+            "total": -132,
+            "dough": -78,
+            "drinks": -38,
+            "dessert": 0,
+            "boxes": -16,
+            "merchandise": 0,
+            "snack": 0,
+            "scrap": 2942,
+            "scrap_pct": 15.6,
+            "cash_register": {
+              "total": 0,
+              "upos": 0
+            },
+            "details": {
+              "dough": [
+                {
+                  "item": "Bochnik",
+                  "qty": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "key": "2026-02",
+        "label": "February 2026",
+        "stores": [
+          {
+            "name": "Kolarska",
+            "inventory_pct": 99.6,
+            "total": -66,
+            "dough": -63,
+            "drinks": 20,
+            "dessert": -3,
+            "boxes": -26,
+            "merchandise": 0,
+            "snack": 5,
+            "scrap": 2314,
+            "scrap_pct": 12.7,
+            "cash_register": {
+              "total": -15,
+              "upos": -15
+            },
+            "details": {
+              "dough": [
+                {
+                  "item": "45cm Bochnik",
+                  "qty": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "key": "2026-03",
+        "label": "March 2026",
+        "stores": [
+          {
+            "name": "Kolarska",
+            "inventory_pct": 99.5,
+            "total": -102,
+            "dough": -63,
+            "drinks": -24,
+            "dessert": 0,
+            "boxes": -15,
+            "merchandise": 0,
+            "snack": 0,
+            "scrap": 2936,
+            "scrap_pct": 14.5,
+            "cash_register": {
+              "total": -1,
+              "upos": -1
+            },
+            "details": {
+              "dough": [
+                {
+                  "item": "Bochnik",
+                  "qty": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "key": "2026-04",
+        "label": "April 2026",
+        "stores": [
+          {
+            "name": "Kolarska",
+            "inventory_pct": 99.5,
+            "total": -105,
+            "dough": -57,
+            "drinks": -15,
+            "dessert": -16,
+            "boxes": -9,
+            "merchandise": 0,
+            "snack": -9,
+            "pasta": 42,
+            "scrap": 2296,
+            "scrap_pct": 11.9,
+            "cash_register": {
+              "total": 22,
+              "upos": 22
+            },
+            "details": {
+              "dough": [
+                {
+                  "item": "Bochnik",
+                  "qty": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "key": "2026-05",
+        "label": "May 2026",
+        "stores": [
+          {
+            "name": "Kolarska",
+            "inventory_pct": 99.6,
+            "total": -50,
+            "dough": -54,
+            "drinks": 24,
+            "dessert": 6,
+            "boxes": -26,
+            "merchandise": 0,
+            "snack": 0,
+            "pasta": 76,
+            "scrap": 2619,
+            "scrap_pct": 11.3,
+            "cash_register": {
+              "total": 0,
+              "upos": 0
+            },
+            "details": {
+              "dough": [
+                {
+                  "item": "Bochnik",
+                  "qty": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "key": "2026-06",
+        "label": "June 2026",
+        "stores": [
+          {
+            "name": "Kolarska",
+            "inventory_pct": 99.8,
+            "total": -38,
+            "dough": -67,
+            "drinks": 0,
+            "dessert": 28,
+            "boxes": -14,
+            "merchandise": 0,
+            "snack": 15,
+            "pasta": -54,
+            "scrap": 2368,
+            "scrap_pct": 11.6,
+            "cash_register": {
+              "total": 0,
+              "upos": 0
+            },
+            "details": {
+              "dough": [
+                {
+                  "item": "Bochnik",
+                  "qty": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "key": "2026-07",
+        "label": "July 2026",
+        "stores": [
+          {
+            "name": "Kolarska",
+            "inventory_pct": 99.3,
+            "total": -106,
+            "dough": -110,
+            "drinks": 41,
+            "dessert": -3,
+            "boxes": -39,
+            "merchandise": 0,
+            "snack": 6,
+            "pasta": 12,
+            "scrap": 2689,
+            "scrap_pct": 13.8,
+            "cash_register": {
+              "total": -4,
+              "upos": -4
+            },
+            "details": {
+              "dough": [
+                {
+                  "item": "45cm Bochnik",
+                  "qty": 3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "key": "2026-08",
+        "label": "August 2026",
+        "stores": [
+          {
+            "name": "Kolarska",
+            "inventory_pct": 99.1,
+            "total": -121,
+            "dough": -128,
+            "drinks": 1,
+            "dessert": 9,
+            "boxes": -25,
+            "merchandise": 0,
+            "snack": 22,
+            "pasta": -4,
+            "scrap": 2999,
+            "scrap_pct": 14.1,
+            "cash_register": {
+              "total": 0,
+              "upos": 0
+            },
+            "details": {
+              "dough": [
+                {
+                  "item": "45cm Bochnik",
+                  "qty": 4
+                }
+              ],
+              "boxes": [
+                {
+                  "item": "Paper bags",
+                  "qty": 86
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
