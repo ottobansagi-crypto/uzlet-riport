@@ -34,6 +34,9 @@
     --amber: #8a5a12;
     --amber-bg: var(--pastel-yellow);
     --accent: var(--brand-red-dark);
+    /* Szlovák nézet: a brand pasztellkékből, hogy kilógjon a pirosból, de ne essen ki a palettából */
+    --sk-blue: var(--pastel-blue);
+    --sk-blue-deep: #4f7f8c;
     --radius: 10px;
     --radius-lg: 14px;
   }
@@ -87,6 +90,16 @@
   .franchise-toggle:hover { background: rgba(255,255,255,0.25); }
   .franchise-toggle.active { background: rgba(255,255,255,0.3); color: #fff; }
   .ft-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pastel-yellow); }
+  /* A "Slovakia" kapcsoló szándékosan más színt kap, mint a franchise-kapcsoló:
+     nem ugyanolyan szűrő, hanem teljes nézet-váltás. */
+  #skToggle { border-color: rgba(203,221,223,0.6); }
+  #skToggle .ft-dot { background: var(--sk-blue); box-shadow: 0 0 0 2px rgba(79,127,140,0.9); }
+  #skToggle:hover { background: rgba(203,221,223,0.3); }
+  #skToggle.active {
+    background: var(--sk-blue-deep); border-color: var(--sk-blue);
+    color: #fff; font-weight: 600;
+  }
+  #skToggle.active .ft-dot { background: var(--sk-blue); box-shadow: none; }
 
   /* MAIN */
   .main { max-width: 1200px; margin: 0 auto; padding: 24px 20px; }
@@ -306,7 +319,7 @@
   .header-toggles { display: flex; flex-direction: column; gap: 5px; }
   /* Szlovák nézetben a fejléc és a lap egyértelműen jelzi, hol vagyunk */
   .sk-mode-banner {
-    background: var(--surface2); border: 1px solid var(--border2); border-left: 3px solid var(--brand-red-dark);
+    background: #eef5f6; border: 1px solid var(--sk-blue); border-left: 3px solid var(--sk-blue-deep);
     border-radius: var(--radius); padding: 9px 13px; margin-bottom: 16px;
     font-size: 12px; font-weight: 500; color: var(--text2);
   }
@@ -1702,7 +1715,7 @@ function renderSkView() {
   const histRows = months.map(m => {
     const x = m.stores[0];
     const isCur = m.key === cur.key;
-    return `<tr${isCur ? ' style="background:var(--surface2)"' : ''}>
+    return `<tr${isCur ? ' style="background:#eef5f6"' : ''}>
       <td${isCur ? ' style="font-weight:600"' : ''}>${esc(m.label)}</td>
       <td class="mono ${x.inventory_pct<99.5?'neg':x.inventory_pct>=100?'pos':''}" style="font-weight:600">${fmtPctEn(x.inventory_pct)}</td>
       <td class="mono ${x.total<0?'neg':'pos'}">${fmtEur(x.total)}</td>
