@@ -303,6 +303,13 @@
   .modal-info-row { font-size: 12px; color: var(--text2); display: flex; justify-content: space-between; padding: 3px 0; font-family: 'DM Mono', monospace; }
   .modal-info-row .neg { color: var(--red); }
   .modal-info-row .pos { color: var(--green); }
+  .header-toggles { display: flex; flex-direction: column; gap: 5px; }
+  /* Szlovák nézetben a fejléc és a lap egyértelműen jelzi, hol vagyunk */
+  .sk-mode-banner {
+    background: var(--surface2); border: 1px solid var(--border2); border-left: 3px solid var(--brand-red-dark);
+    border-radius: var(--radius); padding: 9px 13px; margin-bottom: 16px;
+    font-size: 12px; font-weight: 500; color: var(--text2);
+  }
   .modal-info-note { font-size: 11px; color: var(--text3); font-style: italic; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border2); }
 </style>
 </head>
@@ -326,9 +333,15 @@
       <option value="Ullman Zsófia">Ullman Zsófia</option>
       <option value="Anda Patrícia">Anda Patrícia</option>
     </select>
-    <div class="franchise-toggle active" id="franchiseToggle" onclick="toggleFranchise()">
-      <div class="ft-dot"></div>
-      <span id="franchiseLabel">Franchise elrejtése</span>
+    <div class="header-toggles">
+      <div class="franchise-toggle active" id="franchiseToggle" onclick="toggleFranchise()">
+        <div class="ft-dot"></div>
+        <span id="franchiseLabel">Franchise elrejtése</span>
+      </div>
+      <div class="franchise-toggle" id="skToggle" onclick="toggleSk()">
+        <div class="ft-dot"></div>
+        <span id="skLabel">Slovakia</span>
+      </div>
     </div>
   </div>
 </div>
@@ -383,6 +396,13 @@ function getMonthSnapshot() {
 function populateMonthSelect() {
   const sel = document.getElementById('monthSelect');
   if (!sel) return;
+  if (skMode) {                       // szlovák módban az SK hónapok, angolul
+    sel.innerHTML = skMonths().map(m =>
+      `<option value="${esc(m.key)}">${esc(m.label)}</option>`).join('');
+    const cur = skCurrentMonth();
+    if (cur) sel.value = cur.key;
+    return;
+  }
   const history = DATA.elozo_honapok || [];
   const opts = [`<option value="current">${esc(DATA.meta.honap)} (aktuális)</option>`];
   history.forEach((snap, i) => opts.push(`<option value="${i}">${esc(snap.meta.honap)}</option>`));
@@ -412,6 +432,7 @@ function updateStatusBanner() {
 }
 
 function setMonth(v) {
+  if (skMode) { setSkMonth(v); return; }
   selectedMonth = v;
   const snap = getMonthSnapshot();
   document.getElementById('headerMeta').textContent = snap.meta.honap + ' · frissítve: ' + snap.meta.frissitve;
@@ -457,13 +478,11 @@ function init() {
       <button class="tab" onclick="showTab('trend2026')">2026 trend</button>
       <button class="tab" onclick="showTab('trend')">Évek trendje</button>
       <button class="tab" onclick="showTab('levon')">Levonások</button>
-      <button class="tab" onclick="showTab('sk')">SK</button>
     </div>
     <div class="panel active" id="tab-aktualis"></div>
     <div class="panel" id="tab-trend2026"></div>
     <div class="panel" id="tab-trend"></div>
     <div class="panel" id="tab-levon"></div>
-    <div class="panel" id="tab-sk"></div>
   `;
   populateMonthSelect();
   updateStatusBanner();
@@ -576,12 +595,11 @@ function refreshAllTabs() {
 }
 
 function showTab(id) {
-  document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', ['aktualis','trend2026','trend','levon','sk'][i] === id));
+  document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', ['aktualis','trend2026','trend','levon'][i] === id));
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
   if (id === 'trend') { setTimeout(renderTrendChart, 50); }
   if (id === 'trend2026') { setTimeout(render2026Charts, 50); }
-  if (id === 'sk') { renderSk(); }
 }
 
 function setFilter(f) {
@@ -1609,9 +1627,53 @@ function skMetricCardHtml(honap) {
       </div>`;
 }
 
+let skMode = false;          // a fejléc "Slovakia" kapcsolója
 let skSelectedMonth = null;
 
-function setSkMonth(k) { skSelectedMonth = k; renderSk(); }
+function setSkMonth(k) { skSelectedMonth = k; renderSkView(); }
+
+// A fejléc "Slovakia" kapcsolója: a teljes riport vált Magyarország <-> Szlovákia
+// között. Azért az egész, mert a magyar fülekből kettőnek (Évek trendje,
+// Levonások) nincs SK tartalma, a félig magyar / félig szlovák képernyő pedig
+// félrevezető lenne.
+function toggleSk() {
+  skMode = !skMode;
+  document.getElementById('skToggle').classList.toggle('active', skMode);
+  applySkChrome();
+  if (skMode) {
+    renderSkView();
+  } else {
+    init();            // a magyar nézet teljes visszaépítése
+  }
+}
+
+// Szlovák módban a magyar hatókör-vezérlők értelmetlenek, ezért elrejtjük őket.
+function applySkChrome() {
+  const mgr = document.getElementById('managerSelect');
+  const fr = document.getElementById('franchiseToggle');
+  if (mgr) mgr.style.display = skMode ? 'none' : '';
+  if (fr) fr.style.display = skMode ? 'none' : '';
+  populateMonthSelect();
+  updateHeaderMeta();
+}
+
+function updateHeaderMeta() {
+  const el = document.getElementById('headerMeta');
+  if (!el) return;
+  if (skMode) {
+    const cur = skCurrentMonth();
+    el.textContent = 'Slovakia · ' + (DATA.sk ? DATA.sk.store : '') + (cur ? ' · ' + cur.label : '');
+  } else {
+    const snap = getMonthSnapshot();
+    el.textContent = snap.meta.honap + ' · frissítve: ' + snap.meta.frissitve;
+  }
+}
+
+function skCurrentMonth() {
+  const months = skMonths();
+  if (!months.length) return null;
+  return months.find(m => m.key === skSelectedMonth) || months[months.length - 1];
+}
 
 const SK_CATS = [
   { key: 'dough',       label: 'Pizza dough ball' },
@@ -1622,28 +1684,26 @@ const SK_CATS = [
   { key: 'merchandise', label: 'Merchandise' },
 ];
 
-function renderSk() {
-  const el = document.getElementById('tab-sk');
+function renderSkView() {
+  const el = document.getElementById('app');
   if (!el) return;
   const months = skMonths();
   if (!months.length) { el.innerHTML = '<div class="modal-item-empty">No SK data yet.</div>'; return; }
 
-  const cur = months.find(m => m.key === skSelectedMonth) || months[months.length - 1];
+  const cur = skCurrentMonth();
   skSelectedMonth = cur.key;
   const s = cur.stores[0];
 
   const pending = (DATA.sk.pending || []);
   const pendingNote = pending.length
-    ? `<div class="partial-trend-note">Data pending for: ${pending.map(esc).join(', ')} — these months are not shown until the figures reconcile.</div>`
+    ? `<div class="partial-trend-note">Data pending for: ${pending.map(esc).join(', ')}.</div>`
     : '';
-
-  const opts = months.map(m =>
-    `<option value="${esc(m.key)}" ${m.key === cur.key ? 'selected' : ''}>${esc(m.label)}</option>`).join('');
 
   const histRows = months.map(m => {
     const x = m.stores[0];
-    return `<tr>
-      <td>${esc(m.label)}</td>
+    const isCur = m.key === cur.key;
+    return `<tr${isCur ? ' style="background:var(--surface2)"' : ''}>
+      <td${isCur ? ' style="font-weight:600"' : ''}>${esc(m.label)}</td>
       <td class="mono ${x.inventory_pct<99.5?'neg':x.inventory_pct>=100?'pos':''}" style="font-weight:600">${fmtPctEn(x.inventory_pct)}</td>
       <td class="mono ${x.total<0?'neg':'pos'}">${fmtEur(x.total)}</td>
       ${SK_CATS.map(c => `<td class="mono ${(x[c.key]||0)<0?'neg':'pos'}">${fmtEur(x[c.key]||0)}</td>`).join('')}
@@ -1653,10 +1713,8 @@ function renderSk() {
   }).join('');
 
   el.innerHTML = `
+    <div class="sk-mode-banner">🇸🇰 Slovakia — ${esc(DATA.sk.store)} · all figures in EUR. Use the “Slovakia” switch in the header to return to the Hungarian report.</div>
     ${pendingNote}
-    <div class="controls">
-      <select id="skMonthSelect" class="header-select" onchange="setSkMonth(this.value)">${opts}</select>
-    </div>
 
     <div class="metrics">
       <div class="metric">
@@ -1681,35 +1739,41 @@ function renderSk() {
       </div>
     </div>
 
-    <div class="table-wrap">
-      <table>
-        <thead><tr>
-          <th>Store</th><th>Inventory %</th><th>Total diff.</th>
-          ${SK_CATS.map(c => `<th>${esc(c.label)}</th>`).join('')}
-          <th>Scrap %</th>
-        </tr></thead>
-        <tbody><tr>
-          <td><span class="store-link" onclick="openSkDetail()">${esc(s.name)}</span></td>
-          <td class="mono ${s.inventory_pct<99.5?'neg':s.inventory_pct>=100?'pos':''}" style="font-weight:600">${fmtPctEn(s.inventory_pct)}</td>
-          <td class="mono ${s.total<0?'neg':'pos'}">${fmtEur(s.total)}</td>
-          ${SK_CATS.map(c => `<td class="mono ${(s[c.key]||0)<0?'neg':'pos'}">${fmtEur(s[c.key]||0)}</td>`).join('')}
-          <td class="mono">${fmtPctEn(s.scrap_pct)}</td>
-        </tr></tbody>
-      </table>
+    <div class="card">
+      <div class="card-title">Selected month — click the store for the breakdown</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>Store</th><th>Inventory %</th><th>Total diff.</th>
+            ${SK_CATS.map(c => `<th>${esc(c.label)}</th>`).join('')}
+            <th>Scrap %</th>
+          </tr></thead>
+          <tbody><tr>
+            <td><span class="store-link" onclick="openSkDetail()">${esc(s.name)}</span></td>
+            <td class="mono ${s.inventory_pct<99.5?'neg':s.inventory_pct>=100?'pos':''}" style="font-weight:600">${fmtPctEn(s.inventory_pct)}</td>
+            <td class="mono ${s.total<0?'neg':'pos'}">${fmtEur(s.total)}</td>
+            ${SK_CATS.map(c => `<td class="mono ${(s[c.key]||0)<0?'neg':'pos'}">${fmtEur(s[c.key]||0)}</td>`).join('')}
+            <td class="mono">${fmtPctEn(s.scrap_pct)}</td>
+          </tr></tbody>
+        </table>
+      </div>
     </div>
 
-    <div class="card-title" style="margin-top:18px">Month by month — 2026</div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr>
-          <th>Month</th><th>Inventory %</th><th>Total diff.</th>
-          ${SK_CATS.map(c => `<th>${esc(c.label)}</th>`).join('')}
-          <th>Pasta</th><th>Scrap %</th>
-        </tr></thead>
-        <tbody>${histRows}</tbody>
-      </table>
+    <div class="card">
+      <div class="card-title">Month by month — 2026</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>Month</th><th>Inventory %</th><th>Total diff.</th>
+            ${SK_CATS.map(c => `<th>${esc(c.label)}</th>`).join('')}
+            <th>Pasta</th><th>Scrap %</th>
+          </tr></thead>
+          <tbody>${histRows}</tbody>
+        </table>
+      </div>
     </div>
   `;
+  updateHeaderMeta();
 }
 
 function openSkDetail() {
