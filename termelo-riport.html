@@ -579,8 +579,6 @@ function definiciok() {
 
 
 /* ── ALAPANYAG ELTÉRÉS ───────────────────────────────────────────────────── */
-let osszesTermek = false;   // false = csak a kiemelt termékek
-let kereses = '';
 
 /** Egy időszak tételei kiszámolt %-kal és Ft-tal. Ár nélkül a Ft nem számolható. */
 function alapSorok(i) {
@@ -603,22 +601,13 @@ const eltCls = v => v == null ? '' : v < 0 ? 'hiany' : v > 0 ? 'tobblet' : '';
 const STATUSZ = { 'havi zaras': 'havi zárás', 'reszeredmeny': 'részeredmény' };
 const statuszNev = k => STATUSZ[k] || k;
 
-function setOsszes(v) { osszesTermek = v; kereses = ''; rajzol(); }
-function setKereses(v) {
-  kereses = v;
-  document.getElementById('termekTabla').innerHTML = osszesTablaBelso(alapSorok(alapAktualis()));
-  // a tábla újrarajzolásakor az input kicserélődik, ezért a fókuszt vissza kell tenni
-  const el = document.getElementById('termekSrch');
-  if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); }
-}
-
 function alapanyagSzekcio() {
   const a = alap(), i = alapAktualis();
   if (!a || !i) return '<div class="card"><div class="kat-ures">Ehhez a szekcióhoz még nincs adat.</div></div>';
 
   const mind = alapSorok(i);
   const kiemelt = mind.filter(r => r.kategoria);
-  const sorok = osszesTermek ? mind : kiemelt;
+  const sorok = kiemelt;   // a riport mindig a kijelölt tételeket mutatja
 
   const ftSorok = sorok.filter(r => r.ft != null);
   const ftOssz = ftSorok.reduce((s2, r) => s2 + r.ft, 0);
@@ -643,7 +632,7 @@ function alapanyagSzekcio() {
         <div>Ft hatás (ahol van ár)<b class="${eltCls(ftOssz)}">${elt(Math.round(ftOssz))} Ft</b></div>
         <div>Ebből hiány<b class="hiany">${elt(Math.round(hiany.reduce((s2, r) => s2 + r.ft, 0)))} Ft</b></div>
         <div>Ebből többlet<b class="tobblet">${elt(Math.round(tobblet.reduce((s2, r) => s2 + r.ft, 0)))} Ft</b></div>
-        <div>Tételek<b>${sorok.length}${osszesTermek ? '' : ' / ' + mind.length}</b></div>
+        <div>Kijelölt tétel<b>${sorok.length}</b></div>
       </div>
 
       ${foSorok.length ? `
@@ -669,12 +658,13 @@ function alapanyagSzekcio() {
     </div>
 
     <div class="card">
-      <div class="card-title">Tételek</div>
-      <div class="controls" style="margin-bottom:10px">
-        <button class="filter-btn ${osszesTermek ? '' : 'active'}" onclick="setOsszes(false)">Kiemelt termékek (${kiemelt.length})</button>
-        <button class="filter-btn ${osszesTermek ? 'active' : ''}" onclick="setOsszes(true)">Összes termék (${mind.length})</button>
+      <div class="card-title">Tételek kategóriánként</div>
+      <div class="card-sub">
+        A havonta állandó tételek, plusz amit az adott időszakra külön kijelöltünk.
+        A többi ${mind.length - kiemelt.length} termék adata megvan, de itt szándékosan nem jelenik meg:
+        van köztük olyan, ami receptúra hiányában minden hónapban eltér, és állandó zajt csinálna.
       </div>
-      <div id="termekTabla">${osszesTermek ? osszesTablaBelso(mind) : kategoriaBontas(a, sorok)}</div>
+      ${kategoriaBontas(a, sorok)}
     </div>
 
     <div class="card">
@@ -723,22 +713,6 @@ function kategoriaBontas(a, sorok) {
       </div>
       <div class="table-wrap"><table>${FEJ}<tbody>${ks.map(sorHtml).join('')}</tbody></table></div>`;
   }).join('');
-}
-
-function osszesTablaBelso(mind) {
-  const q = kereses.toLowerCase();
-  const ks = mind.filter(r => r.elteres != null && r.elteres !== 0)
-    .filter(r => !q || r.nev.toLowerCase().includes(q))
-    .sort((x, y) => Math.abs(y.pct == null ? 0 : y.pct) - Math.abs(x.pct == null ? 0 : x.pct));
-  return `
-    <div class="card-sub">Csak azok a tételek, ahol van eltérés. Az eltérés %-a szerint rendezve, a legnagyobbal kezdve.</div>
-    <div class="search-wrap" style="margin-bottom:10px">
-      <span class="search-icon">⌕</span>
-      <input type="text" id="termekSrch" placeholder="Termék keresése…" value="${esc(kereses)}"
-             oninput="setKereses(this.value)">
-    </div>
-    <div class="table-wrap"><table>${FEJ}<tbody>${ks.map(sorHtml).join('')}</tbody></table></div>
-    <div class="kat-ures">${ks.length} tétel</div>`;
 }
 
 function alapChartRajz() {
