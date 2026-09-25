@@ -1,0 +1,145 @@
+{
+  "orszag": "HU",
+  "honap": "2026-09",
+  "datum": "2026-09-24",
+  "allapot": "reszeredmeny",
+  "penznem": "HUF",
+  "uzletek": [
+    {
+      "nev": "Király utca",
+      "leltar_pct": 99.9,
+      "osszes": -15197,
+      "gomboc": -2850,
+      "ital": -4270,
+      "desseg": 0,
+      "doboz": -3650,
+      "ajandek": 0,
+      "snack": -4427,
+      "selejt_ft": 1617100,
+      "selejt_pct": 9.1,
+      "ptg": {
+        "osszes": -17846,
+        "fiscat": 6545,
+        "cash": -11299
+      },
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "Szelet",
+            "mennyiseg": 3
+          }
+        ]
+      }
+    },
+    {
+      "nev": "Károly krt",
+      "leltar_pct": 98.98,
+      "osszes": -112930,
+      "gomboc": -36990,
+      "ital": -12410,
+      "desseg": -10392,
+      "doboz": -41800,
+      "ajandek": 0,
+      "snack": -11338,
+      "selejt_ft": 1088933,
+      "selejt_pct": 8.5,
+      "ptg": {
+        "osszes": 935,
+        "fiscat": 1349,
+        "cash": -5549
+      },
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 4
+          }
+        ],
+        "desseg": [
+          {
+            "termek": "Csokis mousse",
+            "mennyiseg": 4
+          },
+          {
+            "termek": "Tiramisu",
+            "mennyiseg": 4
+          }
+        ],
+        "doboz": [
+          {
+            "termek": "Doboz",
+            "mennyiseg": 100
+          },
+          {
+            "termek": "Papírzacskó",
+            "mennyiseg": 100
+          }
+        ]
+      },
+      "megjegyzesek": {
+        "ital": "Vegyesen pár termék",
+        "snack": "1 karton Lays chips"
+      }
+    },
+    {
+      "nev": "Oktogon",
+      "leltar_pct": 99.7,
+      "osszes": -28626,
+      "gomboc": -65796,
+      "ital": -18650,
+      "desseg": 11940,
+      "doboz": 15000,
+      "ajandek": 17350,
+      "snack": 11530,
+      "pasta": -17661,
+      "selejt_ft": 1953931,
+      "selejt_pct": 9.6,
+      "ptg": {
+        "osszes": 546,
+        "fiscat": 0,
+        "cash": 546
+      },
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 6
+          }
+        ],
+        "doboz": [
+          {
+            "termek": "Papírzacskó",
+            "mennyiseg": 250
+          }
+        ],
+        "ajandek": [
+          {
+            "termek": "Gyerekjáték",
+            "mennyiseg": 14
+          },
+          {
+            "termek": "Kockajáték figura",
+            "mennyiseg": 16
+          }
+        ],
+        "snack": [
+          {
+            "termek": "Sperlari",
+            "mennyiseg": 8
+          },
+          {
+            "termek": "Grissini",
+            "mennyiseg": 5
+          }
+        ]
+      },
+      "megjegyzesek": {
+        "ital": "Vegyesen sok termék",
+        "desseg": "Vegyesen sok termék",
+        "snack": "Vegyesen sok termék",
+        "pasta": "1000 g penne, 500 g spagetti"
+      }
+    }
+  ],
+  "levonasok": []
+}
