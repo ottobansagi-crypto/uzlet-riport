@@ -3,8 +3,8 @@
   "cim": "PizzaMe Termelő Riport",
   "szekcio": "Havi gombóc gyártás",
   "forras": "„Alapanyag fogyások” munkafüzet – dagasztások száma munkalap (Google Drive)",
-  "frissitve": "2026. augusztus (lezárt hónap)",
-  "aktualis": "2026-08",
+  "frissitve": "2026. szeptember (lezárt hónap)",
+  "aktualis": "2026-09",
   "gomboc_definicio": "A Gombóc szám nagy gombóc egyenérték: a 32-es gombóc 0,5-tel, a 22-es 0,25-tel számít bele.",
   "egyenertek": {
    "nagy gombóc": 1,
@@ -1951,6 +1951,25 @@
    "liszt": 12024.0,
    "tk_liszt": 3120.0,
    "tk_arany": 25.95,
+   "korszak": "normal"
+  },
+  {
+   "id": "2026-09",
+   "ev": 2026,
+   "ho": 9,
+   "cimke": "2026. szeptember",
+   "gomboc": 40869,
+   "dagasztas": {
+    "nagy": 67.5016,
+    "tk": 20.9667,
+    "g32": 26.89,
+    "tk32": 2.0333,
+    "g22": 1.61,
+    "ossz": 119.0016
+   },
+   "liszt": 12000.0,
+   "tk_liszt": 2990.0,
+   "tk_arany": 24.92,
    "korszak": "normal"
   }
  ],
