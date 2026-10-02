@@ -8219,7 +8219,7 @@
       "nev": "Bivaly Mozzarella",
       "egyseg": "gramm",
       "ar": 3.5,
-      "kategoria": "Sajtok",
+      "kategoria": null,
       "nyito": 0.0,
       "bevet": 0.0,
       "fogyas": 0.0,
@@ -8895,8 +8895,9 @@
       "nyito": 2271.0,
       "bevet": 0.0,
       "fogyas": 277.0,
-      "zaro": 2008.0,
-      "elteres": 14.0
+      "zaro": 1996.0,
+      "elteres": 2.0,
+      "megjegyzes": "A záró készlet kézi pontosítása: a V31-ben 2008 szerepelt, a pontos szám 1996."
      },
      {
       "kod": "bolognai_daralt_hus_72",
