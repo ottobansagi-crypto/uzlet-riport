@@ -140,11 +140,20 @@
   .header-select:hover { background: rgba(255,255,255,0.25); }
   .header-select option { color: var(--text); }
   .header-link {
-    font-size: 12px; font-weight: 500; color: #fff; text-decoration: none;
-    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 20px; padding: 6px 12px; transition: background 0.15s; white-space: nowrap;
+    font-size: 13px; font-weight: 600; color: var(--brand-red-dark); text-decoration: none;
+    background: #fff; border: 1px solid #fff;
+    border-radius: 20px; padding: 8px 16px; white-space: nowrap;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    transition: transform 0.15s, box-shadow 0.15s;
   }
-  .header-link:hover { background: rgba(255,255,255,0.3); }
+  .header-link:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.26); transform: translateY(-1px); }
+  .header-link:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+  @media(max-width:900px){
+    .header { flex-wrap: wrap; gap: 10px 14px; }
+    .header-controls { justify-content: flex-start; order: 3; flex-basis: 100%; }
+    .header-nav::before { display: none; }
+  }
 
   /* METRICS */
   .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 18px; }
@@ -323,6 +332,19 @@
   .modal-info-row .neg { color: var(--red); }
   .modal-info-row .pos { color: var(--green); }
   .header-toggles { display: flex; flex-direction: column; gap: 5px; }
+
+  /* A fejléc három sávja: cím | a riport szűrői | átlépés másik riportra.
+     A szűrők a riportot szabályozzák, a jobb oldali link egy másik oldalra visz —
+     ezért kap eltérő megjelenést, hogy ne tűnjön az előbbiek egyikének. */
+  .header-controls {
+    display: flex; align-items: center; gap: 10px;
+    flex: 1; justify-content: center; flex-wrap: wrap;
+  }
+  .header-nav { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+  .header-nav::before {
+    content: ''; width: 1px; height: 30px;
+    background: rgba(255,255,255,0.3);
+  }
   /* Szlovák nézetben a fejléc és a lap egyértelműen jelzi, hol vagyunk */
   .sk-mode-banner {
     background: #eef5f6; border: 1px solid var(--sk-blue); border-left: 3px solid var(--sk-blue-deep);
@@ -342,7 +364,7 @@
       <span class="header-meta" id="headerMeta">betöltés...</span>
     </div>
   </div>
-  <div style="display:flex;align-items:center;gap:10px;">
+  <div class="header-controls">
     <select id="monthSelect" class="header-select" onchange="setMonth(this.value)"></select>
     <select id="managerSelect" class="header-select" onchange="setManager(this.value)">
       <option value="all">Összes terület</option>
@@ -362,6 +384,8 @@
         <span id="skLabel">Slovakia</span>
       </div>
     </div>
+  </div>
+  <div class="header-nav">
     <a class="header-link" href="/termelo/" title="Külön jogosultsághoz kötött">Termelő riport →</a>
   </div>
 </div>

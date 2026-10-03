@@ -55,14 +55,20 @@
   .header-logo { width: 40px; height: 40px; flex-shrink: 0; }
   .header h1 { font-size: 16px; font-weight: 600; letter-spacing: -0.3px; }
   .header-meta { font-size: 12px; color: rgba(255,255,255,0.8); font-family: 'DM Mono', monospace; }
-  .header-right { display: flex; align-items: center; gap: 8px; }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+  .header-nav { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+  .header-nav::before { content: ''; width: 1px; height: 30px; background: rgba(255,255,255,0.3); }
   .header-right label { font-size: 12px; color: rgba(255,255,255,0.8); }
   .header-link {
-    font-size: 12px; font-weight: 500; color: #fff; text-decoration: none;
-    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 20px; padding: 6px 12px; transition: background 0.15s; white-space: nowrap;
+    font-size: 13px; font-weight: 600; color: var(--brand-red-dark); text-decoration: none;
+    background: #fff; border: 1px solid #fff;
+    border-radius: 20px; padding: 8px 16px; white-space: nowrap;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    transition: transform 0.15s, box-shadow 0.15s;
   }
-  .header-link:hover { background: rgba(255,255,255,0.3); }
+  .header-link:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.26); transform: translateY(-1px); }
+  .header-link:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  @media(max-width:700px){ .header-nav::before { display: none; } }
   .header-select {
     padding: 7px 12px; font-size: 13px; font-weight: 500;
     border: 1px solid rgba(255,255,255,0.3); border-radius: 20px;
@@ -187,6 +193,8 @@
   <div class="header-right">
     <label for="honapSelect">Hónap</label>
     <select id="honapSelect" class="header-select" onchange="setHonap(this.value)"></select>
+  </div>
+  <div class="header-nav">
     <a class="header-link" href="/">← Üzlet riport</a>
   </div>
 </div>
