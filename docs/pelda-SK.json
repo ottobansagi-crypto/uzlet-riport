@@ -1,0 +1,35 @@
+{
+  "orszag": "SK",
+  "honap": "2026-09",
+  "datum": "2026-09-24",
+  "allapot": "reszeredmeny",
+  "penznem": "EUR",
+  "stores": [
+    {
+      "name": "Kolarska",
+      "inventory_pct": 99.4,
+      "total": -85,
+      "dough": -77,
+      "drinks": -1,
+      "dessert": -3,
+      "boxes": -2,
+      "merchandise": 0,
+      "snack": -3,
+      "pasta": -27,
+      "scrap": 2638,
+      "scrap_pct": 15.8,
+      "cash_register": {
+        "total": 0,
+        "upos": 0
+      },
+      "details": {
+        "dough": [
+          {
+            "item": "45cm Bochnik",
+            "qty": 2.5
+          }
+        ]
+      }
+    }
+  ]
+}
