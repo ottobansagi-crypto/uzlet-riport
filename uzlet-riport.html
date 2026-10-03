@@ -559,6 +559,22 @@ function fmtPct(v, d = 1) {
   return s.replace(/,0$/, '') + '%';
 }
 
+// 1 tizedesre kerekítés pontosan úgy, ahogy a fmtPct kiírja (a rendezés is ezt használja).
+function kerekit1(v) {
+  return parseFloat(Number(v).toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1, useGrouping: false }));
+}
+// Leltár %: a kerekítés nem viheti át a 100%-ot. Hiánnyal záró üzlet (pl. 99,95%)
+// nem látszhat 100%-nak, többlettel záró (pl. 100,04%) sem 100%-nak.
+function leltarKerekit(v) {
+  v = Number(v);
+  const r = kerekit1(v);
+  if (v < 100 && r >= 100) return 99.9;
+  if (v > 100 && r <= 100) return 100.1;
+  return r;
+}
+function fmtLeltar(v) { return fmtPct(leltarKerekit(v)); }
+function fmtLeltarEn(v) { return fmtPctEn(leltarKerekit(v)); }
+
 // A keresőmező a renderAktualis() innerHTML-jén belül van, ezért minden
 // billentyűleütésnél újra létrejön: a szöveget külön tartjuk, és a render
 // után visszaadjuk a fókuszt + kurzorpozíciót, különben egy karakter után
@@ -612,7 +628,8 @@ function getFiltered() {
     }
     // A százalékokat 1 tizedesre kiírva mutatjuk, ezért a rendezés is a kiírt értéket
     // nézze — különben két egyformán "99,8%"-os üzlet (99,80 és 99,83) szétcsúszik.
-    if (sortKey.endsWith('_pct')) { va = Math.round(va * 10) / 10; vb = Math.round(vb * 10) / 10; }
+    if (sortKey === 'leltar_pct') { va = leltarKerekit(va); vb = leltarKerekit(vb); }
+    else if (sortKey.endsWith('_pct')) { va = kerekit1(va); vb = kerekit1(vb); }
     if (typeof va === 'string') return sortDir * va.localeCompare(vb, 'hu');
     if (va !== vb) return sortDir * (va - vb);
     // Azonos százaléknál az összes eltérés dönt, nagyobbtól kisebbig.
@@ -709,7 +726,7 @@ function renderAktualis() {
       </div>
       <div class="metric">
         <div class="metric-label">Átlag Leltár %</div>
-        <div class="metric-value ${avgLeltar<99.5?'neg':avgLeltar>=100?'pos':''}">${fmtPct(avgLeltar)}</div>
+        <div class="metric-value ${avgLeltar<99.5?'neg':avgLeltar>=100?'pos':''}">${fmtLeltar(avgLeltar)}</div>
         <div class="metric-sub">${esc(snap.meta.honap)}</div>
       </div>
       <div class="metric">
@@ -776,7 +793,7 @@ function renderAktualis() {
             const lv = levonMap[d.nev];
             const levonCell = lv ? `<span class="levon-pill">${Math.round(lv.levon).toLocaleString('hu-HU')} Ft</span>${lv.megjegyzes ? `<br><span style="font-size:10px;color:var(--text3)">${esc(lv.megjegyzes)}</span>` : ''}` : '—';
             return `<tr ${d.franchise?'class="franchise-row"':''}>
-            <td class="mono ${(d.leltar_pct||100)<99.5?'neg':(d.leltar_pct||100)>=100?'pos':''}" style="font-weight:600">${d.leltar_pct?fmtPct(d.leltar_pct):'—'}</td>
+            <td class="mono ${(d.leltar_pct||100)<99.5?'neg':(d.leltar_pct||100)>=100?'pos':''}" style="font-weight:600">${d.leltar_pct?fmtLeltar(d.leltar_pct):'—'}</td>
             <td><span class="store-link" data-nev="${esc(d.nev)}" onclick="openDetail(this.dataset.nev)">${esc(d.nev)}</span>${d.franchise?'<span class="franchise-label">F</span>':''}</td>
             <td class="mono ${d.osszes<0?'neg':'pos'}">${fmt(Math.round(d.osszes))}</td>
             <td class="mono ${(d.gomboc||0)<0?'neg':'pos'}">${fmt(Math.round(d.gomboc||0))}</td>
@@ -851,7 +868,7 @@ function renderBarChart(data) {
       responsive: true, maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: ctx => (isLeltar || isSzazalek) ? fmtPct(ctx.parsed.y) : fmt(ctx.parsed.y) + ' Ft' } }
+        tooltip: { callbacks: { label: ctx => isLeltar ? fmtLeltar(ctx.parsed.y) : isSzazalek ? fmtPct(ctx.parsed.y) : fmt(ctx.parsed.y) + ' Ft' } }
       },
       scales: {
         x: { ticks: { font: { size: 9, family: 'DM Sans' }, maxRotation: 55, autoSkip: false }, grid: { display: false } },
@@ -926,7 +943,7 @@ function openDetail(nev) {
 
   document.getElementById('detailContent').innerHTML = `
     <div class="modal-title">${esc(d.nev)}${d.franchise?'<span class="franchise-label">F</span>':''}</div>
-    <div class="modal-sub">Leltár: ${d.leltar_pct?fmtPct(d.leltar_pct):'—'} · Összes eltérés: <span class="${d.osszes<0?'neg':'pos'}">${fmt(Math.round(d.osszes))} Ft</span> · Selejt: ${fmtPct(d.selejt_pct)}</div>
+    <div class="modal-sub">Leltár: ${d.leltar_pct?fmtLeltar(d.leltar_pct):'—'} · Összes eltérés: <span class="${d.osszes<0?'neg':'pos'}">${fmt(Math.round(d.osszes))} Ft</span> · Selejt: ${fmtPct(d.selejt_pct)}</div>
     ${catsHtml}
     ${extraHtml}
     ${infoHtml}
@@ -1680,7 +1697,7 @@ function skMetricCardHtml(honap) {
   if (!DATA || !DATA.sk) return '';
   const mon = skMonthForHungarian(honap);
   const s = mon && mon.stores && mon.stores[0];
-  const val = s ? fmtPct(s.inventory_pct) : '—';
+  const val = s ? fmtLeltar(s.inventory_pct) : '—';
   const cls = s ? (s.inventory_pct < 99.5 ? 'neg' : s.inventory_pct >= 100 ? 'pos' : '') : '';
   const sub = s
     ? esc(DATA.sk.store) + ' · selejt ' + fmtPct(s.scrap_pct)
@@ -1770,7 +1787,7 @@ function renderSkView() {
     const isCur = m.key === cur.key;
     return `<tr${isCur ? ' style="background:#eef5f6"' : ''}>
       <td${isCur ? ' style="font-weight:600"' : ''}>${esc(m.label)}</td>
-      <td class="mono ${x.inventory_pct<99.5?'neg':x.inventory_pct>=100?'pos':''}" style="font-weight:600">${fmtPctEn(x.inventory_pct)}</td>
+      <td class="mono ${x.inventory_pct<99.5?'neg':x.inventory_pct>=100?'pos':''}" style="font-weight:600">${fmtLeltarEn(x.inventory_pct)}</td>
       <td class="mono ${x.total<0?'neg':'pos'}">${fmtEur(x.total)}</td>
       ${SK_CATS.map(c => `<td class="mono ${(x[c.key]||0)<0?'neg':'pos'}">${fmtEur(x[c.key]||0)}</td>`).join('')}
       <td class="mono ${(x.pasta||0)<0?'neg':'pos'}">${x.pasta==null?'—':fmtEur(x.pasta)}</td>
@@ -1785,7 +1802,7 @@ function renderSkView() {
     <div class="metrics">
       <div class="metric">
         <div class="metric-label">Inventory %</div>
-        <div class="metric-value ${s.inventory_pct<99.5?'neg':s.inventory_pct>=100?'pos':''}">${fmtPctEn(s.inventory_pct)}</div>
+        <div class="metric-value ${s.inventory_pct<99.5?'neg':s.inventory_pct>=100?'pos':''}">${fmtLeltarEn(s.inventory_pct)}</div>
         <div class="metric-sub">${esc(cur.label)}</div>
       </div>
       <div class="metric">
@@ -1816,7 +1833,7 @@ function renderSkView() {
           </tr></thead>
           <tbody><tr>
             <td><span class="store-link" onclick="openSkDetail()">${esc(s.name)}</span></td>
-            <td class="mono ${s.inventory_pct<99.5?'neg':s.inventory_pct>=100?'pos':''}" style="font-weight:600">${fmtPctEn(s.inventory_pct)}</td>
+            <td class="mono ${s.inventory_pct<99.5?'neg':s.inventory_pct>=100?'pos':''}" style="font-weight:600">${fmtLeltarEn(s.inventory_pct)}</td>
             <td class="mono ${s.total<0?'neg':'pos'}">${fmtEur(s.total)}</td>
             ${SK_CATS.map(c => `<td class="mono ${(s[c.key]||0)<0?'neg':'pos'}">${fmtEur(s[c.key]||0)}</td>`).join('')}
             <td class="mono">${fmtPctEn(s.scrap_pct)}</td>
@@ -1880,7 +1897,7 @@ function openSkDetail() {
 
   document.getElementById('detailContent').innerHTML = `
     <div class="modal-title">${esc(d.name)}</div>
-    <div class="modal-sub">Inventory: ${fmtPctEn(d.inventory_pct)} · Total difference: <span class="${d.total<0?'neg':'pos'}">${fmtEur(d.total)}</span> · Scrap: ${fmtPctEn(d.scrap_pct)} · ${esc(cur.label)}</div>
+    <div class="modal-sub">Inventory: ${fmtLeltarEn(d.inventory_pct)} · Total difference: <span class="${d.total<0?'neg':'pos'}">${fmtEur(d.total)}</span> · Scrap: ${fmtPctEn(d.scrap_pct)} · ${esc(cur.label)}</div>
     ${cats}
     ${extra}
     ${pasta}
