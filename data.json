@@ -1,129 +1,119 @@
 {
   "meta": {
-    "honap": "2026. szeptember",
-    "frissitve": "2026. szeptember teljes hónap"
+    "honap": "2026. október",
+    "frissitve": "2026. október 8-ig (részeredmény, folyamatban)",
+    "reszido": true,
+    "reszido_datum": "2026. október 8"
   },
-  "levonasok": [
-    {
-      "nev": "Király utca",
-      "levon": 10000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Erzsébet krt. 30.",
-      "levon": 10000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Fashion",
-      "levon": 20000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Bazilika",
-      "levon": 50000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Széll Kálmán",
-      "levon": 75000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Károly krt",
-      "levon": 95000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Dob",
-      "levon": 10000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Blaha",
-      "levon": 55000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Oktogon",
-      "levon": 40000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Wesselényi utca",
-      "levon": 10000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Gomba Móricz",
-      "levon": 50000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Árkád",
-      "levon": 35000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Kazinczy",
-      "levon": 25000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "K1 Westend",
-      "levon": 20000,
-      "megjegyzes": ""
-    },
-    {
-      "nev": "Szeged",
-      "levon": 40000,
-      "megjegyzes": ""
-    }
-  ],
+  "levonasok": [],
   "uzletek": [
     {
       "nev": "Király utca",
-      "leltar_pct": 99.95,
-      "osszes": -10327,
-      "gomboc": 2353,
-      "ital": -8070,
-      "desseg": 0,
-      "doboz": -2200,
-      "snack": -2410,
-      "ajandek": 0,
-      "selejt_pct": 9.0,
+      "leltar_pct": 99.41,
+      "osszes": -32551,
+      "gomboc": -3720,
+      "ital": -3310,
+      "desseg": -3289,
+      "doboz": -3850,
+      "snack": -21352,
+      "ajandek": 2970,
+      "selejt_pct": 8.1,
       "reszletek": {
         "gomboc": [
           {
             "termek": "Szelet",
-            "mennyiseg": 2
+            "mennyiseg": 3
           }
         ]
       },
       "megjegyzesek": {
-        "ital": "3db Heineken, 3db 0,5 savas és egyéb termékek"
+        "snack": "1 karton Lays"
       },
       "teruletvezeto": [
         "Bratkovics Ádám"
       ],
-      "selejt_ft": 2138936,
+      "selejt_ft": 508853,
       "ptg": {
-        "osszes": -16500,
+        "osszes": 8629,
         "fiscat": 8434,
         "cash": -11842
       }
     },
     {
       "nev": "Erzsébet krt. 30.",
-      "leltar_pct": 99.8,
-      "osszes": -13311,
-      "gomboc": -8138,
-      "ital": -2220,
-      "desseg": -1299,
-      "doboz": -700,
-      "snack": -954,
+      "leltar_pct": 100.6,
+      "osszes": 11897,
+      "gomboc": 8097,
+      "ital": 4750,
+      "desseg": 0,
+      "doboz": -950,
+      "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 16.0,
+      "selejt_pct": 18.5,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
+        ]
+      },
+      "megjegyzesek": {
+        "ital": "1 karton Cappy narancs"
+      },
+      "teruletvezeto": [
+        "Ullman Zsófia"
+      ],
+      "selejt_ft": 468354,
+      "ptg": {
+        "osszes": -822,
+        "fiscat": 0,
+        "cash": 0
+      }
+    },
+    {
+      "nev": "Fashion",
+      "leltar_pct": 100.24,
+      "osszes": 7832,
+      "gomboc": 4082,
+      "ital": 9640,
+      "desseg": 0,
+      "doboz": -1900,
+      "snack": 0,
+      "ajandek": -3990,
+      "selejt_pct": 10.2,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "Szelet",
+            "mennyiseg": 4
+          }
+        ]
+      },
+      "megjegyzesek": {
+        "ital": "8db Red Bull Sudachi"
+      },
+      "teruletvezeto": [
+        "Hegedűs Milán"
+      ],
+      "selejt_ft": 380320,
+      "ptg": {
+        "osszes": 7817,
+        "fiscat": 14988,
+        "cash": 7276
+      }
+    },
+    {
+      "nev": "Bazilika",
+      "leltar_pct": 100.25,
+      "osszes": 8759,
+      "gomboc": 15301,
+      "ital": 690,
+      "desseg": 0,
+      "doboz": -4850,
+      "snack": -2382,
+      "ajandek": 0,
+      "selejt_pct": 6.7,
       "reszletek": {
         "gomboc": [
           {
@@ -133,24 +123,24 @@
         ]
       },
       "teruletvezeto": [
-        "Ullman Zsófia"
+        "Racsmány Ignác"
       ],
-      "selejt_ft": 1548861,
+      "selejt_ft": 264616,
       "ptg": {
-        "osszes": 13200,
-        "fiscat": 0,
-        "cash": 0
+        "osszes": 91,
+        "fiscat": 2139,
+        "cash": 8244
       }
     },
     {
-      "nev": "Fashion",
-      "leltar_pct": 99.83,
-      "osszes": -23041,
-      "gomboc": -7337,
-      "ital": 1430,
+      "nev": "Széll Kálmán",
+      "leltar_pct": 99.57,
+      "osszes": -14137,
+      "gomboc": -11077,
+      "ital": 840,
       "desseg": 0,
-      "doboz": -15950,
-      "snack": -1184,
+      "doboz": -3900,
+      "snack": 0,
       "ajandek": 0,
       "selejt_pct": 9.4,
       "reszletek": {
@@ -161,30 +151,88 @@
           }
         ]
       },
-      "megjegyzesek": {
-        "doboz": "55db 45cm doboz"
-      },
       "teruletvezeto": [
         "Hegedűs Milán"
       ],
-      "selejt_ft": 1409081,
+      "selejt_ft": 354019,
       "ptg": {
-        "osszes": 22264,
-        "fiscat": 14988,
-        "cash": 7276
+        "osszes": 1429,
+        "fiscat": 18367,
+        "cash": -18047
       }
     },
     {
-      "nev": "Bazilika",
-      "leltar_pct": 99.65,
-      "osszes": -51662,
-      "gomboc": -1132,
-      "ital": -29140,
-      "desseg": -2598,
-      "doboz": -6100,
-      "snack": -12692,
+      "nev": "Corvin",
+      "leltar_pct": 99.9,
+      "osszes": -1688,
+      "gomboc": 8712,
+      "ital": -7100,
+      "desseg": 0,
+      "doboz": 900,
+      "snack": 0,
+      "ajandek": -4200,
+      "selejt_pct": 13.8,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "32-es gombóc",
+            "mennyiseg": 1
+          }
+        ]
+      },
+      "megjegyzesek": {
+        "ital": "NA vizek"
+      },
+      "teruletvezeto": [
+        "Racsmány Ignác"
+      ],
+      "selejt_ft": 366543,
+      "ptg": {
+        "osszes": 4734,
+        "fiscat": 3299,
+        "cash": 1435
+      }
+    },
+    {
+      "nev": "Károly krt",
+      "leltar_pct": 99.84,
+      "osszes": -5153,
+      "gomboc": 1157,
+      "ital": -3510,
+      "desseg": 0,
+      "doboz": -2800,
+      "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 8.1,
+      "selejt_pct": 6.6,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
+        ]
+      },
+      "teruletvezeto": [
+        "Racsmány Ignác"
+      ],
+      "selejt_ft": 242364,
+      "ptg": {
+        "osszes": 935,
+        "fiscat": 1349,
+        "cash": -5541
+      }
+    },
+    {
+      "nev": "Dob",
+      "leltar_pct": 99.52,
+      "osszes": -8809,
+      "gomboc": -1652,
+      "ital": -9380,
+      "desseg": -1299,
+      "doboz": -650,
+      "snack": 4172,
+      "ajandek": 0,
+      "selejt_pct": 13.7,
       "reszletek": {
         "gomboc": [
           {
@@ -194,143 +242,12 @@
         ]
       },
       "megjegyzesek": {
-        "ital": "vegyesen 3-4 db-ok sok termékből",
-        "snack": "sok termékből 1-2db"
-      },
-      "teruletvezeto": [
-        "Racsmány Ignác"
-      ],
-      "selejt_ft": 1347182,
-      "ptg": {
-        "osszes": 12185,
-        "fiscat": 2139,
-        "cash": 8244
-      }
-    },
-    {
-      "nev": "Széll Kálmán",
-      "leltar_pct": 99.44,
-      "osszes": -76133,
-      "gomboc": -60629,
-      "ital": -7360,
-      "desseg": 0,
-      "doboz": -4350,
-      "snack": -3794,
-      "ajandek": 0,
-      "selejt_pct": 8.7,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "45-ös gombóc",
-            "mennyiseg": 6
-          }
-        ]
-      },
-      "megjegyzesek": {
-        "ital": "5db Fuzetea Citrom, 4db 0,5 Mente víz, 3db 0,5 Cola",
-        "doboz": "30db doboz"
-      },
-      "teruletvezeto": [
-        "Hegedűs Milán"
-      ],
-      "selejt_ft": 1332211,
-      "ptg": {
-        "osszes": -14250,
-        "fiscat": 18367,
-        "cash": -18047
-      }
-    },
-    {
-      "nev": "Corvin",
-      "leltar_pct": 100.1,
-      "osszes": 12676,
-      "gomboc": 8687,
-      "ital": 3900,
-      "desseg": 1299,
-      "doboz": 1550,
-      "snack": -2760,
-      "ajandek": 0,
-      "selejt_pct": 12.3,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "32-es gombóc",
-            "mennyiseg": 2
-          }
-        ]
-      },
-      "teruletvezeto": [
-        "Racsmány Ignác"
-      ],
-      "selejt_ft": 1204955,
-      "ptg": {
-        "osszes": 4734,
-        "fiscat": 3299,
-        "cash": 1435
-      }
-    },
-    {
-      "nev": "Károly krt",
-      "leltar_pct": 99.31,
-      "osszes": -96895,
-      "gomboc": -30625,
-      "ital": -15310,
-      "desseg": -10392,
-      "doboz": -35650,
-      "snack": -10908,
-      "ajandek": 5990,
-      "selejt_pct": 8.8,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "45-ös gombóc",
-            "mennyiseg": 3
-          }
-        ]
-      },
-      "megjegyzesek": {
-        "ital": "vegyesen sok termék 1-2-3 db",
-        "desseg": "4db tiramisu, 4db csokis mousse",
-        "doboz": "80db doboz, 90db papírzacskó",
-        "ajandek": "3db PM pizzavágó",
-        "snack": "12db Lays Chips"
-      },
-      "teruletvezeto": [
-        "Racsmány Ignác"
-      ],
-      "selejt_ft": 1432554,
-      "ptg": {
-        "osszes": 935,
-        "fiscat": 1349,
-        "cash": -5541
-      }
-    },
-    {
-      "nev": "Dob",
-      "leltar_pct": 99.84,
-      "osszes": -14296,
-      "gomboc": -4015,
-      "ital": -400,
-      "desseg": 0,
-      "doboz": -4100,
-      "snack": -5781,
-      "ajandek": 0,
-      "selejt_pct": 13.9,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "Szelet",
-            "mennyiseg": 4
-          }
-        ]
-      },
-      "megjegyzesek": {
-        "snack": "4db Lays Chips"
+        "ital": "sok termék 1-2db"
       },
       "teruletvezeto": [
         "Ullman Zsófia"
       ],
-      "selejt_ft": 1508165,
+      "selejt_ft": 312203,
       "ptg": {
         "osszes": 6541,
         "fiscat": 3688,
@@ -339,47 +256,15 @@
     },
     {
       "nev": "Blaha",
-      "leltar_pct": 99.71,
-      "osszes": -57749,
-      "gomboc": -21422,
-      "ital": -1340,
-      "desseg": -2598,
-      "doboz": -29300,
-      "snack": -3089,
+      "leltar_pct": 98.96,
+      "osszes": -46622,
+      "gomboc": -19832,
+      "ital": -25190,
+      "desseg": 0,
+      "doboz": -1400,
+      "snack": -200,
       "ajandek": 0,
-      "selejt_pct": 4.2,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "45-ös gombóc",
-            "mennyiseg": 3
-          }
-        ]
-      },
-      "megjegyzesek": {
-        "doboz": "120 db doboz, 120db papírzacskó"
-      },
-      "teruletvezeto": [
-        "Anda Patrícia"
-      ],
-      "selejt_ft": 878503,
-      "ptg": {
-        "osszes": 35154,
-        "fiscat": 4217,
-        "cash": 32141
-      }
-    },
-    {
-      "nev": "Oktogon",
-      "leltar_pct": 99.8,
-      "osszes": -43101,
-      "gomboc": -26747,
-      "ital": 560,
-      "desseg": -1299,
-      "doboz": -9850,
-      "snack": -2575,
-      "ajandek": -3190,
-      "selejt_pct": 8.6,
+      "selejt_pct": 4.4,
       "reszletek": {
         "gomboc": [
           {
@@ -389,14 +274,45 @@
         ]
       },
       "megjegyzesek": {
-        "doboz": "60db doboz",
-        "pasta": "1000g penne"
+        "ital": "1 karton Sprite"
+      },
+      "teruletvezeto": [
+        "Anda Patrícia"
+      ],
+      "selejt_ft": 212832,
+      "ptg": {
+        "osszes": 12653,
+        "fiscat": 4217,
+        "cash": 32141
+      }
+    },
+    {
+      "nev": "Oktogon",
+      "leltar_pct": 98.1,
+      "osszes": -99089,
+      "gomboc": -7989,
+      "ital": -1640,
+      "desseg": 0,
+      "doboz": -84150,
+      "snack": -5960,
+      "ajandek": 650,
+      "selejt_pct": 9.5,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 2
+          }
+        ]
+      },
+      "megjegyzesek": {
+        "doboz": "1000db Papírzacskó"
       },
       "teruletvezeto": [
         "Ullman Zsófia"
       ],
-      "pasta": -10555,
-      "selejt_ft": 2311912,
+      "pasta": 5104,
+      "selejt_ft": 604461,
       "ptg": {
         "osszes": 14418,
         "fiscat": 5629,
@@ -405,33 +321,33 @@
     },
     {
       "nev": "Wesselényi utca",
-      "leltar_pct": 99.94,
-      "osszes": -9797,
-      "gomboc": -23102,
-      "ital": 3250,
+      "leltar_pct": 100.62,
+      "osszes": 23709,
+      "gomboc": 6609,
+      "ital": 16800,
       "desseg": 0,
-      "doboz": 6300,
-      "snack": 3755,
+      "doboz": 300,
+      "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 4.5,
+      "selejt_pct": 5.0,
       "reszletek": {
         "gomboc": [
           {
-            "termek": "45-ös gombóc",
-            "mennyiseg": 2
+            "termek": "Szelet",
+            "mennyiseg": 6
           }
         ]
       },
       "megjegyzesek": {
-        "doboz": "75 papírzacskó"
+        "ital": "3 karton NA mentes víz"
       },
       "teruletvezeto": [
         "Hegedűs Milán"
       ],
       "pasta": 0,
-      "selejt_ft": 744734,
+      "selejt_ft": 205474,
       "ptg": {
-        "osszes": 4519,
+        "osszes": 9104,
         "fiscat": 17999,
         "cash": -4085
       }
@@ -439,26 +355,29 @@
     {
       "nev": "Astoria",
       "leltar_pct": 100.1,
-      "osszes": 6120,
-      "gomboc": 11033,
-      "ital": 420,
-      "desseg": 0,
-      "doboz": -3100,
-      "snack": -93,
-      "ajandek": -2140,
-      "selejt_pct": 9.7,
+      "osszes": 14280,
+      "gomboc": 15040,
+      "ital": 3780,
+      "desseg": -5196,
+      "doboz": -1400,
+      "snack": 2406,
+      "ajandek": -350,
+      "selejt_pct": 8.6,
       "reszletek": {
         "gomboc": [
           {
-            "termek": "Szelet",
-            "mennyiseg": 7
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1.5
           }
         ]
+      },
+      "megjegyzesek": {
+        "desseg": "2db csokis mousse, 2db tiramisu"
       },
       "teruletvezeto": [
         "Anda Patrícia"
       ],
-      "selejt_ft": 1122245,
+      "selejt_ft": 264678,
       "ptg": {
         "osszes": 11030,
         "fiscat": 8874,
@@ -467,32 +386,26 @@
     },
     {
       "nev": "Gomba Móricz",
-      "leltar_pct": 99.4,
-      "osszes": -51488,
-      "gomboc": -65784,
-      "ital": 10800,
-      "desseg": 2598,
-      "doboz": -3550,
-      "snack": 298,
-      "ajandek": 4150,
+      "leltar_pct": 100.0,
+      "osszes": 3831,
+      "gomboc": 283,
+      "ital": 11210,
+      "desseg": 4588,
+      "doboz": -6800,
+      "snack": -400,
+      "ajandek": -5050,
       "selejt_pct": 10.3,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "45-ös gombóc",
-            "mennyiseg": 6
-          }
-        ]
-      },
       "megjegyzesek": {
-        "ital": "sok termék 1-2 db plusz",
-        "pasta": "1000g Penne, 500g Fusili"
+        "ital": "2 karton NA mentes 1,5l",
+        "desseg": "2db Gelato",
+        "doboz": "Papírzacskó 40db",
+        "ajandek": "Gyerekjáték 15db"
       },
       "teruletvezeto": [
         "Ullman Zsófia"
       ],
-      "pasta": -21808,
-      "selejt_ft": 1761466,
+      "pasta": -1421,
+      "selejt_ft": 421921,
       "ptg": {
         "osszes": 3778,
         "fiscat": 2498,
@@ -501,27 +414,28 @@
     },
     {
       "nev": "Keleti",
-      "leltar_pct": 99.6,
-      "osszes": -39190,
-      "gomboc": -397,
-      "ital": 8370,
+      "leltar_pct": 99.11,
+      "osszes": -31003,
+      "gomboc": -23543,
+      "ital": -4760,
       "desseg": 0,
-      "doboz": -800,
-      "snack": 3477,
-      "ajandek": -49840,
-      "selejt_pct": 5.9,
-      "megjegyzesek": {
-        "ital": "Összecserélt termékek, üdítő hiányok vegyesen és 1,5karton személyzeti víz többlet okozza az eltérést",
-        "doboz": "plusz 18db 22-es doboz, -19db zacskó, -4db 25-45doboz",
-        "ajandek": "legók",
-        "pasta": "plusz 800g fusilli, -570g penne és spagetti",
-        "snack": "vegyesen 1-1 plusz és minusz 5 termékből"
+      "doboz": -2500,
+      "snack": -400,
+      "ajandek": 200,
+      "selejt_pct": 5.5,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 2
+          }
+        ]
       },
       "teruletvezeto": [
         "Hegedűs Milán"
       ],
-      "pasta": 8041,
-      "selejt_ft": 764036,
+      "pasta": -6819,
+      "selejt_ft": 190866,
       "ptg": {
         "osszes": -3014,
         "fiscat": 1104,
@@ -530,27 +444,27 @@
     },
     {
       "nev": "Fővám tér",
-      "leltar_pct": 99.9,
-      "osszes": -1006,
-      "gomboc": -5674,
-      "ital": 1520,
+      "leltar_pct": 100.1,
+      "osszes": 18976,
+      "gomboc": 17447,
+      "ital": -150,
       "desseg": 0,
-      "doboz": -100,
-      "snack": 3248,
+      "doboz": -1600,
+      "snack": 3279,
       "ajandek": 0,
-      "selejt_pct": 7.6,
+      "selejt_pct": 7.9,
       "reszletek": {
         "gomboc": [
           {
-            "termek": "Szelet",
-            "mennyiseg": 5
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1.5
           }
         ]
       },
       "teruletvezeto": [
         "Anda Patrícia"
       ],
-      "selejt_ft": 950205,
+      "selejt_ft": 234207,
       "ptg": {
         "osszes": 22510,
         "fiscat": 9946,
@@ -559,15 +473,15 @@
     },
     {
       "nev": "Ferenciek tere",
-      "leltar_pct": 100.2,
-      "osszes": 17665,
-      "gomboc": 17563,
-      "ital": 1110,
-      "desseg": 0,
-      "doboz": -1500,
-      "snack": 492,
+      "leltar_pct": 99.22,
+      "osszes": -17306,
+      "gomboc": -14067,
+      "ital": -1140,
+      "desseg": -1299,
+      "doboz": -800,
+      "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 7.8,
+      "selejt_pct": 12.2,
       "reszletek": {
         "gomboc": [
           {
@@ -579,36 +493,39 @@
       "teruletvezeto": [
         "Hegedűs Milán"
       ],
-      "selejt_ft": 903328,
+      "selejt_ft": 319268,
       "ptg": {
-        "osszes": 12572,
+        "osszes": 3865,
         "fiscat": 2139,
         "cash": 10433
       }
     },
     {
       "nev": "Jászai Mari tér",
-      "leltar_pct": 99.9,
-      "osszes": -4275,
-      "gomboc": 6835,
-      "ital": -600,
-      "desseg": -1299,
-      "doboz": -4950,
-      "snack": -621,
-      "ajandek": -3640,
-      "selejt_pct": 12.0,
+      "leltar_pct": 100.2,
+      "osszes": 25274,
+      "gomboc": 16774,
+      "ital": 12500,
+      "desseg": 0,
+      "doboz": -3950,
+      "snack": -400,
+      "ajandek": 350,
+      "selejt_pct": 9.5,
       "reszletek": {
         "gomboc": [
           {
-            "termek": "Szelet",
-            "mennyiseg": 6
+            "termek": "45-ös gombóc",
+            "mennyiseg": 2
           }
         ]
+      },
+      "megjegyzesek": {
+        "ital": "2 karton NA savas 1,5l"
       },
       "teruletvezeto": [
         "Racsmány Ignác"
       ],
-      "selejt_ft": 1482300,
+      "selejt_ft": 283535,
       "ptg": {
         "osszes": 41270,
         "fiscat": 8285,
@@ -618,29 +535,26 @@
     {
       "nev": "Etele",
       "leltar_pct": 100.1,
-      "osszes": 7362,
-      "gomboc": 20464,
-      "ital": 940,
+      "osszes": 10253,
+      "gomboc": 8333,
+      "ital": 2470,
       "desseg": 0,
-      "doboz": -3700,
-      "snack": 5618,
-      "ajandek": -15960,
-      "selejt_pct": 11.8,
+      "doboz": -900,
+      "snack": 0,
+      "ajandek": 350,
+      "selejt_pct": 14.7,
       "reszletek": {
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 2
+            "mennyiseg": 1
           }
         ]
-      },
-      "megjegyzesek": {
-        "ajandek": "4db PM kockajáték épület"
       },
       "teruletvezeto": [
         "Bratkovics Ádám"
       ],
-      "selejt_ft": 1313538,
+      "selejt_ft": 401980,
       "ptg": {
         "osszes": 17812,
         "fiscat": 7338,
@@ -650,27 +564,30 @@
     {
       "nev": "Kispest",
       "leltar_pct": 100.1,
-      "osszes": 7267,
-      "gomboc": 7139,
-      "ital": 2120,
-      "desseg": 608,
-      "doboz": -400,
-      "snack": -3250,
-      "ajandek": 1050,
-      "selejt_pct": 11.7,
+      "osszes": 14515,
+      "gomboc": -6025,
+      "ital": 16960,
+      "desseg": 0,
+      "doboz": -600,
+      "snack": 3180,
+      "ajandek": 1000,
+      "selejt_pct": 4.8,
       "reszletek": {
         "gomboc": [
           {
             "termek": "32-es gombóc",
-            "mennyiseg": 2
+            "mennyiseg": 1
           }
         ]
+      },
+      "megjegyzesek": {
+        "ital": "12db Peroni"
       },
       "teruletvezeto": [
         "Ullman Zsófia"
       ],
-      "pasta": 4455,
-      "selejt_ft": 834461,
+      "pasta": -5709,
+      "selejt_ft": 71520,
       "ptg": {
         "osszes": -916,
         "fiscat": 0,
@@ -680,43 +597,14 @@
     {
       "nev": "Bosnyák tér",
       "leltar_pct": 100.1,
-      "osszes": 5395,
-      "gomboc": 6091,
-      "ital": -5820,
-      "desseg": -3897,
-      "doboz": 5400,
-      "snack": 3171,
-      "ajandek": 450,
-      "selejt_pct": 7.9,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "Szelet",
-            "mennyiseg": 6
-          }
-        ]
-      },
-      "teruletvezeto": [
-        "Bratkovics Ádám"
-      ],
-      "selejt_ft": 886661,
-      "ptg": {
-        "osszes": 32412,
-        "fiscat": 15338,
-        "cash": 17074
-      }
-    },
-    {
-      "nev": "Árkád",
-      "leltar_pct": 99.5,
-      "osszes": -40981,
-      "gomboc": -24741,
-      "ital": -4840,
+      "osszes": 6364,
+      "gomboc": 26534,
+      "ital": -14620,
       "desseg": 0,
-      "doboz": -5400,
-      "snack": -5400,
-      "ajandek": -600,
-      "selejt_pct": 10.7,
+      "doboz": -6300,
+      "snack": 0,
+      "ajandek": 750,
+      "selejt_pct": 5.7,
       "reszletek": {
         "gomboc": [
           {
@@ -726,13 +614,42 @@
         ]
       },
       "megjegyzesek": {
-        "pasta": "1500g Spagetti"
+        "ital": "1 karton Na mentes 0,5"
       },
       "teruletvezeto": [
         "Bratkovics Ádám"
       ],
-      "pasta": -17225,
-      "selejt_ft": 1470908,
+      "selejt_ft": 165316,
+      "ptg": {
+        "osszes": 32412,
+        "fiscat": 15338,
+        "cash": 17074
+      }
+    },
+    {
+      "nev": "Árkád",
+      "leltar_pct": 100.1,
+      "osszes": 9877,
+      "gomboc": 13697,
+      "ital": -2520,
+      "desseg": 0,
+      "doboz": -1650,
+      "snack": -200,
+      "ajandek": 550,
+      "selejt_pct": 10.7,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
+          }
+        ]
+      },
+      "teruletvezeto": [
+        "Bratkovics Ádám"
+      ],
+      "pasta": -7096,
+      "selejt_ft": 318835,
       "ptg": {
         "osszes": 3199,
         "fiscat": 2580,
@@ -741,27 +658,27 @@
     },
     {
       "nev": "Kazinczy",
-      "leltar_pct": 99.8,
-      "osszes": -25343,
-      "gomboc": -27826,
-      "ital": 3410,
+      "leltar_pct": 100.1,
+      "osszes": 5330,
+      "gomboc": 8310,
+      "ital": 0,
       "desseg": 0,
-      "doboz": -1950,
-      "snack": 1023,
+      "doboz": 0,
+      "snack": -2980,
       "ajandek": 0,
-      "selejt_pct": 6.1,
+      "selejt_pct": 6.3,
       "reszletek": {
         "gomboc": [
           {
-            "termek": "Szelet",
-            "mennyiseg": 2.5
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
           }
         ]
       },
       "teruletvezeto": [
         "Anda Patrícia"
       ],
-      "selejt_ft": 578364,
+      "selejt_ft": 141863,
       "ptg": {
         "osszes": 0,
         "fiscat": 0,
@@ -771,27 +688,30 @@
     {
       "nev": "Törökvész",
       "leltar_pct": 100.1,
-      "osszes": 8514,
-      "gomboc": 19890,
-      "ital": 1220,
-      "desseg": 1990,
-      "doboz": -7050,
-      "snack": -9536,
-      "ajandek": 2000,
-      "selejt_pct": 8.9,
+      "osszes": 6148,
+      "gomboc": 32327,
+      "ital": -1580,
+      "desseg": -22498,
+      "doboz": -1950,
+      "snack": -101,
+      "ajandek": -50,
+      "selejt_pct": 7.8,
       "reszletek": {
         "gomboc": [
           {
-            "termek": "45-ös gombóc",
-            "mennyiseg": 2
+            "termek": "32-es gombóc",
+            "mennyiseg": 5
           }
         ]
+      },
+      "megjegyzesek": {
+        "desseg": "10db Gelato , 2db Tiramisu"
       },
       "teruletvezeto": [
         "Racsmány Ignác"
       ],
-      "pasta": 1871,
-      "selejt_ft": 1411922,
+      "pasta": -8777,
+      "selejt_ft": 310554,
       "ptg": {
         "osszes": 20719,
         "fiscat": 11773,
@@ -801,27 +721,30 @@
     {
       "nev": "GO Buda",
       "leltar_pct": 99.9,
-      "osszes": -6621,
-      "gomboc": -4141,
-      "ital": -3600,
+      "osszes": -212,
+      "gomboc": -15792,
+      "ital": 15530,
       "desseg": 0,
-      "doboz": -1650,
-      "snack": 1420,
-      "ajandek": 1350,
-      "selejt_pct": 10.0,
+      "doboz": 250,
+      "snack": -200,
+      "ajandek": 0,
+      "selejt_pct": 11.0,
       "reszletek": {
         "gomboc": [
           {
-            "termek": "Szelet",
-            "mennyiseg": 4
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1.5
           }
         ]
+      },
+      "megjegyzesek": {
+        "ital": "12db Peroni"
       },
       "teruletvezeto": [
         "Bratkovics Ádám"
       ],
-      "pasta": 11402,
-      "selejt_ft": 1182883,
+      "pasta": 198,
+      "selejt_ft": 324191,
       "ptg": {
         "osszes": 2182,
         "fiscat": 0,
@@ -830,47 +753,14 @@
     },
     {
       "nev": "D1 Buda",
-      "leltar_pct": 99.9,
-      "osszes": -4411,
-      "gomboc": -1840,
-      "ital": -100,
-      "desseg": -1299,
-      "doboz": -1100,
-      "snack": -1722,
-      "ajandek": 1650,
-      "selejt_pct": 5.9,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "22-es gombóc",
-            "mennyiseg": 1
-          }
-        ]
-      },
-      "megjegyzesek": {
-        "pasta": "1000g Fusili"
-      },
-      "teruletvezeto": [
-        "Hegedűs Milán"
-      ],
-      "pasta": -18640,
-      "selejt_ft": 876668,
-      "ptg": {
-        "osszes": 0,
-        "fiscat": 0,
-        "cash": null
-      }
-    },
-    {
-      "nev": "D2 Baross",
-      "leltar_pct": 100.2,
-      "osszes": 35086,
-      "gomboc": 23746,
-      "ital": 5270,
-      "desseg": -1299,
-      "doboz": 2800,
-      "snack": 229,
-      "ajandek": 4340,
+      "leltar_pct": 100.1,
+      "osszes": 22586,
+      "gomboc": 20996,
+      "ital": 5090,
+      "desseg": 0,
+      "doboz": -3400,
+      "snack": 0,
+      "ajandek": -100,
       "selejt_pct": 3.8,
       "reszletek": {
         "gomboc": [
@@ -881,10 +771,10 @@
         ]
       },
       "teruletvezeto": [
-        "Racsmány Ignác"
+        "Hegedűs Milán"
       ],
-      "pasta": -1587,
-      "selejt_ft": 516783,
+      "pasta": -2043,
+      "selejt_ft": 137660,
       "ptg": {
         "osszes": 0,
         "fiscat": 0,
@@ -892,16 +782,16 @@
       }
     },
     {
-      "nev": "Újpest",
-      "leltar_pct": 99.8,
-      "osszes": -8793,
-      "gomboc": -19560,
-      "ital": 5730,
-      "desseg": 691,
-      "doboz": 700,
-      "snack": 2696,
-      "ajandek": 950,
-      "selejt_pct": 3.1,
+      "nev": "D2 Baross",
+      "leltar_pct": 100.1,
+      "osszes": 8700,
+      "gomboc": 17840,
+      "ital": -150,
+      "desseg": 0,
+      "doboz": -5000,
+      "snack": 1790,
+      "ajandek": -5780,
+      "selejt_pct": 2.0,
       "reszletek": {
         "gomboc": [
           {
@@ -911,10 +801,43 @@
         ]
       },
       "teruletvezeto": [
+        "Racsmány Ignác"
+      ],
+      "pasta": 8998,
+      "selejt_ft": 61160,
+      "ptg": {
+        "osszes": 0,
+        "fiscat": 0,
+        "cash": null
+      }
+    },
+    {
+      "nev": "Újpest",
+      "leltar_pct": 99.4,
+      "osszes": -17231,
+      "gomboc": -5141,
+      "ital": -9980,
+      "desseg": 0,
+      "doboz": -3000,
+      "snack": 990,
+      "ajandek": -100,
+      "selejt_pct": 0.8,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "32-es gombóc",
+            "mennyiseg": 1
+          }
+        ]
+      },
+      "megjegyzesek": {
+        "ital": "6 red bull, 3db 0,33 Cola"
+      },
+      "teruletvezeto": [
         "Anda Patrícia"
       ],
-      "pasta": 2695,
-      "selejt_ft": 254783,
+      "pasta": 1737,
+      "selejt_ft": 17615,
       "ptg": {
         "osszes": 2068,
         "fiscat": 100,
@@ -923,47 +846,73 @@
     },
     {
       "nev": "K1 Westend",
-      "leltar_pct": 99.5,
-      "osszes": -23840,
-      "gomboc": 5705,
-      "ital": -26040,
+      "leltar_pct": 98.82,
+      "osszes": -14682,
+      "gomboc": -9842,
+      "ital": -4990,
       "desseg": 0,
-      "doboz": -2500,
-      "snack": -1005,
+      "doboz": 150,
+      "snack": 0,
       "ajandek": 0,
-      "selejt_pct": 19.8,
+      "selejt_pct": 18.4,
       "reszletek": {
         "gomboc": [
           {
-            "termek": "Szelet",
-            "mennyiseg": 5
+            "termek": "45-ös gombóc",
+            "mennyiseg": 1
           }
         ]
-      },
-      "megjegyzesek": {
-        "ital": "sok termék 2-3 db vegyesen"
       },
       "teruletvezeto": [
         "Racsmány Ignác"
       ],
-      "selejt_ft": 1209652,
+      "selejt_ft": 291035,
       "ptg": {
-        "osszes": -3926,
+        "osszes": 586,
         "fiscat": 0,
         "cash": 0
       }
     },
     {
       "nev": "BP PARK",
-      "leltar_pct": 99.9,
-      "osszes": -658,
-      "gomboc": 4537,
-      "ital": 0,
+      "leltar_pct": 98.7,
+      "osszes": -35855,
+      "gomboc": -32992,
+      "ital": -2520,
       "desseg": 0,
-      "doboz": -100,
-      "snack": -5095,
+      "doboz": 6650,
+      "snack": -6993,
       "ajandek": 0,
-      "selejt_pct": 18.2,
+      "selejt_pct": 5.6,
+      "reszletek": {
+        "gomboc": [
+          {
+            "termek": "45-ös gombóc",
+            "mennyiseg": 3
+          }
+        ]
+      },
+      "teruletvezeto": [
+        "Ullman Zsófia"
+      ],
+      "selejt_ft": 185309,
+      "ptg": {
+        "osszes": 0,
+        "fiscat": 1399,
+        "cash": 4248
+      }
+    },
+    {
+      "nev": "Szeged",
+      "leltar_pct": 100.1,
+      "osszes": 6507,
+      "gomboc": 25157,
+      "ital": -1290,
+      "desseg": 1990,
+      "doboz": -9550,
+      "snack": -9550,
+      "ajandek": -250,
+      "selejt_pct": 8.7,
       "reszletek": {
         "gomboc": [
           {
@@ -972,105 +921,15 @@
           }
         ]
       },
-      "teruletvezeto": [
-        "Ullman Zsófia"
-      ],
-      "selejt_ft": 3558065,
-      "ptg": {
-        "osszes": 0,
-        "fiscat": 1399,
-        "cash": 4248
-      }
-    },
-    {
-      "nev": "PLÁZS",
-      "leltar_pct": 99.6,
-      "osszes": -6167,
-      "gomboc": -3247,
-      "ital": -2420,
-      "desseg": 0,
-      "doboz": -500,
-      "snack": 0,
-      "ajandek": 0,
-      "selejt_pct": 31.1,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "Szelet",
-            "mennyiseg": 3
-          }
-        ]
-      },
-      "teruletvezeto": [
-        "Bratkovics Ádám",
-        "Hegedűs Milán"
-      ],
-      "selejt_ft": 366693,
-      "ptg": {
-        "osszes": 0,
-        "fiscat": 0,
-        "cash": -43
-      }
-    },
-    {
-      "nev": "F1 Siófok",
-      "leltar_pct": 100.1,
-      "osszes": 6970,
-      "gomboc": 5698,
-      "ital": 350,
-      "desseg": -2598,
-      "doboz": 650,
-      "snack": -1120,
-      "ajandek": 3990,
-      "selejt_pct": 77.4,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "Szelet",
-            "mennyiseg": 2
-          }
-        ]
-      },
-      "teruletvezeto": [
-        "Bratkovics Ádám",
-        "Hegedűs Milán"
-      ],
-      "selejt_ft": 4148222,
-      "ptg": {
-        "osszes": -61,
-        "fiscat": 0,
-        "cash": -61
-      }
-    },
-    {
-      "nev": "Szeged",
-      "leltar_pct": 99.4,
-      "osszes": -46819,
-      "gomboc": -5598,
-      "ital": -14490,
-      "desseg": 1907,
-      "doboz": -25850,
-      "snack": -6578,
-      "ajandek": 3790,
-      "selejt_pct": 10.0,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "Szelet",
-            "mennyiseg": 5
-          }
-        ]
-      },
       "megjegyzesek": {
-        "ital": "sok termék vegyesen 1-2 db",
-        "doboz": "100db 25cm doboz",
-        "pasta": "1000 g spagetti, 1000g fusili 500g penne"
+        "doboz": "60 papírzacskó",
+        "snack": "4db Sperlari"
       },
       "teruletvezeto": [
         "Anda Patrícia"
       ],
-      "pasta": -37137,
-      "selejt_ft": 1384981,
+      "pasta": 11461,
+      "selejt_ft": 246165,
       "ptg": {
         "osszes": 16091,
         "fiscat": 1899,
@@ -1079,20 +938,20 @@
     },
     {
       "nev": "Pécs",
-      "leltar_pct": 99.9,
-      "osszes": -3614,
-      "gomboc": 5093,
-      "ital": -300,
-      "desseg": -1299,
-      "doboz": -4000,
-      "snack": -6308,
-      "ajandek": 3200,
-      "selejt_pct": 5.4,
+      "leltar_pct": 100.2,
+      "osszes": 30831,
+      "gomboc": 32551,
+      "ital": 1190,
+      "desseg": 0,
+      "doboz": -4400,
+      "snack": 1390,
+      "ajandek": 100,
+      "selejt_pct": 5.6,
       "reszletek": {
         "gomboc": [
           {
-            "termek": "Szelet",
-            "mennyiseg": 5
+            "termek": "45-ös gombóc",
+            "mennyiseg": 3
           }
         ]
       },
@@ -1100,8 +959,8 @@
       "teruletvezeto": [
         "Bratkovics Ádám"
       ],
-      "pasta": 1357,
-      "selejt_ft": 1061197,
+      "pasta": -13482,
+      "selejt_ft": 247496,
       "ptg": {
         "osszes": 42286,
         "fiscat": 16287,
@@ -1110,33 +969,28 @@
     },
     {
       "nev": "Miskolc",
-      "leltar_pct": 98.44,
-      "osszes": -122221,
-      "gomboc": -83087,
-      "ital": -26000,
-      "desseg": 3088,
-      "doboz": -9800,
-      "snack": -592,
-      "ajandek": -5830,
-      "selejt_pct": 7.6,
+      "leltar_pct": 101.71,
+      "osszes": 59720,
+      "gomboc": 55436,
+      "ital": -4900,
+      "desseg": 1962,
+      "doboz": -2750,
+      "snack": -998,
+      "ajandek": 10970,
+      "selejt_pct": 7.9,
       "reszletek": {
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 8
+            "mennyiseg": 5
           }
         ]
-      },
-      "megjegyzesek": {
-        "ital": "sok termék vegyesen",
-        "doboz": "25 doboz, 30 papírzacskó",
-        "ajandek": "2db PM pizzavágó"
       },
       "franchise": true,
       "teruletvezeto": [
         "Bratkovics Ádám"
       ],
-      "selejt_ft": 865990,
+      "selejt_ft": 204285,
       "ptg": {
         "osszes": 5008,
         "fiscat": 2139,
@@ -4780,6 +4634,1153 @@
           },
           "megjegyzesek": {
             "ital": "Sok termék vegyesen"
+          }
+        }
+      ]
+    },
+    {
+      "meta": {
+        "honap": "2026. szeptember",
+        "frissitve": "2026. szeptember teljes hónap"
+      },
+      "levonasok": [
+        {
+          "nev": "Király utca",
+          "levon": 10000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Erzsébet krt. 30.",
+          "levon": 10000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Fashion",
+          "levon": 20000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Bazilika",
+          "levon": 50000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Széll Kálmán",
+          "levon": 75000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Károly krt",
+          "levon": 95000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Dob",
+          "levon": 10000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Blaha",
+          "levon": 55000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Oktogon",
+          "levon": 40000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Wesselényi utca",
+          "levon": 10000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Gomba Móricz",
+          "levon": 50000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Árkád",
+          "levon": 35000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Kazinczy",
+          "levon": 25000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "K1 Westend",
+          "levon": 20000,
+          "megjegyzes": ""
+        },
+        {
+          "nev": "Szeged",
+          "levon": 40000,
+          "megjegyzes": ""
+        }
+      ],
+      "uzletek": [
+        {
+          "nev": "Király utca",
+          "leltar_pct": 99.95,
+          "osszes": -10327,
+          "gomboc": 2353,
+          "ital": -8070,
+          "desseg": 0,
+          "doboz": -2200,
+          "snack": -2410,
+          "ajandek": 0,
+          "selejt_pct": 9.0,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 2
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "ital": "3db Heineken, 3db 0,5 savas és egyéb termékek"
+          },
+          "teruletvezeto": [
+            "Bratkovics Ádám"
+          ],
+          "selejt_ft": 2138936,
+          "ptg": {
+            "osszes": -16500,
+            "fiscat": 8434,
+            "cash": -11842
+          }
+        },
+        {
+          "nev": "Erzsébet krt. 30.",
+          "leltar_pct": 99.8,
+          "osszes": -13311,
+          "gomboc": -8138,
+          "ital": -2220,
+          "desseg": -1299,
+          "doboz": -700,
+          "snack": -954,
+          "ajandek": 0,
+          "selejt_pct": 16.0,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 1
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Ullman Zsófia"
+          ],
+          "selejt_ft": 1548861,
+          "ptg": {
+            "osszes": 13200,
+            "fiscat": 0,
+            "cash": 0
+          }
+        },
+        {
+          "nev": "Fashion",
+          "leltar_pct": 99.83,
+          "osszes": -23041,
+          "gomboc": -7337,
+          "ital": 1430,
+          "desseg": 0,
+          "doboz": -15950,
+          "snack": -1184,
+          "ajandek": 0,
+          "selejt_pct": 9.4,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 1
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "doboz": "55db 45cm doboz"
+          },
+          "teruletvezeto": [
+            "Hegedűs Milán"
+          ],
+          "selejt_ft": 1409081,
+          "ptg": {
+            "osszes": 22264,
+            "fiscat": 14988,
+            "cash": 7276
+          }
+        },
+        {
+          "nev": "Bazilika",
+          "leltar_pct": 99.65,
+          "osszes": -51662,
+          "gomboc": -1132,
+          "ital": -29140,
+          "desseg": -2598,
+          "doboz": -6100,
+          "snack": -12692,
+          "ajandek": 0,
+          "selejt_pct": 8.1,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 1
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "ital": "vegyesen 3-4 db-ok sok termékből",
+            "snack": "sok termékből 1-2db"
+          },
+          "teruletvezeto": [
+            "Racsmány Ignác"
+          ],
+          "selejt_ft": 1347182,
+          "ptg": {
+            "osszes": 12185,
+            "fiscat": 2139,
+            "cash": 8244
+          }
+        },
+        {
+          "nev": "Széll Kálmán",
+          "leltar_pct": 99.44,
+          "osszes": -76133,
+          "gomboc": -60629,
+          "ital": -7360,
+          "desseg": 0,
+          "doboz": -4350,
+          "snack": -3794,
+          "ajandek": 0,
+          "selejt_pct": 8.7,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 6
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "ital": "5db Fuzetea Citrom, 4db 0,5 Mente víz, 3db 0,5 Cola",
+            "doboz": "30db doboz"
+          },
+          "teruletvezeto": [
+            "Hegedűs Milán"
+          ],
+          "selejt_ft": 1332211,
+          "ptg": {
+            "osszes": -14250,
+            "fiscat": 18367,
+            "cash": -18047
+          }
+        },
+        {
+          "nev": "Corvin",
+          "leltar_pct": 100.1,
+          "osszes": 12676,
+          "gomboc": 8687,
+          "ital": 3900,
+          "desseg": 1299,
+          "doboz": 1550,
+          "snack": -2760,
+          "ajandek": 0,
+          "selejt_pct": 12.3,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "32-es gombóc",
+                "mennyiseg": 2
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Racsmány Ignác"
+          ],
+          "selejt_ft": 1204955,
+          "ptg": {
+            "osszes": 4734,
+            "fiscat": 3299,
+            "cash": 1435
+          }
+        },
+        {
+          "nev": "Károly krt",
+          "leltar_pct": 99.31,
+          "osszes": -96895,
+          "gomboc": -30625,
+          "ital": -15310,
+          "desseg": -10392,
+          "doboz": -35650,
+          "snack": -10908,
+          "ajandek": 5990,
+          "selejt_pct": 8.8,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 3
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "ital": "vegyesen sok termék 1-2-3 db",
+            "desseg": "4db tiramisu, 4db csokis mousse",
+            "doboz": "80db doboz, 90db papírzacskó",
+            "ajandek": "3db PM pizzavágó",
+            "snack": "12db Lays Chips"
+          },
+          "teruletvezeto": [
+            "Racsmány Ignác"
+          ],
+          "selejt_ft": 1432554,
+          "ptg": {
+            "osszes": 935,
+            "fiscat": 1349,
+            "cash": -5541
+          }
+        },
+        {
+          "nev": "Dob",
+          "leltar_pct": 99.84,
+          "osszes": -14296,
+          "gomboc": -4015,
+          "ital": -400,
+          "desseg": 0,
+          "doboz": -4100,
+          "snack": -5781,
+          "ajandek": 0,
+          "selejt_pct": 13.9,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 4
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "snack": "4db Lays Chips"
+          },
+          "teruletvezeto": [
+            "Ullman Zsófia"
+          ],
+          "selejt_ft": 1508165,
+          "ptg": {
+            "osszes": 6541,
+            "fiscat": 3688,
+            "cash": -65
+          }
+        },
+        {
+          "nev": "Blaha",
+          "leltar_pct": 99.71,
+          "osszes": -57749,
+          "gomboc": -21422,
+          "ital": -1340,
+          "desseg": -2598,
+          "doboz": -29300,
+          "snack": -3089,
+          "ajandek": 0,
+          "selejt_pct": 4.2,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 3
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "doboz": "120 db doboz, 120db papírzacskó"
+          },
+          "teruletvezeto": [
+            "Anda Patrícia"
+          ],
+          "selejt_ft": 878503,
+          "ptg": {
+            "osszes": 35154,
+            "fiscat": 4217,
+            "cash": 32141
+          }
+        },
+        {
+          "nev": "Oktogon",
+          "leltar_pct": 99.8,
+          "osszes": -43101,
+          "gomboc": -26747,
+          "ital": 560,
+          "desseg": -1299,
+          "doboz": -9850,
+          "snack": -2575,
+          "ajandek": -3190,
+          "selejt_pct": 8.6,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 2
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "doboz": "60db doboz",
+            "pasta": "1000g penne"
+          },
+          "teruletvezeto": [
+            "Ullman Zsófia"
+          ],
+          "pasta": -10555,
+          "selejt_ft": 2311912,
+          "ptg": {
+            "osszes": 14418,
+            "fiscat": 5629,
+            "cash": 8789
+          }
+        },
+        {
+          "nev": "Wesselényi utca",
+          "leltar_pct": 99.94,
+          "osszes": -9797,
+          "gomboc": -23102,
+          "ital": 3250,
+          "desseg": 0,
+          "doboz": 6300,
+          "snack": 3755,
+          "ajandek": 0,
+          "selejt_pct": 4.5,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 2
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "doboz": "75 papírzacskó"
+          },
+          "teruletvezeto": [
+            "Hegedűs Milán"
+          ],
+          "pasta": 0,
+          "selejt_ft": 744734,
+          "ptg": {
+            "osszes": 4519,
+            "fiscat": 17999,
+            "cash": -4085
+          }
+        },
+        {
+          "nev": "Astoria",
+          "leltar_pct": 100.1,
+          "osszes": 6120,
+          "gomboc": 11033,
+          "ital": 420,
+          "desseg": 0,
+          "doboz": -3100,
+          "snack": -93,
+          "ajandek": -2140,
+          "selejt_pct": 9.7,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 7
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Anda Patrícia"
+          ],
+          "selejt_ft": 1122245,
+          "ptg": {
+            "osszes": 11030,
+            "fiscat": 8874,
+            "cash": 2156
+          }
+        },
+        {
+          "nev": "Gomba Móricz",
+          "leltar_pct": 99.4,
+          "osszes": -51488,
+          "gomboc": -65784,
+          "ital": 10800,
+          "desseg": 2598,
+          "doboz": -3550,
+          "snack": 298,
+          "ajandek": 4150,
+          "selejt_pct": 10.3,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 6
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "ital": "sok termék 1-2 db plusz",
+            "pasta": "1000g Penne, 500g Fusili"
+          },
+          "teruletvezeto": [
+            "Ullman Zsófia"
+          ],
+          "pasta": -21808,
+          "selejt_ft": 1761466,
+          "ptg": {
+            "osszes": 3778,
+            "fiscat": 2498,
+            "cash": 1280
+          }
+        },
+        {
+          "nev": "Keleti",
+          "leltar_pct": 99.6,
+          "osszes": -39190,
+          "gomboc": -397,
+          "ital": 8370,
+          "desseg": 0,
+          "doboz": -800,
+          "snack": 3477,
+          "ajandek": -49840,
+          "selejt_pct": 5.9,
+          "megjegyzesek": {
+            "ital": "Összecserélt termékek, üdítő hiányok vegyesen és 1,5karton személyzeti víz többlet okozza az eltérést",
+            "doboz": "plusz 18db 22-es doboz, -19db zacskó, -4db 25-45doboz",
+            "ajandek": "legók",
+            "pasta": "plusz 800g fusilli, -570g penne és spagetti",
+            "snack": "vegyesen 1-1 plusz és minusz 5 termékből"
+          },
+          "teruletvezeto": [
+            "Hegedűs Milán"
+          ],
+          "pasta": 8041,
+          "selejt_ft": 764036,
+          "ptg": {
+            "osszes": -3014,
+            "fiscat": 1104,
+            "cash": -4118
+          }
+        },
+        {
+          "nev": "Fővám tér",
+          "leltar_pct": 99.9,
+          "osszes": -1006,
+          "gomboc": -5674,
+          "ital": 1520,
+          "desseg": 0,
+          "doboz": -100,
+          "snack": 3248,
+          "ajandek": 0,
+          "selejt_pct": 7.6,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 5
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Anda Patrícia"
+          ],
+          "selejt_ft": 950205,
+          "ptg": {
+            "osszes": 22510,
+            "fiscat": 9946,
+            "cash": 12564
+          }
+        },
+        {
+          "nev": "Ferenciek tere",
+          "leltar_pct": 100.2,
+          "osszes": 17665,
+          "gomboc": 17563,
+          "ital": 1110,
+          "desseg": 0,
+          "doboz": -1500,
+          "snack": 492,
+          "ajandek": 0,
+          "selejt_pct": 7.8,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 1.5
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Hegedűs Milán"
+          ],
+          "selejt_ft": 903328,
+          "ptg": {
+            "osszes": 12572,
+            "fiscat": 2139,
+            "cash": 10433
+          }
+        },
+        {
+          "nev": "Jászai Mari tér",
+          "leltar_pct": 99.9,
+          "osszes": -4275,
+          "gomboc": 6835,
+          "ital": -600,
+          "desseg": -1299,
+          "doboz": -4950,
+          "snack": -621,
+          "ajandek": -3640,
+          "selejt_pct": 12.0,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 6
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Racsmány Ignác"
+          ],
+          "selejt_ft": 1482300,
+          "ptg": {
+            "osszes": 41270,
+            "fiscat": 8285,
+            "cash": 32985
+          }
+        },
+        {
+          "nev": "Etele",
+          "leltar_pct": 100.1,
+          "osszes": 7362,
+          "gomboc": 20464,
+          "ital": 940,
+          "desseg": 0,
+          "doboz": -3700,
+          "snack": 5618,
+          "ajandek": -15960,
+          "selejt_pct": 11.8,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 2
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "ajandek": "4db PM kockajáték épület"
+          },
+          "teruletvezeto": [
+            "Bratkovics Ádám"
+          ],
+          "selejt_ft": 1313538,
+          "ptg": {
+            "osszes": 17812,
+            "fiscat": 7338,
+            "cash": 10474
+          }
+        },
+        {
+          "nev": "Kispest",
+          "leltar_pct": 100.1,
+          "osszes": 7267,
+          "gomboc": 7139,
+          "ital": 2120,
+          "desseg": 608,
+          "doboz": -400,
+          "snack": -3250,
+          "ajandek": 1050,
+          "selejt_pct": 11.7,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "32-es gombóc",
+                "mennyiseg": 2
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Ullman Zsófia"
+          ],
+          "pasta": 4455,
+          "selejt_ft": 834461,
+          "ptg": {
+            "osszes": -916,
+            "fiscat": 0,
+            "cash": -916
+          }
+        },
+        {
+          "nev": "Bosnyák tér",
+          "leltar_pct": 100.1,
+          "osszes": 5395,
+          "gomboc": 6091,
+          "ital": -5820,
+          "desseg": -3897,
+          "doboz": 5400,
+          "snack": 3171,
+          "ajandek": 450,
+          "selejt_pct": 7.9,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 6
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Bratkovics Ádám"
+          ],
+          "selejt_ft": 886661,
+          "ptg": {
+            "osszes": 32412,
+            "fiscat": 15338,
+            "cash": 17074
+          }
+        },
+        {
+          "nev": "Árkád",
+          "leltar_pct": 99.5,
+          "osszes": -40981,
+          "gomboc": -24741,
+          "ital": -4840,
+          "desseg": 0,
+          "doboz": -5400,
+          "snack": -5400,
+          "ajandek": -600,
+          "selejt_pct": 10.7,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 2
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "pasta": "1500g Spagetti"
+          },
+          "teruletvezeto": [
+            "Bratkovics Ádám"
+          ],
+          "pasta": -17225,
+          "selejt_ft": 1470908,
+          "ptg": {
+            "osszes": 3199,
+            "fiscat": 2580,
+            "cash": 619
+          }
+        },
+        {
+          "nev": "Kazinczy",
+          "leltar_pct": 99.8,
+          "osszes": -25343,
+          "gomboc": -27826,
+          "ital": 3410,
+          "desseg": 0,
+          "doboz": -1950,
+          "snack": 1023,
+          "ajandek": 0,
+          "selejt_pct": 6.1,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 2.5
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Anda Patrícia"
+          ],
+          "selejt_ft": 578364,
+          "ptg": {
+            "osszes": 0,
+            "fiscat": 0,
+            "cash": 856
+          }
+        },
+        {
+          "nev": "Törökvész",
+          "leltar_pct": 100.1,
+          "osszes": 8514,
+          "gomboc": 19890,
+          "ital": 1220,
+          "desseg": 1990,
+          "doboz": -7050,
+          "snack": -9536,
+          "ajandek": 2000,
+          "selejt_pct": 8.9,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 2
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Racsmány Ignác"
+          ],
+          "pasta": 1871,
+          "selejt_ft": 1411922,
+          "ptg": {
+            "osszes": 20719,
+            "fiscat": 11773,
+            "cash": 8946
+          }
+        },
+        {
+          "nev": "GO Buda",
+          "leltar_pct": 99.9,
+          "osszes": -6621,
+          "gomboc": -4141,
+          "ital": -3600,
+          "desseg": 0,
+          "doboz": -1650,
+          "snack": 1420,
+          "ajandek": 1350,
+          "selejt_pct": 10.0,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 4
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Bratkovics Ádám"
+          ],
+          "pasta": 11402,
+          "selejt_ft": 1182883,
+          "ptg": {
+            "osszes": 2182,
+            "fiscat": 0,
+            "cash": 2182
+          }
+        },
+        {
+          "nev": "D1 Buda",
+          "leltar_pct": 99.9,
+          "osszes": -4411,
+          "gomboc": -1840,
+          "ital": -100,
+          "desseg": -1299,
+          "doboz": -1100,
+          "snack": -1722,
+          "ajandek": 1650,
+          "selejt_pct": 5.9,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "22-es gombóc",
+                "mennyiseg": 1
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "pasta": "1000g Fusili"
+          },
+          "teruletvezeto": [
+            "Hegedűs Milán"
+          ],
+          "pasta": -18640,
+          "selejt_ft": 876668,
+          "ptg": {
+            "osszes": 0,
+            "fiscat": 0,
+            "cash": null
+          }
+        },
+        {
+          "nev": "D2 Baross",
+          "leltar_pct": 100.2,
+          "osszes": 35086,
+          "gomboc": 23746,
+          "ital": 5270,
+          "desseg": -1299,
+          "doboz": 2800,
+          "snack": 229,
+          "ajandek": 4340,
+          "selejt_pct": 3.8,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "32-es gombóc",
+                "mennyiseg": 3
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Racsmány Ignác"
+          ],
+          "pasta": -1587,
+          "selejt_ft": 516783,
+          "ptg": {
+            "osszes": 0,
+            "fiscat": 0,
+            "cash": null
+          }
+        },
+        {
+          "nev": "Újpest",
+          "leltar_pct": 99.8,
+          "osszes": -8793,
+          "gomboc": -19560,
+          "ital": 5730,
+          "desseg": 691,
+          "doboz": 700,
+          "snack": 2696,
+          "ajandek": 950,
+          "selejt_pct": 3.1,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "32-es gombóc",
+                "mennyiseg": 3
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Anda Patrícia"
+          ],
+          "pasta": 2695,
+          "selejt_ft": 254783,
+          "ptg": {
+            "osszes": 2068,
+            "fiscat": 100,
+            "cash": 1968
+          }
+        },
+        {
+          "nev": "K1 Westend",
+          "leltar_pct": 99.5,
+          "osszes": -23840,
+          "gomboc": 5705,
+          "ital": -26040,
+          "desseg": 0,
+          "doboz": -2500,
+          "snack": -1005,
+          "ajandek": 0,
+          "selejt_pct": 19.8,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 5
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "ital": "sok termék 2-3 db vegyesen"
+          },
+          "teruletvezeto": [
+            "Racsmány Ignác"
+          ],
+          "selejt_ft": 1209652,
+          "ptg": {
+            "osszes": -3926,
+            "fiscat": 0,
+            "cash": 0
+          }
+        },
+        {
+          "nev": "BP PARK",
+          "leltar_pct": 99.9,
+          "osszes": -658,
+          "gomboc": 4537,
+          "ital": 0,
+          "desseg": 0,
+          "doboz": -100,
+          "snack": -5095,
+          "ajandek": 0,
+          "selejt_pct": 18.2,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 2
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Ullman Zsófia"
+          ],
+          "selejt_ft": 3558065,
+          "ptg": {
+            "osszes": 0,
+            "fiscat": 1399,
+            "cash": 4248
+          }
+        },
+        {
+          "nev": "PLÁZS",
+          "leltar_pct": 99.6,
+          "osszes": -6167,
+          "gomboc": -3247,
+          "ital": -2420,
+          "desseg": 0,
+          "doboz": -500,
+          "snack": 0,
+          "ajandek": 0,
+          "selejt_pct": 31.1,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 3
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Bratkovics Ádám",
+            "Hegedűs Milán"
+          ],
+          "selejt_ft": 366693,
+          "ptg": {
+            "osszes": 0,
+            "fiscat": 0,
+            "cash": -43
+          }
+        },
+        {
+          "nev": "F1 Siófok",
+          "leltar_pct": 100.1,
+          "osszes": 6970,
+          "gomboc": 5698,
+          "ital": 350,
+          "desseg": -2598,
+          "doboz": 650,
+          "snack": -1120,
+          "ajandek": 3990,
+          "selejt_pct": 77.4,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 2
+              }
+            ]
+          },
+          "teruletvezeto": [
+            "Bratkovics Ádám",
+            "Hegedűs Milán"
+          ],
+          "selejt_ft": 4148222,
+          "ptg": {
+            "osszes": -61,
+            "fiscat": 0,
+            "cash": -61
+          }
+        },
+        {
+          "nev": "Szeged",
+          "leltar_pct": 99.4,
+          "osszes": -46819,
+          "gomboc": -5598,
+          "ital": -14490,
+          "desseg": 1907,
+          "doboz": -25850,
+          "snack": -6578,
+          "ajandek": 3790,
+          "selejt_pct": 10.0,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 5
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "ital": "sok termék vegyesen 1-2 db",
+            "doboz": "100db 25cm doboz",
+            "pasta": "1000 g spagetti, 1000g fusili 500g penne"
+          },
+          "teruletvezeto": [
+            "Anda Patrícia"
+          ],
+          "pasta": -37137,
+          "selejt_ft": 1384981,
+          "ptg": {
+            "osszes": 16091,
+            "fiscat": 1899,
+            "cash": 14192
+          }
+        },
+        {
+          "nev": "Pécs",
+          "leltar_pct": 99.9,
+          "osszes": -3614,
+          "gomboc": 5093,
+          "ital": -300,
+          "desseg": -1299,
+          "doboz": -4000,
+          "snack": -6308,
+          "ajandek": 3200,
+          "selejt_pct": 5.4,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "Szelet",
+                "mennyiseg": 5
+              }
+            ]
+          },
+          "franchise": true,
+          "teruletvezeto": [
+            "Bratkovics Ádám"
+          ],
+          "pasta": 1357,
+          "selejt_ft": 1061197,
+          "ptg": {
+            "osszes": 42286,
+            "fiscat": 16287,
+            "cash": 25999
+          }
+        },
+        {
+          "nev": "Miskolc",
+          "leltar_pct": 98.44,
+          "osszes": -122221,
+          "gomboc": -83087,
+          "ital": -26000,
+          "desseg": 3088,
+          "doboz": -9800,
+          "snack": -592,
+          "ajandek": -5830,
+          "selejt_pct": 7.6,
+          "reszletek": {
+            "gomboc": [
+              {
+                "termek": "45-ös gombóc",
+                "mennyiseg": 8
+              }
+            ]
+          },
+          "megjegyzesek": {
+            "ital": "sok termék vegyesen",
+            "doboz": "25 doboz, 30 papírzacskó",
+            "ajandek": "2db PM pizzavágó"
+          },
+          "franchise": true,
+          "teruletvezeto": [
+            "Bratkovics Ádám"
+          ],
+          "selejt_ft": 865990,
+          "ptg": {
+            "osszes": 5008,
+            "fiscat": 2139,
+            "cash": 2869
           }
         }
       ]

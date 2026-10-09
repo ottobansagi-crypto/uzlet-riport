@@ -152,7 +152,7 @@ Csak azok az üzletek szerepeljenek, ahol van levonás. A `megjegyzes` elhagyhat
 
 ---
 
-## 3. Kanonikus üzletnevek (34)
+## 3. Kanonikus üzletnevek (32)
 
 | Név | Területvezető |
 |---|---|
@@ -185,8 +185,6 @@ Csak azok az üzletek szerepeljenek, ahol van levonás. A `megjegyzes` elhagyhat
 | Újpest | Anda Patrícia |
 | K1 Westend | Racsmány Ignác |
 | BP PARK | Ullman Zsófia |
-| PLÁZS | Bratkovics Ádám, Hegedűs Milán |
-| F1 Siófok | Bratkovics Ádám, Hegedűs Milán |
 | Szeged | Anda Patrícia |
 | Pécs | Bratkovics Ádám *(franchise)* |
 | Miskolc | Bratkovics Ádám *(franchise)* |
@@ -194,6 +192,9 @@ Csak azok az üzletek szerepeljenek, ahol van levonás. A `megjegyzes` elhagyhat
 A forrásrendszer névváltozatait a modul oldalán érdemes leképezni. Eddig előfordult:
 `13N Erzsébet krt. 40.` → `Erzsébet krt. 30.`, `Széll Kálmán Tér` → `Széll Kálmán`,
 `PM PLÁZS` → `PLÁZS`. Az `Erzsébet krt 14` megszűnt, nem szerepel a riportban.
+
+**2026 októberétől bezárt: PLÁZS, F1 Siófok.** A korábbi hónapokban szerepelnek, de az
+aktuális hónap beküldésébe már ne kerüljenek bele.
 
 ---
 
