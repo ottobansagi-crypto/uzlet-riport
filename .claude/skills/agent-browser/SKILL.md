@@ -50,3 +50,27 @@ Run `agent-browser skills list` to see everything available on the installed ver
 ## Observability Dashboard
 
 The dashboard runs independently of browser sessions on port 4848 and can also be opened through a proxied or forwarded URL such as `https://dashboard.agent-browser.localhost`. Agents should stay on the dashboard origin: session tabs, status, and stream traffic are proxied internally, so session ports do not need to be exposed.
+
+## Known issue: non-ASCII file paths
+
+`upload` silently does nothing when the file path contains any non-ASCII
+character. It prints `✓ Done`, attaches no file, and fires no `change` event.
+Verified on 0.27.0 and 0.36.0; not a normalization problem (NFC and NFD both
+fail). It does not check that the path exists either, so a missing file looks
+exactly like a successful upload.
+
+Hungarian filenames are almost always accented (`Készlet_HU.xlsx`,
+`Árlista.xlsx`), so this will hit most uploads in these repositories.
+
+Before every upload, copy the file to an ASCII-only path and upload the copy:
+
+```bash
+cp "bemenet/Készlet_HU.xlsx" /tmp/hu.xlsx
+agent-browser upload "#fileHu" /tmp/hu.xlsx
+```
+
+Then confirm it actually landed — never trust the `✓ Done`:
+
+```bash
+agent-browser eval 'document.querySelector("#fileHu").files.length'   # expect 1
+```

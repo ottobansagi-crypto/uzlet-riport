@@ -95,7 +95,39 @@ sync_agent_browser() {
         record agent-browser "${name}" "${commit}"
     done
     cp "${TMP}/agent-browser/LICENSE" "${VENDOR}/LICENSE-agent-browser"
+    append_agent_browser_warning
     echo "  agent-browser: $(ls -1 "${src}" | wc -l) skills @ ${commit}"
+}
+
+# Re-applied on every sync, because it is our own addition to an upstream file.
+# Root-caused here on 2026-10-10; drop this once upstream fixes it.
+append_agent_browser_warning() {
+    cat >> "${DEST}/agent-browser/SKILL.md" <<'WARNING'
+
+## Known issue: non-ASCII file paths
+
+`upload` silently does nothing when the file path contains any non-ASCII
+character. It prints `✓ Done`, attaches no file, and fires no `change` event.
+Verified on 0.27.0 and 0.36.0; not a normalization problem (NFC and NFD both
+fail). It does not check that the path exists either, so a missing file looks
+exactly like a successful upload.
+
+Hungarian filenames are almost always accented (`Készlet_HU.xlsx`,
+`Árlista.xlsx`), so this will hit most uploads in these repositories.
+
+Before every upload, copy the file to an ASCII-only path and upload the copy:
+
+```bash
+cp "bemenet/Készlet_HU.xlsx" /tmp/hu.xlsx
+agent-browser upload "#fileHu" /tmp/hu.xlsx
+```
+
+Then confirm it actually landed — never trust the `✓ Done`:
+
+```bash
+agent-browser eval 'document.querySelector("#fileHu").files.length'   # expect 1
+```
+WARNING
 }
 
 case "${1:-all}" in
