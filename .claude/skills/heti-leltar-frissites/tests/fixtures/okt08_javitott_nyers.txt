@@ -1,0 +1,469 @@
+friss tábla ptf dolgok javítvam köszi
+Király utca						
+Százalékos mutató	99,41%					
+Összes eltérés	-32 551					
+Gombóc eltérés	-3 720		3	Szelet		
+Ital eltérés	-3 310					
+Édesség eltérés	-3 289					
+Dobozok eltérés	-3 850					
+Ajándéktárgy	2 970					
+Snack	-21 352					1# Lays
+PTG/rendszer eltérés	8 629	Fiscat	5 005	Cash	8 938	
+Selejt	508 853					
+Selejt %	8,1%					
+						
+13N Erzsébet krt. 40.						
+Százalékos mutató	100,1%					
+Összes eltérés	11 897					
+Gombóc eltérés	8 097		1	45-ös gombóc		
+Ital eltérés	4 750					1# Cappy narancs
+Édesség eltérés	0					
+Dobozok eltérés	-950					
+Ajándéktárgy	0					
+Snack	0					
+PTG/rendszer eltérés	-822	Fiscat	0	Cash	0	
+Selejt	468 354					
+Selejt %	18,5%					
+						
+Fashion						
+Százalékos mutató	100,10%					
+Összes eltérés	7 832					
+Gombóc eltérés	4 082		4	Szelet		
+Ital eltérés	9 640					8db Red Bull Sudachi
+Édesség eltérés	0					
+Dobozok eltérés	-1 900					
+Ajándéktárgy	-3 990					
+Snack	0					
+PTG/rendszer eltérés	7 817	Fiscat	21 439	Cash	-13 622	
+Selejt	380 320					
+Selejt %	10,2%					
+						
+Bazilika						
+Százalékos mutató	100,10%					
+Összes eltérés	8 759					
+Gombóc eltérés	15 301		1	45-ös gombóc		
+Ital eltérés	690					
+Édesség eltérés	0					
+Dobozok eltérés	-4 850					
+Ajándéktárgy	0					
+Snack	-2 382					
+PTG/rendszer eltérés	91	Fiscat	0	Cash	91	
+Selejt	264 616					
+Selejt %	6,7%					
+						
+Széll Kálmán Tér						
+Százalékos mutató	99,57%					
+Összes eltérés	-14 137					
+Gombóc eltérés	-11 077		1	45-ös gombóc		
+Ital eltérés	840					
+Édesség eltérés	0					
+Dobozok eltérés	-3 900					
+Ajándéktárgy	0					
+Snack	0					
+PTG/rendszer eltérés	1 429	Fiscat	1 249	Cash	180	
+Selejt	354 019					
+Selejt %	9,4%					
+						
+Corvin						
+Százalékos mutató	99,72%					
+Összes eltérés	-6 312					
+Gombóc eltérés	4 088		1	32-es gombóc		
+Ital eltérés	-7 100					NA vizek
+Édesség eltérés	0					
+Dobozok eltérés	900					
+Ajándéktárgy	-4 200					
+Snack	0					
+PTG/rendszer eltérés	110	Fiscat	0	Cash	110	
+Selejt	366 543					
+Selejt %	13,8%					
+						
+Károly krt						
+Százalékos mutató	99,84%					
+Összes eltérés	-5 153					
+Gombóc eltérés	1 157		1	45-ös gombóc		
+Ital eltérés	-3 510					
+Édesség eltérés	0					
+Dobozok eltérés	-2 800					
+Ajándéktárgy	0					
+Snack	0					
+PTG/rendszer eltérés	935	Fiscat	0	Cash	-94	
+Selejt	242 364					
+Selejt %	6,6%					
+						
+Dob 						
+Százalékos mutató	99,52%					
+Összes eltérés	-8 809					
+Gombóc eltérés	-1 652		1	Szelet		
+Ital eltérés	-9 380					sok termék 1-2db
+Édesség eltérés	-1 299					
+Dobozok eltérés	-650					
+Ajándéktárgy	0					
+Snack	4 172					
+PTG/rendszer eltérés	6 541	Fiscat	0	Cash	-370	
+Selejt	312 203					
+Selejt %	13,7%					
+						
+Blaha						
+Százalékos mutató	98,96%					
+Összes eltérés	-46 622					
+Gombóc eltérés	-19 832		2	45-ös gombóc		
+Ital eltérés	-25 190					1# Sprite
+Édesség eltérés	0					
+Dobozok eltérés	-1 400					
+Ajándéktárgy	0					
+Snack	-200					
+PTG/rendszer eltérés	12 653	Fiscat	1 251	Cash	11 406	
+Selejt	212 832					
+Selejt %	4,4%					
+						
+Oktogon						
+Százalékos mutató	97,97%					
+Összes eltérés	-113 137					
+Gombóc eltérés	-22 037		2	45-ös gombóc		
+Ital eltérés	-1 640					
+Édesség eltérés	0					
+Dobozok eltérés	-84 150					1000db Papírzacskó
+Ajándéktárgy	650					
+Pasta	5 104					
+Snack	-5 960					
+PTG/rendszer eltérés	370	Fiscat	0	Cash	370	
+Selejt	604 461					
+Selejt %	9,5%					
+						
+Wesselényi utca						
+Százalékos mutató	100,20%					
+Összes eltérés	23 709					
+Gombóc eltérés	6 609		6	Szelet		
+Ital eltérés	16 800					3# NA mentes víz
+Édesség eltérés	0					
+Dobozok eltérés	300					
+Ajándéktárgy	0					
+Pasta	0					
+Snack	0					
+PTG/rendszer eltérés	9 104	Fiscat	4 996	Cash	4 108	
+Selejt	205 474					
+Selejt %	5,0%					
+						
+Astoria						
+Százalékos mutató	100,10%					
+Összes eltérés	6 549					
+Gombóc eltérés	7 309		1	45-ös gombóc		
+Ital eltérés	3 780					
+Édesség eltérés	-5 196					2db csokis mousse, 2db tiramisu
+Dobozok eltérés	-1 400					
+Ajándéktárgy	-350					
+Snack	2 406					
+PTG/rendszer eltérés	3 299	Fiscat	3 560	Cash	-261	
+Selejt	264 678					
+Selejt %	8,6%					
+						
+Erzsébet krt 14						
+Százalékos mutató						
+Összes eltérés	0					
+Gombóc eltérés	0		2	Szelet		
+Ital eltérés	0					
+Édesség eltérés	0					
+Dobozok eltérés	0					
+Ajándéktárgy	0					
+Pasta	0					
+Snack	0					
+PTG/rendszer eltérés	0	Fiscat	0	Cash	0	
+Selejt	0					
+Selejt %						
+						
+Gomba Móricz						
+Százalékos mutató	100,00%					
+Összes eltérés	477					
+Gombóc eltérés	-3 071		3	Szelet		
+Ital eltérés	11 210			 		2# NA mentes 1,5l
+Édesség eltérés	4 588					2db Gelato
+Dobozok eltérés	-6 800					Papírzacskó 40db
+Ajándéktárgy	-5 050					Gyerekjáték 15db
+Pasta	-1 421					
+Snack	-400					
+PTG/rendszer eltérés	424	Fiscat	0	Cash	424	
+Selejt	421 921					
+Selejt %	10,3%					
+						
+Keleti						
+Százalékos mutató	99,11%					
+Összes eltérés	-27 948					
+Gombóc eltérés	-20 488		2	45-ös gombóc		
+Ital eltérés	-4 760					
+Édesség eltérés	0					
+Dobozok eltérés	-2 500					
+Ajándéktárgy	200					
+Pasta	-6 819					
+Snack	-400					
+PTG/rendszer eltérés	41	Fiscat	0	Cash	41	
+Selejt	190 866					
+Selejt %	5,5%					
+						
+Fővám tér						
+Százalékos mutató	99,00%					
+Összes eltérés	-21 077					
+Gombóc eltérés	-22 606		2	45-ös gombóc		
+Ital eltérés	-150					
+Édesség eltérés	0					
+Dobozok eltérés	-1 600					
+Ajándéktárgy	0					
+Snack	3 279					
+PTG/rendszer eltérés	-17 543	Fiscat	3 499	Cash	-21 042	
+Selejt	234 207					
+Selejt %	7,9%					
+						
+Ferenciek tere						
+Százalékos mutató	99,22%					
+Összes eltérés	-17 306					
+Gombóc eltérés	-14 067		1,5	45-ös gombóc		
+Ital eltérés	-1 140					
+Édesség eltérés	-1 299					
+Dobozok eltérés	-800					
+Ajándéktárgy	0					
+Snack	0					
+PTG/rendszer eltérés	3 865	Fiscat	0	Cash	3 865	
+Selejt	319 268					
+Selejt %	12,2%					
+						
+Jászai Mari tér						
+Százalékos mutató	99,55%					
+Összes eltérés	-10 575					
+Gombóc eltérés	-19 075		2	45-ös gombóc		
+Ital eltérés	12 500					2# NA savas 1,5l
+Édesség eltérés	0					
+Dobozok eltérés	-3 950					
+Ajándéktárgy	350					
+Snack	-400					
+PTG/rendszer eltérés	-46 149	Fiscat	2 498	Cash	-48 647	
+Selejt	283 535					
+Selejt %	9,7%					
+						
+Etele						
+Százalékos mutató	99,80%					
+Összes eltérés	-3 421					
+Gombóc eltérés	-5 341		5	Szelet		
+Ital eltérés	2 470					
+Édesség eltérés	0					
+Dobozok eltérés	-900					
+Ajándéktárgy	350					
+Snack	0					
+PTG/rendszer eltérés	4 138	Fiscat	4 138	Cash	0	
+Selejt	401 980					
+Selejt %	14,7%					
+						
+Kispest						
+Százalékos mutató	100,10%					
+Összes eltérés	15 393					
+Gombóc eltérés	-5 147		1	32-es gombóc		
+Ital eltérés	16 960					12db Peroni
+Édesség eltérés	0					
+Dobozok eltérés	-600					
+Ajándéktárgy	1 000					
+Pasta	-5 709					
+Snack	3 180					
+PTG/rendszer eltérés	-38	Fiscat	0	Cash	-38	
+Selejt	71 520					
+Selejt %	4,8%					
+						
+Bosnyák tér						
+Százalékos mutató	99,24%					
+Összes eltérés	-20 342					
+Gombóc eltérés	-172		0	45-ös gombóc		
+Ital eltérés	-14 620					1# Na mentes 0,5
+Édesség eltérés	0					
+Dobozok eltérés	-6 300					
+Ajándéktárgy	750					
+Snack	0					
+PTG/rendszer eltérés	5 706	Fiscat	0	Cash	5 706	
+Selejt	165 316					
+Selejt %	5,7%					
+						
+Árkád						
+Százalékos mutató	100,10%					
+Összes eltérés	6 587					
+Gombóc eltérés	10 407		1	45-ös gombóc		
+Ital eltérés	-2 520					
+Édesség eltérés	0					
+Dobozok eltérés	-1 650					
+Ajándéktárgy	550					
+Pasta	-7 096					
+Snack	-200					
+PTG/rendszer eltérés	-91	Fiscat	0	Cash	-91	
+Selejt	318 835					
+Selejt %	10,7%					
+						
+Kazinczy						
+Százalékos mutató	100,10%					
+Összes eltérés	4 613					
+Gombóc eltérés	7 593		1	45-ös gombóc		
+Ital eltérés	0					
+Édesség eltérés	0					
+Dobozok eltérés	0					
+Ajándéktárgy	0					
+Snack	-2 980					
+PTG/rendszer eltérés	0	Fiscat	0	Cash	139	
+Selejt	141 863					
+Selejt %	6,3%					
+						
+Törökvész						
+Százalékos mutató	99,80%					
+Összes eltérés	-6 998					
+Gombóc eltérés	19 181		4	32-es gombóc		
+Ital eltérés	-1 580					
+Édesség eltérés	-22 498					10db Gelato , 2db Tiramisu
+Dobozok eltérés	-1 950					
+Ajándéktárgy	-50					
+Pasta	-8 777					
+Snack	-101					
+PTG/rendszer eltérés	7 573	Fiscat	0	Cash	7 573	
+Selejt	310 554					
+Selejt %	7,8%					
+						
+GO Buda						
+Százalékos mutató	100,10%					
+Összes eltérés	4 543					
+Gombóc eltérés	-11 037		1	45-ös gombóc		
+Ital eltérés	15 530					12db Peroni
+Édesség eltérés	0					
+Dobozok eltérés	250					
+Ajándéktárgy	0					
+Pasta	198					
+Snack	-200					
+PTG/rendszer eltérés	6 937	Fiscat	3 690	Cash	3 247	
+Selejt	324 191					
+Selejt %	11,0%					
+						
+D1 Buda						
+Százalékos mutató	100,20%					
+Összes eltérés	22 586					
+Gombóc eltérés	20 996		3	32-es gombóc		
+Ital eltérés	5 090					
+Édesség eltérés	0					
+Dobozok eltérés	-3 400					
+Ajándéktárgy	-100					
+Pasta	-2 043					
+snack	0					
+PTG/rendszer eltérés	0	Fiscat	0	Cash		
+Selejt	137 660					
+Selejt %	3,8%					
+						
+D2 Baross						
+Százalékos mutató	100,10%					
+Összes eltérés	8 700					
+Gombóc eltérés	17 840		3	32-es gombóc		
+Ital eltérés	-150					
+Édesség eltérés	0					
+Dobozok eltérés	-5 000					
+Ajándéktárgy	-5 780					
+Pasta	8 998					
+Snack	1 790					
+PTG/rendszer eltérés	0	Fiscat	0	Cash		
+Selejt	61 160					
+Selejt %	2,0%					
+						
+Újpest						
+Százalékos mutató	98,92%					
+Összes eltérés	-19 286					
+Gombóc eltérés	-7 196		1	32-es gombóc		
+Ital eltérés	-9 980					6 red bull, 3db 0,33 Cola
+Édesség eltérés	0					
+Dobozok eltérés	-3 000					
+Ajándéktárgy	-100					
+Pasta	1 737					
+Snack	990					
+PTG/rendszer eltérés	13	Fiscat	0	Cash	13	
+Selejt	17 615					
+Selejt %	0,8%					
+						
+K1 Westend						
+Százalékos mutató	98,82%					
+Összes eltérés	-14 682					
+Gombóc eltérés	-9 842		1	45-ös gombóc		
+Ital eltérés	-4 990					
+Édesség eltérés	0					
+Dobozok eltérés	150					
+Ajándéktárgy	0					
+Snack	0					
+PTG/rendszer eltérés	586	Fiscat: 0 Cash: 0 hsz: 0				
+Selejt	291 035					
+Selejt %	18,4%					
+						
+BP PARK						
+Százalékos mutató	98,7%					
+Összes eltérés	-35 855					
+Gombóc eltérés	-32 992		3	45-ös gombóc		
+Ital eltérés	-2 520					
+Édesség eltérés	0					
+Dobozok eltérés	6 650					
+Ajándéktárgy	0					
+Snack	-6 993					
+PTG/rendszer eltérés	0	Fiscat	0	Cash	-2 798	
+Selejt	185 309					
+Selejt %	5,6%					
+						
+PM PLÁZS						
+Százalékos mutató						
+Összes eltérés	0					
+Gombóc eltérés	0		3	Szelet		
+Ital eltérés	0					
+Édesség eltérés	0					
+Dobozok eltérés	0					
+Ajándéktárgy	0					
+Snack	0					
+PTG/rendszer eltérés	0	Fiscat	0	Cash	0	
+Selejt	0					
+Selejt %						
+						
+F1 Siófok						
+Százalékos mutató						
+Összes eltérés	0					
+Gombóc eltérés	0		2	Szelet		
+Ital eltérés	0					
+Édesség eltérés	0					
+Dobozok eltérés	0					
+Ajándéktárgy	0					
+Snack	0					
+PTG/rendszer eltérés	0	Fiscat	0	Cash	0	
+Selejt	0					
+Selejt %						
+						
+Szeged						
+Százalékos mutató	99,90%					
+Összes eltérés	-6 641					
+Gombóc eltérés	12 009		1	45-ös gombóc		
+Ital eltérés	-1 290					
+Édesség eltérés	1 990					
+Dobozok eltérés	-9 550					60 papírzacskó
+Ajándéktárgy	-250					
+Pasta	11 461					
+Snack	-9 550					4db Sperlari
+PTG/rendszer eltérés	2 943	Fiscat	0	Cash	2 943	
+Selejt	246 165					
+Selejt %	8,7%					
+						
+Pécs						
+Százalékos mutató	99,90%					
+Összes eltérés	-11 218					
+Gombóc eltérés	-9 498		1	45-ös gombóc		
+Ital eltérés	1 190					
+Édesség eltérés	0					
+Dobozok eltérés	-4 400					
+Ajándéktárgy	100					
+Pasta	-13 482					
+Snack	1 390					
+PTG/rendszer eltérés	237	Fiscat	0	Cash	237	
+Selejt	247 496					
+Selejt %	5,6%					
+						
+Miskolc						
+Százalékos mutató	101,71%					
+Összes eltérés	21 522					
+Gombóc eltérés	17 238		2	45-ös gombóc		
+Ital eltérés	-4 900					
+Édesség eltérés	1 962					
+Dobozok eltérés	-2 750					
+Ajándéktárgy	10 970					
+Snack	-998					
+PTG/rendszer eltérés	3 956	Fiscat	0	Cash	3 956	
+Selejt	204 285					
+Selejt %	7,9%
