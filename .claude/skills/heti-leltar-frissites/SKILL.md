@@ -11,7 +11,7 @@ A riport adatát (data.json, TREND2026, INLINE_DATA, SK) **csak a `scripts/` szk
 ## Lépések
 Munka a `claude/business-report-review-4iqn3c` ágon, a repó gyökeréből. `K=.claude/skills/heti-leltar-frissites/scripts`
 1. `git fetch origin main`; ha a main előrébb jár, előbb húzd be (fast-forward vagy merge) a munkaágba.
-2. Mentsd a bemásolt szöveget fájlba (scratchpad), majd: `python3 $K/parse.py <fájl> -o p.json`
+2. Mentsd a bemásolt szöveget fájlba **a scratchpadba, soha ne a repóba** (a repó publikus), majd: `python3 $K/parse.py <fájl> -o p.json`
 3. `python3 $K/check.py p.json` (hónap első beküldésénél `--honapvaltas`).
 4. **Ha van HIBA sor: állj meg, nem építesz be semmit.** Kérdezd meg Ottót (lásd a jelentés-sablont), és várj a javított sorokra. A javított sort írd át a mentett szövegben, és kezdd újra a 2. lépéstől.
 5. Mód kiválasztása, majd `python3 $K/apply.py p.json --mod <mód> ...`:
@@ -37,6 +37,7 @@ Munka a `claude/business-report-review-4iqn3c` ágon, a repó gyökeréből. `K=
 4. **Élesítés:** „A munkaágon van, élesbe még nem ment. Mehet?"
 
 ## Szöveges értékelés (forrás: `pizzame-tudas` → `tudas/leltar-keszlet.md`)
+Az összkép tényeit (melyik kategória a fő hiány, hány üzlet van a küszöb felett) a `check.py` „Kategóriák (hálózat)” és „20 ezer feletti hiány” soraiból vedd, ne becsüld meg. Ha egy kategória a hálózatban többletben van, nem lehet „fő tétel”.
 Kevés szám: üzletenként 1–2 mondatban az eltérés oka (kategória, termék). Minősítés és javaslat nincs. A küszöb 20 000 Ft hiány. Négy blokk: összkép (2–3 mondat) → 50 ezer feletti hiány → 20–50 ezer → 20 ezer alatt egy sorban (a többlettel zártak külön), végül „Amit érdemes kiemelni". Területvezetőt nem kell írni.
 
 ## Ismert, Otto által elfogadott tételek — ezekre NE kérdezz

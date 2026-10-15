@@ -10,6 +10,8 @@
 
 A levonások fájlja: tabulátoros 'nev<TAB>levon' sorok, kanonikus üzletnévvel (a PM-kódokat
 előtte fel kell oldani). Ha bármi nem stimmel, egyetlen fájlt sem ír, és nem nulla kóddal lép ki."""
+import sys
+sys.dont_write_bytecode = True   # ne keletkezzen __pycache__ a repóban
 import argparse, collections, io, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from szabalyok import KATEGORIAK, SK_TETELEK, TREND_EV, ft, honap_adatai

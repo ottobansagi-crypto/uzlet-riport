@@ -5,10 +5,14 @@
 
 Kimenet soronként:  HIBA (beépítés előtt Ottótól javítás kell) / FIGYELEM (rá kell kérdezni)
 / INFO (érdemes megemlíteni). Kilépési kód: 2 ha van HIBA, 1 ha csak FIGYELEM, különben 0."""
+import sys
+sys.dont_write_bytecode = True   # ne keletkezzen __pycache__ a repóban
 import argparse, io, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from szabalyok import BEZART, KATEGORIAK, TURES, ft
 
+KAT_NEVEK = [('gomboc', 'gombóc'), ('ital', 'ital'), ('desseg', 'édesség'), ('doboz', 'papíráru'),
+             ('ajandek', 'ajándék'), ('snack', 'snack')]
 OSSZEVETETT = ['leltar_pct', 'osszes', 'gomboc', 'ital', 'desseg', 'doboz', 'ajandek', 'snack', 'selejt_ft']
 NAGY_TETEL = 50000
 
@@ -100,6 +104,12 @@ def main():
     hu = [b for b in parsed['hu'] if b['nev'] in aktiv]
     print(f"Ellenőrizve: {len(hu)} üzlet, hálózati összeg {ft(sum(b.get('osszes') or 0 for b in hu))} Ft"
           f"{', SK is' if parsed.get('sk') else ''}.")
+    # Az összkép tényei (a szöveges értékeléshez): ne becsüld, ezekből írd.
+    elojel = lambda v: ('+' if v > 0 else '') + ft(v)
+    kat = ', '.join(f'{nev} {elojel(sum(b.get(k) or 0 for b in hu))}' for k, nev in KAT_NEVEK)
+    print(f"Kategóriák (hálózat): {kat}; pasta {elojel(sum(b.get('pasta') or 0 for b in hu))} (nem része az összesnek).")
+    print(f"20 ezer feletti hiány: {sum((b.get('osszes') or 0) <= -20000 for b in hu)} üzlet, "
+          f"ebből 50 ezer feletti: {sum((b.get('osszes') or 0) <= -50000 for b in hu)}.")
     for cimke, lista in (('HIBA', hiba), ('FIGYELEM', figy), ('INFO', info)):
         for s in lista:
             print(f'{cimke:9}{s}')

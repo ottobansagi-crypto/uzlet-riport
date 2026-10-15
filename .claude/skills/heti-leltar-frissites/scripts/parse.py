@@ -7,6 +7,8 @@ Egy üzlet-blokk: a név sora, utána a mezősorok ("Százalékos mutató", "Ös
 "Gombóc eltérés" ...). A cellák: [mező, érték, üres, mennyiség, termék, ..., megjegyzés].
 A blokkon kívüli sorokat (pl. Otto kísérőszövege) figyelmen kívül hagyja.
 Az SK blokk ("Kolarska SNP") angol mezőnevű, külön kerül ki."""
+import sys
+sys.dont_write_bytecode = True   # ne keletkezzen __pycache__ a repóban
 import argparse, io, json, re, sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from szabalyok import NEVEK

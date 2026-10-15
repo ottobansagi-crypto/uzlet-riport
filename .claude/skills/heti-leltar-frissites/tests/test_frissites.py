@@ -156,6 +156,10 @@ class TestCheck(Alap):
         r = run('check.py', p, '--root', self.root, check=False)
         self.assertNotEqual(r.returncode, 2, r.stdout)
         self.assertNotIn('HIBA', r.stdout)
+        # Az összkép tényeihez: hálózati kategória-összegek és küszöb-darabszámok
+        self.assertIn('gombóc +34 933', r.stdout)
+        self.assertIn('papíráru -97 550', r.stdout)
+        self.assertRegex(r.stdout, r'20 ezer feletti hiány: 8 üzlet.*50 ezer feletti: 0')
 
     def test_apply_nem_fut_hibas_osszeggel(self):
         self.allapot('b9df2f5')
