@@ -902,13 +902,13 @@
     },
     {
       "nev": "BP PARK",
-      "leltar_pct": 100.1,
-      "osszes": 13096,
+      "leltar_pct": 99.0,
+      "osszes": -28862,
       "gomboc": -32992,
       "ital": -2520,
       "desseg": 0,
       "doboz": 6650,
-      "snack": 41958,
+      "snack": 0,
       "ajandek": 0,
       "selejt_pct": 5.7,
       "reszletek": {
