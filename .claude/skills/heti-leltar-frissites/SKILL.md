@@ -12,7 +12,7 @@ A riport adatát (data.json, TREND2026, INLINE_DATA, SK) **csak a `scripts/` szk
 Munka a `claude/business-report-review-4iqn3c` ágon, a repó gyökeréből. `K=.claude/skills/heti-leltar-frissites/scripts`
 1. `git fetch origin main`; ha a main előrébb jár, előbb húzd be (fast-forward vagy merge) a munkaágba.
 2. Mentsd a bemásolt szöveget fájlba **a scratchpadba, soha ne a repóba** (a repó publikus), majd: `python3 $K/parse.py <fájl> -o p.json`
-3. `python3 $K/check.py p.json` (hónap első beküldésénél `--honapvaltas`).
+3. `python3 $K/check.py p.json` (hónap első beküldésénél `--honapvaltas`; ha Otto **ugyanarra a napra** küld javított táblát vagy sorokat: `--javitas`, ez a változott üzleteket sorolja fel, és nem jelez „nem frissült"-et). Ha Otto csak néhány üzlet blokkját küldi, írd át azokat az utolsó teljes beküldésben, és azt futtasd.
 4. **Ha van HIBA sor: állj meg, nem építesz be semmit.** Kérdezd meg Ottót (lásd a jelentés-sablont), és várj a javított sorokra. A javított sort írd át a mentett szövegben, és kezdd újra a 2. lépéstől.
 5. Mód kiválasztása, majd `python3 $K/apply.py p.json --mod <mód> ...`:
 
@@ -31,7 +31,7 @@ Munka a `claude/business-report-review-4iqn3c` ágon, a repó gyökeréből. `K=
 9. „Mehet élesre" után: `git fetch origin main`, ellenőrizd, hogy a main a munkaág őse, aztán `git push origin HEAD:main`. Csak fast-forward lehet.
 
 ## Jelentés Ottónak (sablon)
-1. **Ami bement:** üzletszám, hálózati összeg (az előző beküldéshez képest), SK. Röviden.
+1. **Ami bement:** üzletszám, hálózati összeg (az előző beküldéshez képest), SK. Javításnál: mely üzletek változtak. Röviden.
 2. **Kérdések** — számozva, csak a check HIBA és FIGYELEM soraiból, egy-egy mondatban, a konkrét számokkal.
 3. **Szöveges értékelés** — beépített adat esetén kötelező. Ha még HIBA miatt áll a beépítés, írd oda: „a javítás után küldöm".
 4. **Élesítés:** „A munkaágon van, élesbe még nem ment. Mehet?"

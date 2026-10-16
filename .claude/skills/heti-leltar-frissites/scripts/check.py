@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 """A feldolgozott beküldés ellenőrzése a riport jelenlegi állapotához képest.
 
-    python3 check.py <parsed.json> [--root <repó>]
+    python3 check.py <parsed.json> [--root <repó>] [--honapvaltas | --javitas]
+
+--javitas: ugyanarra a napra küldött javított tábla. Ilyenkor a legtöbb üzlet szándékosan
+változatlan, ezért "nem frissült" jelzés helyett a változott üzleteket sorolja fel.
 
 Kimenet soronként:  HIBA (beépítés előtt Ottótól javítás kell) / FIGYELEM (rá kell kérdezni)
 / INFO (érdemes megemlíteni). Kilépési kód: 2 ha van HIBA, 1 ha csak FIGYELEM, különben 0."""
@@ -27,8 +30,8 @@ def aktiv_nevek(data, honapvaltas=False):
     return [u['nev'] for u in data['uzletek'] if not (honapvaltas and u['nev'] in BEZART)]
 
 
-def ellenoriz(parsed, data, aktiv=None):
-    hiba, figy, info = [], [], []
+def ellenoriz(parsed, data, aktiv=None, javitas=False):
+    hiba, figy, info, valtozott = [], [], [], []
     aktiv = aktiv_nevek(data) if aktiv is None else aktiv
     akt = {u['nev']: u for u in data['uzletek'] if u['nev'] in aktiv}
     bekuldott = [b for b in parsed['hu'] if not (b['nev'] in BEZART and b['nev'] not in akt)]
@@ -61,10 +64,17 @@ def ellenoriz(parsed, data, aktiv=None):
         if (p < 100 and o > 0) or (p > 100 and o < 0):
             figy.append(f"{b['nev']}: {p}% mellett {ft(o)} Ft — a százalék és a forint előjele ellentmond.")
         azonos = [k for k in OSSZEVETETT if (b.get(k) or 0) == (u.get(k) or 0)]
-        if len(azonos) >= 6 and o != 0:
+        if javitas:
+            t, ut = b.get('ptg') or {}, u.get('ptg') or {}
+            if (len(azonos) < len(OSSZEVETETT)
+                    or any((b.get(k) or 0) != (u.get(k) or 0) for k in ('pasta', 'selejt_pct'))
+                    or any((t.get(k) or 0) != (ut.get(k) or 0) for k in ('osszes', 'fiscat', 'cash'))
+                    or (b.get('megjegyzesek') or {}) != (u.get('megjegyzesek') or {})):
+                valtozott.append(b['nev'])
+        elif len(azonos) >= 6 and o != 0:
             figy.append(f"{b['nev']}: {len(azonos)} mező változatlan az előző beküldéshez képest "
                         f"({', '.join(azonos)}) — lehet, hogy nem frissült.")
-        if (b.get('selejt_ft') or 0) < (u.get('selejt_ft') or 0) and data['meta'].get('reszido'):
+        if not javitas and (b.get('selejt_ft') or 0) < (u.get('selejt_ft') or 0) and data['meta'].get('reszido'):
             info.append(f"{b['nev']}: a selejt csökkent ({ft(u['selejt_ft'])} -> {ft(b['selejt_ft'])}); "
                         f"hónap közben kumulatív, csak hónapváltáskor csökkenhet.")
         t, ut = b.get('ptg') or {}, u.get('ptg') or {}
@@ -77,7 +87,9 @@ def ellenoriz(parsed, data, aktiv=None):
             if v is not None and abs(v) >= NAGY_TETEL:
                 megj = (b.get('megjegyzesek') or {}).get(k, '')
                 info.append(f"{b['nev']}: {k} {ft(v)} Ft{' — ' + megj if megj else ''}.")
-    if elozo_fc and azonos_fc >= elozo_fc / 2:
+    if javitas:
+        info.insert(0, f"Változott {len(valtozott)} üzlet: {', '.join(valtozott) or '—'}.")
+    elif elozo_fc and azonos_fc >= elozo_fc / 2:
         figy.append(f'PTG: {azonos_fc} üzletnél a Fiscat és a Cash pontosan az előző beküldés értéke — '
                     f'valószínűleg nem frissült a PTG.')
 
@@ -93,14 +105,16 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('parsed')
     ap.add_argument('--root', default='.')
-    ap.add_argument('--honapvaltas', action='store_true', help='az új hónap első beküldése')
+    mod = ap.add_mutually_exclusive_group()
+    mod.add_argument('--honapvaltas', action='store_true', help='az új hónap első beküldése')
+    mod.add_argument('--javitas', action='store_true', help='javított tábla ugyanarra a napra')
     a = ap.parse_args()
     with io.open(a.parsed, encoding='utf-8') as f:
         parsed = json.load(f)
     with io.open(os.path.join(a.root, 'data.json'), encoding='utf-8') as f:
         data = json.load(f)
     aktiv = aktiv_nevek(data, a.honapvaltas)
-    hiba, figy, info = ellenoriz(parsed, data, aktiv)
+    hiba, figy, info = ellenoriz(parsed, data, aktiv, javitas=a.javitas)
     hu = [b for b in parsed['hu'] if b['nev'] in aktiv]
     print(f"Ellenőrizve: {len(hu)} üzlet, hálózati összeg {ft(sum(b.get('osszes') or 0 for b in hu))} Ft"
           f"{', SK is' if parsed.get('sk') else ''}.")

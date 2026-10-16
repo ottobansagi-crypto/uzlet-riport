@@ -161,6 +161,16 @@ class TestCheck(Alap):
         self.assertIn('papíráru -97 550', r.stdout)
         self.assertRegex(r.stdout, r'20 ezer feletti hiány: 8 üzlet.*50 ezer feletti: 0')
 
+    def test_javitas_ugyanarra_a_napra(self):
+        # Ugyanarra a napra küldött javított tábla: a legtöbb üzlet szándékosan változatlan,
+        # ezért "nem frissült" figyelmeztetés helyett a változott üzleteket kell felsorolni.
+        self.allapot('de758d4')                     # október 14, javított (élesben)
+        p = self.parse('okt14_nyers.txt')           # ehhez képest csak a Bazilika és a BP PARK más
+        out = run('check.py', p, '--root', self.root, '--javitas', check=False).stdout
+        self.assertIn('Változott 2 üzlet: Bazilika, BP PARK', out)
+        self.assertNotIn('változatlan', out)
+        self.assertNotIn('nem frissült a PTG', out)
+
     def test_apply_nem_fut_hibas_osszeggel(self):
         self.allapot('b9df2f5')
         p = self.parse('okt14_nyers.txt')
