@@ -74,10 +74,10 @@
     },
     {
       "nev": "Fashion",
-      "leltar_pct": 99.82,
-      "osszes": -11030,
+      "leltar_pct": 99.75,
+      "osszes": -15770,
       "gomboc": -9730,
-      "ital": 5780,
+      "ital": 1040,
       "desseg": 0,
       "doboz": -1900,
       "snack": -1190,
@@ -90,9 +90,6 @@
             "mennyiseg": 9
           }
         ]
-      },
-      "megjegyzesek": {
-        "ital": "8db Red Bull"
       },
       "teruletvezeto": [
         "Hegedűs Milán"
@@ -138,10 +135,10 @@
     },
     {
       "nev": "Széll Kálmán",
-      "leltar_pct": 100.0,
-      "osszes": -266,
+      "leltar_pct": 99.84,
+      "osszes": -10346,
       "gomboc": -4026,
-      "ital": 11910,
+      "ital": 1830,
       "desseg": 0,
       "doboz": -7950,
       "snack": -200,
@@ -156,7 +153,6 @@
         ]
       },
       "megjegyzesek": {
-        "ital": "3 karton 1,5L Savas víz",
         "doboz": "20db Papírzacskó, 50db doboz"
       },
       "teruletvezeto": [
@@ -261,10 +257,10 @@
     },
     {
       "nev": "Blaha",
-      "leltar_pct": 99.85,
-      "osszes": -12996,
+      "leltar_pct": 99.65,
+      "osszes": -30276,
       "gomboc": -28390,
-      "ital": 21540,
+      "ital": 4260,
       "desseg": -5196,
       "doboz": -550,
       "snack": -400,
@@ -274,12 +270,9 @@
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 3
+            "mennyiseg": 2.5
           }
         ]
-      },
-      "megjegyzesek": {
-        "ital": "1 karton SP citrom"
       },
       "teruletvezeto": [
         "Anda Patrícia"
@@ -361,9 +354,9 @@
     },
     {
       "nev": "Astoria",
-      "leltar_pct": 100.2,
-      "osszes": 28386,
-      "gomboc": 32287,
+      "leltar_pct": 100.1,
+      "osszes": 12254,
+      "gomboc": 16155,
       "ital": -2270,
       "desseg": 0,
       "doboz": 1100,
@@ -374,7 +367,7 @@
         "gomboc": [
           {
             "termek": "32-es gombóc",
-            "mennyiseg": 6
+            "mennyiseg": 3
           }
         ]
       },
@@ -390,10 +383,10 @@
     },
     {
       "nev": "Gomba Móricz",
-      "leltar_pct": 100.1,
-      "osszes": 8747,
+      "leltar_pct": 99.9,
+      "osszes": -6373,
       "gomboc": -580,
-      "ital": 13980,
+      "ital": -1140,
       "desseg": 3897,
       "doboz": -8200,
       "snack": -400,
@@ -408,7 +401,6 @@
         ]
       },
       "megjegyzesek": {
-        "ital": "3 karton 1,5l Mentes víz",
         "doboz": "70db Papírzacskó"
       },
       "teruletvezeto": [
@@ -424,30 +416,27 @@
     },
     {
       "nev": "Keleti",
-      "leltar_pct": 99.5,
-      "osszes": -29798,
-      "gomboc": -26788,
+      "leltar_pct": 99.8,
+      "osszes": -12045,
+      "gomboc": -9035,
       "ital": -860,
       "desseg": 0,
       "doboz": -1850,
       "snack": -600,
       "ajandek": 300,
-      "selejt_pct": 5.7,
+      "selejt_pct": 5.8,
       "reszletek": {
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 2
+            "mennyiseg": 1
           }
         ]
-      },
-      "megjegyzesek": {
-        "pasta": "1500g Fusili"
       },
       "teruletvezeto": [
         "Hegedűs Milán"
       ],
-      "pasta": -23114,
+      "pasta": -5361,
       "selejt_ft": 374490,
       "ptg": {
         "osszes": 77,
@@ -519,26 +508,22 @@
     },
     {
       "nev": "Jászai Mari tér",
-      "leltar_pct": 100.2,
-      "osszes": 39496,
-      "gomboc": 39566,
-      "ital": 14480,
+      "leltar_pct": 100.1,
+      "osszes": 13609,
+      "gomboc": 18799,
+      "ital": -640,
       "desseg": 0,
-      "doboz": -13900,
+      "doboz": -3900,
       "snack": -1000,
       "ajandek": 350,
-      "selejt_pct": 11.2,
+      "selejt_pct": 11.1,
       "reszletek": {
         "gomboc": [
           {
             "termek": "32-es gombóc",
-            "mennyiseg": 5
+            "mennyiseg": 3
           }
         ]
-      },
-      "megjegyzesek": {
-        "ital": "3 karton 1,5l Mentes víz",
-        "doboz": "100db 22cm doboz"
       },
       "teruletvezeto": [
         "Racsmány Ignác"
@@ -773,9 +758,9 @@
     {
       "nev": "D1 Buda",
       "leltar_pct": 100.2,
-      "osszes": 33861,
+      "osszes": 28821,
       "gomboc": 18722,
-      "ital": 13740,
+      "ital": 8700,
       "desseg": 1299,
       "doboz": -300,
       "snack": 0,
@@ -790,7 +775,7 @@
         ]
       },
       "megjegyzesek": {
-        "ital": "8db 1,5 víz plusz sok 1-1 db termék"
+        "ital": "pár termék vegyesen"
       },
       "teruletvezeto": [
         "Hegedűs Milán"
@@ -805,9 +790,9 @@
     },
     {
       "nev": "D2 Baross",
-      "leltar_pct": 100.3,
-      "osszes": 57880,
-      "gomboc": 47042,
+      "leltar_pct": 100.2,
+      "osszes": 33086,
+      "gomboc": 22248,
       "ital": 5690,
       "desseg": 2598,
       "doboz": 1800,
@@ -818,7 +803,7 @@
         "gomboc": [
           {
             "termek": "32-es gombóc",
-            "mennyiseg": 8
+            "mennyiseg": 4
           }
         ]
       },
@@ -835,11 +820,11 @@
     },
     {
       "nev": "Újpest",
-      "leltar_pct": 99.4,
-      "osszes": -37264,
+      "leltar_pct": 98.0,
+      "osszes": -42460,
       "gomboc": -33560,
       "ital": -8600,
-      "desseg": 5196,
+      "desseg": 0,
       "doboz": 500,
       "snack": -1000,
       "ajandek": 200,
@@ -853,8 +838,7 @@
         ]
       },
       "megjegyzesek": {
-        "ital": "6db Red Bull",
-        "desseg": "4db Profiterol"
+        "ital": "6db Red Bull"
       },
       "teruletvezeto": [
         "Anda Patrícia"
@@ -931,13 +915,13 @@
     },
     {
       "nev": "Szeged",
-      "leltar_pct": 99.8,
-      "osszes": -11546,
-      "gomboc": 6144,
+      "leltar_pct": 100.1,
+      "osszes": 2094,
+      "gomboc": 8644,
       "ital": -1680,
       "desseg": 1990,
       "doboz": -9450,
-      "snack": -8150,
+      "snack": 2990,
       "ajandek": -400,
       "selejt_pct": 7.1,
       "reszletek": {
@@ -949,8 +933,7 @@
         ]
       },
       "megjegyzesek": {
-        "doboz": "70db papírzacskó",
-        "snack": "2db Sperlari, 3db Fini"
+        "doboz": "70db papírzacskó"
       },
       "teruletvezeto": [
         "Anda Patrícia"
@@ -958,9 +941,9 @@
       "pasta": 5877,
       "selejt_ft": 391968,
       "ptg": {
-        "osszes": 6784,
+        "osszes": 9284,
         "fiscat": 0,
-        "cash": 6784
+        "cash": 9284
       }
     },
     {
