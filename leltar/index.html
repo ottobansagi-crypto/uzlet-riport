@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PizzaMe Leltármodul</title>
+<link rel="icon" type="image/png" href="../logo.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    /* PizzaMe brand — azonos az üzlet és a termelő riporttal */
+    --brand-red: #ec1b23;
+    --brand-red-dark: #bc1d23;
+
+    --bg: #fdf5f4;
+    --surface: #ffffff;
+    --surface2: #f8e9e8;
+    --border: rgba(0,0,0,0.08);
+    --border2: rgba(0,0,0,0.14);
+    --text: #1a1916;
+    --text2: #6b6a65;
+    --text3: #8a8a85;
+    --red: var(--brand-red);
+    --green: #2d6a4f;
+    --amber: #8a5a12;
+    --amber-bg: #fdf0dc;
+    --radius: 10px;
+    --radius-lg: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg); color: var(--text);
+    min-height: 100vh; font-size: 14px; line-height: 1.5;
+  }
+
+  /* ── FEJLÉC ───────────────────────────────────────────────────────────── */
+  .header {
+    background: var(--brand-red); color: #fff; padding: 14px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 3px solid var(--brand-red-dark);
+    flex-wrap: wrap; gap: 12px;
+  }
+  .header-left { display: flex; align-items: center; gap: 14px; }
+  .header-logo { width: 40px; height: 40px; flex-shrink: 0; }
+  .header h1 { font-size: 16px; font-weight: 600; letter-spacing: -0.3px; }
+  .header-meta { font-size: 12px; color: rgba(255,255,255,0.8); font-family: 'DM Mono', monospace; }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+  .header-right label { font-size: 12px; color: rgba(255,255,255,0.8); }
+  .header-nav { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+  .header-nav::before { content: ''; width: 1px; height: 30px; background: rgba(255,255,255,0.3); }
+  .header-link {
+    font-size: 13px; font-weight: 600; color: var(--brand-red-dark); text-decoration: none;
+    background: #fff; border: 1px solid #fff;
+    border-radius: 20px; padding: 8px 16px; white-space: nowrap;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .header-link:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.26); transform: translateY(-1px); }
+  .header-link:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  @media(max-width:700px){ .header-nav::before { display: none; } .header { padding: 12px 16px; } }
+  .header-select {
+    padding: 7px 12px; font-size: 13px; font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.3); border-radius: 20px;
+    background: rgba(255,255,255,0.15); color: #fff; cursor: pointer;
+    font-family: inherit; outline: none; min-height: 34px;
+  }
+  .header-select:hover { background: rgba(255,255,255,0.28); }
+  .header-select:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .header-select option { color: var(--text); }
+
+  .main { max-width: 1240px; margin: 0 auto; padding: 24px 20px 48px; }
+  @media(max-width:700px){ .main { padding: 16px 16px 40px; } }
+
+  /* ── KÁRTYA, CSEMPÉK ─────────────────────────────────────────────────── */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; margin-bottom: 14px; }
+  .card-title { font-size: 12px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .card-sub { font-size: 12px; color: var(--text3); margin-bottom: 14px; line-height: 1.6; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .tile { border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
+  .tile-label { font-size: 11px; color: var(--text2); margin-bottom: 4px; }
+  .tile-value { font-size: 20px; font-weight: 600; letter-spacing: -0.4px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tile-sub { font-size: 12px; margin-top: 2px; color: var(--text3); }
+
+  /* ── TÁBLÁZAT ─────────────────────────────────────────────────────────── */
+  .toolbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+  .search {
+    padding: 8px 12px; font-size: 13px; border: 1px solid var(--border2); border-radius: 20px;
+    font-family: inherit; min-width: 220px; background: var(--surface); color: var(--text);
+  }
+  .search:focus-visible { outline: 2px solid var(--brand-red); outline-offset: 1px; }
+  .toolbar .muted { font-size: 12px; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; padding: 8px 10px; font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 1px solid var(--border2); white-space: nowrap; }
+  th button { all: unset; cursor: pointer; }
+  th button:focus-visible { outline: 2px solid var(--brand-red); outline-offset: 2px; border-radius: 3px; }
+  th.sorted { color: var(--text); }
+  td { padding: 9px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.num { font-family: 'DM Mono', monospace; font-size: 12px; }
+  tbody tr.sor { cursor: pointer; }
+  tbody tr.sor:hover td { background: #fffafa; }
+  tbody tr.sor:focus-visible td { background: var(--surface2); outline: none; }
+  tbody tr.nyitva td { background: var(--surface2); }
+  tbody tr.reszlet td { background: #fffdfb; white-space: normal; padding: 12px 18px 16px; }
+  td.nev { font-weight: 600; }
+  td.nev .jel { display: inline-block; margin-left: 6px; font-size: 11px; font-weight: 500; color: var(--amber); background: var(--amber-bg); border-radius: 10px; padding: 0 7px; }
+  .hiany { color: var(--red); } .tobblet { color: var(--green); }
+  .muted { color: var(--text3); }
+  .osszesen td { font-weight: 600; border-top: 1px solid var(--border2); background: var(--surface2); }
+
+  /* ── RÉSZLETEK ────────────────────────────────────────────────────────── */
+  .reszlet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 24px; }
+  .reszlet-cim { font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .reszlet-szoveg { font-size: 12.5px; color: var(--text); line-height: 1.6; }
+  .reszlet-szoveg li { margin-left: 16px; }
+
+  /* ── JELZÉSEK ─────────────────────────────────────────────────────────── */
+  .note { border-radius: var(--radius); padding: 11px 14px; margin-bottom: 16px; font-size: 12.5px; line-height: 1.6; }
+  .note-warn { background: var(--amber-bg); color: var(--amber); border: 1px solid #d9a45c; }
+  .note-info { background: var(--surface2); color: var(--text2); border: 1px solid var(--border2); }
+  .note strong { font-weight: 600; }
+  #loading { text-align: center; padding: 60px; color: var(--text3); }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-left">
+    <img src="../logo.png" alt="PizzaMe" class="header-logo">
+    <div>
+      <h1>PizzaMe Leltármodul</h1>
+      <span class="header-meta" id="headerMeta">betöltés…</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <label for="honapSelect">Hónap</label>
+    <select id="honapSelect" class="header-select"></select>
+  </div>
+  <div class="header-nav">
+    <a class="header-link" href="/">← Üzlet riport</a>
+  </div>
+</div>
+<div class="main" id="app"><div id="loading">Adatok betöltése…</div></div>
+<script>
+/* A leltármodul heti futása a havi HU JSON-t a ../beerkezo/leltar-ÉÉÉÉ-HH-HU.json fájlba tölti
+   (formátum: docs/adatformatum.md). Ez az oldal csak olvassa és megmutatja; semmit nem ír. */
+const MAPPA = '../beerkezo/';
+const HONAPOK_SZAMA = 12;
+const HO_NEV = ['január','február','március','április','május','június','július','augusztus','szeptember','október','november','december'];
+const KAT = [
+  ['gomboc', 'Gombóc'], ['ital', 'Ital'], ['desseg', 'Édesség'], ['doboz', 'Doboz'],
+  ['ajandek', 'Ajándék'], ['snack', 'Snack'], ['pasta', 'Pasta']
+];
+const OSZLOPOK = [
+  ['nev', 'Üzlet', false], ['leltar_pct', 'Leltár %', true], ['osszes', 'Összes', true],
+  ...KAT.map(([k, n]) => [k, n, true]),
+  ['selejt_ft', 'Selejt Ft', true], ['selejt_pct', 'Selejt %', true], ['ptg', 'PTG', true]
+];
+const NAGY_HIANY = -20000;
+
+let DOC = null, rendez = { kulcs: 'osszes', irany: 1 }, szuro = '', nyitott = new Set();
+
+/* ── segédek ─────────────────────────────────────────────────────────────── */
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const szam = v => typeof v === 'number' && isFinite(v);
+const sz = (v, d = 0) => !szam(v) ? '–' : (v < 0 ? '−' : '') + Math.abs(v).toLocaleString('hu-HU', {minimumFractionDigits: d, maximumFractionDigits: d});
+const elojeles = v => !szam(v) ? '–' : (v > 0 ? '+' : '') + sz(v);
+const szinosztaly = v => !szam(v) || v === 0 ? '' : v < 0 ? 'hiany' : 'tobblet';
+const ptgOssz = u => u.ptg && szam(u.ptg.osszes) ? u.ptg.osszes : null;
+const ertek = (u, k) => k === 'ptg' ? ptgOssz(u) : u[k];
+const honapCimke = h => { const [e, m] = h.split('-'); return `${e}. ${HO_NEV[+m - 1]}`; };
+const allapotSzoveg = a => a === 'vegleges' ? 'végleges' : 'részeredmény';
+
+function honapLista() {
+  const ma = new Date(), ki = [];
+  for (let i = 0; i < HONAPOK_SZAMA; i++) {
+    const d = new Date(ma.getFullYear(), ma.getMonth() - i, 1);
+    ki.push(`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`);
+  }
+  return ki;
+}
+
+function vanJel(u) {
+  const m = u.megjegyzesek || {};
+  return Object.values(m).some(s => /becsült forgalom|kézi forgalom|PizzaMe Go/.test(String(s)));
+}
+
+/* ── összesítő ───────────────────────────────────────────────────────────── */
+function osszeg(uzletek, k) {
+  const v = uzletek.map(u => ertek(u, k)).filter(szam);
+  return v.length ? v.reduce((a, b) => a + b, 0) : null;
+}
+
+function osszesito(uzletek) {
+  const nagy = uzletek.filter(u => szam(u.osszes) && u.osszes <= NAGY_HIANY).length;
+  const jelolt = uzletek.filter(vanJel).length;
+  const csempe = (cim, ertekHtml, al = '') =>
+    `<div class="tile"><div class="tile-label">${esc(cim)}</div><div class="tile-value">${ertekHtml}</div>${al ? `<div class="tile-sub">${al}</div>` : ''}</div>`;
+  const kat = KAT.map(([k, n]) => { const v = osszeg(uzletek, k); return csempe(n, `<span class="${szinosztaly(v)}">${elojeles(v)}</span>`); }).join('');
+  const ossz = osszeg(uzletek, 'osszes');
+  return `
+    <div class="card">
+      <div class="card-title">Hálózat összesen</div>
+      <div class="card-sub">${uzletek.length} üzlet · a hiány negatív, a többlet pozitív (Ft)</div>
+      <div class="tiles">
+        ${csempe('Összes eltérés', `<span class="${szinosztaly(ossz)}">${elojeles(ossz)}</span>`, 'Ft')}
+        ${csempe('20 ezer Ft feletti hiány', `${nagy}`, 'üzlet')}
+        ${csempe('Selejt összesen', sz(osszeg(uzletek, 'selejt_ft')), 'Ft')}
+        ${csempe('Ideiglenes adat / pótlás', `${jelolt}`, 'üzlet (lásd a megjegyzést)')}
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Kategóriák (hálózat)</div>
+      <div class="card-sub">A gombóc a maradék: összes − a többi kategória.</div>
+      <div class="tiles">${kat}</div>
+    </div>`;
+}
+
+/* ── táblázat ────────────────────────────────────────────────────────────── */
+function rendezett(uzletek) {
+  const { kulcs, irany } = rendez;
+  return [...uzletek].sort((a, b) => {
+    if (kulcs === 'nev') return irany * String(a.nev).localeCompare(String(b.nev), 'hu');
+    const x = ertek(a, kulcs), y = ertek(b, kulcs);
+    if (!szam(x) && !szam(y)) return 0;
+    if (!szam(x)) return 1;
+    if (!szam(y)) return -1;
+    return irany * (x - y);
+  });
+}
+
+function cella(u, k) {
+  if (k === 'nev') return `<td class="nev">${esc(u.nev)}${vanJel(u) ? '<span class="jel">jelölt</span>' : ''}${u.franchise ? ' <span class="muted">(franchise)</span>' : ''}</td>`;
+  const v = ertek(u, k);
+  if (k === 'leltar_pct' || k === 'selejt_pct') return `<td class="num">${szam(v) ? sz(v, 1) : '–'}</td>`;
+  if (k === 'selejt_ft') return `<td class="num">${sz(v)}</td>`;
+  return `<td class="num ${szinosztaly(v)}">${elojeles(v)}</td>`;
+}
+
+function reszletHtml(u) {
+  const m = u.megjegyzesek || {}, r = u.reszletek || {};
+  const blokkok = [];
+  const p = u.ptg || {};
+  blokkok.push(`<div><div class="reszlet-cim">PTG (pénztár)</div><div class="reszlet-szoveg">összes ${elojeles(p.osszes)} · Fiscat ${elojeles(p.fiscat)} · Cash ${elojeles(p.cash)}</div></div>`);
+  for (const [k, n] of KAT) {
+    const tetelek = Array.isArray(r[k]) ? r[k] : [];
+    const szoveg = m[k] ? String(m[k]).split(' | ') : [];
+    if (!tetelek.length && !szoveg.length) continue;
+    const t = tetelek.map(x => `<li>${esc(x.termek)}: ${esc(sz(x.mennyiseg, Number.isInteger(x.mennyiseg) ? 0 : 1))}</li>`).join('');
+    const s = szoveg.map(x => `<li>${esc(x)}</li>`).join('');
+    blokkok.push(`<div><div class="reszlet-cim">${esc(n)}</div><ul class="reszlet-szoveg">${t}${s}</ul></div>`);
+  }
+  return `<div class="reszlet-grid">${blokkok.join('')}</div>`;
+}
+
+function tablazat(uzletek) {
+  const lathato = rendezett(uzletek.filter(u => String(u.nev).toLowerCase().includes(szuro.toLowerCase())));
+  const fej = OSZLOPOK.map(([k, n, num]) => {
+    const jel = rendez.kulcs === k ? (rendez.irany > 0 ? ' ▲' : ' ▼') : '';
+    const aria = rendez.kulcs === k ? (rendez.irany > 0 ? 'ascending' : 'descending') : 'none';
+    return `<th class="${num ? 'num' : ''}${rendez.kulcs === k ? ' sorted' : ''}" aria-sort="${aria}"><button data-rendez="${k}">${esc(n)}${jel}</button></th>`;
+  }).join('');
+  const sorok = lathato.map(u => {
+    const id = esc(u.nev), ny = nyitott.has(u.nev);
+    const sor = `<tr class="sor${ny ? ' nyitva' : ''}" tabindex="0" data-nev="${id}" aria-expanded="${ny}">${OSZLOPOK.map(([k]) => cella(u, k)).join('')}</tr>`;
+    return ny ? sor + `<tr class="reszlet"><td colspan="${OSZLOPOK.length}">${reszletHtml(u)}</td></tr>` : sor;
+  }).join('');
+  const ossz = `<tr class="osszesen"><td>Összesen</td><td class="num">–</td>${OSZLOPOK.slice(2).map(([k]) => {
+    if (k === 'selejt_pct') return '<td class="num">–</td>';
+    const v = osszeg(lathato, k);
+    return k === 'selejt_ft' ? `<td class="num">${sz(v)}</td>` : `<td class="num ${szinosztaly(v)}">${elojeles(v)}</td>`;
+  }).join('')}</tr>`;
+  return `
+    <div class="card">
+      <div class="card-title">Üzletek</div>
+      <div class="card-sub">Kattints egy üzletre a részletekért (megjegyzések, tételek, PTG). Az oszlopfejlécre kattintva rendez.</div>
+      <div class="toolbar">
+        <input class="search" id="kereso" type="search" placeholder="Üzlet keresése…" value="${esc(szuro)}" aria-label="Üzlet keresése">
+        <span class="muted">${lathato.length} / ${uzletek.length} üzlet</span>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr>${fej}</tr></thead>
+        <tbody>${sorok || `<tr><td colspan="${OSZLOPOK.length}" class="muted">Nincs találat.</td></tr>`}${lathato.length ? ossz : ''}</tbody>
+      </table></div>
+    </div>`;
+}
+
+/* ── rajzolás és események ──────────────────────────────────────────────── */
+function rajzol() {
+  const app = document.getElementById('app');
+  const u = DOC.uzletek || [];
+  document.getElementById('headerMeta').textContent =
+    `${honapCimke(DOC.honap)} · adat ${DOC.datum}-ig · ${allapotSzoveg(DOC.allapot)}`;
+  app.innerHTML = `
+    <div class="note note-info"><strong>Párhuzamos futás.</strong> A leltármodul automatikus heti számolása (csütörtök reggel, a szerdai napzárásig). A hivatalos számok az üzlet riportban vannak; ez az oldal az összevetéshez készült. A zárt (forgalom nélküli) üzlet nem szerepel.</div>
+    ${osszesito(u)}${tablazat(u)}`;
+  const k = document.getElementById('kereso');
+  k.addEventListener('input', e => {
+    szuro = e.target.value; rajzol();
+    const uj = document.getElementById('kereso'); uj.focus(); uj.setSelectionRange(szuro.length, szuro.length);
+  });
+}
+
+document.getElementById('app').addEventListener('click', e => {
+  const r = e.target.closest('[data-rendez]');
+  if (r) {
+    const kulcs = r.dataset.rendez;
+    rendez = rendez.kulcs === kulcs ? { kulcs, irany: -rendez.irany } : { kulcs, irany: 1 };
+    rajzol(); return;
+  }
+  const sor = e.target.closest('tr.sor');
+  if (sor) { valt(sor.dataset.nev); }
+});
+document.getElementById('app').addEventListener('keydown', e => {
+  const sor = e.target.closest && e.target.closest('tr.sor');
+  if (sor && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); valt(sor.dataset.nev, true); }
+});
+function valt(nev, fokusz = false) {
+  nyitott.has(nev) ? nyitott.delete(nev) : nyitott.add(nev);
+  rajzol();
+  if (fokusz) { const s = [...document.querySelectorAll('tr.sor')].find(x => x.dataset.nev === nev); if (s) s.focus(); }
+}
+
+async function betolt(honap) {
+  const app = document.getElementById('app');
+  app.innerHTML = '<div id="loading">Adatok betöltése…</div>';
+  try {
+    const r = await fetch(`${MAPPA}leltar-${honap}-HU.json?v=${Date.now()}`);
+    if (r.status === 404) {
+      DOC = null;
+      document.getElementById('headerMeta').textContent = honapCimke(honap);
+      app.innerHTML = `<div class="note note-info">Ehhez a hónaphoz (${esc(honapCimke(honap))}) még nincs leltármodul-adat. A heti futás csütörtök reggel tölti fel.</div>`;
+      return false;
+    }
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    DOC = await r.json();
+  } catch (e) {
+    app.innerHTML = `<div class="note note-warn">⚠ Az adatok betöltése nem sikerült (${esc(e.message)}). Frissíts rá az oldalra.</div>`;
+    return false;
+  }
+  nyitott = new Set();
+  rajzol();
+  return true;
+}
+
+async function indul() {
+  const sel = document.getElementById('honapSelect');
+  const lista = honapLista();
+  sel.innerHTML = lista.map(h => `<option value="${h}">${esc(honapCimke(h))}</option>`).join('');
+  sel.addEventListener('change', () => betolt(sel.value));
+  const kert = new URLSearchParams(location.search).get('honap');
+  if (kert && lista.includes(kert)) { sel.value = kert; await betolt(kert); return; }
+  // az első hónap, amelyhez van adat (hó elején még az előző hónap a friss)
+  for (const h of lista.slice(0, 2)) { sel.value = h; if (await betolt(h)) return; }
+  sel.value = lista[0]; await betolt(lista[0]);
+}
+
+indul();
+</script>
+</body>
+</html>
