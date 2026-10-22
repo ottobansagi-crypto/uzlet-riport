@@ -26,9 +26,9 @@
     },
     {
       "nev": "Erzsébet krt. 30.",
-      "leltar_pct": 96.93,
-      "osszes": -186326,
-      "gomboc": -181270,
+      "leltar_pct": 100.45,
+      "osszes": 27291,
+      "gomboc": 32347,
       "ital": 5090,
       "desseg": -5196,
       "doboz": -4950,
@@ -38,16 +38,19 @@
       "selejt_ft": 1105377,
       "selejt_pct": 14.9,
       "ptg": {
-        "osszes": -209466,
+        "osszes": 4151,
         "fiscat": null,
         "cash": null
+      },
+      "megjegyzesek": {
+        "gomboc": "PizzaMe Go rendelés pótolva az all-in forgalomhoz: 2026-10-21, #16540725, 38 768 Ft"
       }
     },
     {
       "nev": "Fashion",
-      "leltar_pct": 97.1,
-      "osszes": -260841,
-      "gomboc": -252411,
+      "leltar_pct": 100.08,
+      "osszes": 7498,
+      "gomboc": 15928,
       "ital": 200,
       "desseg": 0,
       "doboz": -3450,
@@ -57,16 +60,16 @@
       "selejt_ft": 1135757,
       "selejt_pct": 11.0,
       "ptg": {
-        "osszes": -254158,
+        "osszes": 14181,
         "fiscat": 25186,
-        "cash": -9757
+        "cash": -9756
       }
     },
     {
       "nev": "Bazilika",
-      "leltar_pct": 99.35,
-      "osszes": -64374,
-      "gomboc": -222110,
+      "leltar_pct": 101.98,
+      "osszes": 195572,
+      "gomboc": 37836,
       "ital": 100,
       "desseg": -1299,
       "doboz": 153650,
@@ -76,16 +79,16 @@
       "selejt_ft": 941361,
       "selejt_pct": 8.4,
       "ptg": {
-        "osszes": -247693,
+        "osszes": 12253,
         "fiscat": 7194,
-        "cash": 872
+        "cash": 5059
       }
     },
     {
       "nev": "Széll Kálmán",
-      "leltar_pct": 95.54,
-      "osszes": -422217,
-      "gomboc": -419207,
+      "leltar_pct": 99.79,
+      "osszes": -19525,
+      "gomboc": -16515,
       "ital": 4200,
       "desseg": 0,
       "doboz": -9200,
@@ -95,9 +98,9 @@
       "selejt_ft": 1056384,
       "selejt_pct": 9.7,
       "ptg": {
-        "osszes": -406183,
-        "fiscat": 2348,
-        "cash": 469
+        "osszes": -3491,
+        "fiscat": 8684,
+        "cash": 497
       },
       "megjegyzesek": {
         "gomboc": "PizzaMe Go rendelés pótolva az all-in forgalomhoz: 2026-10-15, #16514364, 2 598 Ft"
@@ -105,7 +108,7 @@
     },
     {
       "nev": "Corvin",
-      "leltar_pct": 100.02,
+      "leltar_pct": 100.36,
       "osszes": -5134,
       "gomboc": -17513,
       "ital": 17830,
@@ -144,8 +147,8 @@
     {
       "nev": "Dob",
       "leltar_pct": 99.83,
-      "osszes": -10729,
-      "gomboc": 34850,
+      "osszes": -10735,
+      "gomboc": 34844,
       "ital": -46250,
       "desseg": -1299,
       "doboz": -4000,
@@ -155,7 +158,7 @@
       "selejt_ft": 896857,
       "selejt_pct": 11.8,
       "ptg": {
-        "osszes": 7207,
+        "osszes": 7201,
         "fiscat": 4877,
         "cash": 2330
       }
@@ -238,9 +241,9 @@
     },
     {
       "nev": "Gomba Móricz",
-      "leltar_pct": 96.56,
-      "osszes": 127090,
-      "gomboc": 174281,
+      "leltar_pct": 100.3,
+      "osszes": 127392,
+      "gomboc": 174583,
       "ital": 20410,
       "desseg": 3897,
       "doboz": -14450,
@@ -250,9 +253,9 @@
       "selejt_ft": 1217622,
       "selejt_pct": 10.6,
       "ptg": {
-        "osszes": 5176,
+        "osszes": 5478,
         "fiscat": 0,
-        "cash": 5176
+        "cash": 5478
       }
     },
     {
@@ -276,7 +279,7 @@
     },
     {
       "nev": "Fővám tér",
-      "leltar_pct": 100.36,
+      "leltar_pct": 100.47,
       "osszes": 42540,
       "gomboc": 30664,
       "ital": 8400,
@@ -371,7 +374,7 @@
     },
     {
       "nev": "Bosnyák tér",
-      "leltar_pct": 98.43,
+      "leltar_pct": 98.45,
       "osszes": -10841,
       "gomboc": 15509,
       "ital": -19990,
@@ -428,9 +431,9 @@
     },
     {
       "nev": "Törökvész",
-      "leltar_pct": 93.83,
-      "osszes": 3741,
-      "gomboc": 60550,
+      "leltar_pct": 99.51,
+      "osszes": 3770,
+      "gomboc": 60579,
       "ital": -7660,
       "desseg": -24488,
       "doboz": -6200,
@@ -440,16 +443,16 @@
       "selejt_ft": 993159,
       "selejt_pct": 8.5,
       "ptg": {
-        "osszes": 8937,
+        "osszes": 8966,
         "fiscat": 1249,
-        "cash": 7688
+        "cash": 7717
       }
     },
     {
       "nev": "GO Buda",
-      "leltar_pct": 94.24,
-      "osszes": -47957,
-      "gomboc": -865,
+      "leltar_pct": 98.44,
+      "osszes": -47118,
+      "gomboc": -26,
       "ital": -19770,
       "desseg": 5196,
       "doboz": -10700,
@@ -459,9 +462,9 @@
       "selejt_ft": 887578,
       "selejt_pct": 10.3,
       "ptg": {
-        "osszes": 9282,
-        "fiscat": 3690,
-        "cash": 5592
+        "osszes": 10121,
+        "fiscat": 4530,
+        "cash": 5591
       }
     },
     {
@@ -485,9 +488,9 @@
     },
     {
       "nev": "D2 Baross",
-      "leltar_pct": 94.94,
-      "osszes": -125287,
-      "gomboc": 98515,
+      "leltar_pct": 97.69,
+      "osszes": -125279,
+      "gomboc": 98523,
       "ital": -124760,
       "desseg": 4588,
       "doboz": -12600,
@@ -497,9 +500,9 @@
       "selejt_ft": 212285,
       "selejt_pct": 2.3,
       "ptg": {
-        "osszes": 262,
+        "osszes": 270,
         "fiscat": 0,
-        "cash": 262
+        "cash": 270
       }
     },
     {
@@ -523,9 +526,9 @@
     },
     {
       "nev": "K1 Westend",
-      "leltar_pct": 98.88,
-      "osszes": -39321,
-      "gomboc": -30341,
+      "leltar_pct": 98.79,
+      "osszes": -42321,
+      "gomboc": -33341,
       "ital": -6330,
       "desseg": 0,
       "doboz": -2650,
@@ -535,9 +538,9 @@
       "selejt_ft": 797081,
       "selejt_pct": 18.0,
       "ptg": {
-        "osszes": 13172,
+        "osszes": 10172,
         "fiscat": 1449,
-        "cash": 11723
+        "cash": 8723
       }
     },
     {
