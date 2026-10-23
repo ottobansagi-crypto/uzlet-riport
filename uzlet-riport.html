@@ -1786,6 +1786,9 @@ function toggleSk() {
 
 // Szlovák módban a magyar hatókör-vezérlők értelmetlenek, ezért elrejtjük őket.
 function applySkChrome() {
+  // A kapcsoló felirata mindig azt mutatja, hová visz a kattintás.
+  const lbl = document.getElementById('skLabel');
+  if (lbl) lbl.textContent = skMode ? 'Hungary' : 'Slovakia';
   const mgr = document.getElementById('managerSelect');
   const fr = document.getElementById('franchiseToggle');
   if (mgr) mgr.style.display = skMode ? 'none' : '';
@@ -1850,7 +1853,7 @@ function renderSkView() {
   }).join('');
 
   el.innerHTML = `
-    <div class="sk-mode-banner">🇸🇰 Slovakia — ${esc(DATA.sk.store)} · all figures in EUR. Use the “Slovakia” switch in the header to return to the Hungarian report.</div>
+    <div class="sk-mode-banner">🇸🇰 Slovakia — ${esc(DATA.sk.store)} · all figures in EUR. Use the “Hungary” switch in the header to return to the Hungarian report.</div>
     ${pendingNote}
 
     <div class="metrics">
