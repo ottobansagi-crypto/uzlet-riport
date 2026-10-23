@@ -171,6 +171,8 @@ def main():
     ap.add_argument('--datum', help='meddig szólnak a számok, pl. "2026. október 14" (heti, honapvaltas)')
     ap.add_argument('--honap', help='az új hónap, pl. "2026. november" (honapvaltas)')
     ap.add_argument('--levonasok', help='tabulátoros nev/levon fájl (zaras)')
+    ap.add_argument('--kivesz', action='append', default=[], metavar='NEV',
+                    help='üzlet kivétele a folyó hónapból (pl. bezárt), Otto kérésére; többször is megadható')
     a = ap.parse_args()
     if a.mod in ('heti', 'honapvaltas') and not a.datum:
         leall('--datum kell.')
@@ -190,8 +192,8 @@ def main():
             leall(f"A(z) {data['meta']['honap']} nincs lezárva (még részeredmény) — előbb a hónapzárás kell.")
         if a.honap == data['meta']['honap']:
             leall('Az új hónap ugyanaz, mint a folyó.')
-    aktiv = aktiv_nevek(data, a.mod == 'honapvaltas')
-    hiba, _, _ = ellenoriz(parsed, data, aktiv)
+    aktiv = aktiv_nevek(data, a.mod == 'honapvaltas', a.kivesz)
+    hiba, _, _ = ellenoriz(parsed, data, aktiv, kivesz=a.kivesz)
     if hiba:
         leall('Előbb ezeket kell rendezni:\n  ' + '\n  '.join(hiba))
 
@@ -228,7 +230,9 @@ def main():
 
     if a.mod == 'honapvaltas':
         html = honap_tombok(html, kulcs, felirat, honap.split()[-1].lower())
-    html = trend_frissit(html, kulcs, {u['nev']: u['osszes'] for u in uj}, uj_oszlop=(a.mod == 'honapvaltas'))
+    trend_ertekek = {u['nev']: u['osszes'] for u in uj}
+    trend_ertekek.update({n: None for n in a.kivesz})          # a kivett üzlet hónapja üres (null) a trendben
+    html = trend_frissit(html, kulcs, trend_ertekek, uj_oszlop=(a.mod == 'honapvaltas'))
     i0 = html.index('const INLINE_DATA = {'); i1 = html.index('\n};', i0) + 3
     html = html[:i0] + 'const INLINE_DATA = ' + inline_szoveg(data) + ';' + html[i1:]
 

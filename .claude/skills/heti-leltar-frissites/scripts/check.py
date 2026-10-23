@@ -12,7 +12,7 @@ import sys
 sys.dont_write_bytecode = True   # ne keletkezzen __pycache__ a repóban
 import argparse, io, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from szabalyok import BEZART, KATEGORIAK, TURES, ft
+from szabalyok import BEZART, KATEGORIAK, TURES, ft, honap_kulcs, kovetkezo_kulcs
 
 KAT_NEVEK = [('gomboc', 'gombóc'), ('ital', 'ital'), ('desseg', 'édesség'), ('doboz', 'papíráru'),
              ('ajandek', 'ajándék'), ('snack', 'snack')]
@@ -24,17 +24,24 @@ def ures(b):
     return b.get('leltar_pct') is None and not any(b.get(k) for k in OSSZEVETETT)
 
 
-def aktiv_nevek(data, honapvaltas=False):
+def aktiv_nevek(data, honapvaltas=False, kivesz=()):
     """Az üzletek, amelyeket a beküldésben várunk. Egy bezárt üzlet addig marad benne, amíg a folyó
-    hónapban még szerepel (pl. szeptember zárásakor); hónapváltáskor az új hónapból kimarad."""
-    return [u['nev'] for u in data['uzletek'] if not (honapvaltas and u['nev'] in BEZART)]
+    hónapban még szerepel (pl. szeptember zárásakor); hónapváltáskor az új hónapból kimarad.
+    A kivesz-ben megadott üzletek (Otto kérésére) a folyó hónapból is kikerülnek."""
+    uj = kovetkezo_kulcs(honap_kulcs(data['meta']['honap'])) if honapvaltas else None
+    return [u['nev'] for u in data['uzletek']
+            if not (uj and u['nev'] in BEZART and BEZART[u['nev']] <= uj) and u['nev'] not in kivesz]
 
 
-def ellenoriz(parsed, data, aktiv=None, javitas=False):
+def ellenoriz(parsed, data, aktiv=None, javitas=False, kivesz=()):
     hiba, figy, info, valtozott = [], [], [], []
-    aktiv = aktiv_nevek(data) if aktiv is None else aktiv
+    aktiv = aktiv_nevek(data, kivesz=kivesz) if aktiv is None else aktiv
     akt = {u['nev']: u for u in data['uzletek'] if u['nev'] in aktiv}
-    bekuldott = [b for b in parsed['hu'] if not (b['nev'] in BEZART and b['nev'] not in akt)]
+    for n in kivesz:
+        if n not in {u['nev'] for u in data['uzletek']}:
+            hiba.append(f'{n}: nincs ilyen üzlet a folyó hónapban, nem lehet kivenni.')
+    bekuldott = [b for b in parsed['hu']
+                 if b['nev'] not in kivesz and not (b['nev'] in BEZART and b['nev'] not in akt)]
 
     for b in bekuldott:
         if b['nev'] in akt:
@@ -108,13 +115,15 @@ def main():
     mod = ap.add_mutually_exclusive_group()
     mod.add_argument('--honapvaltas', action='store_true', help='az új hónap első beküldése')
     mod.add_argument('--javitas', action='store_true', help='javított tábla ugyanarra a napra')
+    ap.add_argument('--kivesz', action='append', default=[], metavar='NEV',
+                    help='üzlet kivétele a folyó hónapból (pl. bezárt), Otto kérésére; többször is megadható')
     a = ap.parse_args()
     with io.open(a.parsed, encoding='utf-8') as f:
         parsed = json.load(f)
     with io.open(os.path.join(a.root, 'data.json'), encoding='utf-8') as f:
         data = json.load(f)
-    aktiv = aktiv_nevek(data, a.honapvaltas)
-    hiba, figy, info = ellenoriz(parsed, data, aktiv, javitas=a.javitas)
+    aktiv = aktiv_nevek(data, a.honapvaltas, a.kivesz)
+    hiba, figy, info = ellenoriz(parsed, data, aktiv, javitas=a.javitas, kivesz=a.kivesz)
     hu = [b for b in parsed['hu'] if b['nev'] in aktiv]
     print(f"Ellenőrizve: {len(hu)} üzlet, hálózati összeg {ft(sum(b.get('osszes') or 0 for b in hu))} Ft"
           f"{', SK is' if parsed.get('sk') else ''}.")

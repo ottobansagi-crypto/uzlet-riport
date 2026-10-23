@@ -23,6 +23,7 @@ Munka a `claude/business-report-review-4iqn3c` ágon, a repó gyökeréből. `K=
 | teljes havi adat | `zaras` (levonás nélkül) |
 | megjöttek a levonások | `zaras --levonasok lev.tsv` (a teljes havi adattal együtt) |
 
+   Ha Otto azt kéri, hogy egy (pl. bezárt) üzlet már a folyó hónapban se szerepeljen: `--kivesz "NÉV"` a check-nek és az apply-nak is; a jövőre nézve vedd fel a `szabalyok.py` BEZART listájába (attól a hónaptól, amikortól már nem kell).
    A levonás-fájl tabulátoros `nev<TAB>levon` sorokból áll, **kanonikus névvel**. A PM-kódokat a `pizzame-tudas` skill `tudas/szervezet.md` kódtáblájából oldd fel. Amit ott nem találsz, arra kérdezz rá: **soha ne tippelj**, mert a levonás munkavállalói adat.
    Hónapváltás előtt kell a zárás. Ha a teljes havi adat nem jött meg, kérdezd meg Ottót.
 6. Ellenőrizd böngészőben (Playwright, Chromium: `/opt/pw-browsers`), és küldj képet Ottónak.
@@ -44,6 +45,7 @@ Kevés szám: üzletenként 1–2 mondatban az eltérés oka (kategória, termé
 - A PTG „összes" nem egyezik a Fiscat + Cash összegével (Kazinczy, BP PARK, Károly krt, Dob, Király utca stb.), a K1 Westend „hsz: 0" mezője, és az SK `Cash register` harmadik, címke nélküli értéke.
 - A 100,00%-os százalék 100%-nak látszik, akkor is, ha kis hiány van mellette.
 - A check INFO sorai (nagy tételek, csupa nulla új név) csak említendők, nem kérdések.
+- PLÁZS, F1 Siófok, BP PARK: bezártak (a `szabalyok.py` BEZART listája), a beküldésben még szerepelnek, de kimaradnak — erre ne kérdezz.
 - Egy FIGYELEM-et, amit Otto ugyanerre a beküldésre már megerősített, nem kérdezel újra.
 
 ## Red flags — ha ezt gondolod, állj meg

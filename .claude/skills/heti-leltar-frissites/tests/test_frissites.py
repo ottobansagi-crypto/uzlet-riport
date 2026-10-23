@@ -127,6 +127,30 @@ class TestHonapvaltas(Alap):
         self.assertIn('nincs lezárva', r.stdout + r.stderr)
 
 
+class TestKivesz(Alap):
+    def test_bezart_uzlet_kivetele_a_folyo_honapbol(self):
+        # BP PARK október 4-én bezárt; Otto kérésére a folyó hónapból is kikerül.
+        self.allapot('b9df2f5')
+        p = self.parse('okt14_javitott.txt')
+        r = run('check.py', p, '--root', self.root, '--kivesz', 'BP PARK', check=False)
+        self.assertNotIn('BP PARK', r.stdout)
+        self.assertNotIn('HIBA', r.stdout)
+        run('apply.py', p, '--root', self.root, '--mod', 'heti', '--datum', '2026. október 14', '--kivesz', 'BP PARK')
+        data = json.loads(self.olvas('data.json'))
+        self.assertNotIn('BP PARK', [u['nev'] for u in data['uzletek']])
+        self.assertEqual(len(data['uzletek']), 31)
+        self.assertEqual(sum(u['osszes'] for u in data['uzletek']), -34883 + 28862)
+        self.assertIn('okt:null', trend_rows(self.olvas('uzlet-riport.html'))['BP PARK'])
+        self.assertEqual(norm(inline_data(self.olvas('uzlet-riport.html'))), norm(data))
+
+    def test_ismeretlen_uzlet_kivetele_hiba(self):
+        self.allapot('b9df2f5')
+        p = self.parse('okt14_javitott.txt')
+        r = run('apply.py', p, '--root', self.root, '--mod', 'heti', '--datum', '2026. október 14',
+                '--kivesz', 'Nincsilyen', check=False)
+        self.assertNotEqual(r.returncode, 0)
+
+
 class TestZaras(Alap):
     def test_szeptember_zarasa_levonasokkal(self):
         self.allapot('70a6c7a')                     # szeptember 24-i részeredmény
