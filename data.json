@@ -870,35 +870,6 @@
       }
     },
     {
-      "nev": "BP PARK",
-      "leltar_pct": 99.0,
-      "osszes": -28862,
-      "gomboc": -32992,
-      "ital": -2520,
-      "desseg": 0,
-      "doboz": 6650,
-      "snack": 0,
-      "ajandek": 0,
-      "selejt_pct": 5.7,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "45-ös gombóc",
-            "mennyiseg": 3
-          }
-        ]
-      },
-      "teruletvezeto": [
-        "Ullman Zsófia"
-      ],
-      "selejt_ft": 185309,
-      "ptg": {
-        "osszes": 0,
-        "fiscat": 0,
-        "cash": -2798
-      }
-    },
-    {
       "nev": "Szeged",
       "leltar_pct": 100.1,
       "osszes": 14243,
