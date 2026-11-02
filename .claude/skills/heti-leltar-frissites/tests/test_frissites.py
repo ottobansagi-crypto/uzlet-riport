@@ -164,12 +164,18 @@ class TestCheck(Alap):
     def test_okt14_nyers_hibai(self):
         self.allapot('b9df2f5')
         p = self.parse('okt14_nyers.txt')
+        # Az ismeretlen-név jelzéshez egy kitalált név kell: a Debrecen azóta ismert (NEM_RESZE).
+        with open(p, encoding='utf-8') as f:
+            d = json.load(f)
+        next(b for b in d['hu'] if b['nev'] == 'Debrecen')['nev'] = 'Teszt Újüzlet'
+        with open(p, 'w', encoding='utf-8') as f:
+            json.dump(d, f, ensure_ascii=False)
         r = run('check.py', p, '--root', self.root, check=False)
         out = r.stdout
         self.assertNotEqual(r.returncode, 0, out)
         self.assertRegex(out, r'Bazilika.*15 785.*18 153')          # összeg nem jön ki
         self.assertRegex(out, r'BP PARK.*változatlan')               # előző beküldésből maradt
-        self.assertRegex(out, r'Debrecen')                           # ismeretlen üzlet
+        self.assertRegex(out, r'Teszt Újüzlet: új név')              # ismeretlen üzlet
         self.assertNotRegex(out, r'PLÁZS|Siófok')                    # bezártak: csendben kimaradnak
 
     def test_okt14_javitott_nincs_hiba(self):
@@ -194,6 +200,20 @@ class TestCheck(Alap):
         self.assertIn('Változott 2 üzlet: Bazilika, BP PARK', out)
         self.assertNotIn('változatlan', out)
         self.assertNotIn('nem frissült a PTG', out)
+
+    def test_nem_resze_uzlet_adattal_is_kimarad(self):
+        # Debrecen: Otto szerint nem része a riportnak — adattal érkezve sem lehet HIBA.
+        self.allapot('b9df2f5')
+        p = self.parse('okt14_javitott.txt')
+        with open(p, encoding='utf-8') as f:
+            d = json.load(f)
+        deb = next(b for b in d['hu'] if b['nev'] == 'Debrecen')
+        deb.update({'leltar_pct': 0.0, 'osszes': -1480.0, 'ital': -1480.0, 'selejt_pct': 0.0})
+        with open(p, 'w', encoding='utf-8') as f:
+            json.dump(d, f, ensure_ascii=False)
+        out = run('check.py', p, '--root', self.root, check=False).stdout
+        self.assertNotIn('Debrecen', out)
+        self.assertNotIn('HIBA', out)
 
     def test_apply_nem_fut_hibas_osszeggel(self):
         self.allapot('b9df2f5')

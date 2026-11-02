@@ -46,6 +46,7 @@ Kevés szám: üzletenként 1–2 mondatban az eltérés oka (kategória, termé
 - A 100,00%-os százalék 100%-nak látszik, akkor is, ha kis hiány van mellette.
 - A check INFO sorai (nagy tételek, csupa nulla új név) csak említendők, nem kérdések.
 - PLÁZS, F1 Siófok, BP PARK: bezártak (a `szabalyok.py` BEZART listája), a beküldésben még szerepelnek, de kimaradnak — erre ne kérdezz.
+- Debrecen: Otto szerint nem része a riportnak (`NEM_RESZE`), adattal is kimarad — erre ne kérdezz.
 - Egy FIGYELEM-et, amit Otto ugyanerre a beküldésre már megerősített, nem kérdezel újra.
 
 ## Red flags — ha ezt gondolod, állj meg

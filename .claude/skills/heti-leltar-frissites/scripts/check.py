@@ -12,7 +12,7 @@ import sys
 sys.dont_write_bytecode = True   # ne keletkezzen __pycache__ a repóban
 import argparse, io, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from szabalyok import BEZART, KATEGORIAK, TURES, ft, honap_kulcs, kovetkezo_kulcs
+from szabalyok import BEZART, KATEGORIAK, NEM_RESZE, TURES, ft, honap_kulcs, kovetkezo_kulcs
 
 KAT_NEVEK = [('gomboc', 'gombóc'), ('ital', 'ital'), ('desseg', 'édesség'), ('doboz', 'papíráru'),
              ('ajandek', 'ajándék'), ('snack', 'snack')]
@@ -40,8 +40,8 @@ def ellenoriz(parsed, data, aktiv=None, javitas=False, kivesz=()):
     for n in kivesz:
         if n not in {u['nev'] for u in data['uzletek']}:
             hiba.append(f'{n}: nincs ilyen üzlet a folyó hónapban, nem lehet kivenni.')
-    bekuldott = [b for b in parsed['hu']
-                 if b['nev'] not in kivesz and not (b['nev'] in BEZART and b['nev'] not in akt)]
+    bekuldott = [b for b in parsed['hu'] if b['nev'] not in kivesz and b['nev'] not in NEM_RESZE
+                 and not (b['nev'] in BEZART and b['nev'] not in akt)]
 
     for b in bekuldott:
         if b['nev'] in akt:

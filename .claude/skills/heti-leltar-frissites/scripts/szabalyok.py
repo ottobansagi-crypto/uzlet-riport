@@ -17,6 +17,12 @@ NEVEK = {
 #            október közben kivettük (apply --kivesz), novembertől magától kimarad.
 BEZART = {'Erzsébet krt 14': '2026-08', 'PLÁZS': '2026-10', 'F1 Siófok': '2026-10', 'BP PARK': '2026-11'}
 
+# Üzletek, amelyek a beküldésben szerepelnek, de Otto szerint nem részei a riportnak (pl. még
+# nem nyitott meg). Adattal érkezve is csendben kimaradnak. Ha egyszer be kell venni, innen kell
+# törölni, és az új üzlet felvételéhez a szkriptet bővíteni (területvezető, franchise, TREND-sor).
+#   Debrecen: Otto, 2026. november — "nem kell".
+NEM_RESZE = {'Debrecen'}
+
 # A riport hat kategóriája; ezek összege = "Összes eltérés". A pasta NEM számít bele.
 KATEGORIAK = ['gomboc', 'ital', 'desseg', 'doboz', 'ajandek', 'snack']
 TURES = 1   # Ft, kerekítés
