@@ -38,8 +38,12 @@ Munka a `claude/business-report-review-4iqn3c` ágon, a repó gyökeréből. `K=
 4. **Élesítés:** „A munkaágon van, élesbe még nem ment. Mehet?"
 
 ## Szöveges értékelés (forrás: `pizzame-tudas` → `tudas/leltar-keszlet.md`)
-Az összkép tényeit (melyik kategória a fő hiány, hány üzlet van a küszöb felett) a `check.py` „Kategóriák (hálózat)” és „20 ezer feletti hiány” soraiból vedd, ne becsüld meg. Ha egy kategória a hálózatban többletben van, nem lehet „fő tétel”.
-Kevés szám: üzletenként 1–2 mondatban az eltérés oka (kategória, termék). Minősítés és javaslat nincs. A küszöb 20 000 Ft hiány. Négy blokk: összkép (2–3 mondat) → 50 ezer feletti hiány → 20–50 ezer → 20 ezer alatt egy sorban (a többlettel zártak külön), végül „Amit érdemes kiemelni". Területvezetőt nem kell írni.
+Előbb futtasd: `python3 $K/ertekeles.py` — ez kigyűjti a tényeket (a hónap helye az évben, a 20 ezer feletti hiányos üzletek száma havonta, a fő hiány-kategória, a javult / tartósan hiányos / előjelet váltó üzletek, a gombóc-méretek, a víz, a papíráru és a pasta mintái). A szöveg ezekből készül, nem becslésből. Ha egy kategória a hálózatban többletben van, nem lehet „fő tétel".
+A szöveg **informatív, kevés számmal**, üzletenkénti felsorolás nélkül (a számok a riportban vannak). Három rész:
+1. **Összkép** (2–3 mondat): a hónap az évhez és az előző hónaphoz képest, a 20 ezer feletti hiányos üzletek számának alakulása, a levonások iránya.
+2. **Ami a hónapot jellemzi** (3–5 pont): több üzletben ismétlődő minták, mindegyik félkövér állítás + 1–2 mondat, a példa-üzletek zárójelben.
+3. **Az üzletek trendje** (3 pont): javult / tartósan hiányos maradt / előjelet váltott.
+Minősítés („legrosszabb", „romlik", „krónikus") és javaslat nincs. Egyértelmű rögzítési vagy átvételi mintánál „valószínűleg" fordulat használható. Területvezetőt nem kell írni. Heti részeredménynél ugyanez a forma, rövidebben.
 
 ## Ismert, Otto által elfogadott tételek — ezekre NE kérdezz
 - A PTG „összes" nem egyezik a Fiscat + Cash összegével (Kazinczy, BP PARK, Károly krt, Dob, Király utca stb.), a K1 Westend „hsz: 0" mezője, és az SK `Cash register` harmadik, címke nélküli értéke.

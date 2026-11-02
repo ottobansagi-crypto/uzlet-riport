@@ -151,6 +151,24 @@ class TestKivesz(Alap):
         self.assertNotEqual(r.returncode, 0)
 
 
+class TestErtekeles(Alap):
+    def test_oktoberi_tenyek(self):
+        # Az októberi hónapzárás (Miskolc-javítás utáni) állapota: a szöveges értékelés tényei.
+        self.allapot('5554c6f')
+        out = run('ertekeles.py', '--root', self.root).stdout
+        self.assertIn('Az év legjobb hónapja eddig: október', out)
+        self.assertRegex(out, r'20 ezer feletti hiány.*augusztus 21.*szeptember 13.*október 9')
+        self.assertRegex(out, r'Javult.*Károly krt')
+        self.assertRegex(out, r'Tartósan hiányos maradt.*Oktogon')
+        for n in ('Gomba Móricz', 'Szeged', 'Fashion', 'Dob'):     # 5/9 előző hónap is többség
+            self.assertRegex(out, r'Tartósan hiányos maradt.*' + n)
+        self.assertRegex(out, r'Előjelet váltott.*Corvin')
+        self.assertRegex(out, r'45-ös gombóc hiány:.*Oktogon')
+        self.assertRegex(out, r'32-es gombóc többlet:.*D2 Baross')
+        self.assertRegex(out, r'víz.*Wesselényi utca')
+        self.assertIn('fő hiány: papíráru', out)
+
+
 class TestZaras(Alap):
     def test_szeptember_zarasa_levonasokkal(self):
         self.allapot('70a6c7a')                     # szeptember 24-i részeredmény
