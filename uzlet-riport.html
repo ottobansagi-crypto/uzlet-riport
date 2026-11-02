@@ -442,7 +442,8 @@ function populateMonthSelect() {
   const sel = document.getElementById('monthSelect');
   if (!sel) return;
   if (skMode) {                       // szlovák módban az SK hónapok, angolul
-    sel.innerHTML = skMonths().map(m =>
+    // A legfrissebb hónap van felül, visszafelé haladva (a magyar listával egyezően).
+    sel.innerHTML = skMonths().slice().reverse().map(m =>
       `<option value="${esc(m.key)}">${esc(m.label)}</option>`).join('');
     const cur = skCurrentMonth();
     if (cur) sel.value = cur.key;
@@ -450,7 +451,11 @@ function populateMonthSelect() {
   }
   const history = DATA.elozo_honapok || [];
   const opts = [`<option value="current">${esc(DATA.meta.honap)} (aktuális)</option>`];
-  history.forEach((snap, i) => opts.push(`<option value="${i}">${esc(snap.meta.honap)}</option>`));
+  // Az aktuális után a korábbi hónapok visszafelé (a legfrissebb felül). Az option értéke
+  // továbbra is az elozo_honapok indexe, így a választás ugyanazt a hónapot nyitja meg.
+  for (let i = history.length - 1; i >= 0; i--) {
+    opts.push(`<option value="${i}">${esc(history[i].meta.honap)}</option>`);
+  }
   sel.innerHTML = opts.join('');
   sel.value = selectedMonth;
 }
