@@ -1421,8 +1421,19 @@ function renderLevon() {
 // ── INLINE FALLBACK DATA ──────────────────────────────────────────────────────
 // Ha a fetch nem működik (pl. fájlból nyitják meg), ez az inline adat tölt be
 const INLINE_DATA = {
-  "meta": {"honap":"2026. október","frissitve":"2026. október teljes hónap (levonások még nem véglegesek)"},
-  "levonasok": [],
+  "meta": {"honap":"2026. október","frissitve":"2026. október teljes hónap"},
+  "levonasok": [
+    {"nev":"Erzsébet krt. 30.","levon":24000,"megjegyzes":""},
+    {"nev":"Fashion","levon":63000,"megjegyzes":""},
+    {"nev":"Corvin","levon":45000,"megjegyzes":""},
+    {"nev":"Dob","levon":25000,"megjegyzes":""},
+    {"nev":"Blaha","levon":30000,"megjegyzes":""},
+    {"nev":"Oktogon","levon":50000,"megjegyzes":""},
+    {"nev":"Gomba Móricz","levon":60000,"megjegyzes":""},
+    {"nev":"Ferenciek tere","levon":30000,"megjegyzes":""},
+    {"nev":"Bosnyák tér","levon":10000,"megjegyzes":""},
+    {"nev":"Szeged","levon":40000,"megjegyzes":""}
+  ],
   "uzletek": [
     {"nev":"Király utca","leltar_pct":100.02,"osszes":6645,"gomboc":38754,"ital":-2040,"desseg":-3289,"doboz":-14650,"snack":-12130,"ajandek":0,"selejt_pct":9.6,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":3}]},"megjegyzesek":{"doboz":"70 doboz, 30 papírzacskó","snack":"5db Sperlati, 1db Fini, 1db Amica"},"teruletvezeto":["Bratkovics Ádám"],"selejt_ft":2523285,"ptg":{"osszes":15078,"fiscat":22392,"cash":-1996}},
     {"nev":"Erzsébet krt. 30.","leltar_pct":99.7,"osszes":-24369,"gomboc":-16903,"ital":1730,"desseg":-5196,"doboz":-4000,"snack":0,"ajandek":0,"selejt_pct":13.9,"reszletek":{"gomboc":[{"termek":"45-ös gombóc","mennyiseg":1.5}]},"megjegyzesek":{"desseg":"4db Profiterol"},"teruletvezeto":["Ullman Zsófia"],"selejt_ft":1568666,"ptg":{"osszes":-29304,"fiscat":0,"cash":0}},

@@ -1,9 +1,60 @@
 {
   "meta": {
     "honap": "2026. október",
-    "frissitve": "2026. október teljes hónap (levonások még nem véglegesek)"
+    "frissitve": "2026. október teljes hónap"
   },
-  "levonasok": [],
+  "levonasok": [
+    {
+      "nev": "Erzsébet krt. 30.",
+      "levon": 24000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Fashion",
+      "levon": 63000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Corvin",
+      "levon": 45000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Dob",
+      "levon": 25000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Blaha",
+      "levon": 30000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Oktogon",
+      "levon": 50000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Gomba Móricz",
+      "levon": 60000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Ferenciek tere",
+      "levon": 30000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Bosnyák tér",
+      "levon": 10000,
+      "megjegyzes": ""
+    },
+    {
+      "nev": "Szeged",
+      "levon": 40000,
+      "megjegyzes": ""
+    }
+  ],
   "uzletek": [
     {
       "nev": "Király utca",
