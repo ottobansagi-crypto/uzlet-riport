@@ -8160,7 +8160,10 @@
       "bevet": 0.0,
       "fogyas": 330.0,
       "zaro": 1110.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_tk_gomboc_4",
@@ -8172,7 +8175,10 @@
       "bevet": 0.0,
       "fogyas": -90.0,
       "zaro": 480.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_32_gomboc_5",
@@ -8184,7 +8190,10 @@
       "bevet": 0.0,
       "fogyas": -924.0,
       "zaro": 1992.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_32_tk_gomboc_6",
@@ -8196,7 +8205,10 @@
       "bevet": 0.0,
       "fogyas": 16.0,
       "zaro": 120.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_22_gomboc_7",
@@ -8208,7 +8220,10 @@
       "bevet": 0.0,
       "fogyas": 168.0,
       "zaro": 72.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_szosz_8",
@@ -8220,7 +8235,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "paradicsomszosz_pelatti_9",
@@ -8232,7 +8250,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_fuszerkeverek_10",
@@ -8244,7 +8265,10 @@
       "bevet": 0.0,
       "fogyas": -1037.43,
       "zaro": 1550.0,
-      "elteres": 13.57
+      "elteres": 13.57,
+      "selejt": 1,
+      "selejt_ft": 812.15,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "p_mozzarela_11",
@@ -8256,7 +8280,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "reszelt_mozzarela_12",
@@ -8268,7 +8295,10 @@
       "bevet": 6240000.0,
       "fogyas": 7952500.0,
       "zaro": 1472500.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": 25000,
+      "selejt_ft": 50961.57,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "bivaly_mozzarella_13",
@@ -8280,7 +8310,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_edami_14",
@@ -8292,7 +8325,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_vodkaszosz_15",
@@ -8304,7 +8340,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_szupercsipos_pepperoni_16",
@@ -8316,7 +8355,10 @@
       "bevet": 0.0,
       "fogyas": -1920.0,
       "zaro": 12480.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "csirkemell_sonka_17",
@@ -8328,7 +8370,10 @@
       "bevet": 1800.0,
       "fogyas": 0.0,
       "zaro": 900.0,
-      "elteres": -900.0
+      "elteres": -900.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gorgonzola_18",
@@ -8340,7 +8385,10 @@
       "bevet": 490225.0,
       "fogyas": 447736.0,
       "zaro": 220500.0,
-      "elteres": 511.0
+      "elteres": 511.0,
+      "selejt": 21000,
+      "selejt_ft": 76230.0,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "sztracsatella_19",
@@ -8352,7 +8400,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "parmezansajt_20",
@@ -8364,7 +8415,10 @@
       "bevet": 200000.0,
       "fogyas": 205217.39,
       "zaro": 157000.0,
-      "elteres": -782.61
+      "elteres": -782.61,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ricotta_21",
@@ -8376,7 +8430,10 @@
       "bevet": 400500.0,
       "fogyas": 508000.0,
       "zaro": 230500.0,
-      "elteres": -1500.0
+      "elteres": -1500.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "sperlari_erdei_gyumolcs_gumicukor_22",
@@ -8388,7 +8445,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "sperlari_narancsos_gumicukor_23",
@@ -8400,7 +8460,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szupercsipos_pepperoni_24",
@@ -8412,7 +8475,10 @@
       "bevet": 153.96,
       "fogyas": 143.46,
       "zaro": 130.0,
-      "elteres": 0.5
+      "elteres": 0.5,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fini_tukortojas_gumicukor_25",
@@ -8424,7 +8490,10 @@
       "bevet": 0.0,
       "fogyas": 19.0,
       "zaro": 0.0,
-      "elteres": 19.0
+      "elteres": 19.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "amica_pizzas_snack_125g_26",
@@ -8436,7 +8505,10 @@
       "bevet": 0.0,
       "fogyas": 119.0,
       "zaro": 28.0,
-      "elteres": -2.0
+      "elteres": -2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tre_marie_sztracsatellas_napolyi_140g_27",
@@ -8448,7 +8520,10 @@
       "bevet": 0.0,
       "fogyas": 85.0,
       "zaro": 47.0,
-      "elteres": -24.0
+      "elteres": -24.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ventricina_szalami_28",
@@ -8460,7 +8535,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_pepperoni_szalami_29",
@@ -8472,7 +8550,10 @@
       "bevet": 0.0,
       "fogyas": -6000.0,
       "zaro": 30500.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": 500,
+      "selejt_ft": 2101.05,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "p_spiaria_szalami_30",
@@ -8484,7 +8565,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szaritott_paradicsom_31",
@@ -8496,7 +8580,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 58.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pacolt_paprika_32",
@@ -8508,7 +8595,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_porchetta_romana_33",
@@ -8520,7 +8610,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_sonka_cotto_34",
@@ -8532,7 +8625,10 @@
       "bevet": 0.0,
       "fogyas": 8000.0,
       "zaro": 74000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": 2000,
+      "selejt_ft": 4641.76,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "p_speck_35",
@@ -8544,7 +8640,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_spinata_calabra_36",
@@ -8556,7 +8655,10 @@
       "bevet": 0.0,
       "fogyas": 8000.0,
       "zaro": 35000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_guanciale_37",
@@ -8568,7 +8670,10 @@
       "bevet": 0.0,
       "fogyas": 23280.0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_szalami_napolitana_38",
@@ -8580,7 +8685,10 @@
       "bevet": 1008000.0,
       "fogyas": 585500.0,
       "zaro": 557000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_bolognai_ragu_39",
@@ -8592,7 +8700,10 @@
       "bevet": 0.0,
       "fogyas": 84800.0,
       "zaro": 99200.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "hatso_csulok_40",
@@ -8604,7 +8715,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 8918.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "salsicca_41",
@@ -8616,7 +8730,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 216000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "bacon_42",
@@ -8628,7 +8745,10 @@
       "bevet": 120000.0,
       "fogyas": 154000.0,
       "zaro": 45000.0,
-      "elteres": -2000.0
+      "elteres": -2000.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gyulai_kolbasz_43",
@@ -8640,7 +8760,10 @@
       "bevet": 80000.0,
       "fogyas": 87000.0,
       "zaro": 54000.0,
-      "elteres": -2000.0
+      "elteres": -2000.0,
+      "selejt": 1000,
+      "selejt_ft": 2860.0,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "p_chilisolaj_44",
@@ -8652,7 +8775,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 5.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_fokhagymaolaj_45",
@@ -8664,7 +8790,10 @@
       "bevet": 0.0,
       "fogyas": 9.0,
       "zaro": 7.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "blue_gorgonzola_46",
@@ -8676,7 +8805,10 @@
       "bevet": 0.0,
       "fogyas": 8000.0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_olivabogyokrem_47",
@@ -8688,7 +8820,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_bazsalikomos_olaj_48",
@@ -8700,7 +8835,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_fuszeres_paprika_49",
@@ -8712,7 +8850,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_lilahagyma_50",
@@ -8724,7 +8865,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_cukkini_51",
@@ -8736,7 +8880,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "panna_52",
@@ -8748,7 +8895,10 @@
       "bevet": 360.0,
       "fogyas": 309.0,
       "zaro": 465.0,
-      "elteres": -5.0
+      "elteres": -5.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "zsemlemorzsa_53",
@@ -8760,7 +8910,10 @@
       "bevet": 4500.0,
       "fogyas": 4041.3,
       "zaro": 0.0,
-      "elteres": -458.7
+      "elteres": -458.7,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_zoldseg_mix_54",
@@ -8772,7 +8925,10 @@
       "bevet": 0.0,
       "fogyas": 27600.0,
       "zaro": 43200.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_olivabogyo_55",
@@ -8784,7 +8940,10 @@
       "bevet": 0.0,
       "fogyas": -10560.0,
       "zaro": 21440.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "petrezselyem_56",
@@ -8796,7 +8955,10 @@
       "bevet": 3000.0,
       "fogyas": 1142.86,
       "zaro": 1800.0,
-      "elteres": -57.14
+      "elteres": -57.14,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_tonhal_57",
@@ -8808,7 +8970,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_szeletelt_koktel_paradicsom_58",
@@ -8820,7 +8985,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kis_tonhalkonzerv_59",
@@ -8832,7 +9000,10 @@
       "bevet": 0.0,
       "fogyas": 588.0,
       "zaro": 156.0,
-      "elteres": -24.0
+      "elteres": -24.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szeletelt_sonka_500g_60",
@@ -8844,7 +9015,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "csabai_kolbasz_61",
@@ -8856,7 +9030,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fusili_62",
@@ -8868,7 +9045,10 @@
       "bevet": 259280.0,
       "fogyas": 268280.0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": 56040,
+      "selejt_ft": 97394.21,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "penne_63",
@@ -8880,7 +9060,10 @@
       "bevet": 189420.0,
       "fogyas": 204420.0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": 4310,
+      "selejt_ft": 7490.53,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "spagetti_64",
@@ -8892,7 +9075,10 @@
       "bevet": 258000.0,
       "fogyas": 266000.0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": 10000,
+      "selejt_ft": 17379.41,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "retesliszt_65",
@@ -8904,7 +9090,10 @@
       "bevet": 0.0,
       "fogyas": 340000.0,
       "zaro": 770000.0,
-      "elteres": -10000.0
+      "elteres": -10000.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_sutotokkrem_66",
@@ -8916,7 +9105,10 @@
       "bevet": 0.0,
       "fogyas": -14000.0,
       "zaro": 14000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cappy_eper_67",
@@ -8928,7 +9120,10 @@
       "bevet": 0.0,
       "fogyas": 12.0,
       "zaro": 0.0,
-      "elteres": 12.0
+      "elteres": 12.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "articsoka_68",
@@ -8940,7 +9135,10 @@
       "bevet": 24700.0,
       "fogyas": 40400.0,
       "zaro": 0.0,
-      "elteres": 15700.0
+      "elteres": 15700.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "durva_tengeri_so_69",
@@ -8952,7 +9150,10 @@
       "bevet": 0.0,
       "fogyas": 94000.0,
       "zaro": 109000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pm_tartufata_140g_70",
@@ -8964,7 +9165,10 @@
       "bevet": 0.0,
       "fogyas": 123.0,
       "zaro": 1117.0,
-      "elteres": -9.0
+      "elteres": -9.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tartufata_szosz_1_85_kg_71",
@@ -8976,7 +9180,10 @@
       "bevet": 0.0,
       "fogyas": 241.0,
       "zaro": 1755.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "bolognai_daralt_hus_72",
@@ -8988,7 +9195,10 @@
       "bevet": 120000.0,
       "fogyas": 110694.0,
       "zaro": 0.0,
-      "elteres": -9306.0
+      "elteres": -9306.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "funghi_mix_zacsko_1_7_kg_73",
@@ -9000,7 +9210,10 @@
       "bevet": 0.0,
       "fogyas": 674.0,
       "zaro": 4552.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "acel_szalvetatarto_74",
@@ -9012,7 +9225,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 21.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tartufata_szosz_0_8_kg_75",
@@ -9024,7 +9240,10 @@
       "bevet": 0.0,
       "fogyas": 82.0,
       "zaro": 102.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "sutotokkrem_crema_di_zucca_76",
@@ -9036,7 +9255,10 @@
       "bevet": 42.0,
       "fogyas": 70.84,
       "zaro": 0.0,
-      "elteres": -6.16
+      "elteres": -6.16,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "palast_csoki_mousse_77",
@@ -9048,7 +9270,10 @@
       "bevet": 0.0,
       "fogyas": 400.0,
       "zaro": 5600.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "spenot_78",
@@ -9060,7 +9285,10 @@
       "bevet": 324.0,
       "fogyas": 383.0,
       "zaro": 115.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "coca_cola_0_5l_79",
@@ -9072,7 +9300,10 @@
       "bevet": 2256.0,
       "fogyas": 2004.0,
       "zaro": 48.0,
-      "elteres": -252.0
+      "elteres": -252.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "coca_cola_zero_0_5l_80",
@@ -9084,7 +9315,10 @@
       "bevet": 1992.0,
       "fogyas": 1680.0,
       "zaro": 48.0,
-      "elteres": -300.0
+      "elteres": -300.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "malna_limonade_81",
@@ -9096,7 +9330,10 @@
       "bevet": 0.0,
       "fogyas": 1032.0,
       "zaro": 3336.0,
-      "elteres": -44.0
+      "elteres": -44.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fuszeres_paradicsom_suritmeny_82",
@@ -9108,7 +9345,10 @@
       "bevet": 0.0,
       "fogyas": 188266.2,
       "zaro": 1065000.0,
-      "elteres": -14233.8
+      "elteres": -14233.8,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "karamelizalt_hagyma_83",
@@ -9120,7 +9360,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "aglio_polvere_fokhagymapor_84",
@@ -9132,7 +9375,10 @@
       "bevet": 0.0,
       "fogyas": 10.0,
       "zaro": 37.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "mini_habcsok_85",
@@ -9144,7 +9390,10 @@
       "bevet": 1800.0,
       "fogyas": 960.0,
       "zaro": 1360.0,
-      "elteres": -40.0
+      "elteres": -40.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "nutella_86",
@@ -9156,7 +9405,10 @@
       "bevet": 24000.0,
       "fogyas": 47000.0,
       "zaro": 59000.0,
-      "elteres": -2000.0
+      "elteres": -2000.0,
+      "selejt": 1000,
+      "selejt_ft": 3490.3,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "olivabogyo_87",
@@ -9168,7 +9420,10 @@
       "bevet": 132.0,
       "fogyas": 28.79,
       "zaro": 147.0,
-      "elteres": -0.21
+      "elteres": -0.21,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "oregano_88",
@@ -9180,7 +9435,10 @@
       "bevet": 1500.0,
       "fogyas": 4000.0,
       "zaro": 15500.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "voroshagyma_89",
@@ -9192,7 +9450,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tonhal_90",
@@ -9204,7 +9465,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "suma_bac_d10_szorofejes_adagolo_flakon_91",
@@ -9216,7 +9480,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 17.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "konzerves_suritett_paradicsom_92",
@@ -9228,7 +9495,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 9100.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fem_liszt_szita_93",
@@ -9240,7 +9510,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 14.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "arrabiata_szosz_gyartott_94",
@@ -9252,7 +9525,10 @@
       "bevet": 0.0,
       "fogyas": -39800.0,
       "zaro": 126400.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pesto_szosz_gyartott_95",
@@ -9264,7 +9540,10 @@
       "bevet": 0.0,
       "fogyas": -14800.0,
       "zaro": 47400.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szeletelt_mandula_96",
@@ -9276,7 +9555,10 @@
       "bevet": 4000.0,
       "fogyas": 3108.7,
       "zaro": 0.0,
-      "elteres": -1891.3
+      "elteres": -1891.3,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "rucola_97",
@@ -9288,7 +9570,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cappy_alma_98",
@@ -9300,7 +9585,10 @@
       "bevet": 230.0,
       "fogyas": 146.0,
       "zaro": 24.0,
-      "elteres": -84.0
+      "elteres": -84.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cappy_narancs_99",
@@ -9312,7 +9600,10 @@
       "bevet": 205.0,
       "fogyas": 229.0,
       "zaro": 60.0,
-      "elteres": 24.0
+      "elteres": 24.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "red_bull_zero_100",
@@ -9324,7 +9615,10 @@
       "bevet": 0.0,
       "fogyas": 198.0,
       "zaro": 336.0,
-      "elteres": -18.0
+      "elteres": -18.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "galvanina_bellini_101",
@@ -9336,7 +9630,10 @@
       "bevet": 0.0,
       "fogyas": 24.0,
       "zaro": 312.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "galvanina_spritz_102",
@@ -9348,7 +9645,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 336.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pilsner_urquell_103",
@@ -9360,7 +9660,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "liszt_piros_105",
@@ -9372,7 +9675,10 @@
       "bevet": 0.0,
       "fogyas": 11513.16,
       "zaro": 4875.0,
-      "elteres": -11.84
+      "elteres": -11.84,
+      "selejt": 25,
+      "selejt_ft": 8731.5,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "tk_liszt_106",
@@ -9384,7 +9690,10 @@
       "bevet": 7820.0,
       "fogyas": 2868.55,
       "zaro": 6580.0,
-      "elteres": -1.45
+      "elteres": -1.45,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "lievito_birra_107",
@@ -9396,7 +9705,10 @@
       "bevet": 30.0,
       "fogyas": 47.0,
       "zaro": 12.0,
-      "elteres": -11.0
+      "elteres": -11.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "paccheri_108",
@@ -9408,7 +9720,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gnocchi_109",
@@ -9420,7 +9735,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pelatti_110",
@@ -9432,7 +9750,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "paradicsom_suritmeny_111",
@@ -9444,7 +9765,10 @@
       "bevet": 0.0,
       "fogyas": 849.57,
       "zaro": 1196.0,
-      "elteres": -0.43
+      "elteres": -0.43,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "olivaolaj_112",
@@ -9456,7 +9780,10 @@
       "bevet": 0.0,
       "fogyas": 993.17,
       "zaro": 3191.0,
-      "elteres": -2.83
+      "elteres": -2.83,
+      "selejt": 10,
+      "selejt_ft": 21559.27,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "etolaj_113",
@@ -9468,7 +9795,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 18.0,
-      "elteres": -14.0
+      "elteres": -14.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szeletelt_koktelaparadicsom_114",
@@ -9480,7 +9810,10 @@
       "bevet": 0.0,
       "fogyas": 128.64,
       "zaro": 306.0,
-      "elteres": 2.64
+      "elteres": 2.64,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cukor_115",
@@ -9492,7 +9825,10 @@
       "bevet": 0.0,
       "fogyas": 67.2,
       "zaro": 56.0,
-      "elteres": -11.8
+      "elteres": -11.8,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "frutta_max_szorp_limo_szirup_116",
@@ -9504,7 +9840,10 @@
       "bevet": 0.0,
       "fogyas": 20.04,
       "zaro": 36.0,
-      "elteres": -15.96
+      "elteres": -15.96,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "bodza_limonade_117",
@@ -9516,7 +9855,10 @@
       "bevet": 0.0,
       "fogyas": 912.0,
       "zaro": 3696.0,
-      "elteres": -44.0
+      "elteres": -44.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fuzetea_eper_118",
@@ -9528,7 +9870,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizzame_pizzavago_119",
@@ -9540,7 +9885,10 @@
       "bevet": 0.0,
       "fogyas": 5.0,
       "zaro": 2380.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ria_kormatrica_5cm_120",
@@ -9552,7 +9900,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "edami_121",
@@ -9564,7 +9915,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 117000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tartufone_csokolade_150g_122",
@@ -9576,7 +9930,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tre_marie_mogyoros_napolyi_175g_123",
@@ -9588,7 +9945,10 @@
       "bevet": 0.0,
       "fogyas": 74.0,
       "zaro": 80.0,
-      "elteres": -12.0
+      "elteres": -12.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "feta_124",
@@ -9600,7 +9960,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizzame_chili_olaj_125",
@@ -9612,7 +9975,10 @@
       "bevet": 0.0,
       "fogyas": 3.0,
       "zaro": 26.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizzame_fokhagyma_olaj_126",
@@ -9624,7 +9990,10 @@
       "bevet": 0.0,
       "fogyas": -20.0,
       "zaro": 54.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "speck_127",
@@ -9636,7 +10005,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "sonka_cotto_128",
@@ -9648,7 +10020,10 @@
       "bevet": 1008.29,
       "fogyas": 1501.1,
       "zaro": 846.0,
-      "elteres": 2.81
+      "elteres": 2.81,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "spinata_calabra_129",
@@ -9660,7 +10035,10 @@
       "bevet": 429.06,
       "fogyas": 501.08,
       "zaro": 1255.0,
-      "elteres": 0.02
+      "elteres": 0.02,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "csokis_keksz_200g_131",
@@ -9672,7 +10050,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "spiaria_szalami_132",
@@ -9684,7 +10065,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "funghi_porcini_0_85_kg_133",
@@ -9696,7 +10080,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 154.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "guanciale_134",
@@ -9708,7 +10095,10 @@
       "bevet": 0.0,
       "fogyas": 125.85,
       "zaro": 0.0,
-      "elteres": -0.15
+      "elteres": -0.15,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szoszos_talka_xxl_egybefedeles_135",
@@ -9720,7 +10110,10 @@
       "bevet": 0.0,
       "fogyas": 550.0,
       "zaro": 0.0,
-      "elteres": 50.0
+      "elteres": 50.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pepperoni_szalami_136",
@@ -9732,7 +10125,10 @@
       "bevet": 408.2,
       "fogyas": 339.33,
       "zaro": 312.0,
-      "elteres": 1.13
+      "elteres": 1.13,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "dulciar_etcsokolade_80g_137",
@@ -9744,7 +10140,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "profiterol_138",
@@ -9756,7 +10155,10 @@
       "bevet": 5040.0,
       "fogyas": 642.0,
       "zaro": 4380.0,
-      "elteres": -18.0
+      "elteres": -18.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tiramisu_139",
@@ -9768,7 +10170,10 @@
       "bevet": 0.0,
       "fogyas": 1693.0,
       "zaro": 144.0,
-      "elteres": -39.0
+      "elteres": -39.0,
+      "selejt": 8,
+      "selejt_ft": 1935.93,
+      "tipus": "Édesség"
      },
      {
       "kod": "tengeri_so_140",
@@ -9780,7 +10185,10 @@
       "bevet": 980000.0,
       "fogyas": 566847.62,
       "zaro": 1400000.0,
-      "elteres": 16847.62
+      "elteres": 16847.62,
+      "selejt": 4000,
+      "selejt_ft": 439.99,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "pepperoncino_egesz_141",
@@ -9792,7 +10200,10 @@
       "bevet": 6.0,
       "fogyas": 73.95,
       "zaro": 0.0,
-      "elteres": 0.95
+      "elteres": 0.95,
+      "selejt": 62,
+      "selejt_ft": 106933.96,
+      "tipus": "Alapanyag"
      },
      {
       "kod": "pepperoncino_contuso_orolt_142",
@@ -9804,7 +10215,10 @@
       "bevet": 0.0,
       "fogyas": 1000.0,
       "zaro": 23000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "feketebors_orolt_143",
@@ -9816,7 +10230,10 @@
       "bevet": 0.0,
       "fogyas": 15.0,
       "zaro": 31.0,
-      "elteres": -7.0
+      "elteres": -7.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ice_coffee_cappuccino_144",
@@ -9828,7 +10245,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ice_coffee_slim_vanilia_145",
@@ -9840,7 +10260,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "padlizsan_146",
@@ -9852,7 +10275,10 @@
       "bevet": 0.0,
       "fogyas": 17.61,
       "zaro": 385.0,
-      "elteres": 2.61
+      "elteres": 2.61,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "bazsalikom_147",
@@ -9864,7 +10290,10 @@
       "bevet": 105.0,
       "fogyas": 114.86,
       "zaro": 0.0,
-      "elteres": 9.86
+      "elteres": 9.86,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "lilahagyma_148",
@@ -9876,7 +10305,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fokhagyma_149",
@@ -9888,7 +10320,10 @@
       "bevet": 20.0,
       "fogyas": 10.52,
       "zaro": 13.0,
-      "elteres": -0.48
+      "elteres": -0.48,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gnocchi_talka_150",
@@ -9900,7 +10335,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fenyomag_151",
@@ -9912,7 +10350,10 @@
       "bevet": 0.0,
       "fogyas": 1243.48,
       "zaro": 2000.0,
-      "elteres": 43.48
+      "elteres": 43.48,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "sarga_fagyasztott_paprika_152",
@@ -9924,7 +10365,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "papir_talca_nyomatlan_153",
@@ -9936,7 +10380,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 9750.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cukkini_154",
@@ -9948,7 +10395,10 @@
       "bevet": 0.0,
       "fogyas": 44.03,
       "zaro": 110.0,
-      "elteres": 0.03
+      "elteres": 0.03,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kalifornia_paprika_155",
@@ -9960,7 +10410,10 @@
       "bevet": 0.0,
       "fogyas": 26416.42,
       "zaro": 554000.0,
-      "elteres": 1416.42
+      "elteres": 1416.42,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "zsirpapir_156",
@@ -9972,7 +10425,10 @@
       "bevet": 0.0,
       "fogyas": 8.0,
       "zaro": 109.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "sprite_0_33_157",
@@ -9984,7 +10440,10 @@
       "bevet": 0.0,
       "fogyas": 696.0,
       "zaro": 3648.0,
-      "elteres": -3.0
+      "elteres": -3.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "san_benedetto_mentes_viz_158",
@@ -9996,7 +10455,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cappy_ice_fruit_multivitamin_0_5l_159",
@@ -10008,7 +10470,10 @@
       "bevet": 504.0,
       "fogyas": 276.0,
       "zaro": 57.0,
-      "elteres": -231.0
+      "elteres": -231.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "naturaqua_mentes_1_5l_160",
@@ -10020,7 +10485,10 @@
       "bevet": 0.0,
       "fogyas": 1869.53,
       "zaro": 495.0,
-      "elteres": 2364.53
+      "elteres": 2364.53,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "naturaqua_savas_1_5l_161",
@@ -10032,7 +10500,10 @@
       "bevet": 132.0,
       "fogyas": 42.0,
       "zaro": 0.0,
-      "elteres": -90.0
+      "elteres": -90.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "naturaqua_mentes_0_5l_162",
@@ -10044,7 +10515,10 @@
       "bevet": 3504.0,
       "fogyas": 2736.0,
       "zaro": 72.0,
-      "elteres": -792.0
+      "elteres": -792.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "naturaqua_savas_0_5l_163",
@@ -10056,7 +10530,10 @@
       "bevet": 564.0,
       "fogyas": 492.0,
       "zaro": 48.0,
-      "elteres": -60.0
+      "elteres": -60.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "coca_cola_164",
@@ -10068,7 +10545,10 @@
       "bevet": 1440.0,
       "fogyas": 1128.0,
       "zaro": 0.0,
-      "elteres": -408.0
+      "elteres": -408.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "coca_zero_165",
@@ -10080,7 +10560,10 @@
       "bevet": 840.0,
       "fogyas": 744.0,
       "zaro": 48.0,
-      "elteres": -120.0
+      "elteres": -120.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "limonade_166",
@@ -10092,7 +10575,10 @@
       "bevet": 0.0,
       "fogyas": 647.0,
       "zaro": 24.0,
-      "elteres": 537.0
+      "elteres": 537.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "sp_citrom_167",
@@ -10104,7 +10590,10 @@
       "bevet": 2160.0,
       "fogyas": 504.0,
       "zaro": 2040.0,
-      "elteres": -8.0
+      "elteres": -8.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "sp_narancs_168",
@@ -10116,7 +10605,10 @@
       "bevet": 0.0,
       "fogyas": 576.0,
       "zaro": 1224.0,
-      "elteres": -12.0
+      "elteres": -12.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kinley_pink_aromatic_berry_0_5l_169",
@@ -10128,7 +10620,10 @@
       "bevet": 120.0,
       "fogyas": 102.0,
       "zaro": 12.0,
-      "elteres": -18.0
+      "elteres": -18.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kinley_gyomber_0_5_170",
@@ -10140,7 +10635,10 @@
       "bevet": 180.0,
       "fogyas": 120.0,
       "zaro": 48.0,
-      "elteres": -60.0
+      "elteres": -60.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "coca_cola_1_liter_171",
@@ -10152,7 +10650,10 @@
       "bevet": 132.0,
       "fogyas": 144.0,
       "zaro": 156.0,
-      "elteres": 156.0
+      "elteres": 156.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "coca_cola_zero_1_liter_172",
@@ -10164,7 +10665,10 @@
       "bevet": 48.0,
       "fogyas": -48.0,
       "zaro": 6.0,
-      "elteres": -240.0
+      "elteres": -240.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "limonade_alap_173",
@@ -10176,7 +10680,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "citromle_174",
@@ -10188,7 +10695,10 @@
       "bevet": 66.0,
       "fogyas": 20.43,
       "zaro": 77.0,
-      "elteres": 4.43
+      "elteres": 4.43,
+      "selejt": 2,
+      "selejt_ft": 1977.8,
+      "tipus": "Italok"
      },
      {
       "kod": "fuzetea_barack_0_5l_175",
@@ -10200,7 +10710,10 @@
       "bevet": 804.0,
       "fogyas": 504.0,
       "zaro": 60.0,
-      "elteres": -276.0
+      "elteres": -276.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fuzetea_citrom_0_5l_176",
@@ -10212,7 +10725,10 @@
       "bevet": 600.0,
       "fogyas": 504.0,
       "zaro": 60.0,
-      "elteres": -60.0
+      "elteres": -60.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "red_bull_barack_eper_177",
@@ -10224,7 +10740,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "red_bull_kokusz_afonya_178",
@@ -10236,7 +10755,10 @@
       "bevet": 0.0,
       "fogyas": 432.0,
       "zaro": 0.0,
-      "elteres": -26.0
+      "elteres": -26.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "coca_cola_koffeinmentes_zero_0_33l_179",
@@ -10248,7 +10770,10 @@
       "bevet": 192.0,
       "fogyas": 120.0,
       "zaro": 72.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "red_bull_180",
@@ -10260,7 +10785,10 @@
       "bevet": 1056.0,
       "fogyas": 624.0,
       "zaro": 1008.0,
-      "elteres": -26.0
+      "elteres": -26.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "red_bull_summer_edition_sudachi_lime_181",
@@ -10272,7 +10800,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 24.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gyerekjatek_182",
@@ -10284,7 +10815,10 @@
       "bevet": 0.0,
       "fogyas": 187.0,
       "zaro": 1501.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cukortarto_muanyag_183",
@@ -10296,7 +10830,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 2.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "1_2_csepegteto_zoldsegek_spenot_184",
@@ -10308,7 +10845,10 @@
       "bevet": 15.0,
       "fogyas": 2.0,
       "zaro": 18.0,
-      "elteres": -4.0
+      "elteres": -4.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "etelfolia_185",
@@ -10320,7 +10860,10 @@
       "bevet": 0.0,
       "fogyas": 9000.0,
       "zaro": 50000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kortalca_186",
@@ -10332,7 +10875,10 @@
       "bevet": 0.0,
       "fogyas": 1200.0,
       "zaro": 1300.0,
-      "elteres": 200.0
+      "elteres": 200.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "papir_talca_187",
@@ -10344,7 +10890,10 @@
       "bevet": 0.0,
       "fogyas": 148250.0,
       "zaro": 312750.0,
-      "elteres": 2125.0
+      "elteres": 2125.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "papirszalveta_188",
@@ -10356,7 +10905,10 @@
       "bevet": 114.0,
       "fogyas": 70.0,
       "zaro": 70.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "papirzacsko_189",
@@ -10368,7 +10920,10 @@
       "bevet": 0.0,
       "fogyas": 6093.0,
       "zaro": 61000.0,
-      "elteres": 1593.0
+      "elteres": 1593.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizza_doboz_25x45_190",
@@ -10380,7 +10935,10 @@
       "bevet": 0.0,
       "fogyas": 5400.0,
       "zaro": 7700.0,
-      "elteres": 400.0
+      "elteres": 400.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizza_doboz_45_191",
@@ -10392,7 +10950,10 @@
       "bevet": 0.0,
       "fogyas": 1589.0,
       "zaro": 6550.0,
-      "elteres": 89.0
+      "elteres": 89.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizza_doboz_32_192",
@@ -10404,7 +10965,10 @@
       "bevet": 23800.0,
       "fogyas": 17200.0,
       "zaro": 13600.0,
-      "elteres": 300.0
+      "elteres": 300.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizza_tavtarto_500_193",
@@ -10416,7 +10980,10 @@
       "bevet": 50.0,
       "fogyas": 32.0,
       "zaro": 68.0,
-      "elteres": 6.0
+      "elteres": 6.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szemelyzeti_muanyagpohar_194",
@@ -10428,7 +10995,10 @@
       "bevet": 0.0,
       "fogyas": 1300.0,
       "zaro": 1300.0,
-      "elteres": -150.0
+      "elteres": -150.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "etelecet_195",
@@ -10440,7 +11010,10 @@
       "bevet": 90000.0,
       "fogyas": 97000.0,
       "zaro": 51000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "femlapat_nyellel_galvanizalt_196",
@@ -10452,7 +11025,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 10.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "folpack_197",
@@ -10464,7 +11040,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 2.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "keztorlo_198",
@@ -10476,7 +11055,10 @@
       "bevet": 0.0,
       "fogyas": 186.0,
       "zaro": 117.0,
-      "elteres": 4.0
+      "elteres": 4.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "femdorzsi_199",
@@ -10488,7 +11070,10 @@
       "bevet": 150.0,
       "fogyas": 104.0,
       "zaro": 157.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gumikesztyu_200",
@@ -10500,7 +11085,10 @@
       "bevet": 200.0,
       "fogyas": 186.0,
       "zaro": 237.0,
-      "elteres": -18.0
+      "elteres": -18.0,
+      "selejt": 3,
+      "selejt_ft": 3767.71,
+      "tipus": "Tisztítószerek"
      },
      {
       "kod": "nylon_foliakesztyu_201",
@@ -10512,7 +11100,10 @@
       "bevet": 0.0,
       "fogyas": 217.0,
       "zaro": 77.0,
-      "elteres": -11.0
+      "elteres": -11.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "mosogatoszivacs_202",
@@ -10524,7 +11115,10 @@
       "bevet": 0.0,
       "fogyas": 462.0,
       "zaro": 665.0,
-      "elteres": -18.0
+      "elteres": -18.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "vileda_torlokendo_203",
@@ -10536,7 +11130,10 @@
       "bevet": 150.0,
       "fogyas": 247.0,
       "zaro": 471.0,
-      "elteres": 18.0
+      "elteres": 18.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "wc_papir_204",
@@ -10548,7 +11145,10 @@
       "bevet": 120.0,
       "fogyas": 144.0,
       "zaro": 100.0,
-      "elteres": 24.0
+      "elteres": 24.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "papirszivoszal_205",
@@ -10560,7 +11160,10 @@
       "bevet": 0.0,
       "fogyas": 600.0,
       "zaro": 12800.0,
-      "elteres": 400.0
+      "elteres": 400.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fertotlenito_adagolo_szenzoros_206",
@@ -10572,7 +11175,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "nylonkesztyutarto_207",
@@ -10584,7 +11190,10 @@
       "bevet": 0.0,
       "fogyas": 8.0,
       "zaro": 3.0,
-      "elteres": 3.0
+      "elteres": 3.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "habvero_208",
@@ -10596,7 +11205,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 12.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "hutohomero_209",
@@ -10608,7 +11220,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "maghomero_210",
@@ -10620,7 +11235,10 @@
       "bevet": 0.0,
       "fogyas": 11.0,
       "zaro": 3.0,
-      "elteres": 14.0
+      "elteres": 14.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kes_211",
@@ -10632,7 +11250,10 @@
       "bevet": 10.0,
       "fogyas": 0.0,
       "zaro": 11.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "konzervnyito_kicsi_212",
@@ -10644,7 +11265,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 6.0,
-      "elteres": 6.0
+      "elteres": 6.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "nutella_keno_213",
@@ -10656,7 +11280,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 9.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "penzvisszaado_talca_214",
@@ -10668,7 +11295,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 7.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szoszos_femtal_215",
@@ -10680,7 +11310,10 @@
       "bevet": 0.0,
       "fogyas": 3.0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szurotal_216",
@@ -10692,7 +11325,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 8.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "rukkolas_zacsko_217",
@@ -10704,7 +11340,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "habzsak_zaro_csipesz_218",
@@ -10716,7 +11355,10 @@
       "bevet": 0.0,
       "fogyas": 20.0,
       "zaro": 22.0,
-      "elteres": -2.0
+      "elteres": -2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fiscat_penztargepszalag_219",
@@ -10728,7 +11370,10 @@
       "bevet": 0.0,
       "fogyas": 20.0,
       "zaro": 64.0,
-      "elteres": 3.0
+      "elteres": 3.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "terminal_szalag_220",
@@ -10740,7 +11385,10 @@
       "bevet": 0.0,
       "fogyas": 150.0,
       "zaro": 40.0,
-      "elteres": -10.0
+      "elteres": -10.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ipari_keztorlo_221",
@@ -10752,7 +11400,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 4.0,
-      "elteres": -6.0
+      "elteres": -6.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "femvonalzo_222",
@@ -10764,7 +11415,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 4.0,
-      "elteres": 2.0
+      "elteres": 2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "domestos_223",
@@ -10776,7 +11430,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 1.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "muanyag_badella_1_1_20_l_224",
@@ -10788,7 +11445,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gepi_mosogatoszer_225",
@@ -10800,7 +11460,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gyorsfertotlenito_226",
@@ -10812,7 +11475,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "muanyag_badella_1_2_10l_227",
@@ -10824,7 +11490,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "belsomagos_228",
@@ -10836,7 +11505,10 @@
       "bevet": 6.0,
       "fogyas": 0.0,
       "zaro": 6.0,
-      "elteres": -6.0
+      "elteres": -6.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "keztorlo_adagolo_229",
@@ -10848,7 +11520,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 51.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szemeteszsak_230",
@@ -10860,7 +11535,10 @@
       "bevet": 0.0,
       "fogyas": 700.0,
       "zaro": 260.0,
-      "elteres": -15.0
+      "elteres": -15.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "lay_s_chips_60g_231",
@@ -10872,7 +11550,10 @@
       "bevet": 3584.0,
       "fogyas": 2379.0,
       "zaro": 1205.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "amica_burgonyas_snack_100g_233",
@@ -10884,7 +11565,10 @@
       "bevet": 0.0,
       "fogyas": 124.0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "dulciar_tejcsokolade_80g_235",
@@ -10896,7 +11580,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "groksi_sajttaller_60g_237",
@@ -10908,7 +11595,10 @@
       "bevet": 0.0,
       "fogyas": 95.0,
       "zaro": 65.0,
-      "elteres": -4.0
+      "elteres": -4.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cantuccini_mandulas_keksz_250g_238",
@@ -10920,7 +11610,10 @@
       "bevet": 0.0,
       "fogyas": 5.0,
       "zaro": 79.0,
-      "elteres": -5.0
+      "elteres": -5.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ciopettini_ropogos_falatok_200g_239",
@@ -10932,7 +11625,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szarvasgombas_burgonyachips_40g_240",
@@ -10944,7 +11640,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "grisbi_mangos_es_fehercsoki_toltelekkel_112g_243",
@@ -10956,7 +11655,10 @@
       "bevet": 0.0,
       "fogyas": 57.0,
       "zaro": 87.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "grisbi_keksz_pisztacias_toltelekkel_135g_244",
@@ -10968,7 +11670,10 @@
       "bevet": 120.0,
       "fogyas": 69.0,
       "zaro": 102.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "grisbi_keksz_csokolades_toltelekkel_135g_245",
@@ -10980,7 +11685,10 @@
       "bevet": 120.0,
       "fogyas": 88.0,
       "zaro": 103.0,
-      "elteres": -7.0
+      "elteres": -7.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fuszerszoro_246",
@@ -10992,7 +11700,10 @@
       "bevet": 0.0,
       "fogyas": 4.0,
       "zaro": 744.0,
-      "elteres": -3.0
+      "elteres": -3.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kiontocsor_247",
@@ -11004,7 +11715,10 @@
       "bevet": 0.0,
       "fogyas": 19.0,
       "zaro": 99.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "olajos_uveg_cola_248",
@@ -11016,7 +11730,10 @@
       "bevet": 480.0,
       "fogyas": 26.0,
       "zaro": 493.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "soszoro_249",
@@ -11028,7 +11745,10 @@
       "bevet": 0.0,
       "fogyas": 12.0,
       "zaro": 38.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "muanyag_badella_1_2_4l_250",
@@ -11040,7 +11760,10 @@
       "bevet": 0.0,
       "fogyas": 3.0,
       "zaro": 37.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kemence_kefe_rezfejes_251",
@@ -11052,7 +11775,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 6.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kemence_vilagitas_uvegbura_252",
@@ -11064,7 +11790,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "merleg_253",
@@ -11076,7 +11805,10 @@
       "bevet": 0.0,
       "fogyas": 3.0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": 3,
+      "selejt_ft": 44173.14,
+      "tipus": "Egyeb anyag"
      },
      {
       "kod": "meroedeny_254",
@@ -11088,7 +11820,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 23.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "merokanal_szoszos_sarga_nagy_255",
@@ -11100,7 +11835,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 3.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "nagy_pizzalapat_256",
@@ -11112,7 +11850,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 6.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizza_forgatolapat_257",
@@ -11124,7 +11865,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizzalapat_hamburger_258",
@@ -11136,7 +11880,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 5.0,
-      "elteres": -4.0
+      "elteres": -4.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "merokanal_szoszos_zold_kicsi_259",
@@ -11148,7 +11895,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 13.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "muanyag_badella_1_1_teto_260",
@@ -11160,7 +11910,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizzaspakli_261",
@@ -11172,7 +11925,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 6.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizzavago_262",
@@ -11184,7 +11940,10 @@
       "bevet": 40.0,
       "fogyas": 5.0,
       "zaro": 47.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizzavago_deszka_50_263",
@@ -11196,7 +11955,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 70.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizzavago_deszka_32_264",
@@ -11208,7 +11970,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 68.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "rez_kefe_potfej_265",
@@ -11220,7 +11985,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 12.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizzalapat_32_266",
@@ -11232,7 +12000,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 7.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "muanyag_badella_1_2_teto_267",
@@ -11244,7 +12015,10 @@
       "bevet": 0.0,
       "fogyas": 3.0,
       "zaro": 0.0,
-      "elteres": 3.0
+      "elteres": 3.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizza_szurka_nyars_268",
@@ -11256,7 +12030,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 16.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szorofejes_permetezo_fufus_uveg_269",
@@ -11268,7 +12045,10 @@
       "bevet": 0.0,
       "fogyas": 2.0,
       "zaro": 38.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "palast_profiterol_270",
@@ -11280,7 +12060,10 @@
       "bevet": 0.0,
       "fogyas": 200.0,
       "zaro": 3700.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "palast_tiramisu_271",
@@ -11292,7 +12075,10 @@
       "bevet": 0.0,
       "fogyas": 1000.0,
       "zaro": 8200.0,
-      "elteres": -64.0
+      "elteres": -64.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szappanadagolo_272",
@@ -11304,7 +12090,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 113.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szemetesedeny_muanyag_kuka_273",
@@ -11316,7 +12105,10 @@
       "bevet": 0.0,
       "fogyas": 2.0,
       "zaro": 6.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "wc_kefe_tartalyos_274",
@@ -11328,7 +12120,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 10.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "wc_papir_tarto_275",
@@ -11340,7 +12135,10 @@
       "bevet": 5.0,
       "fogyas": 0.0,
       "zaro": 18.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "feltethuto_eloszto_sin_276",
@@ -11352,7 +12150,10 @@
       "bevet": 0.0,
       "fogyas": 2.0,
       "zaro": 0.0,
-      "elteres": 2.0
+      "elteres": 2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "32_es_kortalca_277",
@@ -11364,7 +12165,10 @@
       "bevet": 0.0,
       "fogyas": 600.0,
       "zaro": 2200.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "mosogatokesztyu_278",
@@ -11376,7 +12180,10 @@
       "bevet": 15.0,
       "fogyas": 6.0,
       "zaro": 18.0,
-      "elteres": -5.0
+      "elteres": -5.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pm_ragasztoszalag_279",
@@ -11388,7 +12195,10 @@
       "bevet": 180.0,
       "fogyas": 55.0,
       "zaro": 216.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "automosokefe_280",
@@ -11400,7 +12210,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "lefolyo_szuro_281",
@@ -11412,7 +12225,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 28.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "legfrissito_282",
@@ -11424,7 +12240,10 @@
       "bevet": 36.0,
       "fogyas": 13.0,
       "zaro": 48.0,
-      "elteres": -8.0
+      "elteres": -8.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "teleszkopos_ablaklehuzo_283",
@@ -11436,7 +12255,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "langos_doboz_284",
@@ -11448,7 +12270,10 @@
       "bevet": 8900.0,
       "fogyas": 2800.0,
       "zaro": 9400.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ket_oldalu_ragasztoszalag_285",
@@ -11460,7 +12285,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fa_kes_286",
@@ -11472,7 +12300,10 @@
       "bevet": 0.0,
       "fogyas": 1400.0,
       "zaro": 1500.0,
-      "elteres": -100.0
+      "elteres": -100.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fa_villa_287",
@@ -11484,7 +12315,10 @@
       "bevet": 0.0,
       "fogyas": 1100.0,
       "zaro": 2200.0,
-      "elteres": -100.0
+      "elteres": -100.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "vakumzacsko_288",
@@ -11496,7 +12330,10 @@
       "bevet": 6000.0,
       "fogyas": 0.0,
       "zaro": 5800.0,
-      "elteres": -3800.0
+      "elteres": -3800.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "vizkooldo_289",
@@ -11508,7 +12345,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "papirpohar_290",
@@ -11520,7 +12360,10 @@
       "bevet": 0.0,
       "fogyas": 2500.0,
       "zaro": 19100.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "nh_kezfertotlenito_utantolto_5l_291",
@@ -11532,7 +12375,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": 1,
+      "selejt_ft": 17561.5,
+      "tipus": "Tisztítószerek"
      },
      {
       "kod": "kv_kapszula_szemelyzeti_292",
@@ -11544,7 +12390,10 @@
       "bevet": 120.0,
       "fogyas": 29.0,
       "zaro": 102.0,
-      "elteres": -30.0
+      "elteres": -30.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "wc_tisztito_folyadek_293",
@@ -11556,7 +12405,10 @@
       "bevet": 48.0,
       "fogyas": 27.0,
       "zaro": 50.0,
-      "elteres": -14.0
+      "elteres": -14.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "wc_zsele_294",
@@ -11568,7 +12420,10 @@
       "bevet": 35.0,
       "fogyas": 43.0,
       "zaro": 61.0,
-      "elteres": -2.0
+      "elteres": -2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "acel_szemetes_kuka_nagymeretu_femkuka_295",
@@ -11580,7 +12435,10 @@
       "bevet": 7.0,
       "fogyas": 0.0,
       "zaro": 7.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "nh_kezi_mosogatoszer_5l_296",
@@ -11592,7 +12450,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 0.0,
-      "elteres": -3.0
+      "elteres": -3.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "nh_folyekony_fertotlenito_szappan_5l_297",
@@ -11604,7 +12465,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 17.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "nh_ipari_zsiroldo_5l_298",
@@ -11616,7 +12480,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 21.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "nh_ipari_lefolyotisztito_granulatum_880g_299",
@@ -11628,7 +12495,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "nh_uvegtisztito_5l_300",
@@ -11640,7 +12510,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "piros_toll_azert_mert_pirosan_fog_301",
@@ -11652,7 +12525,10 @@
       "bevet": 0.0,
       "fogyas": 44.0,
       "zaro": 81.0,
-      "elteres": 107.0
+      "elteres": 107.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "nh_gyorsfertotlenito_0_75l_302",
@@ -11664,7 +12540,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "uvegtisztito_kefe_304",
@@ -11676,7 +12555,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 11.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cellux_305",
@@ -11688,7 +12570,10 @@
       "bevet": 0.0,
       "fogyas": 6.0,
       "zaro": 17.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "etikett_cimke_306",
@@ -11700,7 +12585,10 @@
       "bevet": 0.0,
       "fogyas": 2.0,
       "zaro": 9.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "filctoll_307",
@@ -11712,7 +12600,10 @@
       "bevet": 0.0,
       "fogyas": 18.0,
       "zaro": 46.0,
-      "elteres": -7.0
+      "elteres": -7.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fuzet_308",
@@ -11724,7 +12615,10 @@
       "bevet": 0.0,
       "fogyas": 8.0,
       "zaro": 1.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "hibajavito_309",
@@ -11736,7 +12630,10 @@
       "bevet": 20.0,
       "fogyas": 4.0,
       "zaro": 15.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ollo_310",
@@ -11748,7 +12645,10 @@
       "bevet": 0.0,
       "fogyas": 2.0,
       "zaro": 9.0,
-      "elteres": -4.0
+      "elteres": -4.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "post_it_311",
@@ -11760,7 +12660,10 @@
       "bevet": 15.0,
       "fogyas": 67.0,
       "zaro": 44.0,
-      "elteres": 65.0
+      "elteres": 65.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szamologep_312",
@@ -11772,7 +12675,10 @@
       "bevet": 0.0,
       "fogyas": 2.0,
       "zaro": 8.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "toll_pizza_logos_piros_de_keken_fog_313",
@@ -11784,7 +12690,10 @@
       "bevet": 100.0,
       "fogyas": 212.0,
       "zaro": 709.0,
-      "elteres": -29.0
+      "elteres": -29.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tuzogep_314",
@@ -11796,7 +12705,10 @@
       "bevet": 6.0,
       "fogyas": 0.0,
       "zaro": 8.0,
-      "elteres": -3.0
+      "elteres": -3.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tuzogep_kapocs_315",
@@ -11808,7 +12720,10 @@
       "bevet": 15.0,
       "fogyas": 1.0,
       "zaro": 17.0,
-      "elteres": -2.0
+      "elteres": -2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "nh_alkoholos_kezfertotlenito_0_5l_316",
@@ -11820,7 +12735,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szoszos_talka_egybefedeles_30ml_317",
@@ -11832,7 +12750,10 @@
       "bevet": 0.0,
       "fogyas": 3000.0,
       "zaro": 7300.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szoszos_talka_egybefedeles_50ml_318",
@@ -11844,7 +12765,10 @@
       "bevet": 0.0,
       "fogyas": 1350.0,
       "zaro": 1750.0,
-      "elteres": -100.0
+      "elteres": -100.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "dulciar_chilis_etcsokolade_80g_319",
@@ -11856,7 +12780,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "flakon_limonade_320",
@@ -11868,7 +12795,10 @@
       "bevet": 0.0,
       "fogyas": 608.0,
       "zaro": 5860.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kupak_limonade_321",
@@ -11880,7 +12810,10 @@
       "bevet": 0.0,
       "fogyas": 608.0,
       "zaro": 47156.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pezsgos_pohar_322",
@@ -11892,7 +12825,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "rovarcsapda_323",
@@ -11904,7 +12840,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 10.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gnocchi_tanyer_324",
@@ -11916,7 +12855,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "selejtes_gyorskotozo_325",
@@ -11928,7 +12870,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "natura_neperliva_mentes_327",
@@ -11940,7 +12885,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "natura_jemne_perliva_savas_328",
@@ -11952,7 +12900,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fuzetea_aloe_jahodou_eper_329",
@@ -11964,7 +12915,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fuzetea_broskyna_barack_330",
@@ -11976,7 +12930,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fuzetea_citron_citrom_331",
@@ -11988,7 +12945,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "coca_cola_sk_332",
@@ -12000,7 +12960,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "coca_cola_zero_sk_333",
@@ -12012,7 +12975,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "coca_cola_0_5l_sk_334",
@@ -12024,7 +12990,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "coca_cola_zero_0_5l_sk_335",
@@ -12036,7 +13005,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cappy_jablko_alma_336",
@@ -12048,7 +13020,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cappy_pomaranc_narancs_337",
@@ -12060,7 +13035,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "peroni_sk_338",
@@ -12072,7 +13050,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "alkoholmentes_peroni_sk_339",
@@ -12084,7 +13065,10 @@
       "bevet": 0.0,
       "fogyas": 12.0,
       "zaro": 0.0,
-      "elteres": 12.0
+      "elteres": 12.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pasta_talka_340",
@@ -12096,7 +13080,10 @@
       "bevet": 0.0,
       "fogyas": 4260.0,
       "zaro": 7980.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pasta_talka_teto_341",
@@ -12108,7 +13095,10 @@
       "bevet": 0.0,
       "fogyas": 3570.0,
       "zaro": 13000.0,
-      "elteres": 70.0
+      "elteres": 70.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pasta_tanyer_342",
@@ -12120,7 +13110,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pasta_villa_343",
@@ -12132,7 +13125,10 @@
       "bevet": 0.0,
       "fogyas": 2600.0,
       "zaro": 3700.0,
-      "elteres": 2000.0
+      "elteres": 2000.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "penztar_kasszafiok_344",
@@ -12144,7 +13140,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 12.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "feliro_tabla_345",
@@ -12156,7 +13155,10 @@
       "bevet": 10.0,
       "fogyas": 0.0,
       "zaro": 23.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "izjelzo_tablak_346",
@@ -12168,7 +13170,10 @@
       "bevet": 0.0,
       "fogyas": 35.0,
       "zaro": 1258.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "izjelzo_tabla_olajos_347",
@@ -12180,7 +13185,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "izjelzo_tabla_tarto_348",
@@ -12192,7 +13200,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 3.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "intim_szemetes_edeny_349",
@@ -12204,7 +13215,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 5.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "hoallo_sutokesztyu_350",
@@ -12216,7 +13230,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 10.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "eu_doboz_351",
@@ -12228,7 +13245,10 @@
       "bevet": 6.0,
       "fogyas": 0.0,
       "zaro": 9.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "panthenol_spray_352",
@@ -12240,7 +13260,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 16.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "allo_laptarto_plexi_a4_infotabla_353",
@@ -12252,7 +13275,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 21.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "sornyito_354",
@@ -12264,7 +13290,10 @@
       "bevet": 0.0,
       "fogyas": 3.0,
       "zaro": 8.0,
-      "elteres": -2.0
+      "elteres": -2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "rukkola_csipesz_355",
@@ -12276,7 +13305,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 14.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "selejtes_lada_356",
@@ -12288,7 +13320,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 10.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pm_kormatrica_5cm_357",
@@ -12300,7 +13335,10 @@
       "bevet": 0.0,
       "fogyas": 8000.0,
       "zaro": 78000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "eu_doboz_utantolto_358",
@@ -12312,7 +13350,10 @@
       "bevet": 10.0,
       "fogyas": 2.0,
       "zaro": 17.0,
-      "elteres": 2.0
+      "elteres": 2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "muanyag_tolcser_szurovel_olajos_359",
@@ -12324,7 +13365,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 7.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "muanyag_sziv_forma_nagy_360",
@@ -12336,7 +13380,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 7.0,
-      "elteres": 2.0
+      "elteres": 2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "muanyag_sziv_forma_kicsi_361",
@@ -12348,7 +13395,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 2.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fogpiszkalo_362",
@@ -12360,7 +13410,10 @@
       "bevet": 15.0,
       "fogyas": 0.0,
       "zaro": 15.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szurotal_teto_363",
@@ -12372,7 +13425,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 7.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tartos_mosogatokesztyu_364",
@@ -12384,7 +13440,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "sebtapasz_365",
@@ -12396,7 +13455,10 @@
       "bevet": 0.0,
       "fogyas": 12.0,
       "zaro": 32.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kv_gep_366",
@@ -12408,7 +13470,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 4.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "mikrohullamu_suto_367",
@@ -12420,7 +13485,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 4.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ikea_szerszamkeszlet_368",
@@ -12432,7 +13500,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 5.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "papirtaska_369",
@@ -12444,7 +13515,10 @@
       "bevet": 0.0,
       "fogyas": 2550.0,
       "zaro": 7500.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "habzsak_370",
@@ -12456,7 +13530,10 @@
       "bevet": 10.0,
       "fogyas": 6.0,
       "zaro": 10.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fembadella_1_2_371",
@@ -12468,7 +13545,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 17.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fembadella_1_3_372",
@@ -12480,7 +13560,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fembadella_1_6_150mm_373",
@@ -12492,7 +13575,10 @@
       "bevet": 0.0,
       "fogyas": 4.0,
       "zaro": 0.0,
-      "elteres": 4.0
+      "elteres": 4.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fembadella_1_2_teto_374",
@@ -12504,7 +13590,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 33.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fembadella_1_3_teto_375",
@@ -12516,7 +13605,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fembadella_1_6_teto_376",
@@ -12528,7 +13620,10 @@
       "bevet": 0.0,
       "fogyas": 4.0,
       "zaro": 12.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szentkiralyi_mentes_0_5l_377",
@@ -12540,7 +13635,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szentkiralyi_savas_0_5l_378",
@@ -12552,7 +13650,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_2_literes_merces_kancso_379",
@@ -12564,7 +13665,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 8.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_aluminium_falsin_500_mm_380",
@@ -12576,7 +13680,10 @@
       "bevet": 3.0,
       "fogyas": 0.0,
       "zaro": 7.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_aluminium_nyel_1300_mm_381",
@@ -12588,7 +13695,10 @@
       "bevet": 0.0,
       "fogyas": 3.0,
       "zaro": 15.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_bix_mop_382",
@@ -12600,7 +13710,10 @@
       "bevet": 0.0,
       "fogyas": 33.0,
       "zaro": 10.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_bix_mop_tarto_383",
@@ -12612,7 +13725,10 @@
       "bevet": 0.0,
       "fogyas": 2.0,
       "zaro": 8.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_felmosovodor_15_l_384",
@@ -12624,7 +13740,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 7.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_ferde_vagasu_sepru_1_es_sorte_385",
@@ -12636,7 +13755,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_kampo_386",
@@ -12648,7 +13770,10 @@
       "bevet": 12.0,
       "fogyas": 12.0,
       "zaro": 26.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_kenyernedvesito_kefe_387",
@@ -12660,7 +13785,10 @@
       "bevet": 10.0,
       "fogyas": 4.0,
       "zaro": 23.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_keszulektisztito_kefe_388",
@@ -12672,7 +13800,10 @@
       "bevet": 0.0,
       "fogyas": 6.0,
       "zaro": 19.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": 1,
+      "selejt_ft": 3190.0,
+      "tipus": "Tisztítószerek"
      },
      {
       "kod": "kobra_mikroszalas_torlokendo_389",
@@ -12684,7 +13815,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 27.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "langos_tavtarto_500_390",
@@ -12696,7 +13830,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 12.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ragasztoszalag_adagolo_391",
@@ -12708,7 +13845,10 @@
       "bevet": 5.0,
       "fogyas": 1.0,
       "zaro": 6.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_padlosurolo_kulteri_392",
@@ -12720,7 +13860,10 @@
       "bevet": 20.0,
       "fogyas": 0.0,
       "zaro": 20.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_sepru_0_3_as_sorte_393",
@@ -12732,7 +13875,10 @@
       "bevet": 26.0,
       "fogyas": 14.0,
       "zaro": 44.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": 1,
+      "selejt_ft": 7480.0,
+      "tipus": "Tisztítószerek"
      },
      {
       "kod": "kobra_sepru_kulteri_0_5_os_sorte_394",
@@ -12744,7 +13890,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_sepru_puha_0_25_os_sorte_395",
@@ -12756,7 +13905,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_sinvegzodes_396",
@@ -12768,7 +13920,10 @@
       "bevet": 6.0,
       "fogyas": 6.0,
       "zaro": 5.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_szemeteslapat_397",
@@ -12780,7 +13935,10 @@
       "bevet": 0.0,
       "fogyas": 5.0,
       "zaro": 17.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kobra_csotisztito_kefe_teleszkopos_398",
@@ -12792,7 +13950,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pm_forgatolapat_399",
@@ -12804,7 +13965,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 8.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "informacios_tabla_a4_femkeret_400",
@@ -12816,7 +13980,10 @@
       "bevet": 0.0,
       "fogyas": 6.0,
       "zaro": 47.0,
-      "elteres": -12.0
+      "elteres": -12.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "infras_szappanadagolo_401",
@@ -12828,7 +13995,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 19.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szallito_roller_402",
@@ -12840,7 +14010,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 2.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "lebomlo_fagyiskanal_403",
@@ -12852,7 +14025,10 @@
       "bevet": 0.0,
       "fogyas": 1800.0,
       "zaro": 2000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "femhutohomero_404",
@@ -12864,7 +14040,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 18.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizza_negyedelo_405",
@@ -12876,7 +14055,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 9.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "futartasak_406",
@@ -12888,7 +14070,10 @@
       "bevet": 0.0,
       "fogyas": 1500.0,
       "zaro": 3050.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "etelfestekes_filctoll_407",
@@ -12900,7 +14085,10 @@
       "bevet": 0.0,
       "fogyas": 13.0,
       "zaro": 25.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ricotta_tarto_muanyag_408",
@@ -12912,7 +14100,10 @@
       "bevet": 25.0,
       "fogyas": 6.0,
       "zaro": 20.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "merokanal_tartu_piros_409",
@@ -12924,7 +14115,10 @@
       "bevet": 0.0,
       "fogyas": 3.0,
       "zaro": 14.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "vagodeszka_muanyag_410",
@@ -12936,7 +14130,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizza_emelo_allvany_411",
@@ -12948,7 +14145,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fembadella_1_6_100_mm_412",
@@ -12960,7 +14160,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fembadella_1_2_40mm_413",
@@ -12972,7 +14175,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kezmuves_sor_414",
@@ -12984,7 +14190,10 @@
       "bevet": 0.0,
       "fogyas": 72.0,
       "zaro": 216.0,
-      "elteres": 48.0
+      "elteres": 48.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "heineken_415",
@@ -12996,7 +14205,10 @@
       "bevet": 840.0,
       "fogyas": 936.0,
       "zaro": 600.0,
-      "elteres": 360.0
+      "elteres": 360.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "moretti_416",
@@ -13008,7 +14220,10 @@
       "bevet": 480.0,
       "fogyas": 696.0,
       "zaro": 384.0,
-      "elteres": 360.0
+      "elteres": 360.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "peroni_417",
@@ -13020,7 +14235,10 @@
       "bevet": 1080.0,
       "fogyas": 936.0,
       "zaro": 744.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "jack_coke_418",
@@ -13032,7 +14250,10 @@
       "bevet": 0.0,
       "fogyas": 204.0,
       "zaro": 48.0,
-      "elteres": 156.0
+      "elteres": 156.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "jack_coke_zero_419",
@@ -13044,7 +14265,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kreinbacher_prestige_brut_420",
@@ -13056,7 +14280,10 @@
       "bevet": 0.0,
       "fogyas": 3.0,
       "zaro": 4.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "piper_heidseck_cuvee_brut_421",
@@ -13068,7 +14295,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 1.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "vodka_423",
@@ -13080,7 +14310,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_paprika_mix_426",
@@ -13092,7 +14325,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "sult_bacon_427",
@@ -13104,7 +14340,10 @@
       "bevet": 0.0,
       "fogyas": 14100.0,
       "zaro": 21600.0,
-      "elteres": -900.0
+      "elteres": -900.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_fokhagymas_joghurt_428",
@@ -13116,7 +14355,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kotozott_sparga_429",
@@ -13128,7 +14370,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_jalapeno_430",
@@ -13140,7 +14385,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_cheddar_431",
@@ -13152,7 +14400,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "palacsintasuto_24cm_432",
@@ -13164,7 +14415,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 3.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fembadella_1_6_65_mm_433",
@@ -13176,7 +14430,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 10.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizza_doboz_22_434",
@@ -13188,7 +14445,10 @@
       "bevet": 11100.0,
       "fogyas": 9990.0,
       "zaro": 3500.0,
-      "elteres": 90.0
+      "elteres": 90.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kukorica_435",
@@ -13200,7 +14460,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_fokhagymas_majonez_436",
@@ -13212,7 +14475,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "paradicsomos_bab_437",
@@ -13224,7 +14490,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pizza_ria_tavtarto_500_438",
@@ -13236,7 +14505,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_eros_pistas_majonez_439",
@@ -13248,7 +14520,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "p_fuszeres_csirkemell_440",
@@ -13260,7 +14535,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gorog_joghurt_441",
@@ -13272,7 +14550,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "savanyitott_pepperoni_442",
@@ -13284,7 +14565,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "csirkemell_443",
@@ -13296,7 +14580,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cheddar_444",
@@ -13308,7 +14595,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "bbq_szosz_445",
@@ -13320,7 +14610,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ananasz_446",
@@ -13332,7 +14625,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "durvan_orolt_feketebors_447",
@@ -13344,7 +14640,10 @@
       "bevet": 0.0,
       "fogyas": 13.0,
       "zaro": 0.0,
-      "elteres": 5.0
+      "elteres": 5.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "22cm_ria_doboz_448",
@@ -13356,7 +14655,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "majonez_449",
@@ -13368,7 +14670,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "32cm_ria_doboz_450",
@@ -13380,7 +14685,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "jalapeno_451",
@@ -13392,7 +14700,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "eros_pista_452",
@@ -13404,7 +14715,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "vegeta_453",
@@ -13416,7 +14730,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pasta_keverotal_zold_454",
@@ -13428,7 +14745,10 @@
       "bevet": 0.0,
       "fogyas": 2.0,
       "zaro": 0.0,
-      "elteres": 2.0
+      "elteres": 2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pepsi_cola_0_33l_455",
@@ -13440,7 +14760,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pepsi_zero_0_33l_456",
@@ -13452,7 +14775,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pepsi_cola_0_5l_457",
@@ -13464,7 +14790,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pepsi_zero_0_5l_458",
@@ -13476,7 +14805,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pepsi_cola_1l_459",
@@ -13488,7 +14820,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pepsi_zero_1l_460",
@@ -13500,7 +14835,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "lipton_barackos_tea_0_5l_461",
@@ -13512,7 +14850,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "lipton_citromos_tea_0_5l_462",
@@ -13524,7 +14865,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "lipton_zold_tea_0_5l_463",
@@ -13536,7 +14880,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pasta_doboz_palast_468",
@@ -13548,7 +14895,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pasta_melegito_tal_quecha_469",
@@ -13560,7 +14910,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 119.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tefal_aprito_470",
@@ -13572,7 +14925,10 @@
       "bevet": 6.0,
       "fogyas": 2.0,
       "zaro": 5.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tesztatarto_muanyag_471",
@@ -13584,7 +14940,10 @@
       "bevet": 0.0,
       "fogyas": 2.0,
       "zaro": 16.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "vedoszemuveg_472",
@@ -13596,7 +14955,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 2.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kormatrica_35mm_chili_olajos_473",
@@ -13608,7 +14970,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 15000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kormatrica_35mm_fokhagyma_olajos_474",
@@ -13620,7 +14985,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 17000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kormatrica_35mm_oregano_pehely_475",
@@ -13632,7 +15000,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 17000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kormatrica_35mm_chili_pehely_476",
@@ -13644,7 +15015,10 @@
       "bevet": 0.0,
       "fogyas": 1000.0,
       "zaro": 15000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kormatrica_so_477",
@@ -13656,7 +15030,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 88.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "kormatrica_fokhagymapor_478",
@@ -13668,7 +15045,10 @@
       "bevet": 0.0,
       "fogyas": 110.0,
       "zaro": 54.0,
-      "elteres": 86.0
+      "elteres": 86.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "olajosuveg_matrica_479",
@@ -13680,7 +15060,10 @@
       "bevet": 0.0,
       "fogyas": 12.0,
       "zaro": 74.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fuszerszoro_matrica_480",
@@ -13692,7 +15075,10 @@
       "bevet": 0.0,
       "fogyas": 22.0,
       "zaro": 41.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szoszos_etikett_481",
@@ -13704,7 +15090,10 @@
       "bevet": 75600.0,
       "fogyas": 70875.0,
       "zaro": 4725.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "cumisuveg_482",
@@ -13716,7 +15105,10 @@
       "bevet": 0.0,
       "fogyas": 2.0,
       "zaro": 23.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ipari_konzervnyito_483",
@@ -13728,7 +15120,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 2.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "muanyag_tolcser_tisztitoszeres_484",
@@ -13740,7 +15135,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 4.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fem_evokanal_485",
@@ -13752,7 +15150,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "szilikon_spatula_486",
@@ -13764,7 +15165,10 @@
       "bevet": 15.0,
       "fogyas": 2.0,
       "zaro": 13.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "keverotal_2_5l_pasta_487",
@@ -13776,7 +15180,10 @@
       "bevet": 0.0,
       "fogyas": 3.0,
       "zaro": 6.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "merokanal_pasta_30ml_488",
@@ -13788,7 +15195,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 3.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "torrone_tenero_150g_493",
@@ -13800,7 +15210,10 @@
       "bevet": 0.0,
       "fogyas": 17.0,
       "zaro": 127.0,
-      "elteres": -4.0
+      "elteres": -4.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "ketchup_10ml_494",
@@ -13812,7 +15225,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "majonez_10ml_495",
@@ -13824,7 +15240,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "lasagne_cannelloni_tal_496",
@@ -13836,7 +15255,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 1000.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pm_kockajatek_epulet_497",
@@ -13848,7 +15270,10 @@
       "bevet": 0.0,
       "fogyas": 28.0,
       "zaro": 30.0,
-      "elteres": -7.0
+      "elteres": -7.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pm_kockajatek_figura_498",
@@ -13860,7 +15285,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 640.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fembadella_1_9_100mm_499",
@@ -13872,7 +15300,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fembadella_1_9_teto_500",
@@ -13884,7 +15315,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "canneloni_501",
@@ -13896,7 +15330,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "lasagne_502",
@@ -13908,7 +15345,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "csokis_mousse_503",
@@ -13920,7 +15360,10 @@
       "bevet": 0.0,
       "fogyas": 582.0,
       "zaro": 2455.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gelato_nutella_kremmel_504",
@@ -13932,7 +15375,10 @@
       "bevet": 198.0,
       "fogyas": 181.0,
       "zaro": 83.0,
-      "elteres": -25.0
+      "elteres": -25.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gelato_tartufata_505",
@@ -13944,7 +15390,10 @@
       "bevet": 0.0,
       "fogyas": 33.0,
       "zaro": 42.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gelato_pistachio_mascarpone_506",
@@ -13956,7 +15405,10 @@
       "bevet": 270.0,
       "fogyas": 187.0,
       "zaro": 105.0,
-      "elteres": -23.0
+      "elteres": -23.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "gymbeam_kanal_szett_507",
@@ -13968,7 +15420,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 16.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "grissini_paradicsom_oregano_100g_508",
@@ -13980,7 +15435,10 @@
       "bevet": 60.0,
       "fogyas": 48.0,
       "zaro": 18.0,
-      "elteres": -4.0
+      "elteres": -4.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "grissini_fokhagyma_chili_100g_509",
@@ -13992,7 +15450,10 @@
       "bevet": 24.0,
       "fogyas": 25.0,
       "zaro": 23.0,
-      "elteres": -12.0
+      "elteres": -12.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "grissini_burgonya_rozmaring_100g_510",
@@ -14004,7 +15465,10 @@
       "bevet": 48.0,
       "fogyas": 30.0,
       "zaro": 40.0,
-      "elteres": -8.0
+      "elteres": -8.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "krumi_csokolades_keksz_150g_511",
@@ -14016,7 +15480,10 @@
       "bevet": 0.0,
       "fogyas": 24.0,
       "zaro": 35.0,
-      "elteres": -9.0
+      "elteres": -9.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "hoallo_csipesz_512",
@@ -14028,7 +15495,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 13.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "suma_star_d1_5l_kezi_mosogatoszer_513",
@@ -14040,7 +15510,10 @@
       "bevet": 25.0,
       "fogyas": 31.0,
       "zaro": 3.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "soft_care_des_alkoholos_kezfertotlenito_5l_514",
@@ -14052,7 +15525,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 11.0,
-      "elteres": 2.0
+      "elteres": 2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "suma_bac_conc_d10_gyorsfertotlenito_515",
@@ -14064,7 +15540,10 @@
       "bevet": 15.0,
       "fogyas": 13.0,
       "zaro": 13.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "sure_antimic_kezmoso_szappan_516",
@@ -14076,7 +15555,10 @@
       "bevet": 10.0,
       "fogyas": 2.0,
       "zaro": 11.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "deogen_gepi_mosogatoszer_20l_517",
@@ -14088,7 +15570,10 @@
       "bevet": 2.0,
       "fogyas": 1.0,
       "zaro": 3.0,
-      "elteres": -2.0
+      "elteres": -2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "taski_sprint_200_uvegtisztito_oldat_518",
@@ -14100,7 +15585,10 @@
       "bevet": 0.0,
       "fogyas": 4.0,
       "zaro": 1.0,
-      "elteres": 2.0
+      "elteres": 2.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "suma_grill_d9_zsiroldo_oldat_519",
@@ -14112,7 +15600,10 @@
       "bevet": 2.0,
       "fogyas": 1.0,
       "zaro": 2.0,
-      "elteres": -3.0
+      "elteres": -3.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "taski_sani_4in1_vizkooldo_oldat_520",
@@ -14124,7 +15615,10 @@
       "bevet": 0.0,
       "fogyas": 0.8,
       "zaro": 7.0,
-      "elteres": 3.8
+      "elteres": 3.8,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "taski_sprint_200_uvegtisztito_higitott_521",
@@ -14136,7 +15630,10 @@
       "bevet": 0.0,
       "fogyas": 1.0,
       "zaro": 1.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "suma_grill_d9_zsiroldo_higitott_522",
@@ -14148,7 +15645,10 @@
       "bevet": 0.0,
       "fogyas": 2.0,
       "zaro": 2.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "taski_sani_4in1_vizkooldo_higitott_523",
@@ -14160,7 +15660,10 @@
       "bevet": 0.0,
       "fogyas": -3.0,
       "zaro": 6.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "allo_laptarto_plexi_a5_infotabla_524",
@@ -14172,7 +15675,10 @@
       "bevet": 0.0,
       "fogyas": 6.0,
       "zaro": 27.0,
-      "elteres": 1.0
+      "elteres": 1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "lapos_tanyer_525",
@@ -14184,7 +15690,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 35.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fem_villa_526",
@@ -14196,7 +15705,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 54.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fem_kes_527",
@@ -14208,7 +15720,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 48.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "fem_evoeszkoztarto_528",
@@ -14220,7 +15735,10 @@
       "bevet": 0.0,
       "fogyas": 0,
       "zaro": 0.0,
-      "elteres": 0
+      "elteres": 0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "datumbelyegzo_529",
@@ -14232,7 +15750,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 5.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tegely_fagyi_530",
@@ -14244,7 +15765,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 21503.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "pm_kockajatek_food_truck_531",
@@ -14256,7 +15780,10 @@
       "bevet": 0.0,
       "fogyas": 40.0,
       "zaro": 575.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "bonuspro_mikroszalas_torlokendo_kek_532",
@@ -14268,7 +15795,10 @@
       "bevet": 0.0,
       "fogyas": 110.0,
       "zaro": 41.0,
-      "elteres": 141.0
+      "elteres": 141.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "hendi_utesallo_maghomero_533",
@@ -14280,7 +15810,10 @@
       "bevet": 0.0,
       "fogyas": 0.0,
       "zaro": 2.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "soft_care_dermasoft_borregeneralo_krem_534",
@@ -14292,7 +15825,10 @@
       "bevet": 6.0,
       "fogyas": 5.0,
       "zaro": 0.0,
-      "elteres": -1.0
+      "elteres": -1.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tabasco_scorpion_chiliszosz_535",
@@ -14304,7 +15840,10 @@
       "bevet": 9360.0,
       "fogyas": 4051.02,
       "zaro": 5160.0,
-      "elteres": -148.98
+      "elteres": -148.98,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tabasco_chipotle_jalapeno_szosz_536",
@@ -14316,7 +15855,10 @@
       "bevet": 16200.0,
       "fogyas": 4021.01,
       "zaro": 12000.0,
-      "elteres": -178.99
+      "elteres": -178.99,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "tabasco_habanero_paprika_szosz_537",
@@ -14328,7 +15870,10 @@
       "bevet": 1440.0,
       "fogyas": 720.0,
       "zaro": 720.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "scorpion_szosz_538",
@@ -14340,7 +15885,10 @@
       "bevet": 0.0,
       "fogyas": -26400.0,
       "zaro": 26400.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      },
      {
       "kod": "chipotle_szosz_539",
@@ -14352,11 +15900,34 @@
       "bevet": 0.0,
       "fogyas": -23760.0,
       "zaro": 23760.0,
-      "elteres": 0.0
+      "elteres": 0.0,
+      "selejt": null,
+      "selejt_ft": null,
+      "tipus": null
      }
     ]
    }
   ],
-  "megjegyzes": "Az alapanyag eltérés adatsor 2026 szeptemberétől indul. A korábbi augusztusi adat pilot volt, nem része a riportnak."
+  "megjegyzes": "Az alapanyag eltérés adatsor 2026 szeptemberétől indul. A korábbi augusztusi adat pilot volt, nem része a riportnak.",
+  "selejt_megjegyzes": "A selejt a fogyás része, nem jön rá az eltérésre — azt mutatja, mi lett szándékosan leírva. Forrás: V31 „mindentudó” lap, BV (mennyiség) és BW (érték, 110%-os áron). A csoportosítás a V31 saját besorolása (C oszlop).",
+  "selejt_csoportok": [
+   {
+    "nev": "Élelmiszer",
+    "tipusok": [
+     "Alapanyag",
+     "Édesség",
+     "Italok"
+    ]
+   },
+   {
+    "nev": "Eszköz és vegyiáru",
+    "tipusok": [
+     "Tisztítószerek",
+     "Csomagolóanyag",
+     "Irodaszerek",
+     "Egyeb anyag"
+    ]
+   }
+  ]
  }
 }

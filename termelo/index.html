@@ -175,6 +175,7 @@
   .hiany { color: var(--red); } .tobblet { color: var(--green); }
   .osszeg-sav { display: flex; flex-wrap: wrap; gap: 10px 28px; padding: 12px 16px; background: var(--surface2); border-radius: var(--radius); margin-bottom: 14px; }
   .osszeg-sav div { font-size: 12px; color: var(--text2); }
+  .semleges { color: var(--text2); }
   .osszeg-sav b { display: block; font-size: 18px; font-weight: 600; color: var(--text); letter-spacing: -0.3px; }
 
   #loading { text-align: center; padding: 60px; color: var(--text3); }
@@ -631,6 +632,8 @@ function alapanyagSzekcio() {
   const tobblet = ftSorok.filter(r => r.ft > 0);
   const arNelkul = sorok.filter(r => r.ar == null && r.elteres);
   const foSorok = mind.filter(r => r.kategoria === 'Fő termékek');
+  const selejtSorok = mind.filter(r => r.selejt_ft);
+  const selejtOssz = selejtSorok.reduce((s2, r) => s2 + r.selejt_ft, 0);
 
   const arFigyelem = arNelkul.length ? `
     <div class="note note-warn">
@@ -649,6 +652,7 @@ function alapanyagSzekcio() {
         <div>Ebből hiány<b class="hiany">${elt(Math.round(hiany.reduce((s2, r) => s2 + r.ft, 0)))} Ft</b></div>
         <div>Ebből többlet<b class="tobblet">${elt(Math.round(tobblet.reduce((s2, r) => s2 + r.ft, 0)))} Ft</b></div>
         <div>Kijelölt tétel<b>${sorok.length}</b></div>
+        ${selejtOssz ? `<div>Selejt (a fogyáson belül)<b class="semleges">${sz(Math.round(selejtOssz), 0)} Ft</b></div>` : ''}
       </div>
 
       ${foSorok.length ? `
@@ -683,6 +687,8 @@ function alapanyagSzekcio() {
       ${kategoriaBontas(a, sorok)}
     </div>
 
+    ${selejtKartya(a, selejtSorok, selejtOssz)}
+
     <div class="card">
       <div class="card-title">Definíciók és adatforrás</div>
       <div class="deflist">
@@ -690,6 +696,7 @@ function alapanyagSzekcio() {
         <b>Eltérés:</b> ${esc(a.szamitas.elteres)} — ${esc(a.elojel)}, a riportban a hiány piros, a többlet zöld.<br>
         <b>Eltérés %:</b> eltérés / fogyás. Ez az egyetlen mutató, amivel különböző méretű tételek összevethetők.<br>
         <b>Ft hatás:</b> ${esc(a.ft_keplet)}<br>
+        <b>Selejt:</b> ${esc(a.selejt_megjegyzes || '')}<br>
         <b>Készletfedezet:</b> a záró készlet hány napnyi fogyást fed az időszak napi átlagával számolva.<br>
         <b>Forrás:</b> ${esc(a.forras)}
       </div>
@@ -711,6 +718,44 @@ function sorHtml(r) {
     <td class="num ${eltCls(r.pct)}">${pct(r.pct, 2)}</td>
     <td class="num ${r.ft == null ? 'muted' : eltCls(r.ft)}">${r.ft == null ? 'nincs ár' : elt(Math.round(r.ft))}</td>
   </tr>`;
+}
+
+const SELEJT_FEJ = `<thead><tr>
+  <th>Termék</th><th class="num">Selejt</th><th class="num">Érték</th>
+</tr></thead>`;
+
+function selejtKartya(a, sorok, ossz) {
+  if (!sorok.length) return '';
+  const csoportok = a.selejt_csoportok || [{ nev: 'Összes tétel', tipusok: null }];
+  const blokk = csoportok.map(cs => {
+    const ks = sorok.filter(r => !cs.tipusok || cs.tipusok.indexOf(r.tipus) >= 0)
+      .slice().sort((x, y) => y.selejt_ft - x.selejt_ft);
+    if (!ks.length) return '';
+    const cOssz = ks.reduce((s2, r) => s2 + r.selejt_ft, 0);
+    return `
+      <div class="kat-cim">
+        <span>${esc(cs.nev)}</span>
+        <span class="osszeg semleges">${sz(Math.round(cOssz), 0)} Ft · ${ks.length} tétel</span>
+      </div>
+      <div class="table-wrap"><table>${SELEJT_FEJ}<tbody>${ks.map(r => `
+        <tr>
+          <td>${esc(r.nev)}</td>
+          <td class="num">${szAuto(r.selejt)} ${esc(r.egyseg || '')}</td>
+          <td class="num">${sz(Math.round(r.selejt_ft), 0)} Ft</td>
+        </tr>`).join('')}</tbody></table></div>`;
+  }).join('');
+  const maradek = sorok.filter(r => !csoportok.some(cs => !cs.tipusok || cs.tipusok.indexOf(r.tipus) >= 0));
+  return `
+    <div class="card">
+      <div class="card-title">Selejt — mi lett leírva</div>
+      <div class="card-sub">
+        Összesen ${sz(Math.round(ossz), 0)} Ft, ${sorok.length} tétel. Ez a fogyás része,
+        nem adódik hozzá az eltéréshez: azt mutatja meg, mi lett szándékosan leírva.
+        A listában minden selejtezett termék szerepel, nem csak a kiemeltek.
+      </div>
+      ${blokk}
+      ${maradek.length ? `<div class="kat-ures">${maradek.length} tétel besorolás nélkül maradt.</div>` : ''}
+    </div>`;
 }
 
 function kategoriaBontas(a, sorok) {
