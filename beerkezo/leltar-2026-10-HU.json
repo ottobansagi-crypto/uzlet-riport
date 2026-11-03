@@ -7,9 +7,9 @@
   "uzletek": [
     {
       "nev": "Király utca",
-      "leltar_pct": 99.99,
-      "osszes": -2334,
-      "gomboc": 38055,
+      "leltar_pct": 100.0,
+      "osszes": 745,
+      "gomboc": 41134,
       "ital": -10320,
       "desseg": -3289,
       "doboz": -14650,
@@ -19,19 +19,16 @@
       "selejt_ft": 2523285,
       "selejt_pct": 9.6,
       "ptg": {
-        "osszes": 11999,
-        "fiscat": 18945,
-        "cash": -1628
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "osszes": 15078,
+        "fiscat": 22392,
+        "cash": -1996
       }
     },
     {
       "nev": "Erzsébet krt. 30.",
       "leltar_pct": 100.18,
-      "osszes": 16784,
-      "gomboc": 24250,
+      "osszes": 17096,
+      "gomboc": 24562,
       "ital": 1730,
       "desseg": -5196,
       "doboz": -4000,
@@ -41,19 +38,19 @@
       "selejt_ft": 1571363,
       "selejt_pct": 13.9,
       "ptg": {
-        "osszes": 9152,
+        "osszes": 9464,
         "fiscat": null,
         "cash": null
       },
       "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31 | PizzaMe Go rendelés pótolva az all-in forgalomhoz: 2026-10-21, #16540725, 38 768 Ft"
+        "gomboc": "PizzaMe Go rendelés pótolva az all-in forgalomhoz: 2026-10-21, #16540725, 38 768 Ft"
       }
     },
     {
       "nev": "Fashion",
-      "leltar_pct": 99.53,
-      "osszes": -65631,
-      "gomboc": -40731,
+      "leltar_pct": 99.58,
+      "osszes": -59222,
+      "gomboc": -34322,
       "ital": -14720,
       "desseg": 0,
       "doboz": -5000,
@@ -63,19 +60,16 @@
       "selejt_ft": 1635714,
       "selejt_pct": 10.2,
       "ptg": {
-        "osszes": 21693,
-        "fiscat": 32321,
-        "cash": -9379
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "osszes": 28102,
+        "fiscat": 38666,
+        "cash": -4319
       }
     },
     {
       "nev": "Bazilika",
       "leltar_pct": 100.24,
-      "osszes": 38880,
-      "gomboc": 37599,
+      "osszes": 39074,
+      "gomboc": 37793,
       "ital": -4000,
       "desseg": -1299,
       "doboz": -2800,
@@ -85,19 +79,16 @@
       "selejt_ft": 1359405,
       "selejt_pct": 7.6,
       "ptg": {
-        "osszes": 12327,
+        "osszes": 12521,
         "fiscat": 7194,
-        "cash": 5133
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 5327
       }
     },
     {
       "nev": "Széll Kálmán",
-      "leltar_pct": 98.71,
-      "osszes": -190001,
-      "gomboc": -16160,
+      "leltar_pct": 98.73,
+      "osszes": -186003,
+      "gomboc": -12162,
       "ital": 10200,
       "desseg": 0,
       "doboz": -7500,
@@ -107,19 +98,19 @@
       "selejt_ft": 1493935,
       "selejt_pct": 8.9,
       "ptg": {
-        "osszes": 100,
+        "osszes": 4098,
         "fiscat": 12431,
-        "cash": 341
+        "cash": 4339
       },
       "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31 | PizzaMe Go rendelés pótolva az all-in forgalomhoz: 2026-10-15, #16514364, 2 598 Ft"
+        "gomboc": "PizzaMe Go rendelés pótolva az all-in forgalomhoz: 2026-10-15, #16514364, 2 598 Ft"
       }
     },
     {
       "nev": "Corvin",
       "leltar_pct": 99.92,
-      "osszes": -39196,
-      "gomboc": -45124,
+      "osszes": -39350,
+      "gomboc": -45278,
       "ital": 5240,
       "desseg": 1299,
       "doboz": -5500,
@@ -129,19 +120,16 @@
       "selejt_ft": 1669702,
       "selejt_pct": 13.0,
       "ptg": {
-        "osszes": 547,
+        "osszes": 393,
         "fiscat": 0,
-        "cash": 547
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 393
       }
     },
     {
       "nev": "Károly krt",
-      "leltar_pct": 100.21,
-      "osszes": 34214,
-      "gomboc": 14569,
+      "leltar_pct": 100.28,
+      "osszes": 44159,
+      "gomboc": 24514,
       "ital": 9760,
       "desseg": 0,
       "doboz": 2000,
@@ -151,19 +139,16 @@
       "selejt_ft": 1507563,
       "selejt_pct": 8.4,
       "ptg": {
-        "osszes": -3267,
+        "osszes": 6678,
         "fiscat": 0,
-        "cash": -3267
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 6678
       }
     },
     {
       "nev": "Dob",
-      "leltar_pct": 100.93,
-      "osszes": 88556,
-      "gomboc": 73665,
+      "leltar_pct": 100.98,
+      "osszes": 94046,
+      "gomboc": 79155,
       "ital": 15520,
       "desseg": -1299,
       "doboz": -5300,
@@ -173,19 +158,16 @@
       "selejt_ft": 1334637,
       "selejt_pct": 11.6,
       "ptg": {
-        "osszes": 10261,
-        "fiscat": 8824,
-        "cash": 1443
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "osszes": 15751,
+        "fiscat": 14020,
+        "cash": 1737
       }
     },
     {
       "nev": "Blaha",
-      "leltar_pct": 99.43,
-      "osszes": -110310,
-      "gomboc": -30122,
+      "leltar_pct": 99.42,
+      "osszes": -112228,
+      "gomboc": -32040,
       "ital": -21240,
       "desseg": -1299,
       "doboz": -11000,
@@ -195,41 +177,35 @@
       "selejt_ft": 970211,
       "selejt_pct": 4.6,
       "ptg": {
-        "osszes": 22502,
+        "osszes": 20584,
         "fiscat": 3849,
-        "cash": 18657
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 16739
       }
     },
     {
       "nev": "Oktogon",
-      "leltar_pct": 98.68,
-      "osszes": -188828,
-      "gomboc": -43000,
+      "leltar_pct": 98.9,
+      "osszes": -132806,
+      "gomboc": 13022,
       "ital": -2350,
       "desseg": 3289,
       "doboz": -1050,
       "ajandek": 5240,
       "snack": -43341,
       "pasta": -107616,
-      "selejt_ft": 2232436,
-      "selejt_pct": 7.7,
+      "selejt_ft": 2238326,
+      "selejt_pct": 7.8,
       "ptg": {
-        "osszes": -41580,
+        "osszes": 14442,
         "fiscat": 10392,
-        "cash": -51972
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 4050
       }
     },
     {
       "nev": "Wesselényi utca",
-      "leltar_pct": 100.28,
-      "osszes": 48363,
-      "gomboc": -4908,
+      "leltar_pct": 100.31,
+      "osszes": 53410,
+      "gomboc": 139,
       "ital": 62020,
       "desseg": 0,
       "doboz": -7850,
@@ -239,19 +215,16 @@
       "selejt_ft": 1082854,
       "selejt_pct": 5.7,
       "ptg": {
-        "osszes": 15139,
-        "fiscat": 19925,
-        "cash": 6006
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "osszes": 20186,
+        "fiscat": 24971,
+        "cash": 6007
       }
     },
     {
       "nev": "Astoria",
       "leltar_pct": 100.59,
-      "osszes": 34114,
-      "gomboc": 37338,
+      "osszes": 34130,
+      "gomboc": 37354,
       "ital": -610,
       "desseg": 3897,
       "doboz": -4350,
@@ -261,19 +234,16 @@
       "selejt_ft": 1337391,
       "selejt_pct": 10.0,
       "ptg": {
-        "osszes": 23942,
+        "osszes": 23958,
         "fiscat": 14209,
-        "cash": 9733
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 9749
       }
     },
     {
       "nev": "Gomba Móricz",
       "leltar_pct": 99.86,
-      "osszes": 78440,
-      "gomboc": 55579,
+      "osszes": 79216,
+      "gomboc": 56355,
       "ital": -10580,
       "desseg": 3897,
       "doboz": -9500,
@@ -283,19 +253,16 @@
       "selejt_ft": 1794833,
       "selejt_pct": 10.2,
       "ptg": {
-        "osszes": 7004,
+        "osszes": 7780,
         "fiscat": 0,
-        "cash": 7004
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 7780
       }
     },
     {
       "nev": "Keleti",
-      "leltar_pct": 99.18,
-      "osszes": -44301,
-      "gomboc": -62301,
+      "leltar_pct": 99.23,
+      "osszes": -38835,
+      "gomboc": -56835,
       "ital": 5180,
       "desseg": 1299,
       "doboz": -2300,
@@ -305,19 +272,16 @@
       "selejt_ft": 1057148,
       "selejt_pct": 7.6,
       "ptg": {
-        "osszes": 152,
+        "osszes": 5618,
         "fiscat": 0,
-        "cash": 152
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 5618
       }
     },
     {
       "nev": "Fővám tér",
       "leltar_pct": 100.43,
-      "osszes": 54430,
-      "gomboc": 38273,
+      "osszes": 54440,
+      "gomboc": 38283,
       "ital": 10080,
       "desseg": 0,
       "doboz": 1400,
@@ -327,19 +291,16 @@
       "selejt_ft": 835536,
       "selejt_pct": 6.6,
       "ptg": {
-        "osszes": 294,
+        "osszes": 304,
         "fiscat": 4848,
-        "cash": -4554
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": -4544
       }
     },
     {
       "nev": "Ferenciek tere",
       "leltar_pct": 98.39,
-      "osszes": -152136,
-      "gomboc": -27100,
+      "osszes": -152134,
+      "gomboc": -27098,
       "ital": -4190,
       "desseg": -7794,
       "doboz": -114850,
@@ -349,19 +310,16 @@
       "selejt_ft": 1266935,
       "selejt_pct": 11.5,
       "ptg": {
-        "osszes": 18902,
+        "osszes": 18904,
         "fiscat": 890,
-        "cash": 18012
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 18014
       }
     },
     {
       "nev": "Jászai Mari tér",
       "leltar_pct": 99.88,
-      "osszes": 7519,
-      "gomboc": 14989,
+      "osszes": 6917,
+      "gomboc": 14387,
       "ital": 16470,
       "desseg": 0,
       "doboz": -16000,
@@ -371,19 +329,16 @@
       "selejt_ft": 1505816,
       "selejt_pct": 11.1,
       "ptg": {
-        "osszes": 8539,
+        "osszes": 7937,
         "fiscat": 2498,
-        "cash": 6041
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 5439
       }
     },
     {
       "nev": "Etele",
       "leltar_pct": 100.59,
-      "osszes": 99278,
-      "gomboc": 66540,
+      "osszes": 99248,
+      "gomboc": 66510,
       "ital": 36080,
       "desseg": 0,
       "doboz": -3150,
@@ -393,41 +348,35 @@
       "selejt_ft": 1355764,
       "selejt_pct": 10.6,
       "ptg": {
-        "osszes": 4394,
+        "osszes": 4364,
         "fiscat": 4138,
-        "cash": 256
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 226
       }
     },
     {
       "nev": "Kispest",
-      "leltar_pct": 101.02,
-      "osszes": 107884,
-      "gomboc": 80527,
+      "leltar_pct": 101.05,
+      "osszes": 109884,
+      "gomboc": 82527,
       "ital": 20220,
       "desseg": 0,
       "doboz": 100,
       "ajandek": 7940,
       "snack": -2790,
       "pasta": 1887,
-      "selejt_ft": 491648,
-      "selejt_pct": 7.3,
+      "selejt_ft": 497648,
+      "selejt_pct": 7.4,
       "ptg": {
-        "osszes": -2043,
+        "osszes": -43,
         "fiscat": 0,
-        "cash": -2043
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": -43
       }
     },
     {
       "nev": "Bosnyák tér",
-      "leltar_pct": 99.28,
-      "osszes": 25111,
-      "gomboc": -18647,
+      "leltar_pct": 99.33,
+      "osszes": 30267,
+      "gomboc": -13491,
       "ital": 8130,
       "desseg": 1990,
       "doboz": 2600,
@@ -437,19 +386,16 @@
       "selejt_ft": 689047,
       "selejt_pct": 6.3,
       "ptg": {
-        "osszes": 7954,
+        "osszes": 13110,
         "fiscat": 2448,
-        "cash": 5506
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 10662
       }
     },
     {
       "nev": "Árkád",
       "leltar_pct": 99.91,
-      "osszes": 8589,
-      "gomboc": -8809,
+      "osszes": 8323,
+      "gomboc": -9075,
       "ital": -3450,
       "desseg": 0,
       "doboz": -3300,
@@ -459,19 +405,16 @@
       "selejt_ft": 1581919,
       "selejt_pct": 10.9,
       "ptg": {
-        "osszes": 23312,
+        "osszes": 23046,
         "fiscat": 22148,
-        "cash": 1164
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 898
       }
     },
     {
       "nev": "Kazinczy",
       "leltar_pct": 100.17,
-      "osszes": 15842,
-      "gomboc": 13663,
+      "osszes": 15664,
+      "gomboc": 13485,
       "ital": 1280,
       "desseg": 0,
       "doboz": 0,
@@ -481,19 +424,16 @@
       "selejt_ft": 615635,
       "selejt_pct": 6.2,
       "ptg": {
-        "osszes": 1233,
+        "osszes": 1055,
         "fiscat": 0,
-        "cash": 1233
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 1055
       }
     },
     {
       "nev": "Törökvész",
       "leltar_pct": 99.66,
-      "osszes": 3638,
-      "gomboc": 9295,
+      "osszes": 3686,
+      "gomboc": 9343,
       "ital": 2180,
       "desseg": -6578,
       "doboz": -2800,
@@ -503,19 +443,16 @@
       "selejt_ft": 1684392,
       "selejt_pct": 9.8,
       "ptg": {
-        "osszes": 9107,
+        "osszes": 9155,
         "fiscat": 1249,
-        "cash": 7858
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 7906
       }
     },
     {
       "nev": "GO Buda",
-      "leltar_pct": 99.54,
-      "osszes": 16637,
-      "gomboc": -29087,
+      "leltar_pct": 99.58,
+      "osszes": 20699,
+      "gomboc": -25025,
       "ital": -1280,
       "desseg": 7794,
       "doboz": -7600,
@@ -525,19 +462,16 @@
       "selejt_ft": 1283886,
       "selejt_pct": 10.0,
       "ptg": {
-        "osszes": 30823,
+        "osszes": 34885,
         "fiscat": 4530,
-        "cash": 26293
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 30355
       }
     },
     {
       "nev": "D1 Buda",
       "leltar_pct": 99.72,
-      "osszes": -37928,
-      "gomboc": -54407,
+      "osszes": 37034,
+      "gomboc": 20555,
       "ital": 12220,
       "desseg": 3897,
       "doboz": 300,
@@ -547,19 +481,16 @@
       "selejt_ft": 720530,
       "selejt_pct": 4.8,
       "ptg": {
-        "osszes": -74962,
+        "osszes": 0,
         "fiscat": 0,
-        "cash": null
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 0
       }
     },
     {
       "nev": "D2 Baross",
       "leltar_pct": 99.81,
-      "osszes": 49679,
-      "gomboc": 72377,
+      "osszes": 49763,
+      "gomboc": 72461,
       "ital": -5880,
       "desseg": 4588,
       "doboz": 3900,
@@ -569,19 +500,16 @@
       "selejt_ft": 625540,
       "selejt_pct": 4.7,
       "ptg": {
-        "osszes": -9655,
+        "osszes": -9571,
         "fiscat": 0,
-        "cash": -9655
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": -9571
       }
     },
     {
       "nev": "Újpest",
-      "leltar_pct": 100.45,
-      "osszes": 89571,
-      "gomboc": 122597,
+      "leltar_pct": 100.46,
+      "osszes": 89951,
+      "gomboc": 122977,
       "ital": -1040,
       "desseg": 3289,
       "doboz": 900,
@@ -591,19 +519,16 @@
       "selejt_ft": 133215,
       "selejt_pct": 1.6,
       "ptg": {
-        "osszes": 737,
+        "osszes": 1117,
         "fiscat": 0,
-        "cash": 737
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 1117
       }
     },
     {
       "nev": "K1 Westend",
       "leltar_pct": 98.8,
-      "osszes": -60839,
-      "gomboc": -45789,
+      "osszes": -60837,
+      "gomboc": -45787,
       "ital": -11900,
       "desseg": 0,
       "doboz": -3150,
@@ -613,12 +538,9 @@
       "selejt_ft": 1106999,
       "selejt_pct": 17.4,
       "ptg": {
-        "osszes": 14315,
+        "osszes": 14317,
         "fiscat": 1449,
-        "cash": 12866
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 12868
       }
     },
     {
@@ -638,16 +560,13 @@
         "osszes": -2798,
         "fiscat": 0,
         "cash": -2798
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
       }
     },
     {
       "nev": "Szeged",
       "leltar_pct": 99.26,
-      "osszes": -86843,
-      "gomboc": -9486,
+      "osszes": -15490,
+      "gomboc": 61867,
       "ital": 2160,
       "desseg": 3289,
       "doboz": -14450,
@@ -657,19 +576,16 @@
       "selejt_ft": 1086966,
       "selejt_pct": 8.3,
       "ptg": {
-        "osszes": -61780,
+        "osszes": 9573,
         "fiscat": 0,
-        "cash": 9497
-      },
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
+        "cash": 9573
       }
     },
     {
       "nev": "Pécs",
-      "leltar_pct": 100.01,
-      "osszes": 2041,
-      "gomboc": -40075,
+      "leltar_pct": 100.06,
+      "osszes": 27869,
+      "gomboc": -14247,
       "ital": 37260,
       "desseg": 1299,
       "doboz": -8350,
@@ -679,20 +595,17 @@
       "selejt_ft": 1243946,
       "selejt_pct": 6.5,
       "ptg": {
-        "osszes": -6305,
-        "fiscat": 5986,
-        "cash": 4720
+        "osszes": 19523,
+        "fiscat": 14731,
+        "cash": 4792
       },
-      "franchise": true,
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
-      }
+      "franchise": true
     },
     {
       "nev": "Miskolc",
-      "leltar_pct": 99.46,
-      "osszes": -58690,
-      "gomboc": -27502,
+      "leltar_pct": 99.47,
+      "osszes": -10484,
+      "gomboc": 20704,
       "ital": -31260,
       "desseg": 1990,
       "doboz": -9350,
@@ -702,14 +615,11 @@
       "selejt_ft": 1017518,
       "selejt_pct": 8.4,
       "ptg": {
-        "osszes": -28794,
-        "fiscat": 5146,
-        "cash": 13116
+        "osszes": 19412,
+        "fiscat": 6495,
+        "cash": 12917
       },
-      "franchise": true,
-      "megjegyzesek": {
-        "gomboc": "becsült forgalom: 2026-10-30, 10-31"
-      }
+      "franchise": true
     }
   ]
 }
