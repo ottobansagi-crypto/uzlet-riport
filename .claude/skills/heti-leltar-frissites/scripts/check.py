@@ -12,7 +12,7 @@ import sys
 sys.dont_write_bytecode = True   # ne keletkezzen __pycache__ a repóban
 import argparse, io, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from szabalyok import BEZART, KATEGORIAK, NEM_RESZE, TURES, ft, honap_kulcs, kovetkezo_kulcs
+from szabalyok import BEZART, KATEGORIAK, NEM_RESZE, TURES, ft, honap_kulcs, kovetkezo_kulcs, szoveg_csere
 
 KAT_NEVEK = [('gomboc', 'gombóc'), ('ital', 'ital'), ('desseg', 'édesség'), ('doboz', 'papíráru'),
              ('ajandek', 'ajándék'), ('snack', 'snack')]
@@ -76,7 +76,7 @@ def ellenoriz(parsed, data, aktiv=None, javitas=False, kivesz=()):
             if (len(azonos) < len(OSSZEVETETT)
                     or any((b.get(k) or 0) != (u.get(k) or 0) for k in ('pasta', 'selejt_pct'))
                     or any((t.get(k) or 0) != (ut.get(k) or 0) for k in ('osszes', 'fiscat', 'cash'))
-                    or (b.get('megjegyzesek') or {}) != (u.get('megjegyzesek') or {})):
+                    or (b.get('megjegyzesek') or {}) != szoveg_csere(u.get('megjegyzesek') or {})):
                 valtozott.append(b['nev'])
         elif len(azonos) >= 6 and o != 0:
             figy.append(f"{b['nev']}: {len(azonos)} mező változatlan az előző beküldéshez képest "

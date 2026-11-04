@@ -179,6 +179,15 @@ class TestSzovegCsere(Alap):
         self.assertNotIn('személyzeti víz', szoveg.lower())
         self.assertIn('1,5karton 1,5l Naturaqua mentes többlet', szoveg)
 
+    def test_mentes_viz_valtozatai(self):
+        for regi, uj in [('3 karton 1,5 L Mentes víz', '3 karton 1,5l Naturaqua mentes'),
+                         ('79 db 1,5 Mentes víz, biztos jol ütik fel?', '79 db 1,5l Naturaqua mentes, biztos jol ütik fel?'),
+                         ('Mentes víz', '1,5l Naturaqua mentes'),
+                         ('1 karton 1,5l mentes víz', '1 karton 1,5l Naturaqua mentes'),
+                         ('3 karton NA mentes víz', '3 karton 1,5l Naturaqua mentes'),
+                         ('Mentes 0,5l', 'Mentes 0,5l'), ('0,5 Mentes', '0,5 Mentes')]:
+            self.assertEqual(szoveg_csere(regi), uj)
+
     def test_nagybetus_tetelnev_is(self):
         self.assertEqual(szoveg_csere({'termek': 'Személyzeti víz'}), {'termek': '1,5l Naturaqua mentes'})
 

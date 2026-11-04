@@ -10,17 +10,21 @@ NEVEK = {
     'Kolarska SNP': 'Kolarska',
 }
 
-# Szövegcsere a megjegyzésekben és a tételnevekben (kis-nagybetűtől függetlenül).
-#   Otto, 2026. november: a "személyzeti víz" helyett "1,5l Naturaqua mentes".
-SZOVEG = {'személyzeti víz': '1,5l Naturaqua mentes'}
+# Szövegcsere a megjegyzésekben és a tételnevekben: (regex, csere), kis-nagybetűtől függetlenül.
+#   Otto, 2026. november: a "személyzeti víz" és a "mentes víz" (1,5l / 1,5 L / NA ...) helyett
+#   egységesen "1,5l Naturaqua mentes". A "0,5 Mentes" / "Mentes 0,5l" más termék, marad.
+SZOVEG = [
+    (r'személyzeti víz', '1,5l Naturaqua mentes'),
+    (r'(?:(?:1[,.]5\s*l?|NA)\s*)?mentes víz', '1,5l Naturaqua mentes'),
+]
 
 
 def szoveg_csere(o):
     """A SZOVEG cseréi egy szövegen, vagy rekurzívan egy dict/lista minden szövegén."""
     import re
     if isinstance(o, str):
-        for regi, uj in SZOVEG.items():
-            o = re.sub(re.escape(regi), uj, o, flags=re.I)
+        for minta, uj in SZOVEG:
+            o = re.sub(minta, uj, o, flags=re.I)
         return o
     if isinstance(o, dict):
         return {k: szoveg_csere(v) for k, v in o.items()}
