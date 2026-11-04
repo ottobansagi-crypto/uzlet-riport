@@ -185,6 +185,8 @@ class TestSzovegCsere(Alap):
                          ('Mentes víz', '1,5l Naturaqua mentes'),
                          ('1 karton 1,5l mentes víz', '1 karton 1,5l Naturaqua mentes'),
                          ('3 karton NA mentes víz', '3 karton 1,5l Naturaqua mentes'),
+                         ('3 karton Személzyetí víz', '3 karton 1,5l Naturaqua mentes'),   # elgépelés (Széll, okt.)
+                         ('személyzeti viz', '1,5l Naturaqua mentes'),
                          ('Mentes 0,5l', 'Mentes 0,5l'), ('0,5 Mentes', '0,5 Mentes')]:
             self.assertEqual(szoveg_csere(regi), uj)
 
