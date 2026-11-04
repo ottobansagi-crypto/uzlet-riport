@@ -62,5 +62,5 @@ Minősítés („legrosszabb", „romlik", „krónikus") és javaslat nincs. Eg
 | „Ez a PM-kód biztos X üzlet" | Csak a kódtáblából, vagy Otto megerősítésével. |
 
 ## Karbantartás
-Új szabály (névváltozat, bezárt üzlet) → `scripts/szabalyok.py`. Bármilyen szkript-módosítás után futtasd a teszteket:
+Új szabály (névváltozat, bezárt üzlet, szövegcsere a megjegyzésekben, pl. „személyzeti víz” → „1,5l Naturaqua mentes”) → `scripts/szabalyok.py`. A szövegcserét az apply minden íráskor a teljes adatra (az archív hónapokra is) lefuttatja. Bármilyen szkript-módosítás után futtasd a teszteket:
 `python3 -m unittest discover -s .claude/skills/heti-leltar-frissites/tests -v`

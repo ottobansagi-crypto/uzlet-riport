@@ -14,7 +14,7 @@ import sys
 sys.dont_write_bytecode = True   # ne keletkezzen __pycache__ a repóban
 import argparse, collections, io, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from szabalyok import KATEGORIAK, SK_TETELEK, TREND_EV, ft, honap_adatai
+from szabalyok import KATEGORIAK, SK_TETELEK, TREND_EV, ft, honap_adatai, szoveg_csere
 from check import aktiv_nevek, ellenoriz
 
 OD = collections.OrderedDict
@@ -233,6 +233,7 @@ def main():
     trend_ertekek = {u['nev']: u['osszes'] for u in uj}
     trend_ertekek.update({n: None for n in a.kivesz})          # a kivett üzlet hónapja üres (null) a trendben
     html = trend_frissit(html, kulcs, trend_ertekek, uj_oszlop=(a.mod == 'honapvaltas'))
+    data = szoveg_csere(data)                                   # az archív hónapokban is (szabalyok.SZOVEG)
     i0 = html.index('const INLINE_DATA = {'); i1 = html.index('\n};', i0) + 3
     html = html[:i0] + 'const INLINE_DATA = ' + inline_szoveg(data) + ';' + html[i1:]
 

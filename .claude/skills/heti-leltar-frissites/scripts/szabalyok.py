@@ -10,6 +10,25 @@ NEVEK = {
     'Kolarska SNP': 'Kolarska',
 }
 
+# Szövegcsere a megjegyzésekben és a tételnevekben (kis-nagybetűtől függetlenül).
+#   Otto, 2026. november: a "személyzeti víz" helyett "1,5l Naturaqua mentes".
+SZOVEG = {'személyzeti víz': '1,5l Naturaqua mentes'}
+
+
+def szoveg_csere(o):
+    """A SZOVEG cseréi egy szövegen, vagy rekurzívan egy dict/lista minden szövegén."""
+    import re
+    if isinstance(o, str):
+        for regi, uj in SZOVEG.items():
+            o = re.sub(re.escape(regi), uj, o, flags=re.I)
+        return o
+    if isinstance(o, dict):
+        return {k: szoveg_csere(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [szoveg_csere(v) for v in o]
+    return o
+
+
 # Bezárt / megszűnt üzletek -> az a hónap ('ÉÉÉÉ-HH'), amelytől már nem szerepelnek.
 # A beküldésben még jöhetnek, de a check nem jelez miattuk, és hónapváltáskor kimaradnak.
 #   PLÁZS, F1 Siófok: 2026 októberétől bezárt (Otto kérése).

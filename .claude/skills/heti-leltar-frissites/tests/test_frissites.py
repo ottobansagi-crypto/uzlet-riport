@@ -13,6 +13,8 @@ import gzip, json, os, re, shutil, subprocess, sys, tempfile, unittest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SCRIPTS = os.path.join(os.path.dirname(HERE), 'scripts')
+sys.path.insert(0, SCRIPTS)
+from szabalyok import szoveg_csere   # a régi pillanatképek a szövegcsere-szabály előttiek
 FIX = os.path.join(HERE, 'fixtures')
 REPO = os.path.abspath(os.path.join(HERE, '..', '..', '..', '..'))
 SABLON = os.path.join(REPO, 'uzlet-riport.html')       # a mostani riport-kód
@@ -94,7 +96,7 @@ class Alap(unittest.TestCase):
         data = json.loads(self.olvas('data.json'))
         html = self.olvas('uzlet-riport.html')
         vart = snapshot(vart_commit)
-        self.assertEqual(norm(data), norm(vart['data']))
+        self.assertEqual(norm(data), norm(szoveg_csere(vart['data'])))
         self.assertEqual(norm(inline_data(html)), norm(data), 'az INLINE_DATA eltér a data.json-tól')
         self.assertEqual(trend_rows(html), trend_rows(vart['trend_block']))
         if honap_tombok:
@@ -167,6 +169,18 @@ class TestErtekeles(Alap):
         self.assertRegex(out, r'32-es gombóc többlet:.*D2 Baross')
         self.assertRegex(out, r'víz.*Wesselényi utca')
         self.assertIn('fő hiány: papíráru', out)
+
+
+class TestSzovegCsere(Alap):
+    def test_szemelyzeti_viz_helyett_naturaqua(self):
+        # Otto, 2026. november: a "személyzeti víz" helyett "1,5l Naturaqua mentes" kell.
+        with open(self.parse('szept_teljes_nyers.txt'), encoding='utf-8') as fh:
+            szoveg = fh.read()
+        self.assertNotIn('személyzeti víz', szoveg.lower())
+        self.assertIn('1,5karton 1,5l Naturaqua mentes többlet', szoveg)
+
+    def test_nagybetus_tetelnev_is(self):
+        self.assertEqual(szoveg_csere({'termek': 'Személyzeti víz'}), {'termek': '1,5l Naturaqua mentes'})
 
 
 class TestZaras(Alap):

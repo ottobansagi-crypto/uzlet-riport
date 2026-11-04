@@ -11,7 +11,7 @@ import sys
 sys.dont_write_bytecode = True   # ne keletkezzen __pycache__ a repóban
 import argparse, io, json, re, sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from szabalyok import NEVEK
+from szabalyok import NEVEK, szoveg_csere
 
 MEZOK = {'Százalékos mutató': 'leltar_pct', 'Összes eltérés': 'osszes', 'Gombóc eltérés': 'gomboc',
          'Ital eltérés': 'ital', 'Édesség eltérés': 'desseg', 'Dobozok eltérés': 'doboz',
@@ -99,7 +99,7 @@ def feldolgoz(szoveg):
             sk = b
         else:
             hu.append(b)
-    return {'hu': hu, 'sk': sk}
+    return szoveg_csere({'hu': hu, 'sk': sk})
 
 
 def main():

@@ -116,11 +116,11 @@ def main():
 
     # 7. Megjegyzésekből kiolvasható minták
     viz_t = [u['nev'] for u in sorted(us, key=lambda u: -(u.get('ital') or 0))
-             if re.search(r'víz', (u.get('megjegyzesek') or {}).get('ital', ''), re.I) and (u.get('ital') or 0) > 0]
+             if re.search(r'víz|naturaqua', (u.get('megjegyzesek') or {}).get('ital', ''), re.I) and (u.get('ital') or 0) > 0]
     viz_h = [u['nev'] for u in sorted(us, key=lambda u: u.get('ital') or 0)
-             if re.search(r'víz', (u.get('megjegyzesek') or {}).get('ital', ''), re.I) and (u.get('ital') or 0) < 0]
+             if re.search(r'víz|naturaqua', (u.get('megjegyzesek') or {}).get('ital', ''), re.I) and (u.get('ital') or 0) < 0]
     if viz_t or viz_h:
-        print(f"Személyzeti / mentes víz a megjegyzésekben — többlet: {', '.join(viz_t) or '—'}; hiány: {', '.join(viz_h) or '—'}")
+        print(f"Mentes víz (1,5l Naturaqua) a megjegyzésekben — többlet: {', '.join(viz_t) or '—'}; hiány: {', '.join(viz_h) or '—'}")
     papir = [u['nev'] for u in sorted(us, key=lambda u: u.get('doboz') or 0)
              if (u.get('doboz') or 0) < 0 and re.search(r'doboz|zacsk', (u.get('megjegyzesek') or {}).get('doboz', ''), re.I)]
     if papir:
