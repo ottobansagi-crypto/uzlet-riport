@@ -1,0 +1,600 @@
+{
+  "orszag": "HU",
+  "honap": "2026-11",
+  "datum": "2026-11-04",
+  "allapot": "reszeredmeny",
+  "penznem": "HUF",
+  "uzletek": [
+    {
+      "nev": "Király utca",
+      "leltar_pct": 101.62,
+      "osszes": 26703,
+      "gomboc": 11363,
+      "ital": 10340,
+      "desseg": 0,
+      "doboz": 5000,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 385831,
+      "selejt_pct": 18.0,
+      "ptg": {
+        "osszes": -1063,
+        "fiscat": 1099,
+        "cash": 36
+      }
+    },
+    {
+      "nev": "Erzsébet krt. 30.",
+      "leltar_pct": 99.98,
+      "osszes": -102,
+      "gomboc": 2868,
+      "ital": 5480,
+      "desseg": 0,
+      "doboz": -8450,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 212034,
+      "selejt_pct": 25.0,
+      "ptg": {
+        "osszes": 339,
+        "fiscat": null,
+        "cash": null
+      }
+    },
+    {
+      "nev": "Fashion",
+      "leltar_pct": 97.93,
+      "osszes": -20234,
+      "gomboc": -1941,
+      "ital": -4400,
+      "desseg": 0,
+      "doboz": 0,
+      "ajandek": -990,
+      "snack": -12903,
+      "pasta": null,
+      "selejt_ft": 275465,
+      "selejt_pct": 21.2,
+      "ptg": {
+        "osszes": 3078,
+        "fiscat": 2998,
+        "cash": 80
+      }
+    },
+    {
+      "nev": "Bazilika",
+      "leltar_pct": 98.99,
+      "osszes": -8609,
+      "gomboc": -1279,
+      "ital": -640,
+      "desseg": 0,
+      "doboz": -4900,
+      "ajandek": 0,
+      "snack": -1790,
+      "pasta": null,
+      "selejt_ft": 194327,
+      "selejt_pct": 17.7,
+      "ptg": {
+        "osszes": 32,
+        "fiscat": 0,
+        "cash": 32
+      }
+    },
+    {
+      "nev": "Széll Kálmán",
+      "leltar_pct": 99.78,
+      "osszes": -2711,
+      "gomboc": -5131,
+      "ital": 2520,
+      "desseg": 0,
+      "doboz": -100,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 268916,
+      "selejt_pct": 17.3,
+      "ptg": {
+        "osszes": 27,
+        "fiscat": 0,
+        "cash": 27
+      }
+    },
+    {
+      "nev": "Corvin",
+      "leltar_pct": 100.9,
+      "osszes": 9781,
+      "gomboc": 9481,
+      "ital": 200,
+      "desseg": 0,
+      "doboz": 100,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 236669,
+      "selejt_pct": 17.4,
+      "ptg": {
+        "osszes": 2824,
+        "fiscat": 0,
+        "cash": 2824
+      }
+    },
+    {
+      "nev": "Károly krt",
+      "leltar_pct": 94.51,
+      "osszes": -65886,
+      "gomboc": -58314,
+      "ital": -9870,
+      "desseg": 0,
+      "doboz": 500,
+      "ajandek": 0,
+      "snack": 1798,
+      "pasta": null,
+      "selejt_ft": 178606,
+      "selejt_pct": 12.3,
+      "ptg": {
+        "osszes": -1467,
+        "fiscat": 0,
+        "cash": -1467
+      }
+    },
+    {
+      "nev": "Dob",
+      "leltar_pct": 100.06,
+      "osszes": 291,
+      "gomboc": -5729,
+      "ital": 6820,
+      "desseg": 0,
+      "doboz": -800,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 146616,
+      "selejt_pct": 20.4,
+      "ptg": {
+        "osszes": -1959,
+        "fiscat": 0,
+        "cash": -1959
+      }
+    },
+    {
+      "nev": "Blaha",
+      "leltar_pct": 98.15,
+      "osszes": -30215,
+      "gomboc": -665,
+      "ital": -28090,
+      "desseg": 0,
+      "doboz": -2650,
+      "ajandek": 0,
+      "snack": 1190,
+      "pasta": null,
+      "selejt_ft": 93626,
+      "selejt_pct": 5.1,
+      "ptg": {
+        "osszes": 589,
+        "fiscat": 0,
+        "cash": 589
+      }
+    },
+    {
+      "nev": "Oktogon",
+      "leltar_pct": 97.95,
+      "osszes": -77695,
+      "gomboc": -47638,
+      "ital": -9490,
+      "desseg": 0,
+      "doboz": -4450,
+      "ajandek": -2990,
+      "snack": -10110,
+      "pasta": -3017,
+      "selejt_ft": 201595,
+      "selejt_pct": 5.3,
+      "ptg": {
+        "osszes": 30,
+        "fiscat": 0,
+        "cash": 30
+      }
+    },
+    {
+      "nev": "Wesselényi utca",
+      "leltar_pct": 101.31,
+      "osszes": 10434,
+      "gomboc": 3804,
+      "ital": 6080,
+      "desseg": 0,
+      "doboz": 550,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 128885,
+      "selejt_pct": 13.1,
+      "ptg": {
+        "osszes": 29,
+        "fiscat": 0,
+        "cash": 29
+      }
+    },
+    {
+      "nev": "Astoria",
+      "leltar_pct": 100.06,
+      "osszes": 590,
+      "gomboc": -4120,
+      "ital": -1180,
+      "desseg": 0,
+      "doboz": 900,
+      "ajandek": 4990,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 203547,
+      "selejt_pct": 16.7,
+      "ptg": {
+        "osszes": -37,
+        "fiscat": 0,
+        "cash": -37
+      }
+    },
+    {
+      "nev": "Gomba Móricz",
+      "leltar_pct": 99.56,
+      "osszes": -7761,
+      "gomboc": -11675,
+      "ital": -3800,
+      "desseg": 0,
+      "doboz": -450,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": 8164,
+      "selejt_ft": 217893,
+      "selejt_pct": 10.5,
+      "ptg": {
+        "osszes": 257,
+        "fiscat": 0,
+        "cash": 257
+      }
+    },
+    {
+      "nev": "Keleti",
+      "leltar_pct": 97.46,
+      "osszes": -34620,
+      "gomboc": -362,
+      "ital": 440,
+      "desseg": 1299,
+      "doboz": 200,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": -36197,
+      "selejt_ft": 163834,
+      "selejt_pct": 10.3,
+      "ptg": {
+        "osszes": 23,
+        "fiscat": 0,
+        "cash": 23
+      }
+    },
+    {
+      "nev": "Fővám tér",
+      "leltar_pct": 102.6,
+      "osszes": 20538,
+      "gomboc": 12858,
+      "ital": 5880,
+      "desseg": 0,
+      "doboz": 1800,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 247094,
+      "selejt_pct": 23.2,
+      "ptg": {
+        "osszes": -1160,
+        "fiscat": 0,
+        "cash": -1160
+      }
+    },
+    {
+      "nev": "Ferenciek tere",
+      "leltar_pct": 100.52,
+      "osszes": 4921,
+      "gomboc": -929,
+      "ital": -4350,
+      "desseg": 0,
+      "doboz": 10200,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 153933,
+      "selejt_pct": 13.5,
+      "ptg": {
+        "osszes": 344,
+        "fiscat": 0,
+        "cash": 344
+      }
+    },
+    {
+      "nev": "Jászai Mari tér",
+      "leltar_pct": 101.86,
+      "osszes": 22945,
+      "gomboc": 295,
+      "ital": 12400,
+      "desseg": 0,
+      "doboz": 10050,
+      "ajandek": 0,
+      "snack": 200,
+      "pasta": null,
+      "selejt_ft": 171364,
+      "selejt_pct": 11.8,
+      "ptg": {
+        "osszes": -1034,
+        "fiscat": 0,
+        "cash": -1034
+      }
+    },
+    {
+      "nev": "Etele",
+      "leltar_pct": 94.97,
+      "osszes": 77633,
+      "gomboc": 75273,
+      "ital": 3460,
+      "desseg": 0,
+      "doboz": -1100,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 222299,
+      "selejt_pct": 16.9,
+      "ptg": {
+        "osszes": 77942,
+        "fiscat": 64812,
+        "cash": 13130
+      }
+    },
+    {
+      "nev": "Kispest",
+      "leltar_pct": 100.05,
+      "osszes": 459,
+      "gomboc": 1996,
+      "ital": 0,
+      "desseg": 0,
+      "doboz": 1800,
+      "ajandek": 450,
+      "snack": 0,
+      "pasta": -3787,
+      "selejt_ft": 48140,
+      "selejt_pct": 4.5,
+      "ptg": {
+        "osszes": -4,
+        "fiscat": 0,
+        "cash": -4
+      }
+    },
+    {
+      "nev": "Bosnyák tér",
+      "leltar_pct": 100.0,
+      "osszes": -44,
+      "gomboc": -6774,
+      "ital": 6230,
+      "desseg": 0,
+      "doboz": 500,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 151796,
+      "selejt_pct": 9.0,
+      "ptg": {
+        "osszes": -809,
+        "fiscat": 0,
+        "cash": -809
+      }
+    },
+    {
+      "nev": "Árkád",
+      "leltar_pct": 99.33,
+      "osszes": -6900,
+      "gomboc": -3446,
+      "ital": 100,
+      "desseg": 0,
+      "doboz": -750,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": -2804,
+      "selejt_ft": 159356,
+      "selejt_pct": 12.7,
+      "ptg": {
+        "osszes": 14,
+        "fiscat": 0,
+        "cash": 14
+      }
+    },
+    {
+      "nev": "Kazinczy",
+      "leltar_pct": 100.09,
+      "osszes": 632,
+      "gomboc": 42,
+      "ital": 390,
+      "desseg": 0,
+      "doboz": 200,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 91290,
+      "selejt_pct": 10.9,
+      "ptg": {
+        "osszes": 42,
+        "fiscat": 0,
+        "cash": 42
+      }
+    },
+    {
+      "nev": "Törökvész",
+      "leltar_pct": 99.23,
+      "osszes": -13868,
+      "gomboc": -6353,
+      "ital": 100,
+      "desseg": 0,
+      "doboz": 1150,
+      "ajandek": -450,
+      "snack": 0,
+      "pasta": -8315,
+      "selejt_ft": 211748,
+      "selejt_pct": 8.7,
+      "ptg": {
+        "osszes": 1384,
+        "fiscat": 1349,
+        "cash": 35
+      }
+    },
+    {
+      "nev": "GO Buda",
+      "leltar_pct": 99.59,
+      "osszes": -6547,
+      "gomboc": -5853,
+      "ital": -2320,
+      "desseg": 1299,
+      "doboz": -1850,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": 2177,
+      "selejt_ft": 93901,
+      "selejt_pct": 5.3,
+      "ptg": {
+        "osszes": -23,
+        "fiscat": 0,
+        "cash": -23
+      }
+    },
+    {
+      "nev": "D1 Buda",
+      "leltar_pct": 97.84,
+      "osszes": -38987,
+      "gomboc": -4434,
+      "ital": 5040,
+      "desseg": 0,
+      "doboz": 300,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": -39893,
+      "selejt_ft": 101040,
+      "selejt_pct": 5.2,
+      "ptg": {
+        "osszes": 0,
+        "fiscat": 0,
+        "cash": 0
+      }
+    },
+    {
+      "nev": "D2 Baross",
+      "leltar_pct": 101.9,
+      "osszes": 32639,
+      "gomboc": 13750,
+      "ital": 9040,
+      "desseg": 0,
+      "doboz": 1000,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": 8849,
+      "selejt_ft": 64265,
+      "selejt_pct": 3.5,
+      "ptg": {
+        "osszes": 247,
+        "fiscat": 0,
+        "cash": 247
+      }
+    },
+    {
+      "nev": "Újpest",
+      "leltar_pct": 98.81,
+      "osszes": -12242,
+      "gomboc": -1579,
+      "ital": -1580,
+      "desseg": -1299,
+      "doboz": -200,
+      "ajandek": 0,
+      "snack": 3980,
+      "pasta": -11564,
+      "selejt_ft": 22650,
+      "selejt_pct": 1.8,
+      "ptg": {
+        "osszes": -1,
+        "fiscat": 0,
+        "cash": -1
+      }
+    },
+    {
+      "nev": "K1 Westend",
+      "leltar_pct": 134.11,
+      "osszes": 104961,
+      "gomboc": 7551,
+      "ital": 9360,
+      "desseg": 0,
+      "doboz": 88050,
+      "ajandek": 0,
+      "snack": 0,
+      "pasta": null,
+      "selejt_ft": 123147,
+      "selejt_pct": 27.1,
+      "ptg": {
+        "osszes": 493,
+        "fiscat": 0,
+        "cash": 493
+      }
+    },
+    {
+      "nev": "Szeged",
+      "leltar_pct": 99.62,
+      "osszes": 9477,
+      "gomboc": 16383,
+      "ital": 4840,
+      "desseg": 0,
+      "doboz": -1200,
+      "ajandek": 0,
+      "snack": 2770,
+      "pasta": -13316,
+      "selejt_ft": 82015,
+      "selejt_pct": 6.9,
+      "ptg": {
+        "osszes": 16383,
+        "fiscat": 6780,
+        "cash": 9603
+      }
+    },
+    {
+      "nev": "Pécs",
+      "leltar_pct": 99.28,
+      "osszes": -8386,
+      "gomboc": -14387,
+      "ital": 1780,
+      "desseg": 1299,
+      "doboz": 250,
+      "ajandek": 990,
+      "snack": 1990,
+      "pasta": -308,
+      "selejt_ft": 140237,
+      "selejt_pct": 10.2,
+      "ptg": {
+        "osszes": 35,
+        "fiscat": 0,
+        "cash": 35
+      },
+      "franchise": true
+    },
+    {
+      "nev": "Miskolc",
+      "leltar_pct": 95.88,
+      "osszes": -25247,
+      "gomboc": -13148,
+      "ital": -7510,
+      "desseg": -1299,
+      "doboz": 1500,
+      "ajandek": -3990,
+      "snack": -800,
+      "pasta": null,
+      "selejt_ft": 117752,
+      "selejt_pct": 15.5,
+      "ptg": {
+        "osszes": 31,
+        "fiscat": 0,
+        "cash": 31
+      },
+      "franchise": true
+    }
+  ]
+}
