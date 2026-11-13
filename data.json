@@ -36,8 +36,8 @@
       "selejt_ft": 768860,
       "ptg": {
         "osszes": -970,
-        "fiscat": 22392,
-        "cash": -996
+        "fiscat": 1099,
+        "cash": 129
       }
     },
     {
@@ -97,8 +97,8 @@
       "selejt_ft": 738447,
       "ptg": {
         "osszes": 5367,
-        "fiscat": 38666,
-        "cash": -9319
+        "fiscat": 3098,
+        "cash": 2269
       }
     },
     {
@@ -126,8 +126,8 @@
       "selejt_ft": 603217,
       "ptg": {
         "osszes": 295,
-        "fiscat": 7194,
-        "cash": 10327
+        "fiscat": 0,
+        "cash": 295
       }
     },
     {
@@ -155,8 +155,8 @@
       "selejt_ft": 576861,
       "ptg": {
         "osszes": 128,
-        "fiscat": 12431,
-        "cash": 339
+        "fiscat": 0,
+        "cash": 128
       }
     },
     {
@@ -183,9 +183,9 @@
       ],
       "selejt_ft": 619048,
       "ptg": {
-        "osszes": 393,
+        "osszes": 40,
         "fiscat": 0,
-        "cash": 393
+        "cash": 40
       }
     },
     {
@@ -217,7 +217,7 @@
       "ptg": {
         "osszes": 935,
         "fiscat": 0,
-        "cash": 6678
+        "cash": -1349
       }
     },
     {
@@ -248,8 +248,8 @@
       "selejt_ft": 478088,
       "ptg": {
         "osszes": 6541,
-        "fiscat": 14020,
-        "cash": 1737
+        "fiscat": 2348,
+        "cash": -2372
       }
     },
     {
@@ -281,15 +281,15 @@
       "selejt_ft": 292365,
       "ptg": {
         "osszes": 923,
-        "fiscat": 3849,
-        "cash": 16739
+        "fiscat": 0,
+        "cash": 923
       }
     },
     {
       "nev": "Oktogon",
-      "leltar_pct": 99.38,
-      "osszes": -59956,
-      "gomboc": -39334,
+      "leltar_pct": 99.28,
+      "osszes": -73927,
+      "gomboc": -53305,
       "ital": 4760,
       "desseg": 3897,
       "doboz": -4450,
@@ -300,7 +300,7 @@
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 4
+            "mennyiseg": 5
           }
         ]
       },
@@ -313,9 +313,9 @@
       "pasta": 26979,
       "selejt_ft": 619568,
       "ptg": {
-        "osszes": 14442,
-        "fiscat": 10392,
-        "cash": 4050
+        "osszes": 471,
+        "fiscat": 0,
+        "cash": 471
       }
     },
     {
@@ -347,15 +347,15 @@
       "selejt_ft": 314366,
       "ptg": {
         "osszes": 5231,
-        "fiscat": 24971,
-        "cash": 6007
+        "fiscat": 5196,
+        "cash": 35
       }
     },
     {
       "nev": "Astoria",
-      "leltar_pct": 100.1,
-      "osszes": 11746,
-      "gomboc": 9706,
+      "leltar_pct": 99.66,
+      "osszes": -12167,
+      "gomboc": -14207,
       "ital": 690,
       "desseg": 0,
       "doboz": -3350,
@@ -375,16 +375,16 @@
       ],
       "selejt_ft": 589947,
       "ptg": {
-        "osszes": 23958,
-        "fiscat": 14209,
-        "cash": 9749
+        "osszes": 45,
+        "fiscat": 0,
+        "cash": 45
       }
     },
     {
       "nev": "Gomba Móricz",
-      "leltar_pct": 100.1,
-      "osszes": 10351,
-      "gomboc": 17459,
+      "leltar_pct": 100.05,
+      "osszes": 2977,
+      "gomboc": 10085,
       "ital": 890,
       "desseg": 0,
       "doboz": -6600,
@@ -408,16 +408,16 @@
       "pasta": 16343,
       "selejt_ft": 602304,
       "ptg": {
-        "osszes": 7780,
+        "osszes": 406,
         "fiscat": 0,
-        "cash": 7780
+        "cash": 406
       }
     },
     {
       "nev": "Keleti",
       "leltar_pct": 99.51,
-      "osszes": -16946,
-      "gomboc": -26784,
+      "osszes": -22387,
+      "gomboc": -32225,
       "ital": 2820,
       "desseg": 608,
       "doboz": -1750,
@@ -428,7 +428,7 @@
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 2
+            "mennyiseg": 3
           }
         ]
       },
@@ -438,16 +438,16 @@
       "pasta": -25413,
       "selejt_ft": 412598,
       "ptg": {
-        "osszes": 5618,
+        "osszes": 177,
         "fiscat": 0,
-        "cash": 5618
+        "cash": 177
       }
     },
     {
       "nev": "Fővám tér",
-      "leltar_pct": 100.1,
-      "osszes": 14902,
-      "gomboc": 11832,
+      "leltar_pct": 100.55,
+      "osszes": 17058,
+      "gomboc": 13988,
       "ital": 2170,
       "desseg": 0,
       "doboz": 900,
@@ -467,9 +467,9 @@
       ],
       "selejt_ft": 492956,
       "ptg": {
-        "osszes": 304,
-        "fiscat": 4848,
-        "cash": -4544
+        "osszes": 2460,
+        "fiscat": 3597,
+        "cash": -1137
       }
     },
     {
@@ -497,15 +497,15 @@
       "selejt_ft": 482583,
       "ptg": {
         "osszes": 1285,
-        "fiscat": 890,
-        "cash": 17014
+        "fiscat": 0,
+        "cash": 1285
       }
     },
     {
       "nev": "Jászai Mari tér",
       "leltar_pct": 100.1,
-      "osszes": 18659,
-      "gomboc": 2687,
+      "osszes": 8955,
+      "gomboc": -7017,
       "ital": 22480,
       "desseg": 1299,
       "doboz": -1150,
@@ -516,12 +516,12 @@
         "gomboc": [
           {
             "termek": "Szelet",
-            "mennyiseg": 2
+            "mennyiseg": 7
           }
         ]
       },
       "megjegyzesek": {
-        "ital": "1 karton 0,5 Zero, 2 karton 1,5l Naturaqua mentes",
+        "ital": "1 karton 0,5 ero, 2 karton 1,5l Naturaqua mentes",
         "snack": "6db termék"
       },
       "teruletvezeto": [
@@ -529,78 +529,59 @@
       ],
       "selejt_ft": 453942,
       "ptg": {
-        "osszes": 7937,
-        "fiscat": 2498,
-        "cash": 5439
+        "osszes": -1767,
+        "fiscat": 0,
+        "cash": -1767
       }
     },
     {
       "nev": "Etele",
-      "leltar_pct": 100.1,
-      "osszes": 7983,
-      "gomboc": 4365,
+      "leltar_pct": 100.01,
+      "osszes": 3334,
+      "gomboc": -284,
       "ital": 2670,
       "desseg": 0,
       "doboz": -850,
       "snack": 1798,
       "ajandek": 0,
       "selejt_pct": 10.9,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "Szelet",
-            "mennyiseg": 3
-          }
-        ]
-      },
-      "megjegyzesek": {
-        "ital": "3 karton 1,5l Naturaqua mentes"
-      },
       "teruletvezeto": [
         "Bratkovics Ádám"
       ],
       "selejt_ft": 484385,
       "ptg": {
-        "osszes": 4364,
-        "fiscat": 4138,
-        "cash": 226
+        "osszes": -285,
+        "fiscat": 0,
+        "cash": -285
       }
     },
     {
       "nev": "Kispest",
       "leltar_pct": 99.96,
-      "osszes": -1193,
-      "gomboc": -343,
+      "osszes": -1147,
+      "gomboc": -297,
       "ital": -50,
       "desseg": 0,
       "doboz": -900,
       "snack": 0,
       "ajandek": 100,
       "selejt_pct": 4.6,
-      "reszletek": {
-        "gomboc": [
-          {
-            "termek": "32-es gombóc",
-            "mennyiseg": 1
-          }
-        ]
-      },
       "teruletvezeto": [
         "Ullman Zsófia"
       ],
       "pasta": -7943,
       "selejt_ft": 134234,
       "ptg": {
-        "osszes": -43,
+        "osszes": 3,
         "fiscat": 0,
-        "cash": -43
+        "cash": 3
       }
     },
     {
       "nev": "Bosnyák tér",
-      "leltar_pct": 99.9,
-      "osszes": -713,
-      "gomboc": 7497,
+      "leltar_pct": 99.68,
+      "osszes": -12745,
+      "gomboc": -4535,
       "ital": -4210,
       "desseg": 0,
       "doboz": -4500,
@@ -610,29 +591,26 @@
       "reszletek": {
         "gomboc": [
           {
-            "termek": "45-ös gombóc",
-            "mennyiseg": 1
+            "termek": "Szelet",
+            "mennyiseg": 4
           }
         ]
-      },
-      "megjegyzesek": {
-        "ital": "24db 0,3 Zero cola"
       },
       "teruletvezeto": [
         "Bratkovics Ádám"
       ],
       "selejt_ft": 300929,
       "ptg": {
-        "osszes": 13110,
-        "fiscat": 2448,
-        "cash": 10662
+        "osszes": 1078,
+        "fiscat": 0,
+        "cash": 1078
       }
     },
     {
       "nev": "Árkád",
-      "leltar_pct": 99.8,
-      "osszes": -13167,
-      "gomboc": -10217,
+      "leltar_pct": 100.1,
+      "osszes": 9806,
+      "gomboc": 12756,
       "ital": 100,
       "desseg": 0,
       "doboz": -3050,
@@ -656,9 +634,9 @@
       "pasta": -22516,
       "selejt_ft": 389247,
       "ptg": {
-        "osszes": 23046,
-        "fiscat": 22148,
-        "cash": 898
+        "osszes": 73,
+        "fiscat": 0,
+        "cash": 73
       }
     },
     {
@@ -679,14 +657,14 @@
       "ptg": {
         "osszes": 0,
         "fiscat": 0,
-        "cash": 1085
+        "cash": 327
       }
     },
     {
       "nev": "Törökvész",
       "leltar_pct": 99.21,
-      "osszes": -43506,
-      "gomboc": -41528,
+      "osszes": -44944,
+      "gomboc": -42966,
       "ital": 13720,
       "desseg": -14897,
       "doboz": -1200,
@@ -696,8 +674,8 @@
       "reszletek": {
         "gomboc": [
           {
-            "termek": "22-es gombóc",
-            "mennyiseg": 1
+            "termek": "45-ös gombóc",
+            "mennyiseg": 4
           }
         ]
       },
@@ -712,16 +690,16 @@
       "pasta": -136332,
       "selejt_ft": 625016,
       "ptg": {
-        "osszes": 9155,
-        "fiscat": 1249,
-        "cash": 7906
+        "osszes": 7717,
+        "fiscat": 1349,
+        "cash": 6368
       }
     },
     {
       "nev": "GO Buda",
-      "leltar_pct": 100.1,
-      "osszes": 1826,
-      "gomboc": 8558,
+      "leltar_pct": 99.26,
+      "osszes": -32324,
+      "gomboc": -25592,
       "ital": -5480,
       "desseg": 0,
       "doboz": -2800,
@@ -732,7 +710,7 @@
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 1
+            "mennyiseg": 2
           }
         ]
       },
@@ -742,9 +720,9 @@
       "pasta": -4399,
       "selejt_ft": 307634,
       "ptg": {
-        "osszes": 34885,
-        "fiscat": 4530,
-        "cash": 30355
+        "osszes": 735,
+        "fiscat": 0,
+        "cash": 735
       }
     },
     {
@@ -762,7 +740,7 @@
         "gomboc": [
           {
             "termek": "32-es gombóc",
-            "mennyiseg": 5
+            "mennyiseg": 4
           }
         ]
       },
@@ -809,9 +787,9 @@
     },
     {
       "nev": "Újpest",
-      "leltar_pct": 100.0,
-      "osszes": 168,
-      "gomboc": 6247,
+      "leltar_pct": 99.98,
+      "osszes": -687,
+      "gomboc": 5392,
       "ital": -2520,
       "desseg": -3289,
       "doboz": -4000,
@@ -832,9 +810,9 @@
       "pasta": -2657,
       "selejt_ft": 63665,
       "ptg": {
-        "osszes": 1117,
+        "osszes": 262,
         "fiscat": 0,
-        "cash": 1117
+        "cash": 262
       }
     },
     {
@@ -872,9 +850,9 @@
     },
     {
       "nev": "Szeged",
-      "leltar_pct": 100.1,
-      "osszes": 5005,
-      "gomboc": -2485,
+      "leltar_pct": 100.08,
+      "osszes": 11915,
+      "gomboc": 4425,
       "ital": 9140,
       "desseg": 0,
       "doboz": -1300,
@@ -885,7 +863,7 @@
         "gomboc": [
           {
             "termek": "Szelet",
-            "mennyiseg": 2
+            "mennyiseg": 4
           }
         ]
       },
@@ -898,9 +876,9 @@
       "pasta": -93,
       "selejt_ft": 291656,
       "ptg": {
-        "osszes": 9568,
-        "fiscat": 0,
-        "cash": 9568
+        "osszes": 16478,
+        "fiscat": 6780,
+        "cash": 9698
       }
     },
     {
@@ -929,16 +907,16 @@
       "pasta": -5769,
       "selejt_ft": 359602,
       "ptg": {
-        "osszes": 19523,
-        "fiscat": 14731,
-        "cash": 4792
+        "osszes": 371,
+        "fiscat": 0,
+        "cash": 371
       }
     },
     {
       "nev": "Miskolc",
-      "leltar_pct": 98.5,
-      "osszes": -49446,
-      "gomboc": -19883,
+      "leltar_pct": 97.83,
+      "osszes": -64811,
+      "gomboc": -35248,
       "ital": -16300,
       "desseg": -673,
       "doboz": -10050,
@@ -949,7 +927,7 @@
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 2
+            "mennyiseg": 3
           }
         ]
       },
@@ -959,9 +937,9 @@
       ],
       "selejt_ft": 253639,
       "ptg": {
-        "osszes": 19412,
-        "fiscat": 6495,
-        "cash": 12917
+        "osszes": 4047,
+        "fiscat": 3847,
+        "cash": 200
       }
     }
   ],
