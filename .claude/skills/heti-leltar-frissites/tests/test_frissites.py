@@ -187,6 +187,11 @@ class TestSzovegCsere(Alap):
                          ('3 karton NA mentes víz', '3 karton 1,5l Naturaqua mentes'),
                          ('3 karton Személzyetí víz', '3 karton 1,5l Naturaqua mentes'),   # elgépelés (Széll, okt.)
                          ('személyzeti viz', '1,5l Naturaqua mentes'),
+                         # 2026. november 12-i beküldés: "víz" nélküli változatok
+                         ('16db 1,5l NA mentes, 12db Cappy Ice', '16db 1,5l Naturaqua mentes, 12db Cappy Ice'),
+                         ('1 karton 1,5 Mentes', '1 karton 1,5l Naturaqua mentes'),
+                         ('1 karton 0,5 Zero, 2 karton Na Mentes 1,5l', '1 karton 0,5 Zero, 2 karton 1,5l Naturaqua mentes'),
+                         ('3 karton 1,5l Naturaqua mentes', '3 karton 1,5l Naturaqua mentes'),   # nem cserél újra
                          ('Mentes 0,5l', 'Mentes 0,5l'), ('0,5 Mentes', '0,5 Mentes')]:
             self.assertEqual(szoveg_csere(regi), uj)
 

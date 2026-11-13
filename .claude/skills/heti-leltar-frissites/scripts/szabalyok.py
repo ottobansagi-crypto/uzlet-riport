@@ -16,6 +16,8 @@ NEVEK = {
 SZOVEG = [
     (r'szem[eé]l\w*\s+v[ií]z', '1,5l Naturaqua mentes'),       # elgépelve is: "Személzyetí víz"
     (r'(?:(?:1[,.]5\s*l?|NA)\s*)?mentes víz', '1,5l Naturaqua mentes'),
+    (r'\b1[,.]5\s*l?\s*(?:NA\s+)?mentes\b', '1,5l Naturaqua mentes'),      # "1,5 Mentes", "1,5l NA mentes"
+    (r'\bNA\s+mentes\s+1[,.]5\s*l?\b', '1,5l Naturaqua mentes'),         # "Na Mentes 1,5l"
 ]
 
 
