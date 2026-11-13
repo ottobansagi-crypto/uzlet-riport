@@ -38,11 +38,12 @@ Munka a `claude/business-report-review-4iqn3c` ágon, a repó gyökeréből. `K=
 4. **Élesítés:** „A munkaágon van, élesbe még nem ment. Mehet?"
 
 ## Szöveges értékelés (forrás: `pizzame-tudas` → `tudas/leltar-keszlet.md`)
-Előbb futtasd: `python3 $K/ertekeles.py` — ez kigyűjti a tényeket (a hónap helye az évben, a 20 ezer feletti hiányos üzletek száma havonta, a fő hiány-kategória, a javult / tartósan hiányos / előjelet váltó üzletek, a gombóc-méretek, a víz, a papíráru és a pasta mintái). A szöveg ezekből készül, nem becslésből. Ha egy kategória a hálózatban többletben van, nem lehet „fő tétel".
-A szöveg **informatív, kevés számmal**, üzletenkénti felsorolás nélkül (a számok a riportban vannak). Három rész:
+Előbb futtasd: `python3 $K/ertekeles.py` — ez kigyűjti a tényeket (a hónap helye az évben, a 20 ezer feletti hiányos üzletek száma havonta, a fő hiány-kategória, a javult / tartósan hiányos / előjelet váltó üzletek, a gombóc-méretek, a víz, a papíráru és a pasta mintái, valamint a kiemelhető egyedi tételek: a gombócon kívüli 10 ezer feletti tételek a megjegyzéssel és a hálózati részarányukkal, és a lopást említő megjegyzések). A szöveg ezekből készül, nem becslésből. Ha egy kategória a hálózatban többletben van, nem lehet „fő tétel".
+A szöveg **informatív, kevés számmal**, üzletenkénti felsorolás nélkül (a számok a riportban vannak). Négy rész:
 1. **Összkép** (2–3 mondat): a hónap az évhez és az előző hónaphoz képest, a 20 ezer feletti hiányos üzletek számának alakulása, a levonások iránya.
 2. **Ami a hónapot jellemzi** (3–5 pont): több üzletben ismétlődő minták, mindegyik félkövér állítás + 1–2 mondat, a példa-üzletek zárójelben.
-3. **Az üzletek trendje** (3 pont): javult / tartósan hiányos maradt / előjelet váltott.
+3. **Kiemelt tételek** (3–4 pont): egy-egy üzlet figyelemre méltó tétele a gombócon kívül, pl. egy üzletből jövő pasta- vagy édességhiány, lopást említő megjegyzés, nagyobb ital-tételek. Félkövér állítás + 1–2 mondat; mennyiség (pl. „hat kilogramm”, „tíz tiramisu”) mehet, forintösszeg nem kell.
+4. **Az üzletek trendje** (3 pont): javult / tartósan hiányos maradt / előjelet váltott.
 Minősítés („legrosszabb", „romlik", „krónikus") és javaslat nincs. Egyértelmű rögzítési vagy átvételi mintánál „valószínűleg" fordulat használható. Területvezetőt nem kell írni. Heti részeredménynél ugyanez a forma, rövidebben.
 
 ## Ismert, Otto által elfogadott tételek — ezekre NE kérdezz

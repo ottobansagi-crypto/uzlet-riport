@@ -5,7 +5,8 @@
 
 Nem szöveget ír, hanem kigyűjti, amire a szöveg épül: a hónap helye az évben, a 20 ezer feletti
 hiánnyal záró üzletek száma havonta, a fő hiány-kategória, a tartósan hiányos üzletek alakulása,
-az előjelet váltók és a több üzletben ismétlődő minták (gombóc-méretek, víz, papíráru, pasta).
+az előjelet váltók, a több üzletben ismétlődő minták (gombóc-méretek, víz, papíráru, pasta),
+valamint a kiemelhető egyedi tételek (pl. egy üzlet pasta- vagy édességhiánya, lopás a megjegyzésben).
 A szöveget ezekből kell megírni, nem becslésből."""
 import sys
 sys.dont_write_bytecode = True   # ne keletkezzen __pycache__ a repóban
@@ -14,8 +15,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from szabalyok import HONAPOK, KATEGORIAK, ft
 
 KUSZOB = -20000
+KIEMEL = 10000          # a kiemelhető tételek küszöbe (Ft, mindkét irányban)
 KAT_NEV = {'gomboc': 'gombóc', 'ital': 'ital', 'desseg': 'édesség', 'doboz': 'papíráru',
-           'ajandek': 'ajándéktárgy', 'snack': 'snack'}
+           'ajandek': 'ajándéktárgy', 'snack': 'snack', 'pasta': 'pasta'}
 KULCS_NEV = {v[0]: k for k, v in HONAPOK.items()}          # 'okt' -> 'október'
 
 
@@ -129,6 +131,27 @@ def main():
     pasta_t = [u['nev'] for u in sorted(us, key=lambda u: -(u.get('pasta') or 0)) if (u.get('pasta') or 0) >= -KUSZOB]
     if pasta_h or pasta_t:
         print(f"Pasta (tájékoztató, 20 ezer felett) — hiány: {', '.join(pasta_h) or '—'}; többlet: {', '.join(pasta_t) or '—'}")
+
+    # 8. Kiemelhető tételek: a gombócon kívüli kategóriák nagy (10 ezer feletti) üzleti tételei a
+    #    megjegyzéssel, és hogy a legnagyobb tétel a hálózati összeg mekkora része (pl. "egy üzletből jön").
+    print('Kiemelhető tételek (10 ezer felett; a % a legnagyobb tétel része a hálózati összegből):')
+    for k in [k for k in KATEGORIAK if k != 'gomboc'] + ['pasta']:
+        nagy = sorted((u for u in us if abs(u.get(k) or 0) >= KIEMEL), key=lambda u: -abs(u[k]))
+        if not nagy:
+            continue
+        osszeg = sum(u.get(k) or 0 for u in us)
+        tetelek = []
+        for i, u in enumerate(nagy):
+            megj = (u.get('megjegyzesek') or {}).get(k, '')
+            t = f"{u['nev']} {elojel(u[k])}" + (f' „{megj}”' if megj else '')
+            if i == 0 and osszeg and (u[k] > 0) == (osszeg > 0) and abs(osszeg) >= KIEMEL:
+                t += f' — a hálózati összeg {round(100 * u[k] / osszeg)}%-a'
+            tetelek.append(t)
+        print(f"  {KAT_NEV.get(k, k)} (hálózat {elojel(osszeg)}): " + '; '.join(tetelek))
+    lopas = [f"{u['nev']} ({KAT_NEV.get(k, k)})" for u in us for k, m in (u.get('megjegyzesek') or {}).items()
+             if re.search(r'lop', m, re.I)]
+    if lopas:
+        print('Lopás a megjegyzésekben: ' + ', '.join(lopas))
 
 
 if __name__ == '__main__':

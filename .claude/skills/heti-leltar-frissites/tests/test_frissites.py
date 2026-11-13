@@ -171,6 +171,20 @@ class TestErtekeles(Alap):
         self.assertIn('fő hiány: papíráru', out)
 
 
+class TestKiemeltTetelek(Alap):
+    def test_novemberi_kiemelt_tetelek(self):
+        # November 12-i részeredmény: a "Kiemelt tételek" rész tényei (Otto, 2026. november).
+        self.allapot('86a2aac')
+        out = run('ertekeles.py', '--root', self.root).stdout
+        self.assertIn('Kiemelhető tételek', out)
+        self.assertRegex(out, r'pasta.*Törökvész -136 332.*6000 gramm.*85%')
+        self.assertRegex(out, r'édesség.*Törökvész -14 897.*10 tiramisu.*95%')
+        self.assertRegex(out, r'snack.*Oktogon -21 939.*lopás')
+        self.assertRegex(out, r'ital.*Blaha -26 430')
+        self.assertNotRegex(out, r'(?m)^  gombóc')              # a gombóc a mintáknál van, nem itt
+        self.assertRegex(out, r'Lopás a megjegyzésekben: Oktogon \(snack\)')
+
+
 class TestSzovegCsere(Alap):
     def test_szemelyzeti_viz_helyett_naturaqua(self):
         # Otto, 2026. november: a "személyzeti víz" helyett "1,5l Naturaqua mentes" kell.
