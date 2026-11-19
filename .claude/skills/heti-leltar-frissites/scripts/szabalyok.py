@@ -15,9 +15,10 @@ NEVEK = {
 #   egységesen "1,5l Naturaqua mentes". A "0,5 Mentes" / "Mentes 0,5l" más termék, marad.
 SZOVEG = [
     (r'szem[eé]l\w*\s+v[ií]z', '1,5l Naturaqua mentes'),       # elgépelve is: "Személzyetí víz"
-    (r'(?:(?:1[,.]5\s*l?|NA)\s*)?mentes víz', '1,5l Naturaqua mentes'),
+    (r'\b(?:NA\s+)?mentes\s+1[,.]5\s*l?\b(?:\s*v[ií]z)?', '1,5l Naturaqua mentes'),  # "Na Mentes 1,5l", "Mentes 1,5 l víz"
+    # "mentes víz", elöl 1,5 / 1,5l / NA jelöléssel vagy anélkül; a "0,5 (l) Mentes víz" más termék, marad
+    (r'(?<!0[,.]5\s)(?<!0[,.]5l\s)(?<!0[,.]5\sl\s)(?:(?:1[,.]5\s*l?|NA)\s*)?mentes víz', '1,5l Naturaqua mentes'),
     (r'\b1[,.]5\s*l?\s*(?:NA\s+)?mentes\b', '1,5l Naturaqua mentes'),      # "1,5 Mentes", "1,5l NA mentes"
-    (r'\bNA\s+mentes\s+1[,.]5\s*l?\b', '1,5l Naturaqua mentes'),         # "Na Mentes 1,5l"
 ]
 
 

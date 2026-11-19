@@ -206,6 +206,11 @@ class TestSzovegCsere(Alap):
                          ('1 karton 1,5 Mentes', '1 karton 1,5l Naturaqua mentes'),
                          ('1 karton 0,5 Zero, 2 karton Na Mentes 1,5l', '1 karton 0,5 Zero, 2 karton 1,5l Naturaqua mentes'),
                          ('3 karton 1,5l Naturaqua mentes', '3 karton 1,5l Naturaqua mentes'),   # nem cserél újra
+                         # 2026. november 18-i beküldés
+                         ('1 karton Mentes 1,5 l víz', '1 karton 1,5l Naturaqua mentes'),
+                         ('1 karton 0,5 Mentes víz', '1 karton 0,5 Mentes víz'),       # a 0,5-ös más termék
+                         ('0,5l Mentes víz', '0,5l Mentes víz'),
+                         ('3 karton 1,5 L mentes', '3 karton 1,5l Naturaqua mentes'),
                          ('Mentes 0,5l', 'Mentes 0,5l'), ('0,5 Mentes', '0,5 Mentes')]:
             self.assertEqual(szoveg_csere(regi), uj)
 
