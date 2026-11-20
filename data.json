@@ -168,10 +168,10 @@
     },
     {
       "nev": "Corvin",
-      "leltar_pct": 99.4,
-      "osszes": -41421,
+      "leltar_pct": 99.7,
+      "osszes": -25421,
       "gomboc": -11751,
-      "ital": -18380,
+      "ital": -2380,
       "desseg": 0,
       "doboz": -8650,
       "snack": 0,
@@ -184,9 +184,6 @@
             "mennyiseg": 1
           }
         ]
-      },
-      "megjegyzesek": {
-        "ital": "1 karton 0,5 Mentes víz"
       },
       "teruletvezeto": [
         "Racsmány Ignác"
@@ -265,10 +262,10 @@
     },
     {
       "nev": "Blaha",
-      "leltar_pct": 99.36,
-      "osszes": -65237,
+      "leltar_pct": 99.46,
+      "osszes": -55157,
       "gomboc": -17062,
-      "ital": -33640,
+      "ital": -23560,
       "desseg": -2598,
       "doboz": -19600,
       "snack": 13653,
@@ -283,7 +280,7 @@
         ]
       },
       "megjegyzesek": {
-        "ital": "2 karton Cappy Ice Fruit",
+        "ital": "1 karton Cappy Ice Fruit 12db 0,5 Cola",
         "doboz": "100db 25cm doboz",
         "snack": "7db lays, 1db Amica"
       },
@@ -597,10 +594,10 @@
     },
     {
       "nev": "Bosnyák tér",
-      "leltar_pct": 99.39,
-      "osszes": -33889,
+      "leltar_pct": 99.63,
+      "osszes": -19089,
       "gomboc": -8099,
-      "ital": -24440,
+      "ital": -9640,
       "desseg": 0,
       "doboz": -500,
       "snack": 400,
@@ -615,7 +612,7 @@
         ]
       },
       "megjegyzesek": {
-        "ital": "10 galvani, 10 apasör"
+        "ital": "10db Galvani"
       },
       "teruletvezeto": [
         "Bratkovics Ádám"
@@ -779,9 +776,9 @@
     {
       "nev": "D2 Baross",
       "leltar_pct": 100.2,
-      "osszes": 28889,
+      "osszes": 18809,
       "gomboc": 9847,
-      "ital": 8750,
+      "ital": -1330,
       "desseg": 10392,
       "doboz": -800,
       "snack": 0,
