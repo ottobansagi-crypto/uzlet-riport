@@ -70,6 +70,10 @@ HONAPOK = {
 }
 TREND_EV = 2026   # a TREND2026 tömb éve; évváltáskor a szkript megáll
 
+# Gombóc-tételnevek, amelyek ugyanazt jelentik (a szöveges értékelésben egy mintaként kezelendők).
+#   Otto, 2026. november: a "Szelet" ugyanaz, mint a 45-ös gombóc.
+GOMBOC_AZONOS = {'Szelet': '45-ös gombóc'}
+
 # Az SK lap angol nyelvű: a forrás magyar tételneveit le kell fordítani.
 SK_TETELEK = {
     '45-ös gombóc': '45cm Bochnik',

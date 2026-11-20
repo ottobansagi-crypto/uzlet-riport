@@ -165,7 +165,7 @@ class TestErtekeles(Alap):
         for n in ('Gomba Móricz', 'Szeged', 'Fashion', 'Dob'):     # 5/9 előző hónap is többség
             self.assertRegex(out, r'Tartósan hiányos maradt.*' + n)
         self.assertRegex(out, r'Előjelet váltott.*Corvin')
-        self.assertRegex(out, r'45-ös gombóc hiány:.*Oktogon')
+        self.assertRegex(out, r'45-ös gombóc \(szelettel együtt\) hiány:.*Oktogon')
         self.assertRegex(out, r'32-es gombóc többlet:.*D2 Baross')
         self.assertRegex(out, r'víz.*Wesselényi utca')
         self.assertIn('fő hiány: papíráru', out)
@@ -183,6 +183,13 @@ class TestKiemeltTetelek(Alap):
         self.assertRegex(out, r'ital.*Blaha -26 430')
         self.assertNotRegex(out, r'(?m)^  gombóc')              # a gombóc a mintáknál van, nem itt
         self.assertRegex(out, r'Lopás a megjegyzésekben: Oktogon \(snack\)')
+
+    def test_szelet_a_45os_gomboc(self):
+        # Otto, 2026. november: a "Szelet" ugyanaz, mint a 45-ös gombóc, nem külön minta.
+        self.allapot('86a2aac')
+        out = run('ertekeles.py', '--root', self.root).stdout
+        self.assertNotIn('Szelet', out)
+        self.assertRegex(out, r'45-ös gombóc \(szelettel együtt\) hiány:.*Jászai Mari tér')
 
 
 class TestSzovegCsere(Alap):

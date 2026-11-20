@@ -12,7 +12,7 @@ import sys
 sys.dont_write_bytecode = True   # ne keletkezzen __pycache__ a repóban
 import argparse, io, json, os, re
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from szabalyok import HONAPOK, KATEGORIAK, ft
+from szabalyok import GOMBOC_AZONOS, HONAPOK, KATEGORIAK, ft
 
 KUSZOB = -20000
 KIEMEL = 10000          # a kiemelhető tételek küszöbe (Ft, mindkét irányban)
@@ -110,7 +110,12 @@ def main():
         for t in (u.get('reszletek') or {}).get('gomboc', []):
             if u['gomboc']:
                 irany = 'hiány' if u['gomboc'] < 0 else 'többlet'
-                csop.setdefault((t['termek'], irany), []).append(u['nev'])
+                termek = GOMBOC_AZONOS.get(t['termek'], t['termek'])
+                if termek in GOMBOC_AZONOS.values():
+                    termek += ' (szelettel együtt)'
+                nevek = csop.setdefault((termek, irany), [])
+                if u['nev'] not in nevek:
+                    nevek.append(u['nev'])
     for (termek, irany), nevek in sorted(csop.items(), key=lambda x: -len(x[1])):
         if len(nevek) >= 2:
             sor = nevek if irany == 'hiány' else list(reversed(nevek))
