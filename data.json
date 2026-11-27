@@ -296,9 +296,9 @@
     },
     {
       "nev": "Oktogon",
-      "leltar_pct": 99.3,
-      "osszes": -148279,
-      "gomboc": -113594,
+      "leltar_pct": 99.4,
+      "osszes": -115322,
+      "gomboc": -80637,
       "ital": -5470,
       "desseg": -774,
       "doboz": 17500,
@@ -309,7 +309,7 @@
         "gomboc": [
           {
             "termek": "45-ös gombóc",
-            "mennyiseg": 10
+            "mennyiseg": 8
           }
         ]
       },
